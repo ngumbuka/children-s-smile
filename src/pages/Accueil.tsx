@@ -1,0 +1,326 @@
+import { Link } from 'react-router-dom';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { Icon } from '../components/Icon';
+import type { IconName } from '../components/Icon';
+
+const assetPathPrefix = '/assets';
+const imgHero = `${assetPathPrefix}/1720c.png`;
+const imgLogo = `${assetPathPrefix}/1fe61.png`;
+const imgMission = `${assetPathPrefix}/c5599.png`;
+const imgProjectClassroom = `${assetPathPrefix}/8894c.png`;
+const imgProjectWater = `${assetPathPrefix}/6a646.png`;
+const imgProjectNutrition = `${assetPathPrefix}/70a8f.png`;
+const imgCheck = `${assetPathPrefix}/2d5a7.svg`;
+
+const stats = [
+  { value: '3 420', label: 'Écoliers équipés', color: 'text-[#006e2d]' },
+  { value: '47', label: 'Salles rénovées', color: 'text-[#004484]' },
+  { value: '10', label: 'Régions couvertes', color: 'text-[#a33900]' },
+  { value: '92%', label: `Taux d'impact`, color: 'text-[#0b5cab]' },
+];
+
+const pillars = [
+  {
+    icon: 'graduationCap',
+    title: 'Scolarisation',
+    desc: `Fournitures, manuels, mobilier scolaire et accompagnement pédagogique pour les enfants des zones rurales.`,
+    color: 'bg-[#eaedff]',
+  },
+  {
+    icon: 'utensils',
+    title: 'Cantines solidaires',
+    desc: `Des repas réguliers pour favoriser l'assiduité, la concentration et la réussite de chaque élève.`,
+    color: 'bg-[#e9f8ef]',
+  },
+  {
+    icon: 'shieldCheck',
+    title: 'Protection infantile',
+    desc: `État civil, écoute et protection des droits fondamentaux des enfants les plus vulnérables.`,
+    color: 'bg-[#fff1e8]',
+  },
+  {
+    icon: 'heartPulse',
+    title: 'Santé & eau potable',
+    desc: `Accès à l'eau, prévention sanitaire et kits d'hygiène au cœur des communautés scolaires.`,
+    color: 'bg-[#ebf3fc]',
+  },
+];
+
+const projects = [
+  {
+    image: imgProjectClassroom,
+    location: 'Région du Centre',
+    title: 'Des salles de classe dignes et équipées',
+    desc: `Réhabilitation des bâtiments, fabrication locale de bancs-pupitres et distribution de kits pédagogiques.`,
+  },
+  {
+    image: imgProjectWater,
+    location: 'Grand-Nord',
+    title: `L'eau potable au plus près des écoles`,
+    desc: `Installation de points d'eau durables et sensibilisation aux gestes d'hygiène dans les villages isolés.`,
+  },
+  {
+    image: imgProjectNutrition,
+    location: 'Zones rurales',
+    title: 'Une cantine pour mieux apprendre',
+    desc: `Des repas équilibrés, préparés avec les communautés, pour réduire l'absentéisme scolaire.`,
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Écouter le terrain',
+    desc: `Les besoins sont identifiés avec les écoles, les familles et les autorités locales.`,
+  },
+  {
+    number: '02',
+    title: 'Agir avec la communauté',
+    desc: `Artisans et bénévoles locaux participent à chaque étape de la mise en œuvre.`,
+  },
+  {
+    number: '03',
+    title: `Mesurer l'impact`,
+    desc: `Chaque action est documentée, suivie et partagée avec nos donateurs et partenaires.`,
+  },
+];
+
+export default function Accueil() {
+  return (
+    <div className="bg-[#faf8ff] flex flex-col min-h-screen overflow-x-hidden">
+      <Header />
+      <main id="main-content" className="flex flex-col w-full">
+        <section className="relative bg-[#004484] flex min-h-[620px] items-center overflow-hidden px-4 py-16 w-full sm:min-h-[680px] sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+          <div className="absolute inset-0 overflow-hidden">
+            <img
+              alt="Équipe et bénéficiaires de Children's Smile Cameroun dans une salle de classe"
+              className="h-full w-full object-cover opacity-30"
+              src={imgHero}
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003566] via-[rgba(0,68,132,0.92)] to-[rgba(0,68,132,0.68)]" />
+          <div className="relative flex flex-col gap-7 items-start max-w-[1168px] mx-auto w-full">
+            <div className="bg-[rgba(255,255,255,0.12)] border border-[rgba(255,255,255,0.2)] flex gap-3 items-center px-4 py-2 rounded-full">
+              <img alt="" className="rounded-full size-7" src={imgLogo} />
+              <p className="font-['Montserrat'] font-bold text-white text-[10px] tracking-[1.4px] uppercase sm:text-xs">
+                ONG camerounaise agréée • 10 régions
+              </p>
+            </div>
+            <div className="flex flex-col gap-5 max-w-[820px]">
+              <h1 className="font-['Montserrat'] font-extrabold text-white text-4xl leading-[1.08] tracking-[-1px] sm:text-5xl lg:text-6xl">
+                Chaque enfant mérite une école, un repas et un avenir.
+              </h1>
+              <p className="font-['Inter'] font-normal text-[#d5e3ff] text-base leading-7 max-w-[720px] sm:text-lg sm:leading-8">
+                {`Children's Smile Cameroun agit aux côtés des communautés pour rendre l'éducation, la santé et la protection accessibles aux enfants de 3 à 15 ans.`}
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 w-full sm:flex-row sm:w-auto">
+              <Link
+                to="/nous-soutenir"
+                className="bg-[#a33900] drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex justify-center px-7 py-4 rounded-full hover:bg-[#8c3000] transition-colors"
+              >
+                <p className="font-['Inter'] font-bold text-sm text-white">Soutenir une action</p>
+              </Link>
+              <Link
+                to="/nos-projets"
+                className="bg-[rgba(255,255,255,0.12)] border border-[rgba(255,255,255,0.35)] flex justify-center px-7 py-4 rounded-full hover:bg-[rgba(255,255,255,0.22)] transition-colors"
+              >
+                <p className="font-['Inter'] font-semibold text-sm text-white">Voir nos projets</p>
+              </Link>
+            </div>
+            <p className="font-['Inter'] font-semibold text-[#bfd6ff] text-xs leading-5">
+              Dons sécurisés • Actions suivies • Impact documenté
+            </p>
+          </div>
+        </section>
+
+        <section aria-label="Notre impact en chiffres" className="bg-white border-b border-[#eaedff] grid grid-cols-2 w-full lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="border-b border-r border-[#eaedff] flex flex-col gap-1 items-center justify-center min-h-28 px-3 py-6 text-center lg:border-b-0 lg:min-h-32"
+            >
+              <p className={`font-['Montserrat'] font-extrabold text-3xl sm:text-4xl ${stat.color}`}>{stat.value}</p>
+              <p className="font-['Inter'] font-semibold text-[#424751] text-xs sm:text-sm">{stat.label}</p>
+            </div>
+          ))}
+        </section>
+
+        <section className="px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+          <div className="grid gap-10 items-center max-w-[1168px] mx-auto w-full lg:grid-cols-2 lg:gap-16">
+            <div className="relative">
+              <img
+                alt="Enfants souriants dans une classe rurale au Cameroun"
+                className="aspect-[4/3] object-cover rounded-2xl w-full"
+                src={imgMission}
+              />
+              <div className="absolute bg-white bottom-4 left-4 max-w-[240px] p-4 rounded-xl shadow-[0px_8px_30px_rgba(0,68,132,0.16)] sm:bottom-6 sm:left-6">
+                <p className="font-['Montserrat'] font-extrabold text-[#006e2d] text-2xl">Depuis 2017</p>
+                <p className="font-['Inter'] font-semibold text-[#424751] text-xs leading-5">Aux côtés des enfants et de leurs communautés.</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-6 items-start">
+              <div className="flex flex-col gap-3">
+                <p className="font-['Montserrat'] font-bold text-[#006e2d] text-[11px] tracking-[1.1px] uppercase">Notre mission</p>
+                <h2 className="font-['Montserrat'] font-bold text-[#004484] text-3xl leading-tight sm:text-4xl">
+                  Transformer durablement le quotidien des enfants
+                </h2>
+                <p className="font-['Inter'] font-normal text-[#424751] text-base leading-7">
+                  Nous construisons des réponses concrètes avec les acteurs locaux. Une salle réhabilitée, un point d'eau ou une cantine deviennent le point de départ d'une communauté plus forte.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                {[
+                  'Des projets conçus avec les communautés',
+                  'Des achats et emplois privilégiés localement',
+                  'Un suivi transparent de chaque intervention',
+                ].map((item) => (
+                  <div key={item} className="flex gap-3 items-center">
+                    <img alt="" className="size-5 shrink-0" src={imgCheck} />
+                    <p className="font-['Inter'] font-semibold text-[#131b2e] text-sm">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <Link to="/a-propos" className="font-['Inter'] font-bold text-[#004484] text-sm hover:text-[#0b5cab] transition-colors">
+                Découvrir notre histoire →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#f2f3ff] px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+          <div className="flex flex-col gap-10 items-center max-w-[1168px] mx-auto w-full">
+            <div className="flex flex-col gap-3 items-center max-w-[720px] text-center">
+              <p className="font-['Montserrat'] font-bold text-[#006e2d] text-[11px] tracking-[1.1px] uppercase">Nos piliers d'action</p>
+              <h2 className="font-['Montserrat'] font-bold text-[#004484] text-3xl leading-tight sm:text-4xl">Agir sur tous les leviers de l'enfance</h2>
+              <p className="font-['Inter'] font-normal text-[#424751] text-base leading-7">
+                Nos programmes répondent aux besoins essentiels qui permettent à un enfant d'apprendre, de grandir et de se protéger.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              {pillars.map((pillar) => (
+                <article key={pillar.title} className="bg-white border border-[#eaedff] flex flex-col gap-4 items-start p-6 rounded-2xl shadow-[0px_2px_10px_rgba(0,68,132,0.05)]">
+                  <div className={`${pillar.color} flex items-center justify-center rounded-full size-12`}>
+                    <Icon className="text-[#004484] max-h-6 max-w-6" name={pillar.icon as IconName} />
+                  </div>
+                  <h3 className="font-['Montserrat'] font-bold text-[#004484] text-lg">{pillar.title}</h3>
+                  <p className="font-['Inter'] font-normal text-[#424751] text-sm leading-6">{pillar.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+          <div className="flex flex-col gap-10 max-w-[1168px] mx-auto w-full">
+            <div className="flex flex-col gap-5 items-start justify-between lg:flex-row lg:items-end">
+              <div className="flex flex-col gap-3 max-w-[700px]">
+                <p className="font-['Montserrat'] font-bold text-[#a33900] text-[11px] tracking-[1.1px] uppercase">Sur le terrain</p>
+                <h2 className="font-['Montserrat'] font-bold text-[#004484] text-3xl leading-tight sm:text-4xl">Des projets utiles, visibles et durables</h2>
+                <p className="font-['Inter'] font-normal text-[#424751] text-base leading-7">
+                  Découvrez comment votre soutien se transforme en solutions concrètes dans les écoles et les villages.
+                </p>
+              </div>
+              <Link to="/nos-projets" className="font-['Inter'] font-bold text-[#004484] text-sm hover:text-[#0b5cab] transition-colors">
+                Tous nos projets →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+              {projects.map((project) => (
+                <article key={project.title} className="border border-[#eaedff] flex flex-col overflow-hidden rounded-2xl">
+                  <img alt={project.title} className="aspect-[16/10] object-cover w-full" src={project.image} />
+                  <div className="flex flex-1 flex-col gap-3 items-start p-5 sm:p-6">
+                    <p className="bg-[#e9f8ef] font-['Montserrat'] font-bold px-3 py-1 rounded-full text-[#006e2d] text-[10px] tracking-[0.5px] uppercase">
+                      {project.location}
+                    </p>
+                    <h3 className="font-['Montserrat'] font-bold text-[#004484] text-xl leading-7">{project.title}</h3>
+                    <p className="font-['Inter'] font-normal text-[#424751] text-sm leading-6">{project.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+          <div className="flex flex-col gap-10 max-w-[1168px] mx-auto w-full">
+            <div className="flex flex-col gap-3 max-w-[700px]">
+              <p className="font-['Montserrat'] font-bold text-[#006e2d] text-[11px] tracking-[1.1px] uppercase">Notre méthode</p>
+              <h2 className="font-['Montserrat'] font-bold text-[#004484] text-3xl leading-tight sm:text-4xl">Du besoin identifié à l'impact mesuré</h2>
+            </div>
+            <div className="grid gap-5 lg:grid-cols-3">
+              {steps.map((step) => (
+                <article key={step.number} className="bg-white border border-[#eaedff] flex gap-5 items-start p-6 rounded-2xl lg:flex-col">
+                  <p className="font-['Montserrat'] font-extrabold text-[#5c7599] text-3xl">{step.number}</p>
+                  <div className="flex flex-col gap-2">
+                    <h3 className="font-['Montserrat'] font-bold text-[#004484] text-lg">{step.title}</h3>
+                    <p className="font-['Inter'] font-normal text-[#424751] text-sm leading-6">{step.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#004484] px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14">
+          <div className="grid gap-10 items-center max-w-[1168px] mx-auto w-full lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+            <div className="flex flex-col gap-5 items-start">
+              <p className="font-['Montserrat'] font-bold text-[#7cf994] text-[11px] tracking-[1.1px] uppercase">Transparence & confiance</p>
+              <h2 className="font-['Montserrat'] font-bold text-white text-3xl leading-tight sm:text-4xl">Votre don suit un chemin clair jusqu'au terrain</h2>
+              <p className="font-['Inter'] font-normal text-[#d5e3ff] text-base leading-7">
+                88 % des contributions sont directement engagées dans les programmes. Nos opérations sont documentées et soumises à un suivi régulier.
+              </p>
+              <Link to="/notre-impact" className="font-['Inter'] font-bold text-white text-sm hover:text-[#7cf994] transition-colors">
+                Consulter notre impact →
+              </Link>
+            </div>
+            <div className="bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] flex flex-col gap-5 p-6 rounded-2xl sm:p-8">
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <p className="font-['Montserrat'] font-extrabold text-white text-5xl">88%</p>
+                  <p className="font-['Inter'] font-semibold text-[#d5e3ff] text-sm">directement sur le terrain</p>
+                </div>
+                <p className="font-['Montserrat'] font-bold text-[#7cf994] text-sm">Impact direct</p>
+              </div>
+              <div className="bg-[rgba(255,255,255,0.18)] h-3 overflow-hidden rounded-full w-full">
+                <div className="bg-[#7cf994] h-full rounded-full w-[88%]" />
+              </div>
+              <div className="border-t border-[rgba(255,255,255,0.18)] grid grid-cols-2 gap-4 pt-5">
+                <div>
+                  <p className="font-['Montserrat'] font-bold text-white text-xl">Loi 90/053</p>
+                  <p className="font-['Inter'] text-[#bfd6ff] text-xs">Agrément officiel</p>
+                </div>
+                <div>
+                  <p className="font-['Montserrat'] font-bold text-white text-xl">CEMAC</p>
+                  <p className="font-['Inter'] text-[#bfd6ff] text-xs">Suivi bancaire</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#f2f3ff] px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14">
+          <div className="bg-white border border-[#eaedff] flex flex-col gap-6 items-center max-w-[960px] mx-auto px-5 py-10 rounded-2xl text-center w-full sm:px-10 sm:py-14">
+            <p className="font-['Montserrat'] font-bold text-[#a33900] text-[11px] tracking-[1.1px] uppercase">Agir maintenant</p>
+            <h2 className="font-['Montserrat'] font-bold text-[#004484] text-3xl leading-tight max-w-[680px] sm:text-4xl">
+              Ensemble, faisons grandir les sourires et les possibilités
+            </h2>
+            <p className="font-['Inter'] font-normal text-[#424751] text-base leading-7 max-w-[620px]">
+              Un don, un partenariat ou quelques heures de bénévolat peuvent ouvrir une nouvelle voie à un enfant.
+            </p>
+            <div className="flex flex-col gap-3 w-full sm:flex-row sm:justify-center sm:w-auto">
+              <Link to="/don" className="bg-[#a33900] flex justify-center px-8 py-4 rounded-full hover:bg-[#8c3000] transition-colors">
+                <p className="font-['Inter'] font-bold text-sm text-white">Faire un don sécurisé</p>
+              </Link>
+              <Link to="/contact" className="border border-[#004484] flex justify-center px-8 py-4 rounded-full hover:bg-[#eaedff] transition-colors">
+                <p className="font-['Inter'] font-bold text-[#004484] text-sm">Devenir partenaire</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

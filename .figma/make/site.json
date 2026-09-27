@@ -1,0 +1,11 @@
+{
+  "title": "children smile",
+  "description": "Enhance your design projects with intuitive tools for collaboration, feedback, and iteration, streamlining the creative process for teams and individuals.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

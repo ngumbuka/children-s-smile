@@ -1,0 +1,1080 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@700;800&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Inter:Bold';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inter:Regular';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter:Italic';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter:Medium';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter:Semi Bold';
+  src: url('https://static.figma.com/font/Inter_1') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Montserrat:Bold';
+  src: url('https://static.figma.com/font/Montserrat_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Montserrat:ExtraBold';
+  src: url('https://static.figma.com/font/Montserrat_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Montserrat:SemiBold';
+  src: url('https://static.figma.com/font/Montserrat_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 3px solid #0b5cab;
+  outline-offset: 3px;
+}
+
+[class*='rounded-full'][class*='size-'],
+[class*='rounded-[9999px]'][class*='size-'] {
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+[role='tab'] {
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------
+   Project filter tabs (NosProjets) — active state lives in <TabBar>
+   Card visibility is applied inline from React (needs category AND region).
+   ------------------------------------------------------------------ */
+
+.nos-projets-page [data-project-category] {
+  animation: tab-fade-in 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nos-projets-page [data-project-category] {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   News filter tabs (Actualites) — active state now lives in <TabBar>
+   ------------------------------------------------------------------ */
+
+/* Article visibility is applied inline from React (needs category matching). */
+.actualites-page[data-news-filter] [data-news-category] {
+  animation: tab-fade-in 200ms ease-out;
+}
+
+@keyframes tab-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actualites-page[data-news-filter] [data-news-category] {
+    animation: none;
+  }
+}
+
+[id='main-content'] {
+  scroll-margin-top: 8rem;
+}
+
+@media (max-width: 640px) {
+  .donation-checkout-page [class*='whitespace-nowrap'] {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 1100px) {
+  .a-propos-page,
+  .contact-page {
+    overflow-x: clip;
+  }
+
+  .a-propos-page > section,
+  .a-propos-page > div {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .a-propos-page [data-node-id='5:3843'],
+  .a-propos-page [data-node-id='5:3956'],
+  .a-propos-page [data-node-id='5:4025'],
+  .a-propos-page [data-node-id='5:4133'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .a-propos-page [data-node-id='5:3851'],
+  .a-propos-page [data-node-id='5:3927'],
+  .a-propos-page [data-node-id='5:4271'] {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .a-propos-page [data-node-id='5:3928'],
+  .a-propos-page [data-node-id='5:3936'],
+  .a-propos-page [data-node-id='5:4272'],
+  .a-propos-page [data-node-id='5:4300'] {
+    width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:3852'],
+  .a-propos-page [data-node-id='5:3862'],
+  .a-propos-page [data-node-id='5:3957'],
+  .a-propos-page [data-node-id='5:4134'],
+  .a-propos-page [data-node-id='5:4140'] {
+    width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:3853'],
+  .a-propos-page [data-node-id='5:3864'],
+  .a-propos-page [data-node-id='5:3963'],
+  .a-propos-page [data-node-id='5:4038'],
+  .a-propos-page [data-node-id='5:4156'],
+  .a-propos-page [data-node-id='5:4281'] {
+    flex-direction: column;
+  }
+
+  .a-propos-page [data-node-id='5:3853'],
+  .a-propos-page [data-node-id='5:3864'] {
+    align-items: flex-start;
+  }
+
+  .a-propos-page [data-node-id='5:3861'] {
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .a-propos-page [data-node-id='5:3861'] p {
+    line-height: 2.4rem;
+  }
+
+  .a-propos-page [data-node-id='5:4039'],
+  .a-propos-page [data-node-id='5:4070'],
+  .a-propos-page [data-node-id='5:4101'] {
+    width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:3950'] {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:4033'] {
+    width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:4034'] {
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:4154'],
+  .a-propos-page [data-node-id='5:4189'],
+  .a-propos-page [data-node-id='5:4204'] {
+    display: none;
+  }
+
+  .a-propos-page [data-node-id='5:4217'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+
+  .a-propos-page [data-node-id='5:4319'] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .a-propos-page [data-node-id='5:4140'] {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .a-propos-page [data-node-id='5:4141'],
+  .a-propos-page [data-node-id='5:4156'],
+  .a-propos-page [data-node-id='5:4191'],
+  .a-propos-page [data-node-id='5:4206'] {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .a-propos-page [data-node-id='5:4142'],
+  .a-propos-page [data-node-id='5:4146'] {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .a-propos-page [data-node-id='5:4327'] {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .a-propos-page [class*='whitespace-nowrap'] {
+    white-space: normal;
+  }
+}
+
+.contact-page [data-name='Input']:has(input) > [data-name='Container'],
+.contact-page [data-name='Options']:has(select) > [data-name='Container'],
+.contact-page [data-name='Textarea']:has(textarea) > [data-name='Container'] {
+  visibility: hidden;
+}
+
+.nos-actions-page,
+.nos-projets-page,
+.notre-impact-page,
+.actualites-page {
+  height: auto;
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+
+.a-propos-page [class*='text-[#727783]'],
+.nos-projets-page [class*='text-[#727783]'] {
+  color: #5d626e;
+}
+
+.nos-projets-page [data-node-id='5:3601'],
+.nos-projets-page [data-node-id='5:3607'],
+.nos-projets-page [data-node-id='5:3619'] {
+  color: #5d626e;
+}
+
+.nos-projets-page [data-node-id='5:3263'] {
+  color: white;
+}
+
+.actualites-page [data-node-id='5:861'] {
+  color: #5d626e;
+}
+
+.notre-impact-page [data-node-id='50:524'],
+.notre-impact-page [data-node-id='50:528'],
+.notre-impact-page [data-node-id='50:532'] {
+  color: white;
+}
+
+.contact-page [data-node-id='5:1457'] {
+  color: white;
+}
+
+.nos-actions-page [data-node-id='5:3105'],
+.nos-actions-page [data-node-id='5:3110'],
+.nos-projets-page [data-node-id='5:3588'] {
+  color: #5d626e;
+}
+
+.actualites-page [data-node-id='5:1164'] {
+  color: #005a25;
+}
+
+.nos-actions-page > [data-name='Header'],
+.nos-actions-page > [data-name='Footer'],
+.nos-projets-page > [data-name='Header'],
+.nos-projets-page > [data-name='Footer'],
+.notre-impact-page > [data-name='Header'],
+.notre-impact-page > [data-name='Footer'],
+.actualites-page > [data-name='Header'],
+.actualites-page > [data-name='Footer'] {
+  display: none;
+}
+
+.nos-projets-page > [data-name='Main'],
+.actualites-page > [data-name='Main'] {
+  padding-top: 0;
+}
+
+.nos-actions-page [class*='max-w-'],
+.nos-projets-page [class*='max-w-'],
+.notre-impact-page [class*='max-w-'],
+.actualites-page [class*='max-w-'] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1100px) {
+  .notre-impact-page [data-node-id='50:524'],
+  .notre-impact-page [data-node-id='50:528'],
+  .notre-impact-page [data-node-id='50:532'] {
+    color: #5d626e;
+  }
+
+  .nos-actions-page > [data-name='Main'],
+  .nos-projets-page > [data-name='Main'],
+  .notre-impact-page > [data-name='Main'],
+  .actualites-page > [data-name='Main'] {
+    min-height: 0;
+    padding-top: 0;
+  }
+
+  .nos-actions-page [class*='px-[56px]'],
+  .nos-projets-page [class*='px-[56px]'],
+  .notre-impact-page [class*='px-[56px]'],
+  .actualites-page [class*='px-[56px]'],
+  .actualites-page [class*='px-[184.609px]'] {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .nos-actions-page [class*='grid-cols-[repeat(3'],
+  .nos-projets-page [class*='grid-cols-[repeat(3'],
+  .notre-impact-page [class*='grid-cols-[repeat(3'],
+  .actualites-page [class*='grid-cols-[repeat(3'],
+  .actualites-page [class*='grid-cols-[repeat(4'] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .nos-actions-page [class*='w-[672px]'],
+  .nos-actions-page [class*='w-[768px]'],
+  .nos-actions-page [class*='w-[1168px]'],
+  .nos-actions-page [class*='w-[576px]'],
+  .nos-projets-page [class*='w-[672px]'],
+  .nos-projets-page [class*='w-[768px]'],
+  .nos-projets-page [class*='w-[1168px]'],
+  .nos-projets-page [class*='w-[576px]'],
+  .notre-impact-page [class*='w-[672px]'],
+  .notre-impact-page [class*='w-[768px]'],
+  .notre-impact-page [class*='w-[1168px]'],
+  .notre-impact-page [class*='w-[576px]'],
+  .actualites-page [class*='w-[672px]'],
+  .actualites-page [class*='w-[768px]'],
+  .actualites-page [class*='w-[1168px]'],
+  .actualites-page [class*='w-[640px]'],
+  .actualites-page [class*='w-[576px]'] {
+    width: 100%;
+  }
+
+  .nos-actions-page [data-name='Heading 1'] > div,
+  .nos-projets-page [data-name='Heading 1'] > div,
+  .notre-impact-page [data-name='Heading 1'] > div,
+  .actualites-page [data-name='Heading 1'] > div {
+    font-size: 2.25rem;
+    line-height: 1.12;
+    white-space: normal;
+  }
+
+  .nos-actions-page [class*='whitespace-nowrap'],
+  .nos-projets-page [class*='whitespace-nowrap'],
+  .notre-impact-page [class*='whitespace-nowrap'],
+  .actualites-page [class*='whitespace-nowrap'] {
+    white-space: normal;
+  }
+
+  .nos-actions-page [class*='grid-cols-[repeat(12'],
+  .nos-actions-page [class*='grid-cols-[repeat(2'],
+  .nos-projets-page [class*='grid-cols-[repeat(12'],
+  .nos-projets-page [class*='grid-cols-[repeat(2'],
+  .notre-impact-page [class*='grid-cols-[repeat(12'],
+  .notre-impact-page [class*='grid-cols-[repeat(2'],
+  .actualites-page [class*='grid-cols-[repeat(12'],
+  .actualites-page [class*='grid-cols-[repeat(2'] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .nos-actions-page [class*='grid-cols-[repeat(12'] > *,
+  .nos-actions-page [class*='grid-cols-[repeat(2'] > *,
+  .nos-projets-page [class*='grid-cols-[repeat(12'] > *,
+  .nos-projets-page [class*='grid-cols-[repeat(2'] > *,
+  .notre-impact-page [class*='grid-cols-[repeat(12'] > *,
+  .notre-impact-page [class*='grid-cols-[repeat(2'] > *,
+  .actualites-page [class*='grid-cols-[repeat(12'] > *,
+  .actualites-page [class*='grid-cols-[repeat(2'] > * {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+  }
+
+  .nos-actions-page [data-name='Heading 1'] p,
+  .nos-projets-page [data-name='Heading 1'] p,
+  .notre-impact-page [data-name='Heading 1'] p,
+  .actualites-page [data-name='Heading 1'] p {
+    line-height: 1.12;
+  }
+
+  .nos-actions-page [data-node-id='5:2789'] {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .nos-actions-page [data-node-id='5:2790'] {
+    gap: 2rem;
+  }
+
+  .nos-actions-page [data-node-id='5:2791'],
+  .nos-actions-page [data-node-id='5:2798'] {
+    width: 100%;
+    max-width: none;
+  }
+
+  .nos-actions-page [data-node-id='5:2792'] {
+    max-width: 100%;
+    border-radius: 0.75rem;
+    width: 100%;
+  }
+
+  .nos-actions-page [data-node-id='5:2795'] {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nos-actions-page [data-node-id='5:2796'] {
+    padding-right: 0;
+  }
+
+  .nos-actions-page [data-node-id='5:2800'] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .nos-actions-page [data-node-id='5:2801'],
+  .nos-actions-page [data-node-id='5:2806'],
+  .nos-actions-page [data-node-id='5:2811'],
+  .nos-actions-page [data-node-id='5:2816'] {
+    min-width: 0;
+    padding: 1rem;
+  }
+
+  .nos-actions-page [data-node-id='5:2824'] {
+    padding: 1.5rem;
+  }
+
+  .nos-actions-page [data-node-id='5:2828'] {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .nos-actions-page [data-node-id='5:2831'] {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nos-actions-page [data-node-id='5:2832'],
+  .nos-actions-page [data-node-id='5:2835'] {
+    max-width: none;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .nos-actions-page [data-node-id='5:2803'],
+  .nos-actions-page [data-node-id='5:2808'],
+  .nos-actions-page [data-node-id='5:2813'],
+  .nos-actions-page [data-node-id='5:2818'] {
+    font-size: 1.75rem;
+  }
+
+  .nos-projets-page [data-node-id='5:3257'] {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .nos-projets-page [data-node-id='5:3258'],
+  .nos-projets-page [data-node-id='5:3264'] {
+    flex-direction: column;
+  }
+
+  .nos-projets-page [data-node-id='5:3258'] {
+    align-items: flex-start;
+  }
+
+  .nos-projets-page [data-node-id='5:3265'],
+  .nos-projets-page [data-node-id='5:3270'] {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .nos-projets-page [data-node-id='5:3266'] > div {
+    font-size: 2.25rem;
+  }
+
+  .nos-projets-page [data-node-id='5:3288'],
+  .nos-projets-page [data-node-id='50:1146'],
+  .nos-projets-page [data-node-id='50:1147'] {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nos-projets-page [data-node-id='5:3289'] {
+    width: 100%;
+  }
+
+  .nos-projets-page [data-node-id='5:3294'] {
+    align-self: flex-start;
+    max-width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:48'] {
+    gap: 3rem;
+    padding-top: 0;
+    padding-bottom: 3rem;
+  }
+
+  .notre-impact-page [data-node-id='50:50'] {
+    padding: 3rem 1.25rem;
+  }
+
+  .notre-impact-page [data-node-id='50:51'] {
+    flex-direction: column;
+  }
+
+  .notre-impact-page [data-node-id='50:52'] {
+    width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:54'] {
+    max-width: 100%;
+    border-radius: 0.75rem;
+    width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:56'] {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .notre-impact-page [data-node-id='50:57'] {
+    min-width: 0;
+    width: 100%;
+    font-size: 2.5rem;
+  }
+
+  .notre-impact-page [data-node-id='50:57'] p,
+  .notre-impact-page [data-node-id='50:57'] span {
+    line-height: 1.12;
+  }
+
+  .notre-impact-page [data-node-id='50:59'] {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:60'],
+  .notre-impact-page [data-node-id='50:63'] {
+    align-items: center;
+    width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:66'] {
+    flex: none;
+    width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:129'] {
+    max-width: 100%;
+  }
+
+  .notre-impact-page [data-node-id='50:138'] > div {
+    flex-direction: column;
+  }
+
+  .actualites-page [data-node-id='5:709'] {
+    padding-bottom: 2.5rem;
+  }
+
+  .actualites-page [data-node-id='5:714'],
+  .actualites-page [data-node-id='5:724'] {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actualites-page [data-node-id='5:715'] {
+    max-width: 100%;
+    border-radius: 0.75rem;
+    width: 100%;
+  }
+
+  .actualites-page [data-node-id='5:718'],
+  .actualites-page [data-node-id='5:723'] {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .actualites-page [data-node-id='5:720'] {
+    width: 100%;
+  }
+
+  .actualites-page [data-node-id='5:725'],
+  .actualites-page [data-node-id='5:730'] {
+    max-width: none;
+    width: 100%;
+  }
+
+  .actualites-page [data-node-id='5:773'] {
+    flex-direction: column;
+  }
+
+  .actualites-page [data-node-id='5:775'] {
+    min-height: 20rem;
+    width: 100%;
+  }
+
+  .actualites-page [data-node-id='5:776'] {
+    height: 20rem;
+  }
+
+  .actualites-page [data-node-id='5:777'] {
+    flex-wrap: wrap;
+    right: 1rem;
+  }
+
+  .actualites-page [data-node-id='5:784'] {
+    display: none;
+  }
+
+  .actualites-page [data-node-id='5:791'] {
+    padding: 1.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .contact-page [data-node-id='5:1402'],
+  .contact-page [data-node-id='5:1441'],
+  .contact-page [data-node-id='5:1475'],
+  .contact-page [data-node-id='5:1666'],
+  .contact-page [data-node-id='5:1712'] {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .contact-page [data-node-id='5:1403'],
+  .contact-page [data-node-id='5:1476'],
+  .contact-page [data-node-id='5:1677'] {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .contact-page [data-node-id='5:1404'],
+  .contact-page [data-node-id='5:1431'],
+  .contact-page [data-node-id='5:1477'],
+  .contact-page [data-node-id='5:1576'],
+  .contact-page [data-node-id='5:1678'],
+  .contact-page [data-node-id='5:1688'] {
+    width: 100%;
+  }
+
+  .contact-page [data-node-id='5:1450'],
+  .contact-page [data-node-id='5:1415'],
+  .contact-page [data-node-id='5:1512'],
+  .contact-page [data-node-id='5:1668'],
+  .contact-page [data-node-id='5:1714'],
+  .contact-page [data-node-id='5:1770'] {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-page [data-node-id='5:1443'] {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-page [data-node-id='5:1444'],
+  .contact-page [data-node-id='5:1449'],
+  .contact-page [data-node-id='5:1468'] {
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .contact-page [data-node-id='5:1469'] {
+    width: 100%;
+  }
+
+  .contact-page [data-node-id='5:1474'] {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-page [data-node-id='5:1678'] {
+    padding-right: 1rem;
+  }
+
+  .contact-page [data-node-id='5:1679'] {
+    max-width: calc(100vw - 5rem);
+  }
+
+  .contact-page [data-node-id='5:1721'] {
+    flex-wrap: wrap;
+  }
+
+  .contact-page [data-node-id='5:1713'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-page [data-node-id='5:1477'] {
+    padding: 1.25rem;
+  }
+
+  .contact-page [data-node-id='5:1722'],
+  .contact-page [data-node-id='5:1730'],
+  .contact-page [data-node-id='5:1738'],
+  .contact-page [data-node-id='5:1746'],
+  .contact-page [data-node-id='5:1754'],
+  .contact-page [data-node-id='5:1762'] {
+    width: 100%;
+  }
+
+  .contact-page [class*='whitespace-nowrap'] {
+    white-space: normal;
+  }
+
+  .nous-soutenir-page [class*='whitespace-nowrap'] {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .a-propos-page [data-node-id='5:4217'] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+/* ==========================================================================
+   Global responsive + centring layer for the Figma-exported pages
+   --------------------------------------------------------------------------
+   The generated markup hard-codes pixel widths, pixel gutters and
+   `white-space: nowrap` everywhere. The rules below make all of that fluid
+   without touching the generated TSX, and centre the content shell.
+   ========================================================================== */
+
+:is(
+    .actualites-page,
+    .nos-projets-page,
+    .nos-actions-page,
+    .notre-impact-page,
+    .a-propos-page,
+    .contact-page,
+    .nous-soutenir-page,
+    .donation-checkout-page
+  ) {
+  /* Every hard-coded pixel width is allowed to shrink to its container. */
+  & [class*='w-['] {
+    max-width: 100%;
+  }
+
+  /* A fixed-width column can never be wider than the space it lives in. */
+  & [class*='min-w-[247px]'],
+  & [class*='min-w-px'] {
+    min-width: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Centring — Figma anchors every band to the left edge
+   -------------------------------------------------------------------------- */
+@media (min-width: 1281px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page
+    )
+    :is(
+      [class*='w-[1280px]'],
+      [class*='w-[1168px]'],
+      [class*='w-[1024px]'],
+      [class*='w-[768px]'],
+      [class*='w-[672px]']
+    ) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop-only centring padding must not be kept on small screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page
+    )
+    :is(
+      [class*='px-[510px]'],
+      [class*='px-[248px]'],
+      [class*='px-[184.609px]'],
+      [class*='px-[48.72px]'],
+      [class*='px-[37.406px]'],
+      [class*='pl-[510px]'],
+      [class*='pr-[510px]']
+    ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Text must wrap rather than run off the edge
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    [class*='whitespace-nowrap'] {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Buttons and links: never wider than the screen
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    a[class*='shrink-0'],
+    :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    button[class*='shrink-0'] {
+    max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Full-bleed decorative photos: fill the frame instead of spilling out
+   -------------------------------------------------------------------------- */
+:is(
+    .actualites-page,
+    .nos-projets-page,
+    .nos-actions-page,
+    .notre-impact-page,
+    .a-propos-page,
+    .contact-page,
+    .nous-soutenir-page
+  )
+  img[class*='left-[-'] {
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Inputs inherit the font, otherwise iOS zooms on focus
+   -------------------------------------------------------------------------- */
+:is(.nous-soutenir-page, .contact-page, .donation-checkout-page) input,
+:is(.nous-soutenir-page, .contact-page, .donation-checkout-page) select,
+:is(.nous-soutenir-page, .contact-page, .donation-checkout-page) textarea {
+  font-size: max(16px, 1em);
+}
+
+/* --------------------------------------------------------------------------
+   `flex-shrink`
+
+   The Figma export marks almost every flex child `shrink-0`. Inside a row that
+   means headings, labels and buttons keep their desktop width and run off the
+   edge. Let them shrink below the desktop breakpoint, but keep genuinely
+   fixed-size chips, avatars and icon boxes rigid.
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    [class*='shrink-0'] {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  /* These must never deform. */
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    [class*='shrink-0'][class*='size-'],
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    [class*='shrink-0'][class*='rounded-full'],
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    [class*='shrink-0'] > img[class*='size-full'],
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    [class*='shrink-0'] > svg {
+    flex-shrink: 0;
+    min-width: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Search placeholder: truncate with an ellipsis instead of being clipped
+   -------------------------------------------------------------------------- */
+.actualites-page [data-name='Input'] p,
+.contact-page [data-name='Input'] p,
+.nous-soutenir-page [data-name='Input'] p {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The search field's parent uses `items-start`, so the text wrapper sizes to
+   its content instead of the field. Stretch it and ellipsize the placeholder. */
+.actualites-page [data-name='Input'] > div,
+.contact-page [data-name='Input'] > div {
+  align-self: stretch;
+  min-width: 0;
+}
+
+/* Constrain the search text wrapper so the placeholder ellipsizes. */
+.actualites-page [data-name='Input'] [class*='whitespace-nowrap'],
+.contact-page [data-name='Input'] [class*='whitespace-nowrap'] {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Decorative "•" separators between two labels must not collapse. Only the
+   thin wrapper whose sole content is the separator is kept rigid. */
+[data-decorative-separator='true'] {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+  [class*='shrink-0']:has(> [data-decorative-separator='true']) {
+    flex-shrink: 0;
+    min-width: min-content;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Figma rows are `flex` + `items-start` with no wrap. Combined with the
+   `flex-shrink` rule above, siblings get crushed until the text wraps one
+   character per line. Let rows wrap instead of crushing, so each child keeps a
+   readable width and simply drops onto its own line.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    div[class*='flex']:not([class*='flex-col']):not([class*='flex-wrap']):not(
+      [class*='absolute']
+    ) {
+    flex-wrap: wrap;
+  }
+}
