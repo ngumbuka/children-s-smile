@@ -4440,7 +4440,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="flex flex-col justify-center relative shrink-0"
+                  className="btn-label flex flex-col justify-center relative"
                   data-node-id="5:1397"
                 >
                   <p className="leading-[20px]">Nous</p>

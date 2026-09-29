@@ -343,7 +343,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
+                  className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white"
                   data-node-id="5:3250"
                 >
                   <p className="leading-[20px]">Nous Soutenir</p>
@@ -1924,7 +1924,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Link"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
+                        className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative text-brand-900 text-[14px]"
                         data-node-id="5:3029"
                       >
                         <p className="leading-[20px]">
@@ -1932,7 +1932,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         </p>
                       </div>
                       <div
-                        className="relative shrink-0 size-[12px]"
+                        className="btn-icon relative shrink-0"
                         data-node-id="5:3030"
                         data-name="Container"
                       >
@@ -2588,7 +2588,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
+                      className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center"
                       data-node-id="5:3123"
                     >
                       <p className="leading-[20px]">

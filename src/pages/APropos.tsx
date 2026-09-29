@@ -525,7 +525,7 @@ function AProposContent() {
                 <div className="h-[12px] relative shrink-0 w-[16.5px]" data-node-id="5:4035" data-name="Container">
                   <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer14} />
                 </div>
-                <div className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="5:4037">
+                <div className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative text-[14px] text-white" data-node-id="5:4037">
                   <p className="leading-[20px]">Rejoindre la communauté</p>
                 </div>
               </div>
@@ -1201,9 +1201,9 @@ function AProposContent() {
             </div>
           </div>
           <div className="content-stretch flex gap-[16px] items-center justify-center relative shrink-0" data-node-id="5:4327" data-name="Container">
-            <Link to="/nos-actions" className="bg-white content-stretch flex flex-col items-start relative rounded-pill shrink-0 btn-md btn" data-node-id="5:4328" data-name="Link">
+            <Link to="/nos-actions" className="bg-white content-stretch flex flex-col items-start relative rounded-pill shrink-0 btn-md btn btn-icon-stack" data-node-id="5:4328" data-name="Link">
               <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-pill shadow-float" data-node-id="5:4329" data-name="Link:shadow" />
-              <div className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap" data-node-id="5:4330">
+              <div className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative text-brand-900 text-[14px] whitespace-nowrap" data-node-id="5:4330">
                 <p className="leading-[20px]">Découvrir nos actions</p>
               </div>
             </Link>
@@ -1212,7 +1212,7 @@ function AProposContent() {
               <div className="h-[13.762px] relative shrink-0 w-[15px]" data-node-id="5:4333" data-name="Container">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer26} />
               </div>
-              <div className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="5:4335">
+              <div className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative text-[14px] text-white" data-node-id="5:4335">
                 <p className="leading-[20px]">Faire un don direct</p>
               </div>
             </Link>

@@ -299,7 +299,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
+                  className="btn-label [word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] text-white"
                   data-node-id="50:45"
                 >
                   Devenir Partenaire
@@ -311,7 +311,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
+                  className="btn-label [word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] text-white"
                   data-node-id="50:47"
                 >
                   Nous Soutenir
@@ -380,11 +380,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-brand-900 content-stretch flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-md btn"
+                      className="bg-brand-900 content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-md btn btn-icon-stack"
                       data-node-id="50:60"
                       data-name="Frame"
                     >
-                      <Icon name="map" size={13.5} className="shrink-0" />
+                      <Icon name="map" size={16} className="shrink-0" />
                       <p
                         className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
                         data-node-id="50:62"
@@ -393,11 +393,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </p>
                     </div>
                     <div
-                      className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-md btn"
+                      className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-md btn btn-icon-stack"
                       data-node-id="50:63"
                       data-name="Frame"
                     >
-                      <Icon name="arrowRight" size={12.0} className="shrink-0" />
+                      <Icon name="arrowRight" size={16} className="shrink-0" />
                       <p
                         className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                         data-node-id="50:65"
@@ -2779,11 +2779,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-brand-900 content-stretch flex flex-col gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
+                      className="bg-brand-900 content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn btn-icon-stack"
                       data-node-id="50:475"
                       data-name="Frame"
                     >
-                      <Icon name="download" size={12.0} className="shrink-0" />
+                      <Icon name="download" size={16} className="shrink-0" />
                       <p
                         className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[12px] text-center text-white whitespace-nowrap"
                         data-node-id="50:477"
@@ -2862,11 +2862,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-surface-tint content-stretch flex flex-col gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
+                      className="bg-surface-tint content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn btn-icon-stack"
                       data-node-id="50:488"
                       data-name="Frame"
                     >
-                      <Icon name="arrowRight" size={12.0} className="shrink-0" />
+                      <Icon name="arrowRight" size={16} className="shrink-0" />
                       <p
                         className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-900 text-[12px] text-center whitespace-nowrap"
                         data-node-id="50:490"
@@ -2942,11 +2942,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-surface-tint content-stretch flex flex-col gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
+                      className="bg-surface-tint content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn btn-icon-stack"
                       data-node-id="50:501"
                       data-name="Frame"
                     >
-                      <Icon name="arrowRight" size={12.0} className="shrink-0" />
+                      <Icon name="arrowRight" size={16} className="shrink-0" />
                       <p
                         className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-900 text-[12px] text-center whitespace-nowrap"
                         data-node-id="50:503"
@@ -3019,22 +3019,22 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="bg-accent-700 content-stretch flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-lg btn"
+                  className="bg-accent-700 content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-lg btn btn-icon-stack"
                   data-node-id="50:515"
                   data-name="Frame"
                 >
-                  <Icon name="arrowRight" size={15.44} className="shrink-0" />
+                  <Icon name="arrowRight" size={18} className="shrink-0" />
                   <p
                     className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap"
                     data-node-id="50:517"
                   >{`Parrainer un chantier d'école`}</p>
                 </div>
                 <div
-                  className="bg-surface-subtle content-stretch flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-lg btn"
+                  className="bg-surface-subtle content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-lg btn btn-icon-stack"
                   data-node-id="50:518"
                   data-name="Frame"
                 >
-                  <Icon name="arrowRight" size={18.33} className="shrink-0" />
+                  <Icon name="arrowRight" size={18} className="shrink-0" />
                   <p
                     className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                     data-node-id="50:520"

@@ -3096,7 +3096,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Link"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap"
+                          className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-white"
                           data-node-id="5:3691"
                         >
                           <p className="leading-[20px]">
@@ -3409,7 +3409,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
+                  className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white"
                   data-node-id="50:1196"
                 >
                   <p className="leading-[20px]">Nous Soutenir</p>
@@ -3726,7 +3726,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
+                  className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white"
                   data-node-id="5:3836"
                 >
                   <p className="leading-[20px]">Nous Soutenir</p>
@@ -3970,7 +3970,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Subscribe Button"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
+                  className="btn-label [word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center"
                   data-node-id="50:1500"
                 >
                   <p className="leading-[20px]">{`S'inscrire`}</p>

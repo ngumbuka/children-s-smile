@@ -380,11 +380,11 @@ export default function FormulaireDon() {
                   </div>
                 </div>
                 <div className="flex flex-col items-start w-full">
-                  <button type="button" className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex gap-2 items-center justify-center rounded-pill w-full cursor-pointer hover:bg-warn-800 transition-colors btn-lg btn">
-                    <div className="relative shrink-0 size-4">
+                  <button type="button" className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex items-center justify-center rounded-pill w-full cursor-pointer hover:bg-warn-800 transition-colors btn-lg btn">
+                    <div className="btn-icon relative shrink-0">
                       <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgLock} />
                     </div>
-                    <p className="font-['Inter'] font-bold leading-5 text-sm text-white whitespace-nowrap">
+                    <p className="btn-label font-['Inter'] font-bold leading-5 text-sm text-white">
                       Valider mon Don de 25 000 FCFA
                     </p>
                   </button>

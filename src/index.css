@@ -230,6 +230,7 @@
     align-items: center;
     border-radius: var(--radius-pill);
     display: inline-flex;
+    flex-wrap: nowrap;
     font-family: var(--font-sans);
     gap: 0.5rem;
     justify-content: center;
@@ -243,8 +244,63 @@
   }
 
   .btn-lg {
+    gap: 0.75rem;
     min-height: 56px;
     padding-inline: var(--btn-pad-lg);
+  }
+
+  /* ---- Buttons: icon placement -------------------------------------
+     A button icon is optical, not decorative filler: it has to sit on the
+     label's baseline band, hold its size next to the type, and never be
+     squeezed by a long label. Direct-child SVG and the Figma img
+     wrappers both get this so a CTA looks the same whichever page it is
+     on. */
+  .btn > svg,
+  .btn-icon {
+    flex: none;
+  }
+
+  .btn-md > svg,
+  .btn-md > .btn-icon {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+
+  .btn-lg > svg,
+  .btn-lg > .btn-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  /* Figma exports icons as a sized wrapper holding a stretched img. Both
+     halves have to be pinned or the glyph drifts inside its box. */
+  .btn > .relative > img,
+  .btn > .relative > svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* The label is what wraps, never the row. Figma hands us shrink-0 on the
+     label, which pushed long calls to action onto a second line and made
+     the pill grow to 126px tall. min-width:0 lets the text reflow inside
+     its own box while the icon holds its position. */
+  .btn-label {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  /* An icon stacked over its label is a vertical CTA, not a horizontal
+     one; it should be centred and the gap collapsed. */
+  .btn-icon-stack {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* Keyboard users need to see where they are. 37 of the 40 calls to
+     action had no focus ring of their own. */
+  .btn:focus-visible {
+    outline: 3px solid var(--color-brand-700);
+    outline-offset: 2px;
   }
 
   /* Respect the OS reduced-motion setting for every button transition. */
@@ -1106,7 +1162,7 @@
       .nous-soutenir-page,
       .donation-checkout-page
     )
-    [class*='shrink-0'] {
+    [class*='shrink-0']:not(.btn-icon) {
     flex-shrink: 1;
     min-width: 0;
   }
@@ -1220,7 +1276,7 @@
     )
     div[class*='flex']:not([class*='flex-col']):not([class*='flex-wrap']):not(
       [class*='absolute']
-    ) {
+    ):not(.btn) {
     flex-wrap: wrap;
   }
 }

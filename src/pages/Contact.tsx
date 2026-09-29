@@ -187,11 +187,11 @@ function ContactContent() {
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="5:1468" data-name="Container">
                 <div className="bg-accent-700 content-stretch flex gap-[10px] items-center justify-center relative rounded-pill shrink-0 btn-lg btn" data-node-id="5:1469" data-name="Link">
                   <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.02px_0_0] rounded-pill shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]" data-node-id="5:1470" data-name="Link:shadow" />
-                  <div className="relative shrink-0 size-[20px]" data-node-id="5:1471" data-name="Container">
+                  <div className="btn-icon relative shrink-0" data-node-id="5:1471" data-name="Container">
                     <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer7} />
                   </div>
                   <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="5:1473" data-name="Container">
-                    <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[18px] text-white whitespace-nowrap" data-node-id="5:1474">
+                    <div className="btn-label [word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative text-[18px] text-white" data-node-id="5:1474">
                       <p className="leading-[24px]">Ouvrir une conversation WhatsApp</p>
                     </div>
                   </div>
@@ -441,7 +441,7 @@ function ContactContent() {
                       <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer10} />
                     </div>
                     <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="5:1574" data-name="Container">
-                      <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white whitespace-nowrap" data-node-id="5:1575">
+                      <div className="btn-label [word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative text-[18px] text-center text-white" data-node-id="5:1575">
                         <p className="leading-[24px]">Envoyer ma demande</p>
                       </div>
                     </div>
@@ -736,7 +736,7 @@ function ContactContent() {
                         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer19} />
                       </div>
                       <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="5:1709" data-name="Container">
-                        <div className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="5:1710">
+                        <div className="btn-label [word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative text-[14px] text-white" data-node-id="5:1710">
                           <p className="leading-[20px]">Solliciter un rendez-vous en agence</p>
                         </div>
                       </div>

@@ -263,10 +263,10 @@ export default function NousSoutenir() {
               </div>
               <Link
                 to="/don"
-                className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex gap-2 items-center justify-center rounded-pill w-full hover:bg-warn-800 transition-colors sm:w-auto btn-md btn"
+                className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex items-center justify-center rounded-pill w-full hover:bg-warn-800 transition-colors sm:w-auto btn-md btn"
               >
-                <Icon name="lock" size={4.0} className="shrink-0" />
-                <p className="font-['Inter'] font-bold text-sm text-white whitespace-nowrap">Finaliser ce Don</p>
+                <Icon name="lock" size={18} className="shrink-0" />
+                <p className="btn-label font-['Inter'] font-bold text-sm text-white">Finaliser ce Don</p>
               </Link>
             </div>
             {/* Trust row */}
@@ -277,7 +277,7 @@ export default function NousSoutenir() {
                 { icon: imgFrame5, text: 'Rapport photo du chantier' },
               ].map((item) => (
                 <div key={item.text} className="flex gap-2 items-center">
-                  <div className="relative shrink-0 size-4">
+                  <div className="btn-icon relative shrink-0">
                     <img alt="" className="absolute block inset-0 max-w-none size-full" src={item.icon} />
                   </div>
                   <p className="font-['Inter'] font-semibold text-ink-700 text-xs">{item.text}</p>
@@ -636,17 +636,17 @@ export default function NousSoutenir() {
             <div className="flex flex-col gap-3 items-stretch pt-2 w-full sm:flex-row sm:items-center sm:justify-center sm:w-auto">
               <Link
                 to="/don"
-                className="bg-warn-700 flex gap-2 items-center justify-center rounded-pill hover:bg-warn-800 transition-colors btn-md btn"
+                className="bg-warn-700 flex items-center justify-center rounded-pill hover:bg-warn-800 transition-colors btn-md btn"
               >
-                <Icon name="handHeart" size={18.33} className="shrink-0" />
-                <p className="font-['Inter'] font-bold text-sm text-white whitespace-nowrap">Envoyer un Don Maintenant</p>
+                <Icon name="handHeart" size={18} className="shrink-0" />
+                <p className="btn-label font-['Inter'] font-bold text-sm text-white">Envoyer un Don Maintenant</p>
               </Link>
               <a
                 href="tel:+237699098688"
-                className="bg-brand-700 flex gap-2 items-center justify-center rounded-pill hover:bg-[#094e97] transition-colors btn-md btn"
+                className="bg-brand-700 flex items-center justify-center rounded-pill hover:bg-[#094e97] transition-colors btn-md btn"
               >
-                <Icon name="phone" size={15.0} className="shrink-0" />
-                <p className="font-['Inter'] font-semibold text-sm text-white whitespace-nowrap">Parler à un Responsable (+237 699 09 86 88)</p>
+                <Icon name="phone" size={18} className="shrink-0" />
+                <p className="btn-label font-['Inter'] font-semibold text-sm text-white">Parler à un Responsable (+237 699 09 86 88)</p>
               </a>
             </div>
           </div>
