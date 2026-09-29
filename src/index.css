@@ -57,13 +57,223 @@
   font-weight: 600;
 }
 
+/* ==========================================================================
+   DESIGN SYSTEM
+   Single source of truth for layout, colour, radius, elevation and rhythm.
+   Every page container resolves to these tokens, so container width and
+   gutters are uniform across the whole site by construction rather than by
+   per-page override.
+
+   Layout model (outermost -> innermost)
+   ------------------------------------
+   .page           full-bleed page root
+   .band           full-bleed section band; owns the background + vertical
+                   rhythm, but no width constraint
+   .shell          THE page container: one max width, centred, fluid gutter
+   .shell-content  readable content column inside .shell
+   .shell-narrow   side-by-side / media column
+   .shell-prose    long-form text measure
+
+   Rule of thumb: exactly one .shell per .band, and every content column is
+   capped by one of the --container-* tokens. Never hard-code a width.
+   ========================================================================== */
+
+@theme {
+  /* ---- Layout: container scale -------------------------------------
+     One column, four stops. .shell is never a literal width: it is
+     --container-content + 2 x --gutter, which pins to 1280px at the
+     desktop gutter and keeps the inner column at exactly 1168px. */
+  --container-shell: 1280px;
+  --container-content: 1168px;
+  --container-narrow: 768px;
+  --container-prose: 672px;
+
+  /* ---- Layout: fluid gutter (20px phone -> 56px desktop) ------------ */
+  --gutter: clamp(1.25rem, 1rem + 2.4vw, 3.5rem);
+
+  /* ---- Typefaces ---------------------------------------------------- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Buttons: horizontal padding per size -------------------------- */
+  --btn-pad-md: 1.5rem;
+  --btn-pad-lg: 2rem;
+
+  /* ---- Layout: vertical section rhythm ----------------------------- */
+  --section-y-sm: 2.5rem;
+  --section-y-md: 4rem;
+  --section-y-lg: 6rem;
+
+  /* ---- Brand ------------------------------------------------------- */
+  --color-brand-900: #004484;
+  --color-brand-800: #004788;
+  --color-brand-700: #0b5cab;
+  --color-brand-300: #bfd6ff;
+  --color-brand-200: #dae2fd;
+  --color-brand-100: #d5e3ff;
+  --color-brand-050: #eef0ff;
+  --color-accent-900: #002109;
+  --color-accent-700: #006e2d;
+  --color-accent-300: #7cf994;
+  --color-accent-200: #7ffc97;
+  --color-warn-700: #a33900;
+  --color-warn-800: #8c3000;
+  --color-warn-900: #7c2900;
+  --color-warn-100: #ffdbce;
+
+  /* ---- Ink --------------------------------------------------------- */
+  --color-ink-900: #131b2e;
+  --color-ink-700: #424751;
+  --color-ink-600: #606775;
+  --color-ink-500: #727783;
+  --color-ink-300: #c2c6d3;
+
+  /* ---- Surface ----------------------------------------------------- */
+  --color-surface: #ffffff;
+  --color-surface-subtle: #faf8ff;
+  --color-surface-muted: #f2f3ff;
+  --color-surface-tint: #eaedff;
+  --color-border-subtle: #e1e4ed;
+
+  /* ---- Radius (semantic, so intent is explicit) --------------------- */
+  --radius-chip: 4px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+  --radius-hero: 24px;
+  --radius-pill: 9999px;
+
+  /* ---- Elevation ---------------------------------------------------- */
+  --shadow-card: 0 1px 1px rgb(0 0 0 / 0.05);
+  --shadow-raised: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-float:
+    0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-hero:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Layout primitives
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* The one and only page container. Centred, capped, fluid gutter.
+     max-width is DERIVED from the content column plus the gutters, so the
+     team's numbers can never drift apart: it resolves to exactly 1280px once
+     the gutter reaches its 56px desktop cap, and the content column stays
+     exactly --container-content at every viewport. Hard-coding 1280px here
+     while the gutter is still fluid would make the inner column drift
+     1168 -> 1240px across the mid range. */
+  .shell {
+    width: 100%;
+    max-width: calc(var(--container-content) + 2 * var(--gutter));
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* Content columns. They sit *inside* .shell, so they carry no gutter —
+     the shell already applied it. */
+  .shell-content,
+  .shell-narrow,
+  .shell-prose {
+    width: 100%;
+    margin-inline: auto;
+    /* Invariant: a max-width is a cap, never a minimum. As a flex/grid item
+       these must yield when the parent is narrower than the cap, otherwise a
+       capped column pushes its row past the container and gets clipped. */
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .shell-content {
+    max-width: var(--container-content);
+  }
+
+  .shell-narrow {
+    max-width: var(--container-narrow);
+  }
+
+  .shell-prose {
+    max-width: var(--container-prose);
+  }
+
+  /* Full-bleed section band: owns background and vertical rhythm only. */
+  .band {
+    width: 100%;
+  }
+
+  /* Absolutely-positioned sibling of .shell.
+     The Figma exports fake a container with `left/right` insets, which grows
+     with the viewport and breaks out of the column on wide screens. This is
+     the same box as the .shell content area, but positioned, so a floating
+     banner lands on exactly the same column as in-flow content. */
+  .shell-abs {
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    width: calc(100% - 2 * var(--gutter));
+    max-width: var(--container-content);
+  }
+
+  /* Inline gutter only, for a band that already sits inside a .shell.
+     Applying .shell twice would double the gutter. */
+  .gutter {
+    padding-inline: var(--gutter);
+  }
+
+  /* ---- Buttons: one shape and one height per size -----------------
+     Ad-hoc px-N py-N pairs produced 44/48/52/54px CTAs for the same
+     action across pages. Size is owned here so primary calls to action
+     line up wherever they appear. Colour stays with each caller. */
+  /* Labels are allowed to wrap. Forcing a single line made long calls to
+     action push their pill into the outer margin on small phones. */
+  .btn {
+    align-items: center;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    font-family: var(--font-sans);
+    gap: 0.5rem;
+    justify-content: center;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .btn-md {
+    min-height: 48px;
+    padding-inline: var(--btn-pad-md);
+  }
+
+  .btn-lg {
+    min-height: 56px;
+    padding-inline: var(--btn-pad-lg);
+  }
+
+  /* Respect the OS reduced-motion setting for every button transition. */
+  @media (prefers-reduced-motion: reduce) {
+    .btn {
+      transition: none;
+    }
+  }
+
+  .section-sm {
+    padding-block: var(--section-y-sm);
+  }
+
+  .section-md {
+    padding-block: var(--section-y-md);
+  }
+
+  .section-lg {
+    padding-block: var(--section-y-lg);
+  }
+}
+
 :focus-visible {
   outline: 3px solid #0b5cab;
   outline-offset: 3px;
 }
 
-[class*='rounded-full'][class*='size-'],
-[class*='rounded-[9999px]'][class*='size-'] {
+[class*='rounded-pill'][class*='size-'],
+[class*='rounded-pill'][class*='size-'] {
   aspect-ratio: 1;
   flex-shrink: 0;
 }
@@ -131,8 +341,8 @@
 
   .a-propos-page > section,
   .a-propos-page > div {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
 
   .a-propos-page [data-node-id='5:3843'],
@@ -273,11 +483,6 @@
   overflow-x: clip;
 }
 
-.a-propos-page [class*='text-[#727783]'],
-.nos-projets-page [class*='text-[#727783]'] {
-  color: #5d626e;
-}
-
 .nos-projets-page [data-node-id='5:3601'],
 .nos-projets-page [data-node-id='5:3607'],
 .nos-projets-page [data-node-id='5:3619'] {
@@ -351,41 +556,15 @@
     padding-top: 0;
   }
 
-  .nos-actions-page [class*='px-[56px]'],
-  .nos-projets-page [class*='px-[56px]'],
-  .notre-impact-page [class*='px-[56px]'],
-  .actualites-page [class*='px-[56px]'],
-  .actualites-page [class*='px-[184.609px]'] {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
   .nos-actions-page [class*='grid-cols-[repeat(3'],
   .nos-projets-page [class*='grid-cols-[repeat(3'],
   .notre-impact-page [class*='grid-cols-[repeat(3'],
-  .actualites-page [class*='grid-cols-[repeat(3'],
-  .actualites-page [class*='grid-cols-[repeat(4'] {
+  .actualites-page [class*='grid-cols-[repeat(3'] {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
   }
 
-  .nos-actions-page [class*='w-[672px]'],
-  .nos-actions-page [class*='w-[768px]'],
-  .nos-actions-page [class*='w-[1168px]'],
-  .nos-actions-page [class*='w-[576px]'],
-  .nos-projets-page [class*='w-[672px]'],
-  .nos-projets-page [class*='w-[768px]'],
-  .nos-projets-page [class*='w-[1168px]'],
-  .nos-projets-page [class*='w-[576px]'],
-  .notre-impact-page [class*='w-[672px]'],
-  .notre-impact-page [class*='w-[768px]'],
-  .notre-impact-page [class*='w-[1168px]'],
-  .notre-impact-page [class*='w-[576px]'],
-  .actualites-page [class*='w-[672px]'],
-  .actualites-page [class*='w-[768px]'],
-  .actualites-page [class*='w-[1168px]'],
-  .actualites-page [class*='w-[640px]'],
-  .actualites-page [class*='w-[576px]'] {
+  .actualites-page [class*='w-[640px]'] {
     width: 100%;
   }
 
@@ -683,8 +862,8 @@
   .contact-page [data-node-id='5:1475'],
   .contact-page [data-node-id='5:1666'],
   .contact-page [data-node-id='5:1712'] {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
 
   .contact-page [data-node-id='5:1403'],
@@ -808,33 +987,8 @@
   }
 
   /* A fixed-width column can never be wider than the space it lives in. */
-  & [class*='min-w-[247px]'],
   & [class*='min-w-px'] {
     min-width: 0;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Centring — Figma anchors every band to the left edge
-   -------------------------------------------------------------------------- */
-@media (min-width: 1281px) {
-  :is(
-      .actualites-page,
-      .nos-projets-page,
-      .nos-actions-page,
-      .notre-impact-page,
-      .a-propos-page,
-      .contact-page
-    )
-    :is(
-      [class*='w-[1280px]'],
-      [class*='w-[1168px]'],
-      [class*='w-[1024px]'],
-      [class*='w-[768px]'],
-      [class*='w-[672px]']
-    ) {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -850,15 +1004,7 @@
       .a-propos-page,
       .contact-page
     )
-    :is(
-      [class*='px-[510px]'],
-      [class*='px-[248px]'],
-      [class*='px-[184.609px]'],
-      [class*='px-[48.72px]'],
-      [class*='px-[37.406px]'],
-      [class*='pl-[510px]'],
-      [class*='pr-[510px]']
-    ) {
+    :is([class*='px-[510px]']) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -987,7 +1133,7 @@
       .nous-soutenir-page,
       .donation-checkout-page
     )
-    [class*='shrink-0'][class*='rounded-full'],
+    [class*='shrink-0'][class*='rounded-pill'],
   :is(
       .actualites-page,
       .nos-projets-page,
@@ -1076,5 +1222,29 @@
       [class*='absolute']
     ) {
     flex-wrap: wrap;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Two-column Figma rows (`flex-[1_0_0]` children) split a 254px content box
+   into ~111px columns on phones, which crushes their text. Give the growing
+   children a full-width basis so `flex-wrap` above puts each on its own line.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  :is(
+      .actualites-page,
+      .nos-projets-page,
+      .nos-actions-page,
+      .notre-impact-page,
+      .a-propos-page,
+      .contact-page,
+      .nous-soutenir-page,
+      .donation-checkout-page
+    )
+    div[class*='flex']:not([class*='flex-col']):not([class*='flex-wrap']):not(
+      [class*='absolute']
+    )
+    > [class*='flex-[1_0_0]'] {
+    flex-basis: 100%;
   }
 }

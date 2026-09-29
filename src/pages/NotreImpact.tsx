@@ -66,7 +66,7 @@ export default function NotreImpactChildrensSmileCameroun() {
       <Header />
       <div
         id="main-content"
-        className="notre-impact-page bg-[#faf8ff] content-stretch flex flex-col items-start relative size-full"
+        className="notre-impact-page bg-surface-subtle content-stretch flex flex-col items-start relative size-full"
         data-node-id="5:1946"
         data-name="Notre impact - Children's Smile Cameroun"
       >
@@ -76,7 +76,7 @@ export default function NotreImpactChildrensSmileCameroun() {
           data-name="Header"
         >
           <div
-            className="bg-[#004484] content-stretch flex flex-col items-start px-[56px] py-[4px] relative shrink-0 w-full"
+            className="bg-brand-900 content-stretch flex flex-col items-start py-[4px] relative shrink-0 w-full shell"
             data-node-id="50:5"
             data-name="Utility Bar"
           >
@@ -91,13 +91,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="bg-[#0b5cab] content-stretch flex gap-[4px] items-center px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                  className="bg-brand-700 content-stretch flex gap-[4px] items-center px-[8px] py-[2px] relative rounded-pill shrink-0"
                   data-node-id="50:8"
                   data-name="Frame"
                 >
                   <Icon name="shieldCheck" size={12.83} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#bfd6ff] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-300 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                     data-node-id="50:10"
                   >
                     ONG AGRÉÉE RÉPUBLIQUE DU CAMEROUN - 10 RÉGIONS
@@ -110,7 +110,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="phone" size={10.5} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] whitespace-nowrap"
                     data-node-id="50:13"
                   >
                     +237 699 09 86 88 / 650 88 11 55
@@ -129,14 +129,14 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="mapPin" size={11.67} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] whitespace-nowrap"
                     data-node-id="50:17"
                   >
                     Yaoundé • Douala • Grand-Nord • Est
                   </p>
                 </div>
                 <div
-                  className="bg-[#006e2d] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                  className="bg-accent-700 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                   data-node-id="50:18"
                   data-name="Frame"
                 >
@@ -149,7 +149,7 @@ export default function NotreImpactChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="content-stretch flex h-[80px] items-center justify-between px-[56px] relative shrink-0 w-full"
+            className="content-stretch flex h-[80px] items-center justify-between relative shrink-0 w-full shell"
             data-node-id="50:20"
             data-name="Top Nav"
           >
@@ -159,11 +159,11 @@ export default function NotreImpactChildrensSmileCameroun() {
               data-name="Frame"
             >
               <div
-                className="relative rounded-[9999px] shrink-0 size-[32px]"
+                className="relative rounded-pill shrink-0 size-[32px]"
                 data-node-id="50:22"
                 data-name="Frame"
               >
-                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[9999px]">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                   <img
                     alt=""
                     className="absolute left-0 max-w-none size-full top-0"
@@ -177,11 +177,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="leading-[25px] relative shrink-0 text-[#004484] text-[20px] tracking-[-0.5px]"
+                  className="leading-[25px] relative shrink-0 text-brand-900 text-[20px] tracking-[-0.5px]"
                   data-node-id="50:24"
                 >{`Children's Smile`}</p>
                 <p
-                  className="leading-[16px] relative shrink-0 text-[#424751] text-[11px] tracking-[1.1px] uppercase"
+                  className="leading-[16px] relative shrink-0 text-ink-700 text-[11px] tracking-[1.1px] uppercase"
                   data-node-id="50:25"
                 >{`CAMEROUN • ENFANCE & AVENIR`}</p>
               </div>
@@ -197,7 +197,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:28"
                 >
                   Accueil
@@ -209,7 +209,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:30"
                 >
                   À propos
@@ -221,7 +221,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:32"
                 >
                   Nos actions
@@ -233,19 +233,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:34"
                 >
                   Nos projets
                 </p>
               </div>
               <div
-                className="bg-[#eaedff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start px-[12px] py-[8px] relative rounded-[8px] shrink-0"
+                className="bg-surface-tint content-stretch drop-shadow-card flex flex-col items-start px-[12px] py-[8px] relative rounded-control shrink-0"
                 data-node-id="50:35"
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#004484] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                   data-node-id="50:36"
                 >
                   Notre impact
@@ -257,7 +257,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:38"
                 >
                   Actualités
@@ -269,7 +269,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:40"
                 >
                   Nous soutenir
@@ -281,7 +281,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:42"
                 >
                   Contact
@@ -294,7 +294,7 @@ export default function NotreImpactChildrensSmileCameroun() {
               data-name="Frame"
             >
               <div
-                className="bg-[#006e2d] content-stretch flex flex-col items-start justify-center px-[16px] py-[10px] relative rounded-[9999px] shrink-0"
+                className="bg-accent-700 content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-md btn"
                 data-node-id="50:44"
                 data-name="Frame"
               >
@@ -306,7 +306,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 </p>
               </div>
               <div
-                className="bg-[#a33900] content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex flex-col items-start justify-center px-[16px] py-[10px] relative rounded-[9999px] shrink-0"
+                className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-md btn"
                 data-node-id="50:46"
                 data-name="Frame"
               >
@@ -321,7 +321,7 @@ export default function NotreImpactChildrensSmileCameroun() {
           </div>
         </div>
         <div
-          className="bg-[#faf8ff] content-stretch flex flex-col gap-[64px] items-start py-[112px] relative shrink-0 w-full"
+          className="bg-surface-subtle content-stretch flex flex-col gap-[64px] items-start py-[112px] relative shrink-0 w-full"
           data-node-id="50:48"
           data-name="Main"
         >
@@ -331,17 +331,17 @@ export default function NotreImpactChildrensSmileCameroun() {
             data-name="Container"
           >
             <div
-              className="bg-[#f2f3ff] content-stretch flex flex-col items-start px-[56px] py-[112px] relative shrink-0 w-full"
+              className="bg-surface-muted content-stretch flex flex-col items-start py-[112px] relative shrink-0 w-full shell"
               data-node-id="50:50"
               data-name="Section - SECTION HERO D'IMPACT"
             >
               <div
-                className="content-stretch flex gap-[24px] items-start max-w-[1280px] relative shrink-0 w-full"
+                className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full shell"
                 data-node-id="50:51"
                 data-name="Hero Content"
               >
                 <div
-                  className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[672px]"
+                  className="content-stretch flex flex-col gap-[24px] items-start relative shell-prose"
                   data-node-id="50:52"
                   data-name="Hero Copy"
                 >
@@ -351,44 +351,27 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[rgba(0,68,132,0.1)] content-stretch flex gap-[8px] items-center px-[12px] py-[6px] relative rounded-[9999px] shrink-0"
+                      className="bg-[rgba(0,68,132,0.1)] content-stretch flex gap-[8px] items-center px-[12px] py-[6px] relative rounded-pill shrink-0"
                       data-node-id="50:54"
                       data-name="Frame"
                     >
                       <Icon name="award" size={14.67} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                         data-node-id="50:56"
                       >{`AUDIT TERRAIN & GOUVERNANCE OUVERTE • CAMEROUN`}</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:ExtraBold'] font-extrabold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[48px] tracking-[-1.2px] w-[min-content]"
+                      className="[word-break:break-word] font-['Montserrat:ExtraBold'] font-extrabold leading-[0] min-w-full relative shrink-0 text-brand-900 text-[48px] tracking-[-1.2px] w-full"
                       data-node-id="50:57"
                     >
-                      <p className="leading-[56px] mb-0">
-                        Un Impact Éducatif Réel,
-                      </p>
-                      <p className="mb-0">
-                        <span className="leading-[56px] text-[#a33900]">
-                          Mesurable
-                        </span>
-                        <span className="leading-[56px]">{` et Transparent`}</span>
-                      </p>
-                      <p className="leading-[56px]">au Cameroun</p>
+                      <p className="leading-[56px]">{`Un Impact Éducatif Réel, <span className="leading-[56px] text-warn-700"> Mesurable </span> <span className="leading-[56px]">{\` et Transparent\`}</span> au Cameroun`}</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[18px] w-[min-content]"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[18px] w-full"
                       data-node-id="50:58"
                     >
-                      <p className="leading-[29.25px] mb-0">
-                        Nous refusons les promesses sans lendemain. Chaque salle
-                        de classe
-                      </p>
-                      <p className="leading-[29.25px] mb-0">{`réhabilitée, chaque point d'eau foré et chaque kit distribué fait l'objet`}</p>
-                      <p className="leading-[29.25px] mb-0">{`d'indicateurs de terrain vérifiables avec les comités de parents d'élèves (APE)`}</p>
-                      <p className="leading-[29.25px]">
-                        et les autorités scolaires locales.
-                      </p>
+                      <p className="leading-[29.25px]">{`Nous refusons les promesses sans lendemain. Chaque salle de classe réhabilitée, chaque point d'eau foré et chaque kit distribué fait l'objet d'indicateurs de terrain vérifiables avec les comités de parents d'élèves (APE) et les autorités scolaires locales.`}</p>
                     </div>
                   </div>
                   <div
@@ -397,7 +380,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#004484] content-stretch flex flex-col gap-[8px] items-start justify-center px-[24px] py-[12px] relative rounded-[9999px] shrink-0"
+                      className="bg-brand-900 content-stretch flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-md btn"
                       data-node-id="50:60"
                       data-name="Frame"
                     >
@@ -410,20 +393,20 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </p>
                     </div>
                     <div
-                      className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col gap-[8px] items-start justify-center px-[24px] py-[12px] relative rounded-[9999px] shrink-0"
+                      className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-md btn"
                       data-node-id="50:63"
                       data-name="Frame"
                     >
                       <Icon name="arrowRight" size={12.0} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-[#004484] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                         data-node-id="50:65"
                       >{`Rapports d'audits certifiés`}</p>
                     </div>
                   </div>
                 </div>
                 <div
-                  className="bg-[#eaedff] content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]"
+                  className="bg-surface-tint content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-card shadow-hero"
                   data-node-id="50:66"
                   data-name="Hero Visual"
                 >
@@ -446,7 +429,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Photo Overlay"
                   >
                     <p
-                      className="leading-[16px] relative shrink-0 text-[#d5e3ff] text-[11px] tracking-[1.1px] uppercase w-full"
+                      className="leading-[16px] relative shrink-0 text-brand-100 text-[11px] tracking-[1.1px] uppercase w-full"
                       data-node-id="50:69"
                     >{`ÉCOLE PUBLIQUE DE DIMAKO (RÉGION DE L'EST)`}</p>
                     <div
@@ -460,12 +443,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="absolute bg-[#faf8ff] bottom-0 content-stretch drop-shadow-[0px_20px_12.5px_rgba(0,0,0,0.1),0px_8px_5px_rgba(0,0,0,0.1)] flex gap-[12px] items-center p-[16px] right-0 rounded-[8px]"
+                    className="absolute bg-surface-subtle bottom-0 content-stretch drop-shadow-[0px_20px_12.5px_rgba(0,0,0,0.1),0px_8px_5px_rgba(0,0,0,0.1)] flex gap-[12px] items-center p-[16px] right-0 rounded-control"
                     data-node-id="50:71"
                     data-name="Audit Badge"
                   >
                     <Icon
-                      className="shrink-0 text-[#004484]"
+                      className="shrink-0 text-brand-900"
                       label="Fabrication artisanale locale de mobilier scolaire à Obala"
                       name="building"
                       size={26.67}
@@ -476,13 +459,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <p
-                        className="leading-[16px] relative shrink-0 text-[#424751] text-[11px] uppercase"
+                        className="leading-[16px] relative shrink-0 text-ink-700 text-[11px] uppercase"
                         data-node-id="50:74"
                       >
                         PROCÈS-VERBAL OFFICIEL
                       </p>
                       <p
-                        className="leading-[28px] relative shrink-0 text-[#004484] text-[20px]"
+                        className="leading-[28px] relative shrink-0 text-brand-900 text-[20px]"
                         data-node-id="50:75"
                       >
                         120 bancs livrés
@@ -497,7 +480,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="4 KPI Badges Bento"
               >
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:77"
                   data-name="Frame"
                 >
@@ -507,18 +490,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <Icon
-                      className="shrink-0 text-[#006e2d]"
+                      className="shrink-0 text-accent-700"
                       label="Forage d'eau sécurisé dans une école de Mora"
                       name="droplet"
                       size={23.92}
                     />
                     <div
-                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                       data-node-id="50:80"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] whitespace-nowrap"
                         data-node-id="50:81"
                       >
                         National
@@ -536,24 +519,24 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <p
-                        className="font-['Montserrat:ExtraBold'] font-extrabold leading-[56px] relative shrink-0 text-[#004484] text-[48px]"
+                        className="font-['Montserrat:ExtraBold'] font-extrabold leading-[56px] relative shrink-0 text-brand-900 text-[48px]"
                         data-node-id="50:84"
                       >{`10 `}</p>
                       <p
-                        className="font-['Montserrat:SemiBold'] font-semibold leading-[32px] relative shrink-0 text-[#424751] text-[24px]"
+                        className="font-['Montserrat:SemiBold'] font-semibold leading-[32px] relative shrink-0 text-ink-700 text-[24px]"
                         data-node-id="50:85"
                       >
                         / 10
                       </p>
                     </div>
                     <p
-                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                       data-node-id="50:86"
                     >
                       Régions Couvertes
                     </p>
                     <div
-                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:87"
                     >
                       <p className="leading-[20px] mb-0">
@@ -566,7 +549,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:88"
                   data-name="Frame"
                 >
@@ -576,18 +559,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <Icon
-                      className="shrink-0 text-[#a33900]"
+                      className="shrink-0 text-warn-700"
                       label="Livraison de trois classes rénovées"
                       name="graduationCap"
                       size={21}
                     />
                     <div
-                      className="bg-[#ffdbce] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                      className="bg-warn-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                       data-node-id="50:91"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#a33900] text-[11px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-warn-700 text-[11px] whitespace-nowrap"
                         data-node-id="50:92"
                       >
                         Cible
@@ -605,22 +588,22 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <p
-                        className="font-['Montserrat:ExtraBold'] font-extrabold leading-[56px] relative shrink-0 text-[#a33900] text-[48px]"
+                        className="font-['Montserrat:ExtraBold'] font-extrabold leading-[56px] relative shrink-0 text-warn-700 text-[48px]"
                         data-node-id="50:95"
                       >{`3 - 15 `}</p>
                       <p
-                        className="font-['Montserrat:SemiBold'] font-semibold leading-[32px] relative shrink-0 text-[#424751] text-[24px]"
+                        className="font-['Montserrat:SemiBold'] font-semibold leading-[32px] relative shrink-0 text-ink-700 text-[24px]"
                         data-node-id="50:96"
                       >
                         ans
                       </p>
                     </div>
                     <p
-                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                       data-node-id="50:97"
                     >{`Tranche d'Âge Pivot`}</p>
                     <div
-                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:98"
                     >
                       <p className="leading-[20px] mb-0">
@@ -634,7 +617,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:99"
                   data-name="Frame"
                 >
@@ -645,12 +628,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="recycle" size={25.68} className="shrink-0" />
                     <div
-                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                       data-node-id="50:102"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] whitespace-nowrap"
                         data-node-id="50:103"
                       >
                         Économie Circulaire
@@ -663,7 +646,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 text-[#006e2d] w-full whitespace-nowrap"
+                      className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 text-accent-700 w-full whitespace-nowrap"
                       data-node-id="50:105"
                       data-name="Frame"
                     >
@@ -681,11 +664,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </p>
                     </div>
                     <p
-                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                       data-node-id="50:108"
                     >{`Matériaux & Artisans Locaux`}</p>
                     <div
-                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:109"
                     >
                       <p className="leading-[20px] mb-0">
@@ -699,7 +682,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:110"
                   data-name="Frame"
                 >
@@ -710,12 +693,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="scale" size={23.33} className="shrink-0" />
                     <div
-                      className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                      className="bg-brand-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                       data-node-id="50:113"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                         data-node-id="50:114"
                       >
                         Éthique
@@ -733,24 +716,24 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <p
-                        className="font-['Montserrat:ExtraBold'] font-extrabold leading-[56px] relative shrink-0 text-[#004484] text-[48px]"
+                        className="font-['Montserrat:ExtraBold'] font-extrabold leading-[56px] relative shrink-0 text-brand-900 text-[48px]"
                         data-node-id="50:117"
                       >{`0 `}</p>
                       <p
-                        className="font-['Montserrat:SemiBold'] font-semibold leading-[32px] relative shrink-0 text-[#424751] text-[24px]"
+                        className="font-['Montserrat:SemiBold'] font-semibold leading-[32px] relative shrink-0 text-ink-700 text-[24px]"
                         data-node-id="50:118"
                       >
                         FCFA
                       </p>
                     </div>
                     <p
-                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                      className="font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                       data-node-id="50:119"
                     >
                       Frais Occultes
                     </p>
                     <div
-                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:120"
                     >
                       <p className="leading-[20px] mb-0">
@@ -764,12 +747,12 @@ export default function NotreImpactChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="bg-[#faf8ff] content-stretch flex flex-col items-start px-[56px] relative shrink-0 w-full"
+            className="bg-surface-subtle content-stretch flex flex-col items-start relative shrink-0 w-full shell"
             data-node-id="50:121"
             data-name="Section - SECTION CARTOGRAPHIE INTERACTIVE DES 10 RÉGIONS"
           >
             <div
-              className="content-stretch flex flex-col gap-[24px] items-start max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full shell"
               data-node-id="50:122"
               data-name="Container"
             >
@@ -779,47 +762,42 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="content-stretch flex flex-col gap-[7px] items-start relative shrink-0 w-[672px]"
+                  className="content-stretch flex flex-col gap-[7px] items-start relative shell-prose"
                   data-node-id="50:124"
                   data-name="Frame"
                 >
                   <div
-                    className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-[9999px] shrink-0"
+                    className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-pill shrink-0"
                     data-node-id="50:125"
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
                       data-node-id="50:126"
                     >
                       ANCRAGE TERRITORIAL CERTIFIÉ
                     </p>
                   </div>
                   <div
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[32px] tracking-[-0.8px] w-[min-content]"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-brand-900 text-[32px] tracking-[-0.8px] w-full"
                     data-node-id="50:127"
                   >
-                    <p className="leading-[40px] mb-0">{`Présence & Cartographie des`}</p>
-                    <p className="leading-[40px]">
-                      Interventions dans les 10 Régions
-                    </p>
+                    <p className="leading-[40px]">{`Présence & Cartographie des Interventions dans les 10 Régions`}</p>
                   </div>
                   <div
-                    className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[16px] w-[min-content]"
+                    className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[16px] w-full"
                     data-node-id="50:128"
                   >
-                    <p className="leading-[24px] mb-0">{`Aucun territoire n'est laissé pour compte. Cliquez sur une région pour filtrer les`}</p>
-                    <p className="leading-[24px] mb-0">{`réalisations matérielles, le volume d'élèves accompagnés et les protocoles locaux`}</p>
-                    <p className="leading-[24px]">déployés.</p>
+                    <p className="leading-[24px]">{`Aucun territoire n'est laissé pour compte. Cliquez sur une région pour filtrer les réalisations matérielles, le volume d'élèves accompagnés et les protocoles locaux déployés.`}</p>
                   </div>
                 </div>
                 <div
-                  className="content-center flex flex-wrap gap-[8px] items-center relative shrink-0 w-[1168px]"
+                  className="content-center flex flex-wrap gap-[8px] items-center relative shell-content"
                   data-node-id="50:129"
                   data-name="Frame"
                 >
                   <div
-                    className="bg-[#004484] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                    className="bg-brand-900 content-stretch drop-shadow-card flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                     data-node-id="50:130"
                     data-name="Frame"
                   >
@@ -831,36 +809,36 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </p>
                   </div>
                   <div
-                    className="bg-[#eaedff] content-stretch flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                    className="bg-surface-tint content-stretch flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                     data-node-id="50:132"
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#131b2e] text-[12px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-900 text-[12px] text-center whitespace-nowrap"
                       data-node-id="50:133"
                     >
                       Septentrion
                     </p>
                   </div>
                   <div
-                    className="bg-[#eaedff] content-stretch flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                    className="bg-surface-tint content-stretch flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                     data-node-id="50:134"
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#131b2e] text-[12px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-900 text-[12px] text-center whitespace-nowrap"
                       data-node-id="50:135"
                     >
                       Centre / Sud / Est
                     </p>
                   </div>
                   <div
-                    className="bg-[#eaedff] content-stretch flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                    className="bg-surface-tint content-stretch flex flex-col items-center justify-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                     data-node-id="50:136"
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#131b2e] text-[12px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-900 text-[12px] text-center whitespace-nowrap"
                       data-node-id="50:137"
                     >
                       Littoral / Ouest
@@ -879,7 +857,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:140"
                     data-name="Frame"
                   >
@@ -894,12 +872,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#ffdbce] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-warn-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:143"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#a33900] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-warn-700 text-[11px] whitespace-nowrap"
                             data-node-id="50:144"
                           >
                             Sahélien
@@ -908,19 +886,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="droplet" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:146"
                       >
                         Extrême-Nord
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:147"
                       >
                         Mora • Kousséri
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:148"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -940,18 +918,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:150"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:151"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:152"
                         >
                           2 480 bénéficiaires
@@ -960,7 +938,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:153"
                     data-name="Frame"
                   >
@@ -975,12 +953,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-brand-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:156"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                             data-node-id="50:157"
                           >
                             Scolarité
@@ -989,19 +967,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="bookOpen" size={18.33} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:159"
                       >
                         Nord
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:160"
                       >
                         Garoua • Guider
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:161"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1021,18 +999,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:163"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:164"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:165"
                         >
                           1 920 bénéficiaires
@@ -1041,7 +1019,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:166"
                     data-name="Frame"
                   >
@@ -1056,12 +1034,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#7cf994] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-accent-300 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:169"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] whitespace-nowrap"
                             data-node-id="50:170"
                           >
                             Nutrition
@@ -1070,19 +1048,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="utensils" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:172"
                       >
                         Adamaoua
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:173"
                       >
                         Ngaoundéré • Meiganga
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:174"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1102,18 +1080,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:176"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:177"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:178"
                         >
                           1 450 bénéficiaires
@@ -1122,7 +1100,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:179"
                     data-name="Frame"
                   >
@@ -1137,12 +1115,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-brand-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:182"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                             data-node-id="50:183"
                           >
                             Bâti Scolaire
@@ -1151,19 +1129,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="home" size={18.33} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:185"
                       >
                         Centre
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:186"
                       >
                         Ngambé-Tikar • Obala
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:187"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1183,18 +1161,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:189"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:190"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:191"
                         >
                           2 100 bénéficiaires
@@ -1203,7 +1181,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:192"
                     data-name="Frame"
                   >
@@ -1218,12 +1196,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#ffdbce] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-warn-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:195"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#a33900] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-warn-700 text-[11px] whitespace-nowrap"
                             data-node-id="50:196"
                           >
                             Urgence Prioritaire
@@ -1232,19 +1210,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="alertTriangle" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:198"
                       >
                         Est
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:199"
                       >
                         Dimako • Batouri
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:200"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1262,18 +1240,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:202"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:203"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:204"
                         >
                           3 120 bénéficiaires
@@ -1288,7 +1266,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:206"
                     data-name="Frame"
                   >
@@ -1303,12 +1281,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#7cf994] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-accent-300 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:209"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] whitespace-nowrap"
                             data-node-id="50:210"
                           >
                             Santé
@@ -1317,19 +1295,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="heartPulse" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:212"
                       >
                         Sud
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:213"
                       >
                         Ebolowa • Sangmélima
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:214"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1347,18 +1325,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:216"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:217"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:218"
                         >
                           1 680 bénéficiaires
@@ -1367,7 +1345,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:219"
                     data-name="Frame"
                   >
@@ -1382,12 +1360,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-brand-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:222"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                             data-node-id="50:223"
                           >
                             Culture
@@ -1396,19 +1374,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="palette" size={17.92} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:225"
                       >
                         Littoral
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:226"
                       >
                         Penja • Loum
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:227"
                       >
                         <p className="leading-[19.25px] mb-0">Bibliothèques</p>
@@ -1427,18 +1405,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:229"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:230"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:231"
                         >
                           2 040 bénéficiaires
@@ -1447,7 +1425,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:232"
                     data-name="Frame"
                   >
@@ -1462,12 +1440,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#7cf994] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-accent-300 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:235"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] whitespace-nowrap"
                             data-node-id="50:236"
                           >
                             Hygiène
@@ -1476,19 +1454,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="sparkles" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:238"
                       >
                         Ouest
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:239"
                       >
                         Foumban • Bafoussam
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:240"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1508,18 +1486,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:242"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:243"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:244"
                         >
                           2 890 bénéficiaires
@@ -1528,7 +1506,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:245"
                     data-name="Frame"
                   >
@@ -1543,12 +1521,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#ffdbce] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-warn-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:248"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#a33900] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-warn-700 text-[11px] whitespace-nowrap"
                             data-node-id="50:249"
                           >
                             Résilience
@@ -1557,19 +1535,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="shield" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:251"
                       >
                         Nord-Ouest
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:252"
                       >
                         Bamenda Rural
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:253"
                       >
                         <p className="leading-[19.25px] mb-0">{`Appui d'urgence aux`}</p>
@@ -1586,18 +1564,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:255"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:256"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:257"
                         >
                           1 750 bénéficiaires
@@ -1606,7 +1584,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[20px] relative rounded-card"
                     data-node-id="50:258"
                     data-name="Frame"
                   >
@@ -1621,12 +1599,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <div
-                          className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-[9999px] shrink-0"
+                          className="bg-brand-100 content-stretch flex flex-col items-start px-[8px] py-[2px] relative rounded-pill shrink-0"
                           data-node-id="50:261"
                           data-name="Frame"
                         >
                           <p
-                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                             data-node-id="50:262"
                           >
                             Psycho-Social
@@ -1635,19 +1613,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                         <Icon name="brain" size={16.67} className="shrink-0" />
                       </div>
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] w-full"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] w-full"
                         data-node-id="50:264"
                       >
                         Sud-Ouest
                       </p>
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] w-full"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] w-full"
                         data-node-id="50:265"
                       >
                         Buea • Limbe Outskirts
                       </p>
                       <div
-                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                        className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                         data-node-id="50:266"
                       >
                         <p className="leading-[19.25px] mb-0">
@@ -1668,18 +1646,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[#f2f3ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-surface-muted content-stretch flex items-center justify-between leading-[16px] not-italic pb-[10px] pt-[12px] px-[10px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:268"
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                          className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                           data-node-id="50:269"
                         >
                           Élèves :
                         </p>
                         <p
-                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                          className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                           data-node-id="50:270"
                         >
                           1 510 bénéficiaires
@@ -1690,7 +1668,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 </div>
               </div>
               <div
-                className="bg-[#f2f3ff] content-stretch flex flex-col items-start justify-between p-[24px] relative rounded-[12px] shrink-0 w-full"
+                className="bg-surface-muted content-stretch flex flex-col items-start justify-between p-[24px] relative rounded-card shrink-0 w-full"
                 data-node-id="50:271"
                 data-name="Frame"
               >
@@ -1706,13 +1684,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <p
-                      className="font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#004484] text-[18px] whitespace-nowrap"
+                      className="font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-brand-900 text-[18px] whitespace-nowrap"
                       data-node-id="50:275"
                     >
                       Total Consolidé Documenté : 20 940 Enfants Soutenus
                     </p>
                     <p
-                      className="font-['Inter:Regular'] font-normal leading-[20px] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-[min-content]"
+                      className="font-['Inter:Regular'] font-normal leading-[20px] min-w-full not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:276"
                     >
                       Données issues des registres de présence nominatifs
@@ -1726,7 +1704,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <p
-                    className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#004484] text-[14px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                     data-node-id="50:278"
                   >{`Comprendre la méthode d'audit`}</p>
                   <Icon name="arrowRight" size={12.0} className="shrink-0" />
@@ -1735,48 +1713,43 @@ export default function NotreImpactChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="bg-[#f2f3ff] content-stretch flex flex-col items-start px-[56px] relative shrink-0 w-full"
+            className="bg-surface-muted content-stretch flex flex-col items-start relative shrink-0 w-full shell"
             data-node-id="50:280"
             data-name="Section - SECTION PROTOCOLE DE MESURE & AVANT / APRÈS"
           >
             <div
-              className="content-stretch flex flex-col gap-[40px] items-center max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[40px] items-center relative shrink-0 w-full shell"
               data-node-id="50:281"
               data-name="Container"
             >
               <div
-                className="content-stretch flex flex-col gap-[7px] items-center max-w-[768px] pt-[3px] relative shrink-0 w-[768px]"
+                className="content-stretch flex flex-col gap-[7px] items-center pt-[3px] relative shell-narrow"
                 data-node-id="50:282"
                 data-name="Frame"
               >
                 <div
-                  className="bg-[#d5e3ff] content-stretch flex flex-col items-center px-[12px] py-[3px] relative rounded-[9999px] shrink-0"
+                  className="bg-brand-100 content-stretch flex flex-col items-center px-[12px] py-[3px] relative rounded-pill shrink-0"
                   data-node-id="50:283"
                   data-name="Frame"
                 >
                   <p
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] text-center tracking-[1.1px] uppercase whitespace-nowrap"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] text-center tracking-[1.1px] uppercase whitespace-nowrap"
                     data-node-id="50:284"
                   >
                     MÉTHODOLOGIE CERTIFIÉE
                   </p>
                 </div>
                 <div
-                  className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[32px] text-center tracking-[-0.8px] w-[min-content]"
+                  className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-brand-900 text-[32px] text-center tracking-[-0.8px] w-full"
                   data-node-id="50:285"
                 >
-                  <p className="leading-[40px] mb-0">
-                    La Mesure Rigoureuse : Avant, Pendant et
-                  </p>
-                  <p className="leading-[40px]">Après Chaque Projet</p>
+                  <p className="leading-[40px]">{`La Mesure Rigoureuse : Avant, Pendant et Après Chaque Projet`}</p>
                 </div>
                 <div
-                  className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[16px] text-center w-[min-content]"
+                  className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[16px] text-center w-full"
                   data-node-id="50:286"
                 >
-                  <p className="leading-[24px] mb-0">{`Nous n'abandonnons jamais une école après le coup de pinceau. Notre méthodologie d'intervention`}</p>
-                  <p className="leading-[24px] mb-0">{`repose sur une traçabilité contractuelle tripartite : Children's Smile, Comités APE et autorités`}</p>
-                  <p className="leading-[24px]">villageoises.</p>
+                  <p className="leading-[24px]">{`Nous n'abandonnons jamais une école après le coup de pinceau. Notre méthodologie d'intervention repose sur une traçabilité contractuelle tripartite : Children's Smile, Comités APE et autorités villageoises.`}</p>
                 </div>
               </div>
               <div
@@ -1785,7 +1758,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:288"
                   data-name="Frame"
                 >
@@ -1795,37 +1768,28 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[rgba(0,68,132,0.1)] content-stretch flex flex-col items-center justify-center relative rounded-[9999px] shrink-0 size-[40px]"
+                      className="bg-[rgba(0,68,132,0.1)] content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 size-[40px]"
                       data-node-id="50:290"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#004484] text-[20px] text-center whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-brand-900 text-[20px] text-center whitespace-nowrap"
                         data-node-id="50:291"
                       >
                         01
                       </p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[20px] w-[min-content]"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[20px] w-full"
                       data-node-id="50:292"
                     >
-                      <p className="leading-[28px] mb-0">{`Diagnostic Initial & Constat`}</p>
-                      <p className="leading-[28px]">{`d'Huissier / PV`}</p>
+                      <p className="leading-[28px]">{`Diagnostic Initial & Constat d'Huissier / PV`}</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-[min-content]"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:293"
                     >
-                      <p className="leading-[22.75px] mb-0">
-                        Procès-verbal de constatation de vétusté
-                      </p>
-                      <p className="leading-[22.75px] mb-0">{`corédigé avec le bureau de l'APE et le directeur`}</p>
-                      <p className="leading-[22.75px] mb-0">{`d'établissement. Recensement exact des`}</p>
-                      <p className="leading-[22.75px] mb-0">{`effectifs, de la distance aux points d'eau et des`}</p>
-                      <p className="leading-[22.75px]">
-                        risques sanitaires prioritaires.
-                      </p>
+                      <p className="leading-[22.75px]">{`Procès-verbal de constatation de vétusté corédigé avec le bureau de l'APE et le directeur d'établissement. Recensement exact des effectifs, de la distance aux points d'eau et des risques sanitaires prioritaires.`}</p>
                     </div>
                   </div>
                   <div
@@ -1834,13 +1798,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-white content-stretch flex gap-[8px] items-center pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-white content-stretch flex gap-[8px] items-center pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 w-full"
                       data-node-id="50:295"
                       data-name="Frame"
                     >
                       <Icon name="school" size={15.0} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#004484] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-900 text-[12px] whitespace-nowrap"
                         data-node-id="50:297"
                       >
                         Validation conjointe MINEDUB
@@ -1849,7 +1813,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:298"
                   data-name="Frame"
                 >
@@ -1859,41 +1823,28 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-center justify-center relative rounded-[9999px] shrink-0 size-[40px]"
+                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 size-[40px]"
                       data-node-id="50:300"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#006e2d] text-[20px] text-center whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-accent-700 text-[20px] text-center whitespace-nowrap"
                         data-node-id="50:301"
                       >
                         02
                       </p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[20px] w-[min-content]"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[20px] w-full"
                       data-node-id="50:302"
                     >
-                      <p className="leading-[28px] mb-0">{`Audit Étape 50% & Contrôle`}</p>
-                      <p className="leading-[28px]">Qualité Local</p>
+                      <p className="leading-[28px]">{`Audit Étape 50% & Contrôle Qualité Local`}</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-[min-content]"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:303"
                     >
-                      <p className="leading-[22.75px] mb-0">
-                        Visite inopinée de la coordination de terrain. Test
-                      </p>
-                      <p className="leading-[22.75px] mb-0">
-                        de solidité du bois, conformité des peintures
-                      </p>
-                      <p className="leading-[22.75px] mb-0">
-                        sans solvants toxiques, épaisseur des tôles
-                      </p>
-                      <p className="leading-[22.75px] mb-0">
-                        galvanisées et respect des salaires décents des
-                      </p>
-                      <p className="leading-[22.75px]">ouvriers locaux.</p>
+                      <p className="leading-[22.75px]">{`Visite inopinée de la coordination de terrain. Test de solidité du bois, conformité des peintures sans solvants toxiques, épaisseur des tôles galvanisées et respect des salaires décents des ouvriers locaux.`}</p>
                     </div>
                   </div>
                   <div
@@ -1902,13 +1853,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-white content-stretch flex gap-[8px] items-center pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-white content-stretch flex gap-[8px] items-center pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 w-full"
                       data-node-id="50:305"
                       data-name="Frame"
                     >
                       <Icon name="eyeOff" size={16.5} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#006e2d] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-accent-700 text-[12px] whitespace-nowrap"
                         data-node-id="50:307"
                       >
                         Zéro intermédiaire opaque
@@ -1917,7 +1868,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:308"
                   data-name="Frame"
                 >
@@ -1927,41 +1878,28 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[rgba(163,57,0,0.1)] content-stretch flex flex-col items-center justify-center relative rounded-[9999px] shrink-0 size-[40px]"
+                      className="bg-[rgba(163,57,0,0.1)] content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 size-[40px]"
                       data-node-id="50:310"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-[#a33900] text-[20px] text-center whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[28px] relative shrink-0 text-warn-700 text-[20px] text-center whitespace-nowrap"
                         data-node-id="50:311"
                       >
                         03
                       </p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[20px] w-[min-content]"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[20px] w-full"
                       data-node-id="50:312"
                     >
-                      <p className="leading-[28px] mb-0">{`Suivi à 12 & 24 Mois : Mesure`}</p>
-                      <p className="leading-[28px]">des Résultats</p>
+                      <p className="leading-[28px]">{`Suivi à 12 & 24 Mois : Mesure des Résultats`}</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-[min-content]"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:313"
                     >
-                      <p className="leading-[22.75px] mb-0">
-                        Évaluation statistique rigoureuse : évolution du
-                      </p>
-                      <p className="leading-[22.75px] mb-0">
-                        taux de rétention scolaire (particulièrement des
-                      </p>
-                      <p className="leading-[22.75px] mb-0">
-                        jeunes filles), recul des parasitoses digestives et
-                      </p>
-                      <p className="leading-[22.75px] mb-0">{`taux de réussite aux examens officiels (CEP &`}</p>
-                      <p className="leading-[22.75px]">
-                        First School Leaving Certificate).
-                      </p>
+                      <p className="leading-[22.75px]">{`Évaluation statistique rigoureuse : évolution du taux de rétention scolaire (particulièrement des jeunes filles), recul des parasitoses digestives et taux de réussite aux examens officiels (CEP & First School Leaving Certificate).`}</p>
                     </div>
                   </div>
                   <div
@@ -1970,13 +1908,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-white content-stretch flex gap-[8px] items-center pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-white content-stretch flex gap-[8px] items-center pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 w-full"
                       data-node-id="50:315"
                       data-name="Frame"
                     >
                       <Icon name="trendingUp" size={15.0} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#a33900] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-warn-700 text-[12px] whitespace-nowrap"
                         data-node-id="50:317"
                       >{`Bilan d'impact post-livraison`}</p>
                     </div>
@@ -1984,7 +1922,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 </div>
               </div>
               <div
-                className="bg-[#faf8ff] content-stretch drop-shadow-[0px_4px_3px_rgba(0,0,0,0.1),0px_2px_2px_rgba(0,0,0,0.1)] flex flex-col gap-[8px] items-start p-[40px] relative rounded-[12px] shrink-0 w-full"
+                className="bg-surface-subtle content-stretch drop-shadow-[0px_4px_3px_rgba(0,0,0,0.1),0px_2px_2px_rgba(0,0,0,0.1)] flex flex-col gap-[8px] items-start p-[40px] relative rounded-card shrink-0 w-full"
                 data-node-id="50:318"
                 data-name="Frame"
               >
@@ -1999,29 +1937,26 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-[9999px] shrink-0"
+                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-pill shrink-0"
                       data-node-id="50:321"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] uppercase whitespace-nowrap"
                         data-node-id="50:322"
                       >
                         CAS DOCUMENTÉ RÉEL
                       </p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[24px] w-[min-content]"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-brand-900 text-[24px] w-full"
                       data-node-id="50:323"
                     >
-                      <p className="leading-[32px] mb-0">
-                        Étude Comparative : École Publique de Batouri (Région de
-                      </p>
-                      <p className="leading-[32px]">{`l'Est)`}</p>
+                      <p className="leading-[32px]">{`Étude Comparative : École Publique de Batouri (Région de l'Est)`}</p>
                     </div>
                   </div>
                   <div
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-[#424751] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
                     data-node-id="50:324"
                   >
                     <p className="leading-[16px] mb-0">{`Période d'audit : Septembre 2023 - Novembre`}</p>
@@ -2034,7 +1969,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <div
-                    className="bg-[rgba(255,218,214,0.2)] content-stretch flex flex-[1_0_0] flex-col items-start justify-between min-w-px overflow-clip p-[24px] relative rounded-[12px]"
+                    className="bg-[rgba(255,218,214,0.2)] content-stretch flex flex-[1_0_0] flex-col items-start justify-between min-w-px overflow-clip p-[24px] relative rounded-card"
                     data-node-id="50:326"
                     data-name="Frame"
                   >
@@ -2068,7 +2003,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="xCircle" size={10.5} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:334"
                           >
                             65 élèves assis à même la poussière de terre battue
@@ -2083,7 +2018,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="xCircle" size={10.5} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:337"
                           >
                             Toitures en tôles perforées : arrêt systématique des
@@ -2098,7 +2033,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="xCircle" size={10.5} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:340"
                           >{`Absence totale d'eau potable : corvée d'eau de 2 km imposée aux écolières pendant les pauses pédagogiques.`}</p>
                         </div>
@@ -2109,7 +2044,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="xCircle" size={10.5} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:343"
                           >{`Taux de réussite au Certificat d'Études Primaires (CEP) stagnant à 48,5%.`}</p>
                         </div>
@@ -2121,7 +2056,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[rgba(250,248,255,0.8)] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 text-[#ba1a1a] text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-[rgba(250,248,255,0.8)] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 text-[#ba1a1a] text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:345"
                         data-name="Frame"
                       >
@@ -2139,7 +2074,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-[1_0_0] flex-col items-start justify-between min-w-px overflow-clip p-[24px] relative rounded-[12px]"
+                    className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-[1_0_0] flex-col items-start justify-between min-w-px overflow-clip p-[24px] relative rounded-card"
                     data-node-id="50:348"
                     data-name="Frame"
                   >
@@ -2155,7 +2090,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       >
                         <Icon name="checkCircle" size={20.0} className="shrink-0" />
                         <p
-                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#006e2d] text-[18px] tracking-[0.9px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-accent-700 text-[18px] tracking-[0.9px] uppercase whitespace-nowrap"
                           data-node-id="50:352"
                         >
                           IMPACT VÉRIFIÉ (APRÈS RÉNOVATION)
@@ -2173,7 +2108,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="trendingUp" size={12.23} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:356"
                           >
                             3 salles entièrement refaites : dalle bétonnée
@@ -2188,7 +2123,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="trendingUp" size={12.23} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:359"
                           >
                             Toiture isolante étanche résistant aux orages
@@ -2203,7 +2138,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="trendingUp" size={12.23} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:362"
                           >{`Forage à pompe manuelle au cœur de l'école et blocs sanitaires séparés pour l'intimité et la dignité des jeunes filles.`}</p>
                         </div>
@@ -2214,7 +2149,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         >
                           <Icon name="trendingUp" size={12.23} className="shrink-0" />
                           <p
-                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[#131b2e] text-[14px]"
+                            className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-ink-900 text-[14px]"
                             data-node-id="50:365"
                           >
                             Bond du taux de réussite au CEP à 89,2% lors de la
@@ -2229,7 +2164,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="[word-break:break-word] bg-[rgba(250,248,255,0.8)] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 text-[#006e2d] text-[12px] w-full whitespace-nowrap"
+                        className="[word-break:break-word] bg-[rgba(250,248,255,0.8)] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 text-accent-700 text-[12px] w-full whitespace-nowrap"
                         data-node-id="50:367"
                         data-name="Frame"
                       >
@@ -2250,7 +2185,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#f2f3ff] content-stretch flex flex-col items-start overflow-clip pb-[24px] pt-[32px] px-[24px] relative rounded-[12px] shrink-0 w-full"
+                  className="bg-surface-muted content-stretch flex flex-col items-start overflow-clip pb-[24px] pt-[32px] px-[24px] relative rounded-card shrink-0 w-full"
                   data-node-id="50:370"
                   data-name="Frame"
                 >
@@ -2260,18 +2195,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#004484] text-[18px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-brand-900 text-[18px] whitespace-nowrap"
                       data-node-id="50:372"
                     >
                       Taux de Fréquentation Scolaire des Filles à Batouri (%)
                     </p>
                     <div
-                      className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start px-[10px] py-[4px] relative rounded-[9999px] shrink-0"
+                      className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col items-start px-[10px] py-[4px] relative rounded-pill shrink-0"
                       data-node-id="50:373"
                       data-name="Frame"
                     >
                       <p
-                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] whitespace-nowrap"
+                        className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] whitespace-nowrap"
                         data-node-id="50:374"
                       >
                         Suivi trimestriel audité
@@ -2301,37 +2236,37 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <p
-                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                       data-node-id="50:389"
                     >
                       T1 2023 (34%)
                     </p>
                     <p
-                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                       data-node-id="50:390"
                     >
                       T2 2023 (41%)
                     </p>
                     <p
-                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                       data-node-id="50:391"
                     >
                       T3 (Travaux)
                     </p>
                     <p
-                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                       data-node-id="50:392"
                     >
                       T1 2024 (78%)
                     </p>
                     <p
-                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                      className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                       data-node-id="50:393"
                     >
                       T2 2024 (85%)
                     </p>
                     <p
-                      className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#006e2d]"
+                      className="font-['Inter:Bold'] font-bold relative shrink-0 text-accent-700"
                       data-node-id="50:394"
                     >
                       T3 2024 (94%)
@@ -2342,17 +2277,17 @@ export default function NotreImpactChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="bg-[#faf8ff] content-stretch flex flex-col items-start px-[56px] relative shrink-0 w-full"
+            className="bg-surface-subtle content-stretch flex flex-col items-start relative shrink-0 w-full shell"
             data-node-id="50:395"
             data-name="Section - SECTION TÉMOIGNAGES SOUS PROTOCOLE DE PROTECTION"
           >
             <div
-              className="content-stretch flex flex-col gap-[40px] items-start max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full shell"
               data-node-id="50:396"
               data-name="Container"
             >
               <div
-                className="bg-[rgba(0,68,132,0.05)] content-stretch flex flex-col gap-[16px] items-start p-[24px] relative rounded-[12px] shrink-0 w-full"
+                className="bg-[rgba(0,68,132,0.05)] content-stretch flex flex-col gap-[16px] items-start p-[24px] relative rounded-card shrink-0 w-full"
                 data-node-id="50:397"
                 data-name="Frame"
               >
@@ -2363,15 +2298,14 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <p
-                    className="font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                    className="font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                     data-node-id="50:400"
                   >{`CHARTE DE SAUVEGARDE & DIGNITÉ DE L'ENFANT`}</p>
                   <div
-                    className="font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-[min-content]"
+                    className="font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
                     data-node-id="50:401"
                   >
-                    <p className="leading-[20px] mb-0">{`Tous les récits et données sont recueillis dans le respect strict des standards internationaux de protection de l'enfance. Préservation systématique de l'anonymat`}</p>
-                    <p className="leading-[20px]">{`complet des mineurs, absence de toute photographie dégradante et accord formalisé avec les tuteurs légaux et directoires d'APE.`}</p>
+                    <p className="leading-[20px]">{`Tous les récits et données sont recueillis dans le respect strict des standards internationaux de protection de l'enfance. Préservation systématique de l'anonymat complet des mineurs, absence de toute photographie dégradante et accord formalisé avec les tuteurs légaux et directoires d'APE.`}</p>
                   </div>
                 </div>
               </div>
@@ -2381,30 +2315,29 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="content-stretch flex flex-col gap-[6.5px] items-start pb-[0.5px] pr-[119.4px] pt-[3px] relative shrink-0"
+                  className="content-stretch flex flex-1 flex-col gap-[6.5px] items-start min-w-0 pb-[0.5px] pt-[3px] relative"
                   data-node-id="50:403"
                   data-name="Frame"
                 >
                   <div
-                    className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-[9999px] shrink-0"
+                    className="bg-[rgba(0,110,45,0.1)] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-pill shrink-0"
                     data-node-id="50:404"
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
                       data-node-id="50:405"
                     >{`PAROLES D'ACTEURS LOCAUX`}</p>
                   </div>
                   <div
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[32px] tracking-[-0.8px] w-[min-content]"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[32px] tracking-[-0.8px] w-full"
                     data-node-id="50:406"
                   >
-                    <p className="leading-[40px] mb-0">{`Récits Directs : L'Impact Vécu au`}</p>
-                    <p className="leading-[40px]">Quotidien</p>
+                    <p className="leading-[40px]">{`Récits Directs : L'Impact Vécu au Quotidien`}</p>
                   </div>
                 </div>
                 <div
-                  className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] w-[512px]"
+                  className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-0 not-italic relative text-ink-700 text-[16px] w-[512px]"
                   data-node-id="50:407"
                 >
                   <p className="leading-[24px] mb-0">
@@ -2420,7 +2353,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="bg-[#f2f3ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[32px] relative rounded-[12px]"
+                  className="bg-surface-muted content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[32px] relative rounded-card"
                   data-node-id="50:409"
                   data-name="Frame"
                 >
@@ -2435,7 +2368,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="bg-[#004484] content-stretch flex flex-col items-center justify-center relative rounded-[9999px] shrink-0 size-[56px]"
+                        className="bg-brand-900 content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 size-[56px]"
                         data-node-id="50:412"
                         data-name="Frame"
                       >
@@ -2452,17 +2385,17 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#004484] text-[18px]"
+                          className="font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-brand-900 text-[18px]"
                           data-node-id="50:415"
                         >
                           M. François B.
                         </p>
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px]"
+                          className="font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px]"
                           data-node-id="50:416"
                         >{`Directeur de l'École Publique de Dimako (Est)`}</p>
                         <p
-                          className="font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#006e2d] text-[11px] uppercase"
+                          className="font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-accent-700 text-[11px] uppercase"
                           data-node-id="50:417"
                         >
                           27 ANS DE SERVICE ÉDUCATIF
@@ -2470,7 +2403,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </div>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Italic'] font-normal italic leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                      className="[word-break:break-word] font-['Inter:Italic'] font-normal italic leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                       data-node-id="50:418"
                     >
                       <p className="leading-[29.25px] mb-0">{`« Nos élèves n'ont plus peur de la pluie. Leurs cahiers`}</p>
@@ -2490,18 +2423,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="[word-break:break-word] bg-[#faf8ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                      className="[word-break:break-word] bg-surface-subtle content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                       data-node-id="50:420"
                       data-name="Frame"
                     >
                       <p
-                        className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                        className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                         data-node-id="50:421"
                       >
                         Indicateur associé :
                       </p>
                       <p
-                        className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#004484]"
+                        className="font-['Inter:Bold'] font-bold relative shrink-0 text-brand-900"
                         data-node-id="50:422"
                       >
                         Assiduité en hausse de 42%
@@ -2510,7 +2443,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#f2f3ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[32px] relative rounded-[12px]"
+                  className="bg-surface-muted content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[32px] relative rounded-card"
                   data-node-id="50:423"
                   data-name="Frame"
                 >
@@ -2525,7 +2458,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       data-name="Frame"
                     >
                       <div
-                        className="bg-[#a33900] content-stretch flex flex-col items-center justify-center relative rounded-[9999px] shrink-0 size-[56px]"
+                        className="bg-warn-700 content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 size-[56px]"
                         data-node-id="50:426"
                         data-name="Frame"
                       >
@@ -2542,23 +2475,23 @@ export default function NotreImpactChildrensSmileCameroun() {
                         data-name="Frame"
                       >
                         <p
-                          className="font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#004484] text-[18px]"
+                          className="font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-brand-900 text-[18px]"
                           data-node-id="50:429"
                         >
                           Mme Alimatou K.
                         </p>
                         <p
-                          className="font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px]"
+                          className="font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px]"
                           data-node-id="50:430"
                         >{`Présidente de l'APE de Mora (Extrême-Nord)`}</p>
                         <p
-                          className="font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#a33900] text-[11px] uppercase"
+                          className="font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-warn-700 text-[11px] uppercase"
                           data-node-id="50:431"
                         >{`PORTE-PAROLE DES MÈRES D'ÉLÈVES`}</p>
                       </div>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Italic'] font-normal italic leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                      className="[word-break:break-word] font-['Inter:Italic'] font-normal italic leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                       data-node-id="50:432"
                     >
                       <p className="leading-[29.25px] mb-0">{`« L'accès au forage sécurisé dans l'enceinte de l'école a`}</p>
@@ -2582,18 +2515,18 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="[word-break:break-word] bg-[#faf8ff] content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-[8px] shrink-0 text-[12px] w-full whitespace-nowrap"
+                      className="[word-break:break-word] bg-surface-subtle content-stretch flex items-center justify-between leading-[16px] not-italic pb-[12px] pt-[16px] px-[12px] relative rounded-control shrink-0 text-[12px] w-full whitespace-nowrap"
                       data-node-id="50:434"
                       data-name="Frame"
                     >
                       <p
-                        className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#424751]"
+                        className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-ink-700"
                         data-node-id="50:435"
                       >
                         Indicateur associé :
                       </p>
                       <p
-                        className="font-['Inter:Bold'] font-bold relative shrink-0 text-[#006e2d]"
+                        className="font-['Inter:Bold'] font-bold relative shrink-0 text-accent-700"
                         data-node-id="50:436"
                       >
                         Zéro accident hydrique en 18 mois
@@ -2608,7 +2541,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="aspect-[4/3] bg-[#eaedff] content-stretch flex flex-col items-start justify-center overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0"
+                  className="aspect-[4/3] bg-surface-tint content-stretch flex flex-col items-start justify-center overflow-clip relative rounded-card shadow-raised shrink-0"
                   data-node-id="50:438"
                   data-name="Frame"
                 >
@@ -2643,7 +2576,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="aspect-[4/3] bg-[#eaedff] content-stretch flex flex-col items-start justify-center overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0"
+                  className="aspect-[4/3] bg-surface-tint content-stretch flex flex-col items-start justify-center overflow-clip relative rounded-card shadow-raised shrink-0"
                   data-node-id="50:443"
                   data-name="Frame"
                 >
@@ -2678,7 +2611,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="aspect-[4/3] bg-[#eaedff] content-stretch flex flex-col items-start justify-center overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0"
+                  className="aspect-[4/3] bg-surface-tint content-stretch flex flex-col items-start justify-center overflow-clip relative rounded-card shadow-raised shrink-0"
                   data-node-id="50:448"
                   data-name="Frame"
                 >
@@ -2716,12 +2649,12 @@ export default function NotreImpactChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="bg-[#f2f3ff] content-stretch flex flex-col items-start px-[56px] relative shrink-0 w-full"
+            className="bg-surface-muted content-stretch flex flex-col items-start relative shrink-0 w-full shell"
             data-node-id="50:453"
             data-name="Section - SECTION TÉLÉCHARGEMENT DES RAPPORTS & AUDITS INDÉPENDANTS"
           >
             <div
-              className="content-stretch flex flex-col gap-[24px] items-start max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full shell"
               data-node-id="50:454"
               data-name="Container"
             >
@@ -2731,49 +2664,43 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="content-stretch flex flex-col gap-[7px] items-start pt-[3px] relative shrink-0 w-[672px]"
+                  className="content-stretch flex flex-col gap-[7px] items-start pt-[3px] relative shell-prose"
                   data-node-id="50:456"
                   data-name="Frame"
                 >
                   <div
-                    className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-[9999px] shrink-0"
+                    className="bg-brand-100 content-stretch flex flex-col items-start px-[12px] py-[3px] relative rounded-pill shrink-0"
                     data-node-id="50:457"
                     data-name="Frame"
                   >
                     <p
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#004484] text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-brand-900 text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
                       data-node-id="50:458"
                     >
                       TRANSPARENCE ABSOLUE
                     </p>
                   </div>
                   <div
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[32px] tracking-[-0.8px] w-[min-content]"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] min-w-full relative shrink-0 text-[#004484] text-[32px] tracking-[-0.8px] w-full"
                     data-node-id="50:459"
                   >
-                    <p className="leading-[40px] mb-0">{`Bilans d'Impact & Rapports Annuels en`}</p>
-                    <p className="leading-[40px]">Accès Libre</p>
+                    <p className="leading-[40px]">{`Bilans d'Impact & Rapports Annuels en Accès Libre`}</p>
                   </div>
                   <div
-                    className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[16px] w-[min-content]"
+                    className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[16px] w-full"
                     data-node-id="50:460"
                   >
-                    <p className="leading-[24px] mb-0">
-                      La confiance de nos donateurs et partenaires repose sur la
-                      vérifiabilité intégrale. Chaque
-                    </p>
-                    <p className="leading-[24px] mb-0">{`année civile fait l'objet d'un rapport certifié par commissariat aux comptes agréé`}</p>
-                    <p className="leading-[24px]">CEMAC.</p>
+                    <p className="leading-[24px]">{`La confiance de nos donateurs et partenaires repose sur la vérifiabilité intégrale. Chaque année civile fait l'objet d'un rapport certifié par commissariat aux comptes agréé CEMAC.`}</p>
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col gap-[7.99px] items-start justify-center p-[12px] relative rounded-[8px] shrink-0"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col gap-[7.99px] items-start justify-center p-[12px] relative rounded-control shrink-0"
                   data-node-id="50:461"
                   data-name="Frame"
                 >
                   <Icon name="badgeCheck" size={22.0} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                     data-node-id="50:463"
                   >
                     Comptes certifiés conformes OHADA / CEMAC
@@ -2786,7 +2713,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:465"
                   data-name="Frame"
                 >
@@ -2812,12 +2739,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="bg-[#eaedff] content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-[4px] shrink-0"
+                        className="bg-surface-tint content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-chip shrink-0"
                         data-node-id="50:470"
                         data-name="Frame"
                       >
                         <p
-                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                           data-node-id="50:471"
                         >
                           PDF • 8.4 Mo
@@ -2825,14 +2752,14 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </div>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-[#004484] text-[20px] w-full"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                       data-node-id="50:472"
                     >
                       <p className="leading-[28px] mb-0">{`Rapport d'Impact & Bilan`}</p>
                       <p className="leading-[28px]">Social 2024</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:473"
                     >
                       <p className="leading-[20px] mb-0">
@@ -2852,7 +2779,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#004484] content-stretch flex flex-col gap-[8px] items-center justify-center py-[12px] relative rounded-[9999px] shrink-0 w-full"
+                      className="bg-brand-900 content-stretch flex flex-col gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
                       data-node-id="50:475"
                       data-name="Frame"
                     >
@@ -2867,7 +2794,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:478"
                   data-name="Frame"
                 >
@@ -2893,12 +2820,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="bg-[#eaedff] content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-[4px] shrink-0"
+                        className="bg-surface-tint content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-chip shrink-0"
                         data-node-id="50:483"
                         data-name="Frame"
                       >
                         <p
-                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                           data-node-id="50:484"
                         >
                           PDF • 4.1 Mo
@@ -2906,7 +2833,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </div>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-[#004484] text-[20px] w-full"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                       data-node-id="50:485"
                     >
                       <p className="leading-[28px] mb-0">
@@ -2915,7 +2842,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       <p className="leading-[28px]">Dépenses</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:486"
                     >
                       <p className="leading-[20px] mb-0">
@@ -2935,13 +2862,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col gap-[8px] items-center justify-center py-[12px] relative rounded-[9999px] shrink-0 w-full"
+                      className="bg-surface-tint content-stretch flex flex-col gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
                       data-node-id="50:488"
                       data-name="Frame"
                     >
                       <Icon name="arrowRight" size={12.0} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#004484] text-[12px] text-center whitespace-nowrap"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-900 text-[12px] text-center whitespace-nowrap"
                         data-node-id="50:490"
                       >
                         Consulter la traçabilité
@@ -2950,7 +2877,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-[12px]"
+                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
                   data-node-id="50:491"
                   data-name="Frame"
                 >
@@ -2976,12 +2903,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="bg-[#eaedff] content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-[4px] shrink-0"
+                        className="bg-surface-tint content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-chip shrink-0"
                         data-node-id="50:496"
                         data-name="Frame"
                       >
                         <p
-                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                           data-node-id="50:497"
                         >
                           PDF • 3.2 Mo
@@ -2989,14 +2916,14 @@ export default function NotreImpactChildrensSmileCameroun() {
                       </div>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-[#004484] text-[20px] w-full"
+                      className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                       data-node-id="50:498"
                     >
                       <p className="leading-[28px] mb-0">{`Rapport d'Audit Financier`}</p>
                       <p className="leading-[28px]">Indépendant</p>
                     </div>
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                       data-node-id="50:499"
                     >
                       <p className="leading-[20px] mb-0">{`Rapport annuel d'expertise comptable`}</p>
@@ -3015,13 +2942,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col gap-[8px] items-center justify-center py-[12px] relative rounded-[9999px] shrink-0 w-full"
+                      className="bg-surface-tint content-stretch flex flex-col gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
                       data-node-id="50:501"
                       data-name="Frame"
                     >
                       <Icon name="arrowRight" size={12.0} className="shrink-0" />
                       <p
-                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#004484] text-[12px] text-center whitespace-nowrap"
+                        className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-900 text-[12px] text-center whitespace-nowrap"
                         data-node-id="50:503"
                       >
                         Voir la certification
@@ -3031,33 +2958,33 @@ export default function NotreImpactChildrensSmileCameroun() {
                 </div>
               </div>
               <p
-                className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#424751] text-[12px] text-center w-full"
+                className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-ink-700 text-[12px] text-center w-full"
                 data-node-id="50:504"
               >{`Tous nos états financiers sont déposés auprès des préfectures départementales et du Ministère de l'Administration Territoriale (MINAT).`}</p>
             </div>
           </div>
           <div
-            className="bg-[#004484] content-stretch flex flex-col gap-[24px] items-start overflow-clip pb-[112px] px-[128px] relative shrink-0 w-full"
+            className="bg-brand-900 content-stretch flex flex-col gap-[24px] items-start overflow-clip pb-[112px] px-[128px] relative shrink-0 w-full"
             data-node-id="50:505"
             data-name="Section - SECTION FINALE D'ENGAGEMENT / CTA"
           >
             <div
-              className="absolute bg-[rgba(11,92,171,0.4)] blur-[32px] bottom-[-79.73px] right-[-80px] rounded-[9999px] size-[384px]"
+              className="absolute bg-[rgba(11,92,171,0.4)] blur-[32px] bottom-[-79.73px] right-[-80px] rounded-pill size-[384px]"
               data-node-id="50:506"
               data-name="Rectangle"
             />
             <div
-              className="absolute bg-[rgba(0,110,45,0.2)] blur-[32px] left-[-80px] rounded-[9999px] size-[384px] top-[-80px]"
+              className="absolute bg-[rgba(0,110,45,0.2)] blur-[32px] left-[-80px] rounded-pill size-[384px] top-[-80px]"
               data-node-id="50:507"
               data-name="Rectangle"
             />
             <div
-              className="content-stretch flex flex-col gap-[8px] items-center max-w-[1024px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[8px] items-center relative w-full shell-content"
               data-node-id="50:508"
               data-name="Frame"
             >
               <div
-                className="bg-[#006e2d] content-stretch flex gap-[8px] items-center px-[16px] py-[4px] relative rounded-[9999px] shrink-0"
+                className="bg-accent-700 content-stretch flex gap-[8px] items-center px-[16px] py-[4px] relative rounded-pill shrink-0"
                 data-node-id="50:509"
                 data-name="Frame"
               >
@@ -3070,19 +2997,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                 </p>
               </div>
               <div
-                className="[word-break:break-word] font-['Montserrat:ExtraBold'] font-extrabold leading-[0] min-w-full relative shrink-0 text-[48px] text-center text-white tracking-[-1.2px] w-[min-content]"
+                className="[word-break:break-word] font-['Montserrat:ExtraBold'] font-extrabold leading-[0] min-w-full relative shrink-0 text-[48px] text-center text-white tracking-[-1.2px] w-full"
                 data-node-id="50:512"
               >
-                <p className="leading-[56px] mb-0">
-                  Vous souhaitez cofinancer un impact
-                </p>
-                <p className="leading-[56px] mb-0">
-                  mesurable dans une école de votre
-                </p>
-                <p className="leading-[56px]">village ou de votre région ?</p>
+                <p className="leading-[56px]">{`Vous souhaitez cofinancer un impact mesurable dans une école de votre village ou de votre région ?`}</p>
               </div>
               <div
-                className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#d5e3ff] text-[18px] text-center w-[672px]"
+                className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative text-brand-100 text-[18px] text-center shell-prose"
                 data-node-id="50:513"
               >
                 <p className="leading-[29.25px] mb-0">
@@ -3098,7 +3019,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <div
-                  className="bg-[#006e2d] content-stretch flex flex-col gap-[8px] items-start justify-center px-[32px] py-[16px] relative rounded-[9999px] shrink-0"
+                  className="bg-accent-700 content-stretch flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-lg btn"
                   data-node-id="50:515"
                   data-name="Frame"
                 >
@@ -3109,13 +3030,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >{`Parrainer un chantier d'école`}</p>
                 </div>
                 <div
-                  className="bg-[#faf8ff] content-stretch flex flex-col gap-[8px] items-start justify-center px-[32px] py-[16px] relative rounded-[9999px] shrink-0"
+                  className="bg-surface-subtle content-stretch flex flex-col gap-[8px] items-start justify-center relative rounded-pill shrink-0 btn-lg btn"
                   data-node-id="50:518"
                   data-name="Frame"
                 >
                   <Icon name="arrowRight" size={18.33} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                     data-node-id="50:520"
                   >
                     Découvrir nos projets en cours
@@ -3134,14 +3055,14 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="phone" size={13.5} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] text-center whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] text-center whitespace-nowrap"
                     data-node-id="50:524"
                   >
                     Direct Terrain : +237 699 09 86 88
                   </p>
                 </div>
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] text-center whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] text-center whitespace-nowrap"
                   data-node-id="50:525"
                 >
                   •
@@ -3153,14 +3074,14 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="scrollText" size={16.5} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] text-center whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] text-center whitespace-nowrap"
                     data-node-id="50:528"
                   >
                     Agrément MINAT N° 000214
                   </p>
                 </div>
                 <p
-                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] text-center whitespace-nowrap"
+                  className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] text-center whitespace-nowrap"
                   data-node-id="50:529"
                 >
                   •
@@ -3172,7 +3093,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="mapPin" size={15.0} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-[#d5e3ff] text-[12px] text-center whitespace-nowrap"
+                    className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[16px] not-italic relative shrink-0 text-brand-100 text-[12px] text-center whitespace-nowrap"
                     data-node-id="50:532"
                   >
                     Siège : Yaoundé, Cameroun
@@ -3183,12 +3104,12 @@ export default function NotreImpactChildrensSmileCameroun() {
           </div>
         </div>
         <div
-          className="bg-[#f2f3ff] border-[rgba(194,198,211,0.3)] border-solid border-t content-stretch flex flex-col items-start relative shrink-0 w-full"
+          className="bg-surface-muted border-[rgba(194,198,211,0.3)] border-solid border-t content-stretch flex flex-col items-start relative shrink-0 w-full"
           data-node-id="50:533"
           data-name="Footer"
         >
           <div
-            className="content-stretch flex flex-col gap-[40px] items-start max-w-[1280px] px-[56px] py-[40px] relative shrink-0 w-full"
+            className="content-stretch flex flex-col gap-[40px] items-start py-[40px] relative shrink-0 w-full shell"
             data-node-id="50:534"
             data-name="Frame"
           >
@@ -3208,11 +3129,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <div
-                    className="relative rounded-[9999px] shrink-0 size-[32px]"
+                    className="relative rounded-pill shrink-0 size-[32px]"
                     data-node-id="50:538"
                     data-name="Frame"
                   >
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[9999px]">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                       <img
                         alt=""
                         className="absolute left-0 max-w-none size-full top-0"
@@ -3226,11 +3147,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <p
-                      className="leading-[25px] relative shrink-0 text-[#004484] text-[20px]"
+                      className="leading-[25px] relative shrink-0 text-brand-900 text-[20px]"
                       data-node-id="50:540"
                     >{`Children's Smile`}</p>
                     <p
-                      className="leading-[16px] relative shrink-0 text-[#424751] text-[11px] tracking-[1.1px] uppercase"
+                      className="leading-[16px] relative shrink-0 text-ink-700 text-[11px] tracking-[1.1px] uppercase"
                       data-node-id="50:541"
                     >
                       CAMEROUN
@@ -3238,26 +3159,10 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#424751] text-[14px] w-[min-content]"
+                  className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                   data-node-id="50:542"
                 >
-                  <p className="leading-[22.75px] mb-0">
-                    Organisation humanitaire à but non
-                  </p>
-                  <p className="leading-[22.75px] mb-0">
-                    lucratif dédiée à la protection,
-                  </p>
-                  <p className="leading-[22.75px] mb-0">{`l'éducation civique, la santé et`}</p>
-                  <p className="leading-[22.75px] mb-0">{`l'épanouissement des enfants`}</p>
-                  <p className="leading-[22.75px] mb-0">
-                    vulnérables de 3 à 15 ans dans les
-                  </p>
-                  <p className="leading-[22.75px] mb-0">
-                    zones rurales et périurbaines isolées
-                  </p>
-                  <p className="leading-[22.75px]">
-                    des 10 régions du Cameroun.
-                  </p>
+                  <p className="leading-[22.75px]">{`Organisation humanitaire à but non lucratif dédiée à la protection, l'éducation civique, la santé et l'épanouissement des enfants vulnérables de 3 à 15 ans dans les zones rurales et périurbaines isolées des 10 régions du Cameroun.`}</p>
                 </div>
                 <div
                   className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 text-[12px]"
@@ -3265,19 +3170,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                   data-name="Frame"
                 >
                   <p
-                    className="font-['Inter:Bold'] font-bold leading-[16px] relative shrink-0 text-[#131b2e] w-full"
+                    className="font-['Inter:Bold'] font-bold leading-[16px] relative shrink-0 text-ink-900 w-full"
                     data-node-id="50:544"
                   >
                     Agrément Ministériel Officiel :
                   </p>
                   <p
-                    className="font-['Inter:Semi_Bold'] font-semibold leading-[16px] relative shrink-0 text-[#424751] w-full"
+                    className="font-['Inter:Semi_Bold'] font-semibold leading-[16px] relative shrink-0 text-ink-700 w-full"
                     data-node-id="50:545"
                   >
                     N° 000214/A/MINAT/SG/DAP/SDLP/SAC
                   </p>
                   <div
-                    className="font-['Inter:Semi_Bold'] font-semibold leading-[0] relative shrink-0 text-[#424751] w-full"
+                    className="font-['Inter:Semi_Bold'] font-semibold leading-[0] relative shrink-0 text-ink-700 w-full"
                     data-node-id="50:546"
                   >
                     <p className="leading-[16px] mb-0">
@@ -3299,7 +3204,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="pillars" size={17.5} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#004484] text-[18px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-brand-900 text-[18px] whitespace-nowrap"
                     data-node-id="50:550"
                   >{`Piliers d'Intervention`}</p>
                 </div>
@@ -3314,12 +3219,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#004484] relative rounded-[9999px] shrink-0 size-[6px]"
+                      className="bg-brand-900 relative rounded-pill shrink-0 size-[6px]"
                       data-node-id="50:553"
                       data-name="Rectangle"
                     />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:554"
                     >{`Scolarisation & Kits Pédagogiques`}</p>
                   </div>
@@ -3329,12 +3234,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#006e2d] relative rounded-[9999px] shrink-0 size-[6px]"
+                      className="bg-accent-700 relative rounded-pill shrink-0 size-[6px]"
                       data-node-id="50:556"
                       data-name="Rectangle"
                     />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:557"
                     >{`Cantines Solidaires & Nutrition Rurale`}</p>
                   </div>
@@ -3344,12 +3249,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#a33900] relative rounded-[9999px] shrink-0 size-[6px]"
+                      className="bg-warn-700 relative rounded-pill shrink-0 size-[6px]"
                       data-node-id="50:559"
                       data-name="Rectangle"
                     />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:560"
                     >{`Protection Infantile & État Civil`}</p>
                   </div>
@@ -3359,12 +3264,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#0b5cab] relative rounded-[9999px] shrink-0 size-[6px]"
+                      className="bg-brand-700 relative rounded-pill shrink-0 size-[6px]"
                       data-node-id="50:562"
                       data-name="Rectangle"
                     />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:563"
                     >{`Santé Préventive & Eau Potable`}</p>
                   </div>
@@ -3374,12 +3279,12 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-name="Frame"
                   >
                     <div
-                      className="bg-[#7cf994] relative rounded-[9999px] shrink-0 size-[6px]"
+                      className="bg-accent-300 relative rounded-pill shrink-0 size-[6px]"
                       data-node-id="50:565"
                       data-name="Rectangle"
                     />
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:566"
                     >
                       <p className="leading-[20px] mb-0">{`Mentorat & Autonomisation`}</p>
@@ -3400,7 +3305,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="droplet" size={16.67} className="shrink-0" />
                   <div
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-[#004484] text-[18px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[0] relative shrink-0 text-brand-900 text-[18px] whitespace-nowrap"
                     data-node-id="50:570"
                   >
                     <p className="leading-[24px] mb-0">{`Transparence &`}</p>
@@ -3419,7 +3324,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="fileText" size={13.33} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:574"
                     >{`Rapports Annuels & Audits CEMAC`}</p>
                   </div>
@@ -3430,7 +3335,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="badgeCheck" size={13.33} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:577"
                     >{`Comptes Certifiés BEAC & MinFi`}</p>
                   </div>
@@ -3441,7 +3346,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="scale" size={16.0} className="shrink-0" />
                     <div
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:580"
                     >
                       <p className="leading-[20px] mb-0">{`Conseil d'Administration`}</p>
@@ -3455,7 +3360,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="handshake" size={14.67} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:583"
                     >{`Partenariats Institutionnels & ONGs`}</p>
                   </div>
@@ -3466,7 +3371,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="trendingUp" size={12.0} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:586"
                     >{`Suivi Terrain & Taux d'Impact 92%`}</p>
                   </div>
@@ -3484,7 +3389,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 >
                   <Icon name="alertTriangle" size={16.67} className="shrink-0" />
                   <p
-                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-[#004484] text-[18px] whitespace-nowrap"
+                    className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[24px] relative shrink-0 text-brand-900 text-[18px] whitespace-nowrap"
                     data-node-id="50:590"
                   >{`Ligne Directe & Soutien`}</p>
                 </div>
@@ -3500,19 +3405,19 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="phone" size={13.5} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] whitespace-nowrap"
                       data-node-id="50:594"
                     >
                       Permanence Siège :
                     </p>
                     <p
-                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[#424751] text-[14px]"
+                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-ink-700 text-[14px]"
                       data-node-id="50:595"
                     >
                       +237 699 09 86 88
                     </p>
                     <p
-                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[#424751] text-[14px]"
+                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-ink-700 text-[14px]"
                       data-node-id="50:596"
                     >
                       +237 650 88 11 55
@@ -3525,13 +3430,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="whatsapp" size={15.0} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] whitespace-nowrap"
                       data-node-id="50:599"
                     >
                       WhatsApp Coordination :
                     </p>
                     <p
-                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[#424751] text-[14px]"
+                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-ink-700 text-[14px]"
                       data-node-id="50:600"
                     >
                       +237 699 09 86 88 (Direct Terrain)
@@ -3544,13 +3449,13 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     <Icon name="wallet" size={16.5} className="shrink-0" />
                     <p
-                      className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[#131b2e] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-ink-900 text-[14px] whitespace-nowrap"
                       data-node-id="50:603"
                     >
                       Canaux de Dons Certifiés :
                     </p>
                     <p
-                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[#424751] text-[14px]"
+                      className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-ink-700 text-[14px]"
                       data-node-id="50:604"
                     >{`Orange Money & MTN MoMo officiels`}</p>
                   </div>
@@ -3563,7 +3468,7 @@ export default function NotreImpactChildrensSmileCameroun() {
               data-name="Frame"
             >
               <p
-                className="font-['Inter:Regular'] font-normal leading-[20px] relative shrink-0 text-[#424751] text-[14px]"
+                className="font-['Inter:Regular'] font-normal leading-[20px] relative shrink-0 text-ink-700 text-[14px]"
                 data-node-id="50:606"
               >{`© 2025 Children's Smile Cameroun. Tous droits réservés.`}</p>
               <div
@@ -3572,27 +3477,27 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Frame"
               >
                 <p
-                  className="relative shrink-0 text-[#424751]"
+                  className="relative shrink-0 text-ink-700"
                   data-node-id="50:608"
                 >{`Politique de Sauvegarde de l'Enfance`}</p>
                 <p
-                  className="relative shrink-0 text-[#c2c6d3]"
+                  className="relative shrink-0 text-ink-300"
                   data-node-id="50:609"
                 >
                   •
                 </p>
                 <p
-                  className="relative shrink-0 text-[#424751]"
+                  className="relative shrink-0 text-ink-700"
                   data-node-id="50:610"
                 >{`Mentions Légales & RGPD`}</p>
                 <p
-                  className="relative shrink-0 text-[#c2c6d3]"
+                  className="relative shrink-0 text-ink-300"
                   data-node-id="50:611"
                 >
                   •
                 </p>
                 <p
-                  className="relative shrink-0 text-[#424751]"
+                  className="relative shrink-0 text-ink-700"
                   data-node-id="50:612"
                 >{`Code d'éthique et Déontologie`}</p>
               </div>

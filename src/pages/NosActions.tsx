@@ -31,7 +31,7 @@ export default function NosActionsChildrensSmileCameroun() {
       <Header />
       <div
         id="main-content"
-        className="nos-actions-page bg-[#faf8ff] content-stretch flex flex-col items-start relative size-full"
+        className="nos-actions-page bg-surface-subtle content-stretch flex flex-col items-start relative size-full"
         data-node-id="5:2786"
         data-name="Nos actions - Children's Smile Cameroun"
       >
@@ -41,12 +41,12 @@ export default function NosActionsChildrensSmileCameroun() {
           data-name="Header"
         >
           <div
-            className="bg-[#004484] content-stretch flex flex-col items-start px-[56px] py-[6px] relative shrink-0 w-full"
+            className="bg-brand-900 content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full shell"
             data-node-id="5:3202"
             data-name="Background"
           >
             <div
-              className="content-stretch flex items-center justify-between max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex items-center justify-between relative shrink-0 w-full shell"
               data-node-id="5:3203"
               data-name="Container"
             >
@@ -140,7 +140,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#bfd6ff] text-[12px] tracking-[0.6px] uppercase whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-300 text-[12px] tracking-[0.6px] uppercase whitespace-nowrap"
                     data-node-id="5:3219"
                   >
                     <p className="leading-[16px]">
@@ -152,7 +152,7 @@ export default function NosActionsChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="h-[80px] max-w-[1280px] relative shrink-0 w-full"
+            className="h-[80px] relative shrink-0 w-full shell"
             data-node-id="5:3220"
             data-name="Container"
           >
@@ -162,11 +162,11 @@ export default function NosActionsChildrensSmileCameroun() {
               data-name="Container"
             >
               <div
-                className="max-w-[331.2699890136719px] relative rounded-[9999px] shrink-0 size-[32px]"
+                className="max-w-[331.2699890136719px] relative rounded-pill shrink-0 size-[32px]"
                 data-node-id="5:3222"
                 data-name="Profile"
               >
-                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[9999px]">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                   <img
                     alt=""
                     className="absolute left-0 max-w-none size-full top-0"
@@ -185,7 +185,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-[#004484] text-[20px] tracking-[-0.5px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] tracking-[-0.5px] whitespace-nowrap"
                     data-node-id="5:3225"
                   >
                     <p className="leading-[20px]">{`Children's Smile Cameroun`}</p>
@@ -202,7 +202,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#006e2d] text-[11px] tracking-[0.55px] uppercase w-full"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] tracking-[0.55px] uppercase w-full"
                       data-node-id="5:3228"
                     >
                       <p className="leading-[16px]">
@@ -224,7 +224,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3231"
                 >
                   <p className="leading-[20px]">Accueil</p>
@@ -236,7 +236,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3233"
                 >
                   <p className="leading-[20px] mb-0">À</p>
@@ -244,7 +244,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 </div>
               </div>
               <div
-                className="bg-[#0b5cab] content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-[9999px] shrink-0"
+                className="bg-brand-700 content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-pill shrink-0"
                 data-node-id="5:3234"
                 data-name="Link"
               >
@@ -262,7 +262,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3237"
                 >
                   <p className="leading-[20px] mb-0">Nos</p>
@@ -275,7 +275,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3239"
                 >
                   <p className="leading-[20px] mb-0">Notre</p>
@@ -288,7 +288,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3241"
                 >
                   <p className="leading-[20px]">Actualités</p>
@@ -300,7 +300,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3243"
                 >
                   <p className="leading-[20px] mb-0">Nous</p>
@@ -313,7 +313,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3245"
                 >
                   <p className="leading-[20px]">Contact</p>
@@ -326,19 +326,19 @@ export default function NosActionsChildrensSmileCameroun() {
               data-name="Container"
             >
               <div
-                className="bg-white content-stretch drop-shadow-[0px_1px_2px_rgba(0,110,45,0.15)] flex items-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                className="bg-white content-stretch drop-shadow-[0px_1px_2px_rgba(0,110,45,0.15)] flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                 data-node-id="5:3247"
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#006e2d] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3248"
                 >
                   <p className="leading-[20px]">Devenir Partenaire</p>
                 </div>
               </div>
               <div
-                className="bg-[#a33900] content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex items-center px-[20px] py-[10px] relative rounded-[9999px] shrink-0"
+                className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex items-center relative rounded-pill shrink-0 btn-md btn"
                 data-node-id="5:3249"
                 data-name="Link"
               >
@@ -353,7 +353,7 @@ export default function NosActionsChildrensSmileCameroun() {
           </div>
         </div>
         <div
-          className="bg-[#faf8ff] content-stretch flex flex-col items-start min-h-[800px] pt-[80px] relative shrink-0 w-full"
+          className="bg-surface-subtle content-stretch flex flex-col items-start min-h-[800px] pt-[80px] relative shrink-0 w-full"
           data-node-id="5:2787"
           data-name="Main"
         >
@@ -368,7 +368,7 @@ export default function NosActionsChildrensSmileCameroun() {
               data-name="Section - Top Editorial Header & Vision"
             >
               <div
-                className="content-stretch flex flex-col gap-[48px] items-start max-w-[1280px] px-[56px] relative shrink-0 w-full"
+                className="content-stretch flex flex-col gap-[48px] items-start relative shrink-0 w-full shell"
                 data-node-id="5:2790"
                 data-name="Container"
               >
@@ -378,7 +378,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="bg-[#d5e3ff] content-stretch flex gap-[8px] items-center px-[14px] py-[6px] relative rounded-[9999px] shrink-0"
+                    className="bg-brand-100 content-stretch flex gap-[8px] items-center px-[14px] py-[6px] relative rounded-pill shrink-0"
                     data-node-id="5:2792"
                     data-name="Background"
                   >
@@ -394,7 +394,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       />
                     </div>
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                       data-node-id="5:2795"
                     >
                       <p className="leading-[16px]">{`STATUTS OFFICIELS • CADRE D'INTERVENTION GLOBAL`}</p>
@@ -406,7 +406,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Heading 1"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:ExtraBold'] font-extrabold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[48px] tracking-[-1.2px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:ExtraBold'] font-extrabold justify-center leading-[0] relative shrink-0 text-ink-900 text-[48px] tracking-[-1.2px] whitespace-nowrap"
                       data-node-id="5:2797"
                     >
                       <p className="leading-[56px] mb-0">{`Une action intégrée pour l'école et`}</p>
@@ -419,7 +419,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[18px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[18px] whitespace-nowrap"
                       data-node-id="5:2799"
                     >
                       <p className="leading-[29.25px] mb-0">{`Pour qu'un enfant de 3 à 15 ans s'épanouisse et apprenne durablement, un cahier ne suffit pas.`}</p>
@@ -439,7 +439,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Quick Metrics Strip"
                 >
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-card"
                     data-node-id="5:2801"
                     data-name="Background+Shadow"
                   >
@@ -449,7 +449,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[32px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[32px] w-full"
                         data-node-id="5:2803"
                       >
                         <p className="leading-[40px]">8 Piliers</p>
@@ -461,7 +461,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[12px] tracking-[0.6px] uppercase w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] tracking-[0.6px] uppercase w-full"
                         data-node-id="5:2805"
                       >
                         <p className="leading-[16px]">INTERVENTION 360°</p>
@@ -469,7 +469,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-card"
                     data-node-id="5:2806"
                     data-name="Background+Shadow"
                   >
@@ -479,7 +479,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#006e2d] text-[32px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[32px] w-full"
                         data-node-id="5:2808"
                       >
                         <p className="leading-[40px]">100%</p>
@@ -491,7 +491,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[12px] tracking-[0.6px] uppercase w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] tracking-[0.6px] uppercase w-full"
                         data-node-id="5:2810"
                       >
                         <p className="leading-[16px]">{`ARTISANS & BOIS LOCAUX`}</p>
@@ -499,7 +499,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-card"
                     data-node-id="5:2811"
                     data-name="Background+Shadow"
                   >
@@ -509,7 +509,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#a33900] text-[32px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-700 text-[32px] w-full"
                         data-node-id="5:2813"
                       >
                         <p className="leading-[40px]">3 à 15 ans</p>
@@ -521,7 +521,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[12px] tracking-[0.6px] uppercase w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] tracking-[0.6px] uppercase w-full"
                         data-node-id="5:2815"
                       >
                         <p className="leading-[16px]">{`MATERNELLE & PRIMAIRE`}</p>
@@ -529,7 +529,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-[12px]"
+                    className="bg-white content-stretch drop-shadow-card flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[20px] relative rounded-card"
                     data-node-id="5:2816"
                     data-name="Background+Shadow"
                   >
@@ -551,7 +551,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[12px] tracking-[0.6px] uppercase w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] tracking-[0.6px] uppercase w-full"
                         data-node-id="5:2820"
                       >
                         <p className="leading-[16px]">PÉRENNITÉ OUVRAGES</p>
@@ -567,7 +567,7 @@ export default function NosActionsChildrensSmileCameroun() {
               data-name="Section - Editorial Visual Hook:margin"
             >
               <div
-                className="absolute bg-[#004484] content-stretch flex flex-col items-start left-[56px] overflow-clip right-[56px] rounded-[12px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] top-[-16px]"
+                className="absolute bg-brand-900 content-stretch flex flex-col items-start overflow-clip rounded-card shadow-hero top-[-16px] shell-abs"
                 data-node-id="5:2822"
                 data-name="Section - Editorial Visual Hook"
               >
@@ -602,7 +602,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[11px] tracking-[1.1px] uppercase w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[11px] tracking-[1.1px] uppercase w-full"
                         data-node-id="5:2827"
                       >
                         <p className="leading-[16px]">
@@ -612,7 +612,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="content-stretch flex flex-col items-start max-w-[768px] relative shrink-0 w-[768px]"
+                    className="content-stretch flex flex-col items-start relative shell-narrow"
                     data-node-id="5:2828"
                     data-name="Blockquote"
                   >
@@ -630,7 +630,7 @@ export default function NosActionsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="content-stretch flex flex-col gap-[48px] items-start max-w-[1280px] pb-[80px] px-[56px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[48px] items-start pb-[80px] relative shrink-0 w-full shell"
               data-node-id="5:2830"
               data-name="Section - 8 Pillars Grid"
             >
@@ -645,13 +645,13 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Paragraph"
                 >
                   <div
-                    className="flex flex-col justify-center relative shrink-0 text-[#006e2d] text-[11px] tracking-[0.55px] uppercase"
+                    className="flex flex-col justify-center relative shrink-0 text-accent-700 text-[11px] tracking-[0.55px] uppercase"
                     data-node-id="5:2833"
                   >
                     <p className="leading-[16px]">{`CATALOGUE D'ENGAGEMENTS`}</p>
                   </div>
                   <div
-                    className="flex flex-col justify-center relative shrink-0 text-[#131b2e] text-[32px]"
+                    className="flex flex-col justify-center relative shrink-0 text-ink-900 text-[32px]"
                     data-node-id="5:2834"
                   >
                     <p className="leading-[40px]">
@@ -665,7 +665,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                     data-node-id="5:2836"
                   >
                     <p className="leading-[24px] mb-0">
@@ -686,7 +686,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Container"
               >
                 <div
-                  className="bg-white col-1 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-1 self-start shrink-0"
+                  className="bg-white col-1 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-1 self-start shrink-0"
                   data-node-id="5:2838"
                   data-name="Article - Pilier 1"
                 >
@@ -701,12 +701,12 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-brand-100 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2841"
                         data-name="Background"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                           data-node-id="5:2842"
                         >
                           <p className="leading-[16px]">PILIER 01</p>
@@ -736,7 +736,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2847"
                       >
                         <p className="leading-[28px]">{`Éducation & Kits Scolaires`}</p>
@@ -754,7 +754,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2850"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -773,7 +773,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                    className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                     data-node-id="5:2851"
                     data-name="Background"
                   >
@@ -794,7 +794,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:2855"
                       >
                         <p className="leading-[16px] mb-0">{`Cahiers protégés, ardoises sans éclats &`}</p>
@@ -818,7 +818,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:2859"
                       >
                         <p className="leading-[16px]">
@@ -829,7 +829,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-2 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-1 self-start shrink-0"
+                  className="bg-white col-2 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-1 self-start shrink-0"
                   data-node-id="5:2860"
                   data-name="Article - Pilier 2"
                 >
@@ -844,12 +844,12 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#7ffc97] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-accent-200 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2863"
                         data-name="Background"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#002109] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                           data-node-id="5:2864"
                         >
                           <p className="leading-[16px]">PILIER 02</p>
@@ -879,7 +879,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2869"
                       >
                         <p className="leading-[28px]">{`Infrastructures & Cadre de Vie`}</p>
@@ -897,7 +897,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2872"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -916,7 +916,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                    className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                     data-node-id="5:2873"
                     data-name="Background"
                   >
@@ -937,7 +937,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:2877"
                       >
                         <p className="leading-[16px] mb-0">
@@ -963,7 +963,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:2881"
                       >
                         <p className="leading-[16px]">
@@ -974,7 +974,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-3 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-1 self-start shrink-0"
+                  className="bg-white col-3 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-1 self-start shrink-0"
                   data-node-id="5:2882"
                   data-name="Article - Pilier 3"
                 >
@@ -989,7 +989,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#ffdbce] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-warn-100 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2885"
                         data-name="Background"
                       >
@@ -1024,7 +1024,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2891"
                       >
                         <p className="leading-[28px]">{`Bibliothèques & Lecture`}</p>
@@ -1042,7 +1042,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2894"
                       >
                         <p className="leading-[22.75px] mb-0">{`Stimulation de l'imaginaire et maîtrise de l'écrit.`}</p>
@@ -1062,7 +1062,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Margin"
                   >
                     <div
-                      className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                       data-node-id="5:2896"
                       data-name="Background"
                     >
@@ -1083,7 +1083,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2900"
                         >
                           <p className="leading-[16px]">
@@ -1108,7 +1108,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2904"
                         >
                           <p className="leading-[16px]">
@@ -1120,7 +1120,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-1 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-2 self-start shrink-0"
+                  className="bg-white col-1 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-2 self-start shrink-0"
                   data-node-id="5:2905"
                   data-name="Article - Pilier 4"
                 >
@@ -1135,12 +1135,12 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-brand-100 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2908"
                         data-name="Background"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                           data-node-id="5:2909"
                         >
                           <p className="leading-[16px]">PILIER 04</p>
@@ -1170,7 +1170,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2914"
                       >
                         <p className="leading-[28px] mb-0">{`Eau Potable & Assainissement`}</p>
@@ -1189,7 +1189,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2917"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -1202,7 +1202,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                    className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                     data-node-id="5:2918"
                     data-name="Background"
                   >
@@ -1223,7 +1223,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:2922"
                       >
                         <p className="leading-[16px] mb-0">
@@ -1249,7 +1249,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:2926"
                       >
                         <p className="leading-[16px] mb-0">
@@ -1261,7 +1261,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-2 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-2 self-start shrink-0"
+                  className="bg-white col-2 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-2 self-start shrink-0"
                   data-node-id="5:2927"
                   data-name="Article - Pilier 5"
                 >
@@ -1276,12 +1276,12 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#7ffc97] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-accent-200 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2930"
                         data-name="Background"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#002109] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                           data-node-id="5:2931"
                         >
                           <p className="leading-[16px]">PILIER 05</p>
@@ -1311,7 +1311,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2936"
                       >
                         <p className="leading-[28px]">{`Santé & Secourisme Scolaire`}</p>
@@ -1329,7 +1329,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2939"
                       >
                         <p className="leading-[22.75px] mb-0">{`Mise en place de trousses d'urgence garnies et`}</p>
@@ -1349,7 +1349,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Margin"
                   >
                     <div
-                      className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                       data-node-id="5:2941"
                       data-name="Background"
                     >
@@ -1370,7 +1370,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2945"
                         >
                           <p className="leading-[16px] mb-0">
@@ -1398,7 +1398,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2949"
                         >
                           <p className="leading-[16px] mb-0">
@@ -1411,7 +1411,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-3 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-2 self-start shrink-0"
+                  className="bg-white col-3 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-2 self-start shrink-0"
                   data-node-id="5:2950"
                   data-name="Article - Pilier 6"
                 >
@@ -1426,7 +1426,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#ffdbce] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-warn-100 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2953"
                         data-name="Background"
                       >
@@ -1461,7 +1461,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2959"
                       >
                         <p className="leading-[28px]">Appui aux Enseignants</p>
@@ -1479,7 +1479,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2962"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -1503,7 +1503,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Margin"
                   >
                     <div
-                      className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                       data-node-id="5:2964"
                       data-name="Background"
                     >
@@ -1524,7 +1524,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2968"
                         >
                           <p className="leading-[16px] mb-0">
@@ -1550,7 +1550,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2972"
                         >
                           <p className="leading-[16px] mb-0">
@@ -1563,7 +1563,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-1 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-3 self-start shrink-0"
+                  className="bg-white col-1 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-3 self-start shrink-0"
                   data-node-id="5:2973"
                   data-name="Article - Pilier 7"
                 >
@@ -1578,12 +1578,12 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-brand-100 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2976"
                         data-name="Background"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                           data-node-id="5:2977"
                         >
                           <p className="leading-[16px]">PILIER 07</p>
@@ -1613,7 +1613,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:2982"
                       >
                         <p className="leading-[28px]">{`Culture & Bilinguisme National`}</p>
@@ -1631,7 +1631,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:2985"
                       >
                         <p className="leading-[22.75px] mb-0">{`Promotion de l'harmonie et du vivre-ensemble`}</p>
@@ -1649,7 +1649,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Margin"
                   >
                     <div
-                      className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                      className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                       data-node-id="5:2987"
                       data-name="Background"
                     >
@@ -1670,7 +1670,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2991"
                         >
                           <p className="leading-[16px]">{`Journées d'expression bilingue inter-écoles`}</p>
@@ -1693,7 +1693,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:2995"
                         >
                           <p className="leading-[16px] mb-0">
@@ -1706,7 +1706,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-white col-2 content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-3 self-start shrink-0"
+                  className="bg-white col-2 content-stretch drop-shadow-card flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-3 self-start shrink-0"
                   data-node-id="5:2996"
                   data-name="Article - Pilier 8"
                 >
@@ -1721,12 +1721,12 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#7ffc97] content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                        className="bg-accent-200 content-stretch flex flex-col items-start px-[12px] py-[4px] relative rounded-pill shrink-0"
                         data-node-id="5:2999"
                         data-name="Background"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#002109] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                           data-node-id="5:3000"
                         >
                           <p className="leading-[16px]">PILIER 08</p>
@@ -1756,7 +1756,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Heading 3"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[20px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[20px] w-full"
                         data-node-id="5:3005"
                       >
                         <p className="leading-[28px] mb-0">{`Sport & Épanouissement`}</p>
@@ -1775,7 +1775,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:3008"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -1794,7 +1794,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[#f2f3ff] content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-[8px] shrink-0 w-full"
+                    className="bg-surface-muted content-stretch flex flex-col gap-[7.5px] items-start p-[16px] relative rounded-control shrink-0 w-full"
                     data-node-id="5:3009"
                     data-name="Background"
                   >
@@ -1815,7 +1815,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:3013"
                       >
                         <p className="leading-[16px]">
@@ -1840,7 +1840,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                         data-node-id="5:3017"
                       >
                         <p className="leading-[16px] mb-0">{`Jeux de chasubles d'équipes et poteaux de`}</p>
@@ -1850,12 +1850,12 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#004484] col-3 content-stretch flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-[12px] row-3 self-start shrink-0"
+                  className="bg-brand-900 col-3 content-stretch flex flex-col items-start justify-between justify-self-stretch p-[24px] relative rounded-card row-3 self-start shrink-0"
                   data-node-id="5:3018"
                   data-name="Article - Deep Commitment Card"
                 >
                   <div
-                    className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.01px_-0.02px_0] rounded-[12px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]"
+                    className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.01px_-0.02px_0] rounded-card shadow-float"
                     data-node-id="5:3019"
                     data-name="Article - Deep Commitment Card:shadow"
                   />
@@ -1865,12 +1865,12 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="bg-[#0b5cab] content-stretch flex items-start px-[12px] py-[3px] relative rounded-[9999px] shrink-0"
+                      className="bg-brand-700 content-stretch flex items-start px-[12px] py-[3px] relative rounded-pill shrink-0"
                       data-node-id="5:3021"
                       data-name="Background"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#bfd6ff] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-300 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                         data-node-id="5:3022"
                       >
                         <p className="leading-[16px]">{`ÉTHIQUE & RIGUEUR`}</p>
@@ -1897,7 +1897,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#d5e3ff] text-[14px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-brand-100 text-[14px] w-full"
                         data-node-id="5:3026"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -1919,12 +1919,12 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="bg-white content-stretch flex gap-[8px] items-center px-[20px] py-[10px] relative rounded-[9999px] shrink-0"
+                      className="bg-white content-stretch flex gap-[8px] items-center relative rounded-pill shrink-0 btn-md btn"
                       data-node-id="5:3028"
                       data-name="Link"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                         data-node-id="5:3029"
                       >
                         <p className="leading-[20px]">
@@ -1948,22 +1948,22 @@ export default function NosActionsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="bg-[#f2f3ff] content-stretch flex flex-col items-start py-[96px] relative shrink-0 w-full"
+              className="bg-surface-muted content-stretch flex flex-col items-start py-[96px] relative shrink-0 w-full"
               data-node-id="5:3032"
               data-name="Section - Ground Methodology (3 Steps)"
             >
               <div
-                className="content-stretch flex flex-col gap-[64px] items-center max-w-[1280px] px-[56px] relative shrink-0 w-full"
+                className="content-stretch flex flex-col gap-[64px] items-center relative shrink-0 w-full shell"
                 data-node-id="5:3033"
                 data-name="Container"
               >
                 <div
-                  className="content-stretch flex flex-col gap-[8px] items-center max-w-[768px] pt-[6px] relative shrink-0 w-[768px]"
+                  className="content-stretch flex flex-col gap-[8px] items-center pt-[6px] relative shell-narrow"
                   data-node-id="5:3034"
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] text-center tracking-[0.55px] uppercase whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] text-center tracking-[0.55px] uppercase whitespace-nowrap"
                     data-node-id="5:3035"
                   >
                     <p className="leading-[16px]">PROTOCOLE DE DÉPLOIEMENT</p>
@@ -1974,7 +1974,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Heading 2"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[32px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[32px] text-center whitespace-nowrap"
                       data-node-id="5:3037"
                     >
                       <p className="leading-[40px]">{`Notre Méthode d'Action sur le Terrain`}</p>
@@ -1986,7 +1986,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] text-center whitespace-nowrap"
                       data-node-id="5:3039"
                     >
                       <p className="leading-[24px] mb-0">{`Aucun projet n'est parachuté depuis Yaoundé ou Douala. L'appropriation communautaire garantit la`}</p>
@@ -2002,7 +2002,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="bg-white drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex-[1_0_0] h-[344.75px] min-w-px relative rounded-[12px]"
+                    className="bg-white drop-shadow-card flex-[1_0_0] h-[344.75px] min-w-px relative rounded-card"
                     data-node-id="5:3041"
                     data-name="Etape 1"
                   >
@@ -2012,7 +2012,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="bg-[#004484] content-stretch flex items-center justify-center relative rounded-[9999px] shrink-0 size-[48px]"
+                        className="bg-brand-900 content-stretch flex items-center justify-center relative rounded-pill shrink-0 size-[48px]"
                         data-node-id="5:3043"
                         data-name="Background"
                       >
@@ -2035,7 +2035,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         data-name="Heading 3"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                           data-node-id="5:3047"
                         >
                           <p className="leading-[24px]">
@@ -2050,7 +2050,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:3049"
                       >
                         <p className="leading-[22.75px] mb-0">{`Rencontre solennelle avec l'Association des`}</p>
@@ -2072,7 +2072,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="border-[#eaedff] border-solid border-t content-stretch flex gap-[6px] items-center pt-[17px] relative shrink-0 w-full"
+                        className="border-surface-tint border-solid border-t content-stretch flex gap-[6px] items-center pt-[17px] relative shrink-0 w-full"
                         data-node-id="5:3051"
                         data-name="HorizontalBorder"
                       >
@@ -2088,7 +2088,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[12px] whitespace-nowrap"
                           data-node-id="5:3054"
                         >
                           <p className="leading-[16px]">
@@ -2099,7 +2099,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex-[1_0_0] h-[344.75px] min-w-px relative rounded-[12px]"
+                    className="bg-white drop-shadow-card flex-[1_0_0] h-[344.75px] min-w-px relative rounded-card"
                     data-node-id="5:3055"
                     data-name="Etape 2"
                   >
@@ -2109,7 +2109,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="bg-[#006e2d] content-stretch flex items-center justify-center relative rounded-[9999px] shrink-0 size-[48px]"
+                        className="bg-accent-700 content-stretch flex items-center justify-center relative rounded-pill shrink-0 size-[48px]"
                         data-node-id="5:3057"
                         data-name="Background"
                       >
@@ -2132,7 +2132,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         data-name="Heading 3"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                           data-node-id="5:3061"
                         >
                           <p className="leading-[24px]">{`Artisans & Économie Locale`}</p>
@@ -2145,7 +2145,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:3063"
                       >
                         <p className="leading-[22.75px] mb-0">
@@ -2171,7 +2171,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="border-[#eaedff] border-solid border-t content-stretch flex gap-[6px] items-center pt-[17px] relative shrink-0 w-full"
+                        className="border-surface-tint border-solid border-t content-stretch flex gap-[6px] items-center pt-[17px] relative shrink-0 w-full"
                         data-node-id="5:3065"
                         data-name="HorizontalBorder"
                       >
@@ -2187,7 +2187,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#006e2d] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[12px] whitespace-nowrap"
                           data-node-id="5:3068"
                         >
                           <p className="leading-[16px]">
@@ -2198,7 +2198,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex-[1_0_0] h-[344.75px] min-w-px relative rounded-[12px]"
+                    className="bg-white drop-shadow-card flex-[1_0_0] h-[344.75px] min-w-px relative rounded-card"
                     data-node-id="5:3069"
                     data-name="Etape 3"
                   >
@@ -2208,7 +2208,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="bg-[#a33900] content-stretch flex items-center justify-center relative rounded-[9999px] shrink-0 size-[48px]"
+                        className="bg-warn-700 content-stretch flex items-center justify-center relative rounded-pill shrink-0 size-[48px]"
                         data-node-id="5:3071"
                         data-name="Background"
                       >
@@ -2231,7 +2231,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         data-name="Heading 3"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                           data-node-id="5:3075"
                         >
                           <p className="leading-[24px]">
@@ -2246,7 +2246,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                         data-node-id="5:3077"
                       >
                         <p className="leading-[22.75px] mb-0">{`Mise en place et formation d'un comité mixte`}</p>
@@ -2264,7 +2264,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="border-[#eaedff] border-solid border-t content-stretch flex gap-[6px] items-center pt-[17px] relative shrink-0 w-full"
+                        className="border-surface-tint border-solid border-t content-stretch flex gap-[6px] items-center pt-[17px] relative shrink-0 w-full"
                         data-node-id="5:3079"
                         data-name="HorizontalBorder"
                       >
@@ -2280,7 +2280,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#a33900] text-[12px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-warn-700 text-[12px] whitespace-nowrap"
                           data-node-id="5:3082"
                         >
                           <p className="leading-[16px]">
@@ -2294,7 +2294,7 @@ export default function NosActionsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="content-stretch flex flex-col items-start max-w-[1280px] px-[56px] py-[64px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col items-start py-[64px] relative shrink-0 w-full shell"
               data-node-id="5:3083"
               data-name="Section - Photo-Reportage Strip from the field"
             >
@@ -2314,7 +2314,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#006e2d] text-[11px] tracking-[0.55px] uppercase w-full"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] tracking-[0.55px] uppercase w-full"
                       data-node-id="5:3087"
                     >
                       <p className="leading-[16px]">
@@ -2328,7 +2328,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Heading 2"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[32px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[32px] w-full"
                       data-node-id="5:3089"
                     >
                       <p className="leading-[40px] mb-0">
@@ -2346,7 +2346,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] w-full"
                       data-node-id="5:3091"
                     >
                       <p className="leading-[26px] mb-0">
@@ -2370,12 +2370,12 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Live status widget:margin"
                   >
                     <div
-                      className="bg-[rgba(218,226,253,0.6)] content-stretch flex gap-[16px] items-center p-[16px] relative rounded-[12px] shrink-0 w-full"
+                      className="bg-[rgba(218,226,253,0.6)] content-stretch flex gap-[16px] items-center p-[16px] relative rounded-card shrink-0 w-full"
                       data-node-id="5:3093"
                       data-name="Live status widget"
                     >
                       <div
-                        className="bg-[#006e2d] relative rounded-[9999px] shrink-0 size-[12px]"
+                        className="bg-accent-700 relative rounded-pill shrink-0 size-[12px]"
                         data-node-id="5:3094"
                         data-name="Background"
                       />
@@ -2390,7 +2390,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] uppercase whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] uppercase whitespace-nowrap"
                             data-node-id="5:3097"
                           >
                             <p className="leading-[16px]">
@@ -2404,7 +2404,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] whitespace-nowrap"
                             data-node-id="5:3099"
                           >
                             <p className="leading-[24px]">{`EP d'Obala - 120 bancs & 2 blocs sanitaires`}</p>
@@ -2425,7 +2425,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[256px] items-start justify-center overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0 w-full"
+                      className="bg-surface-tint content-stretch flex flex-col h-[256px] items-start justify-center overflow-clip relative rounded-card shadow-raised shrink-0 w-full"
                       data-node-id="5:3102"
                       data-name="Background+Shadow"
                     >
@@ -2451,7 +2451,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#727783] text-[11px] text-center tracking-[0.55px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-center tracking-[0.55px] uppercase whitespace-nowrap"
                         data-node-id="5:3105"
                       >
                         <p className="leading-[16px]">
@@ -2466,7 +2466,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[256px] items-start justify-center overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0 w-full"
+                      className="bg-surface-tint content-stretch flex flex-col h-[256px] items-start justify-center overflow-clip relative rounded-card shadow-raised shrink-0 w-full"
                       data-node-id="5:3107"
                       data-name="Background+Shadow"
                     >
@@ -2492,7 +2492,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#727783] text-[11px] text-center tracking-[0.55px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-center tracking-[0.55px] uppercase whitespace-nowrap"
                         data-node-id="5:3110"
                       >
                         <p className="leading-[16px]">
@@ -2505,22 +2505,22 @@ export default function NosActionsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="bg-[rgba(218,226,253,0.4)] content-stretch flex flex-col items-start px-[56px] py-[64px] relative shrink-0 w-full"
+              className="bg-[rgba(218,226,253,0.4)] content-stretch flex flex-col items-start py-[64px] relative shrink-0 w-full shell"
               data-node-id="5:3111"
               data-name="Section - Interactive Action Callout"
             >
               <div
-                className="bg-white content-stretch flex items-center justify-between p-[48px] relative rounded-[16px] shrink-0 w-full"
+                className="bg-white content-stretch flex items-center justify-between p-[48px] relative rounded-panel shrink-0 w-full"
                 data-node-id="5:3112"
                 data-name="Background"
               >
                 <div
-                  className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[16px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
+                  className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-panel shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
                   data-node-id="5:3113"
                   data-name="Overlay+Shadow"
                 />
                 <div
-                  className="content-stretch flex flex-col gap-[12px] items-start max-w-[672px] relative shrink-0"
+                  className="content-stretch flex flex-col gap-[12px] items-start relative shell-prose"
                   data-node-id="5:3114"
                   data-name="Container"
                 >
@@ -2530,7 +2530,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#a33900] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-700 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                       data-node-id="5:3116"
                     >
                       <p className="leading-[16px]">AGIR AVEC NOUS</p>
@@ -2542,7 +2542,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Heading 2"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[32px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[32px] whitespace-nowrap"
                       data-node-id="5:3118"
                     >
                       <p className="leading-[40px] mb-0">
@@ -2560,7 +2560,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                       data-node-id="5:3120"
                     >
                       <p className="leading-[24px] mb-0">
@@ -2583,12 +2583,12 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="bg-[#eaedff] content-stretch flex flex-col items-center px-[24px] py-[14px] relative rounded-[9999px] shrink-0"
+                    className="bg-surface-tint content-stretch flex flex-col items-center relative rounded-pill shrink-0 btn-md btn"
                     data-node-id="5:3122"
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                       data-node-id="5:3123"
                     >
                       <p className="leading-[20px]">
@@ -2597,12 +2597,12 @@ export default function NosActionsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[#a33900] content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex flex-col items-center px-[32px] py-[14px] relative rounded-[9999px] shrink-0"
+                    className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex flex-col items-center min-w-0 relative rounded-pill btn-md btn"
                     data-node-id="5:3124"
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] min-w-0 not-italic relative text-[14px] text-center text-white"
                       data-node-id="5:3125"
                     >
                       <p className="leading-[20px]">Soutenir une action</p>
@@ -2619,7 +2619,7 @@ export default function NosActionsChildrensSmileCameroun() {
           data-name="Footer"
         >
           <div
-            className="content-stretch flex flex-col gap-[48px] items-start max-w-[1280px] pb-[48px] pt-[64px] px-[56px] relative shrink-0 w-full"
+            className="content-stretch flex flex-col gap-[48px] items-start pb-[48px] pt-[64px] relative shrink-0 w-full shell"
             data-node-id="5:3127"
             data-name="Container"
           >
@@ -2639,12 +2639,12 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="bg-white content-stretch flex items-center justify-center relative rounded-[9999px] shrink-0 size-[40px]"
+                    className="bg-white content-stretch flex items-center justify-center relative rounded-pill shrink-0 size-[40px]"
                     data-node-id="5:3131"
                     data-name="Background"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[20px] text-center whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] text-center whitespace-nowrap"
                       data-node-id="5:3132"
                     >
                       <p className="leading-[28px]">CS</p>
@@ -2673,7 +2673,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                         data-node-id="5:3137"
                       >
                         <p className="leading-[16px]">
@@ -2689,7 +2689,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] whitespace-nowrap"
                     data-node-id="5:3139"
                   >
                     <p className="leading-[22.75px] mb-0">
@@ -2705,7 +2705,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="absolute bg-[rgba(218,226,253,0.1)] content-stretch flex gap-[8px] items-center left-0 px-[12px] py-[6px] rounded-[9999px] top-[167px]"
+                  className="absolute bg-[rgba(218,226,253,0.1)] content-stretch flex gap-[8px] items-center left-0 px-[12px] py-[6px] rounded-pill top-[167px]"
                   data-node-id="5:3140"
                   data-name="Overlay"
                 >
@@ -2758,7 +2758,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3149"
                     >
                       <p className="leading-[20px]">{`Assistance nutritionnelle & Urgences`}</p>
@@ -2770,7 +2770,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3151"
                     >
                       <p className="leading-[20px]">{`Éducation & Bourses scolaires`}</p>
@@ -2782,7 +2782,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3153"
                     >
                       <p className="leading-[20px]">{`Santé infantile & Eau potable`}</p>
@@ -2794,7 +2794,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3155"
                     >
                       <p className="leading-[20px]">{`Insertion & Développement local`}</p>
@@ -2806,7 +2806,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3157"
                     >
                       <p className="leading-[20px]">{`Protection & Droits de l'enfant`}</p>
@@ -2842,7 +2842,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3163"
                     >
                       <p className="leading-[20px]">Notre gouvernance</p>
@@ -2854,7 +2854,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3165"
                     >
                       <p className="leading-[20px]">Rapports financiers</p>
@@ -2866,7 +2866,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3167"
                     >
                       <p className="leading-[20px]">Suivi de projets</p>
@@ -2878,7 +2878,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Link"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3169"
                     >
                       <p className="leading-[20px]">Journal des actions</p>
@@ -2895,7 +2895,7 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#7ffc97] text-[12px] tracking-[0.6px] uppercase w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-200 text-[12px] tracking-[0.6px] uppercase w-full"
                         data-node-id="5:3172"
                       >
                         <p className="leading-[16px] mb-0">{`CONFORMITÉ CEMAC &`}</p>
@@ -2929,7 +2929,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="bg-[rgba(218,226,253,0.1)] content-stretch flex gap-[12px] items-center p-[12px] relative rounded-[8px] shrink-0 w-full"
+                    className="bg-[rgba(218,226,253,0.1)] content-stretch flex gap-[12px] items-center p-[12px] relative rounded-control shrink-0 w-full"
                     data-node-id="5:3177"
                     data-name="Overlay"
                   >
@@ -2955,7 +2955,7 @@ export default function NosActionsChildrensSmileCameroun() {
                         data-name="Container"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#c2c6d3] text-[11px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-300 text-[11px] uppercase whitespace-nowrap"
                           data-node-id="5:3182"
                         >
                           <p className="leading-[16px]">PERMANENCE WHATSAPP</p>
@@ -2981,7 +2981,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                       data-node-id="5:3186"
                     >
                       <p className="leading-[20px] mb-0">
@@ -3030,7 +3030,7 @@ export default function NosActionsChildrensSmileCameroun() {
                 data-name="Container"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] whitespace-nowrap"
                   data-node-id="5:3193"
                 >
                   <p className="leading-[20px] mb-0">{`© 2025 Children's Smile Cameroun. Organisation à But Non Lucratif. Tous droits`}</p>
@@ -3048,7 +3048,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[12px] whitespace-nowrap"
                     data-node-id="5:3196"
                   >
                     <p className="leading-[16px]">{`Politique de Sauvegarde de l'Enfance`}</p>
@@ -3060,7 +3060,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[12px] whitespace-nowrap"
                     data-node-id="5:3198"
                   >
                     <p className="leading-[16px]">{`Mentions Légales & RGPD`}</p>
@@ -3072,7 +3072,7 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[12px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[12px] whitespace-nowrap"
                     data-node-id="5:3200"
                   >
                     <p className="leading-[16px]">{`Code d'Éthique & Transparence`}</p>

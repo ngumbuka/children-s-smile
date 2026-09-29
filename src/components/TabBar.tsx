@@ -85,16 +85,16 @@ export function TabBar({
               aria-controls={panelId}
               aria-selected={selected}
               className={[
-                'flex items-center gap-2 rounded-[9999px] px-4 py-2 text-sm font-["Inter:Semi_Bold"] font-semibold',
+                'flex items-center gap-2 rounded-pill px-4 py-2 text-sm font-["Inter:Semi_Bold"] font-semibold',
                 'transition-colors duration-150 cursor-pointer whitespace-nowrap',
                 'shrink-0 max-w-full',
                 variant === 'pill'
                   ? selected
-                    ? 'bg-[#004484] text-white drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)]'
-                    : 'bg-[#eaedff] text-[#424751] hover:bg-[#dde1ff]'
+                    ? 'bg-brand-900 text-white drop-shadow-card'
+                    : 'bg-surface-tint text-ink-700 hover:bg-[#dde1ff]'
                   : selected
-                    ? 'bg-[#0b5cab] text-white drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)]'
-                    : 'bg-white text-[#424751] hover:bg-[#f2f3ff] border border-[#eaedff]',
+                    ? 'bg-brand-700 text-white drop-shadow-card'
+                    : 'bg-white text-ink-700 hover:bg-surface-muted border border-surface-tint',
               ].join(' ')}
               data-filter={item.value}
               onClick={() => onChange(item.value)}

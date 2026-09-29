@@ -146,32 +146,32 @@ export default function NosProjetsChildrensSmileCameroun() {
         data-name="Nos projets - Children's Smile Cameroun"
       >
         <div
-          className="bg-[#faf8ff] content-stretch flex flex-col items-start min-h-[800px] pt-[80px] relative shrink-0 w-full"
+          className="bg-surface-subtle content-stretch flex flex-col items-start min-h-[800px] pt-[80px] relative shrink-0 w-full"
           data-node-id="5:3252"
           data-name="Main"
         >
           <div
-            className="bg-[#faf8ff] content-stretch flex flex-col items-start relative shrink-0 w-full"
+            className="bg-surface-subtle content-stretch flex flex-col items-start relative shrink-0 w-full"
             data-node-id="5:3253"
             data-name="Container"
           >
             <div
-              className="bg-[#004484] content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full"
+              className="bg-brand-900 content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full"
               data-node-id="5:3254"
               data-name="Section - Immersive Editorial Top Scrim with Contextual Counter"
             >
               <div
-                className="absolute bg-[rgba(17,94,174,0.3)] blur-[32px] right-[-96px] rounded-[9999px] size-[384px] top-[-96px]"
+                className="absolute bg-[rgba(17,94,174,0.3)] blur-[32px] right-[-96px] rounded-pill size-[384px] top-[-96px]"
                 data-node-id="5:3255"
                 data-name="Overlay+Blur"
               />
               <div
-                className="absolute bg-[rgba(0,110,45,0.2)] blur-[20px] bottom-[-79.75px] h-[320px] left-[33.33%] right-[41.67%] rounded-[9999px]"
+                className="absolute bg-[rgba(0,110,45,0.2)] blur-[20px] bottom-[-79.75px] h-[320px] left-[33.33%] right-[41.67%] rounded-pill"
                 data-node-id="5:3256"
                 data-name="Overlay+Blur"
               />
               <div
-                className="content-stretch flex flex-col gap-[16px] items-start max-w-[1280px] pb-[80px] pt-[56px] px-[56px] relative shrink-0 w-full"
+                className="content-stretch flex flex-col gap-[16px] items-start pb-[80px] pt-[56px] relative shrink-0 w-full shell"
                 data-node-id="5:3257"
                 data-name="Container"
               >
@@ -181,17 +181,17 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.15)] content-stretch flex gap-[6px] items-center px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                    className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.15)] content-stretch flex gap-[6px] items-center px-[12px] py-[4px] relative rounded-pill shrink-0"
                     data-node-id="5:3259"
                     data-name="Overlay+OverlayBlur"
                   >
                     <div
-                      className="bg-[#7ffc97] relative rounded-[9999px] shrink-0 size-[8px]"
+                      className="bg-accent-200 relative rounded-pill shrink-0 size-[8px]"
                       data-node-id="5:3260"
                       data-name="Background"
                     />
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#d5e3ff] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                       data-node-id="5:3261"
                     >
                       <p className="leading-[16px]">{`AUDIT DE TERRAIN & TRANSPARENCE 100%`}</p>
@@ -239,7 +239,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       </div>
                     </div>
                     <div
-                      className="content-stretch flex flex-col items-start max-w-[768px] relative shrink-0 w-full"
+                      className="content-stretch flex flex-col items-start relative w-full shell-narrow"
                       data-node-id="5:3268"
                       data-name="Container"
                     >
@@ -265,7 +265,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex items-center justify-between p-[20px] relative rounded-[12px] shrink-0 w-full"
+                      className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex items-center justify-between p-[20px] relative rounded-card shrink-0 w-full"
                       data-node-id="5:3271"
                       data-name="Overlay+OverlayBlur"
                     >
@@ -280,7 +280,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[32px] whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[32px] whitespace-nowrap"
                             data-node-id="5:3274"
                           >
                             <p className="leading-[40px]">24</p>
@@ -292,7 +292,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#d5e3ff] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                             data-node-id="5:3276"
                           >
                             <p className="leading-[16px]">
@@ -314,7 +314,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       </div>
                     </div>
                     <div
-                      className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex items-center justify-between p-[20px] relative rounded-[12px] shrink-0 w-full"
+                      className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex items-center justify-between p-[20px] relative rounded-card shrink-0 w-full"
                       data-node-id="5:3279"
                       data-name="Overlay+OverlayBlur"
                     >
@@ -329,7 +329,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#ffdbce] text-[32px] whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-100 text-[32px] whitespace-nowrap"
                             data-node-id="5:3282"
                           >
                             <p className="leading-[40px]">14 280</p>
@@ -341,7 +341,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#d5e3ff] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                             data-node-id="5:3284"
                           >
                             <p className="leading-[16px]">
@@ -367,7 +367,7 @@ export default function NosProjetsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="content-stretch flex flex-col gap-[32px] items-start max-w-[1280px] px-[56px] py-[48px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col gap-[32px] items-start py-[48px] relative shrink-0 w-full shell"
               data-node-id="5:3287"
               data-name="Section - Project Catalog Grid"
             >
@@ -387,7 +387,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Heading 2"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[24px] tracking-[-0.6px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-ink-900 text-[24px] tracking-[-0.6px] whitespace-nowrap"
                       data-node-id="5:3291"
                     >
                       <p className="leading-[32px]">{`Projets & Chantiers Actifs`}</p>
@@ -399,7 +399,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="5:3293"
                     >
                       <p className="leading-[20px]">
@@ -409,12 +409,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-[#eaedff] content-stretch flex gap-[8px] items-center px-[12px] py-[6px] relative rounded-[9999px] shrink-0"
+                  className="bg-surface-tint content-stretch flex gap-[8px] items-center px-[12px] py-[6px] relative rounded-pill shrink-0"
                   data-node-id="5:3294"
                   data-name="Background"
                 >
                   <div
-                    className="bg-[#006e2d] relative rounded-[9999px] shrink-0 size-[8px]"
+                    className="bg-accent-700 relative rounded-pill shrink-0 size-[8px]"
                     data-node-id="5:3295"
                     data-name="Background"
                   />
@@ -424,7 +424,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[12px] whitespace-nowrap"
+                      className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
                       data-node-id="5:3297"
                     >
                       <p className="leading-[16px]">
@@ -449,7 +449,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   style={{ display: hiddenProjectRows.has("5:3299") ? "none" : undefined }}
                 >
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
                     data-project-category="school"
                     data-project-region="Est"
                     data-node-id="5:3299"
@@ -457,7 +457,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Article - Projet 1: Réalis"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
+                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
                       data-node-id="5:3300"
                       data-name="Background"
                     >
@@ -477,12 +477,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute bg-[#7cf994] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-[9999px] top-[14px]"
+                        className="absolute bg-accent-300 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
                         data-node-id="5:3302"
                         data-name="Background+Shadow"
                       >
                         <div
-                          className="bg-[#006e2d] relative rounded-[9999px] shrink-0 size-[8px]"
+                          className="bg-accent-700 relative rounded-pill shrink-0 size-[8px]"
                           data-node-id="5:3303"
                           data-name="Background"
                         />
@@ -494,7 +494,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-[9999px]"
+                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-pill"
                         data-node-id="5:3305"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -510,7 +510,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#eef0ff] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
                           data-node-id="5:3308"
                         >
                           <p className="leading-[16px]">Dimako • Est</p>
@@ -533,12 +533,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-[9999px] shrink-0"
+                            className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
                             data-node-id="5:3312"
                             data-name="Background"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004788] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                               data-node-id="5:3313"
                             >
                               <p className="leading-[16px]">{`ÉCOLES & SALLES DE CLASSE`}</p>
@@ -551,7 +551,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                             data-node-id="5:3315"
                           >
                             <p className="leading-[24.75px] mb-0">{`Réhabilitation de l'école primaire`}</p>
@@ -566,7 +566,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:3317"
                           >
                             <p className="leading-[20px] mb-0">
@@ -587,7 +587,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                         <div
-                          className="bg-[#f2f3ff] content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3319"
                           data-name="Background"
                         >
@@ -613,7 +613,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 />
                               </div>
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3324"
                               >
                                 <p className="leading-[24px] mb-0">Impact</p>
@@ -626,7 +626,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#006e2d] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3326"
                               >
                                 <p className="leading-[24px] mb-0">
@@ -637,12 +637,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#eaedff] content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-[9999px] shrink-0 w-full"
+                            className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3327"
                             data-name="Background"
                           >
                             <div
-                              className="bg-[#006e2d] flex-[1_0_0] min-h-px relative rounded-[9999px] w-full"
+                              className="bg-accent-700 flex-[1_0_0] min-h-px relative rounded-pill w-full"
                               data-node-id="5:3328"
                               data-name="Background"
                             />
@@ -653,7 +653,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Container"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#727783] text-[11px] text-right whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-right whitespace-nowrap"
                               data-node-id="5:3330"
                             >
                               <p className="leading-[16px]">100% Réalisé</p>
@@ -677,7 +677,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                               data-node-id="5:3334"
                             >
                               <p className="leading-[20px]">{`Fiche détaillée & Bilan`}</p>
@@ -710,7 +710,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
                     data-project-category="water"
                     data-project-region="Extrême-Nord"
                     data-node-id="5:3339"
@@ -718,7 +718,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Article - Projet 2: En cours (75%)"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
+                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
                       data-node-id="5:3340"
                       data-name="Background"
                     >
@@ -738,12 +738,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute bg-[#ffdbce] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-[9999px] top-[14px]"
+                        className="absolute bg-warn-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
                         data-node-id="5:3342"
                         data-name="Background+Shadow"
                       >
                         <div
-                          className="bg-[#7c2900] relative rounded-[9999px] shrink-0 size-[8px]"
+                          className="bg-warn-900 relative rounded-pill shrink-0 size-[8px]"
                           data-node-id="5:3343"
                           data-name="Background"
                         />
@@ -755,7 +755,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[12.01px] rounded-[9999px]"
+                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[12.01px] rounded-pill"
                         data-node-id="5:3345"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -771,7 +771,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#eef0ff] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
                           data-node-id="5:3348"
                         >
                           <p className="leading-[16px]">Mora • Extrême-Nord</p>
@@ -794,12 +794,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="bg-[#dae2fd] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-[9999px] shrink-0"
+                            className="bg-brand-200 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
                             data-node-id="5:3352"
                             data-name="Background"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                               data-node-id="5:3353"
                             >
                               <p className="leading-[16px]">{`EAU POTABLE & WASH`}</p>
@@ -812,7 +812,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                             data-node-id="5:3355"
                           >
                             <p className="leading-[24.75px] mb-0">{`Forage d'eau potable et bloc`}</p>
@@ -827,7 +827,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:3357"
                           >
                             <p className="leading-[20px] mb-0">{`Création d'un point d'adduction d'eau à 65`}</p>
@@ -846,7 +846,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                         <div
-                          className="bg-[#f2f3ff] content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3359"
                           data-name="Background"
                         >
@@ -872,7 +872,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 />
                               </div>
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3364"
                               >
                                 <p className="leading-[24px]">
@@ -886,7 +886,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3366"
                               >
                                 <p className="leading-[24px]">800 écoliers</p>
@@ -894,12 +894,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#eaedff] h-[10px] overflow-clip relative rounded-[9999px] shrink-0 w-full"
+                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3367"
                             data-name="Background"
                           >
                             <div
-                              className="absolute bg-[#a33900] inset-[0_25.01%_0_0] rounded-[9999px]"
+                              className="absolute bg-warn-700 inset-[0_25.01%_0_0] rounded-pill"
                               data-node-id="5:3368"
                               data-name="Background"
                             />
@@ -915,7 +915,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3371"
                               >
                                 <p className="leading-[16px]">
@@ -929,7 +929,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7c2900] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-900 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3373"
                               >
                                 <p className="leading-[16px]">{`75% financé & réalisé`}</p>
@@ -954,7 +954,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                               data-node-id="5:3377"
                             >
                               <p className="leading-[20px] mb-0">
@@ -964,7 +964,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#a33900] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center pl-[16px] pr-[57.98px] py-[8px] relative rounded-[9999px] shrink-0"
+                            className="bg-warn-700 content-stretch drop-shadow-card flex gap-[6px] items-center pl-[16px] pr-[57.98px] py-[8px] relative rounded-pill shrink-0"
                             data-node-id="5:3378"
                             data-name="Link"
                           >
@@ -994,7 +994,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
                     data-project-category="books"
                     data-project-region="Littoral"
                     data-node-id="5:3382"
@@ -1002,7 +1002,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Article - Projet 3: En cours (40%)"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
+                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
                       data-node-id="5:3383"
                       data-name="Background"
                     >
@@ -1022,12 +1022,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute bg-[#ffdbce] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-[9999px] top-[14px]"
+                        className="absolute bg-warn-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
                         data-node-id="5:3385"
                         data-name="Background+Shadow"
                       >
                         <div
-                          className="bg-[#7c2900] relative rounded-[9999px] shrink-0 size-[8px]"
+                          className="bg-warn-900 relative rounded-pill shrink-0 size-[8px]"
                           data-node-id="5:3386"
                           data-name="Background"
                         />
@@ -1039,7 +1039,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[11.99px] rounded-[9999px]"
+                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[11.99px] rounded-pill"
                         data-node-id="5:3388"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -1055,7 +1055,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#eef0ff] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
                           data-node-id="5:3391"
                         >
                           <p className="leading-[16px]">Penja • Littoral</p>
@@ -1078,12 +1078,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-[9999px] shrink-0"
+                            className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
                             data-node-id="5:3395"
                             data-name="Background"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004788] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                               data-node-id="5:3396"
                             >
                               <p className="leading-[16px]">{`BIBLIOTHÈQUES & LIVRES`}</p>
@@ -1096,7 +1096,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                             data-node-id="5:3398"
                           >
                             <p className="leading-[24.75px] mb-0">
@@ -1111,7 +1111,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:3400"
                           >
                             <p className="leading-[20px] mb-0">{`Acquisition et aménagement d'un fonds`}</p>
@@ -1130,7 +1130,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                         <div
-                          className="bg-[#f2f3ff] content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3402"
                           data-name="Background"
                         >
@@ -1156,7 +1156,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 />
                               </div>
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3407"
                               >
                                 <p className="leading-[24px]">
@@ -1170,7 +1170,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3409"
                               >
                                 <p className="leading-[24px]">1 200 livres</p>
@@ -1178,12 +1178,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#eaedff] h-[10px] overflow-clip relative rounded-[9999px] shrink-0 w-full"
+                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3410"
                             data-name="Background"
                           >
                             <div
-                              className="absolute bg-[#0b5cab] inset-[0_60%_0_0] rounded-[9999px]"
+                              className="absolute bg-brand-700 inset-[0_60%_0_0] rounded-pill"
                               data-node-id="5:3411"
                               data-name="Background"
                             />
@@ -1199,7 +1199,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3414"
                               >
                                 <p className="leading-[16px]">
@@ -1213,7 +1213,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3416"
                               >
                                 <p className="leading-[16px]">{`40% d'avancement`}</p>
@@ -1238,19 +1238,19 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                               data-node-id="5:3420"
                             >
                               <p className="leading-[20px]">Détails du fonds</p>
                             </div>
                           </div>
                           <div
-                            className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                            className="bg-white content-stretch drop-shadow-card flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                             data-node-id="5:3421"
                             data-name="Link"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                               data-node-id="5:3422"
                             >
                               <p className="leading-[20px]">Parrainer</p>
@@ -1268,7 +1268,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   style={{ display: hiddenProjectRows.has("5:3423") ? "none" : undefined }}
                 >
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
                     data-project-category="health"
                     data-project-region="Centre"
                     data-node-id="5:3423"
@@ -1276,7 +1276,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Article - Projet 4: En préparation"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
+                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
                       data-node-id="5:3424"
                       data-name="Background"
                     >
@@ -1296,17 +1296,17 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute bg-[#d5e3ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-[9999px] top-[14px]"
+                        className="absolute bg-brand-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
                         data-node-id="5:3426"
                         data-name="Background+Shadow"
                       >
                         <div
-                          className="bg-[#004484] relative rounded-[9999px] shrink-0 size-[8px]"
+                          className="bg-brand-900 relative rounded-pill shrink-0 size-[8px]"
                           data-node-id="5:3427"
                           data-name="Background"
                         />
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004788] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] whitespace-nowrap"
                           data-node-id="5:3428"
                         >
                           <p className="leading-[16px]">
@@ -1315,7 +1315,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-[9999px]"
+                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-pill"
                         data-node-id="5:3429"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -1331,7 +1331,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#eef0ff] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
                           data-node-id="5:3432"
                         >
                           <p className="leading-[16px]">
@@ -1356,7 +1356,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="bg-[#ffdad6] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-[9999px] shrink-0"
+                            className="bg-[#ffdad6] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
                             data-node-id="5:3436"
                             data-name="Background"
                           >
@@ -1374,7 +1374,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                             data-node-id="5:3439"
                           >
                             <p className="leading-[24.75px] mb-0">
@@ -1391,7 +1391,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:3441"
                           >
                             <p className="leading-[20px] mb-0">{`Dotation en armoires à pharmacie d'urgence,`}</p>
@@ -1410,7 +1410,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                         <div
-                          className="bg-[#f2f3ff] content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3443"
                           data-name="Background"
                         >
@@ -1436,7 +1436,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 />
                               </div>
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3448"
                               >
                                 <p className="leading-[24px] mb-0">
@@ -1451,7 +1451,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3450"
                               >
                                 <p className="leading-[24px] mb-0">
@@ -1462,12 +1462,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#eaedff] h-[10px] overflow-clip relative rounded-[9999px] shrink-0 w-full"
+                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3451"
                             data-name="Background"
                           >
                             <div
-                              className="absolute bg-[#004484] inset-[0_85%_0_0] rounded-[9999px]"
+                              className="absolute bg-brand-900 inset-[0_85%_0_0] rounded-pill"
                               data-node-id="5:3452"
                               data-name="Background"
                             />
@@ -1483,7 +1483,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3455"
                               >
                                 <p className="leading-[16px]">{`Phase d'achat groupé`}</p>
@@ -1495,7 +1495,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3457"
                               >
                                 <p className="leading-[16px]">
@@ -1522,14 +1522,14 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                               data-node-id="5:3461"
                             >
                               <p className="leading-[20px]">{`Consulter l'inventaire`}</p>
                             </div>
                           </div>
                           <div
-                            className="bg-[#004484] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                            className="bg-brand-900 content-stretch drop-shadow-card flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                             data-node-id="5:3462"
                             data-name="Link"
                           >
@@ -1545,7 +1545,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
                     data-project-category="school"
                     data-project-region="Ouest"
                     data-node-id="5:3464"
@@ -1553,7 +1553,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Article - Projet 5: En préparation"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
+                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
                       data-node-id="5:3465"
                       data-name="Background"
                     >
@@ -1573,24 +1573,24 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute bg-[#d5e3ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-[9999px] top-[14px]"
+                        className="absolute bg-brand-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
                         data-node-id="5:3467"
                         data-name="Background+Shadow"
                       >
                         <div
-                          className="bg-[#004484] relative rounded-[9999px] shrink-0 size-[8px]"
+                          className="bg-brand-900 relative rounded-pill shrink-0 size-[8px]"
                           data-node-id="5:3468"
                           data-name="Background"
                         />
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004788] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] whitespace-nowrap"
                           data-node-id="5:3469"
                         >
                           <p className="leading-[16px]">En préparation</p>
                         </div>
                       </div>
                       <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[12px] rounded-[9999px]"
+                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[12px] rounded-pill"
                         data-node-id="5:3470"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -1606,7 +1606,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#eef0ff] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
                           data-node-id="5:3473"
                         >
                           <p className="leading-[16px]">Foumban • Ouest</p>
@@ -1629,12 +1629,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="bg-[#d5e3ff] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-[9999px] shrink-0"
+                            className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
                             data-node-id="5:3477"
                             data-name="Background"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004788] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                               data-node-id="5:3478"
                             >
                               <p className="leading-[16px]">{`ÉCOLES & SALLES DE CLASSE`}</p>
@@ -1647,7 +1647,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                             data-node-id="5:3480"
                           >
                             <p className="leading-[24.75px] mb-0">
@@ -1664,7 +1664,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:3482"
                           >
                             <p className="leading-[20px] mb-0">
@@ -1686,7 +1686,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                         <div
-                          className="bg-[#f2f3ff] content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3484"
                           data-name="Background"
                         >
@@ -1712,7 +1712,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 />
                               </div>
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3489"
                               >
                                 <p className="leading-[24px]">
@@ -1726,7 +1726,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3491"
                               >
                                 <p className="leading-[24px]">
@@ -1736,12 +1736,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#eaedff] h-[10px] overflow-clip relative rounded-[9999px] shrink-0 w-full"
+                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3492"
                             data-name="Background"
                           >
                             <div
-                              className="absolute bg-[#004484] bottom-0 left-0 right-3/4 rounded-[9999px] top-0"
+                              className="absolute bg-brand-900 bottom-0 left-0 right-3/4 rounded-pill top-0"
                               data-node-id="5:3493"
                               data-name="Background"
                             />
@@ -1757,7 +1757,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3496"
                               >
                                 <p className="leading-[16px]">
@@ -1771,7 +1771,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3498"
                               >
                                 <p className="leading-[16px]">
@@ -1798,7 +1798,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                               data-node-id="5:3502"
                             >
                               <p className="leading-[20px]">
@@ -1807,7 +1807,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#a33900] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                            className="bg-warn-700 content-stretch drop-shadow-card flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                             data-node-id="5:3503"
                             data-name="Link"
                           >
@@ -1823,7 +1823,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
                     data-project-category="school"
                     data-project-region="Est"
                     data-node-id="5:3505"
@@ -1831,7 +1831,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Article - Projet 6: Réalis"
                   >
                     <div
-                      className="bg-[#eaedff] content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
+                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
                       data-node-id="5:3506"
                       data-name="Background"
                     >
@@ -1851,12 +1851,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute bg-[#7cf994] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-[9999px] top-[14px]"
+                        className="absolute bg-accent-300 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
                         data-node-id="5:3508"
                         data-name="Background+Shadow"
                       >
                         <div
-                          className="bg-[#006e2d] relative rounded-[9999px] shrink-0 size-[8px]"
+                          className="bg-accent-700 relative rounded-pill shrink-0 size-[8px]"
                           data-node-id="5:3509"
                           data-name="Background"
                         />
@@ -1868,7 +1868,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[11.99px] rounded-[9999px]"
+                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[11.99px] rounded-pill"
                         data-node-id="5:3511"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -1884,7 +1884,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           />
                         </div>
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#eef0ff] text-[11px] whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
                           data-node-id="5:3514"
                         >
                           <p className="leading-[16px]">Batouri • Est</p>
@@ -1907,12 +1907,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="bg-[#7ffc97] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-[9999px] shrink-0"
+                            className="bg-accent-200 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
                             data-node-id="5:3518"
                             data-name="Background"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#002109] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                               data-node-id="5:3519"
                             >
                               <p className="leading-[16px]">{`ÉDUCATION & BOURSES`}</p>
@@ -1925,7 +1925,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
                             data-node-id="5:3521"
                           >
                             <p className="leading-[24.75px] mb-0">
@@ -1940,7 +1940,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:3523"
                           >
                             <p className="leading-[20px] mb-0">
@@ -1961,7 +1961,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                         <div
-                          className="bg-[#f2f3ff] content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3525"
                           data-name="Background"
                         >
@@ -1987,7 +1987,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 />
                               </div>
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3530"
                               >
                                 <p className="leading-[24px]">
@@ -2001,7 +2001,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#006e2d] text-[16px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[16px] whitespace-nowrap"
                                 data-node-id="5:3532"
                               >
                                 <p className="leading-[24px]">
@@ -2011,12 +2011,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-[#eaedff] content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-[9999px] shrink-0 w-full"
+                            className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3533"
                             data-name="Background"
                           >
                             <div
-                              className="bg-[#006e2d] flex-[1_0_0] min-h-px relative rounded-[9999px] w-full"
+                              className="bg-accent-700 flex-[1_0_0] min-h-px relative rounded-pill w-full"
                               data-node-id="5:3534"
                               data-name="Background"
                             />
@@ -2027,7 +2027,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Container"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#727783] text-[11px] text-right whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-right whitespace-nowrap"
                               data-node-id="5:3536"
                             >
                               <p className="leading-[16px]">100% Clôturé</p>
@@ -2051,7 +2051,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                               data-node-id="5:3540"
                             >
                               <p className="leading-[20px]">
@@ -2078,7 +2078,7 @@ export default function NosProjetsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="bg-[#f2f3ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-start px-[56px] py-[16px] relative shrink-0 w-full"
+              className="bg-surface-muted content-stretch drop-shadow-card flex flex-col items-start py-[16px] relative shrink-0 w-full shell"
               data-node-id="5:3692"
               data-name="Interactive Controls Section (Tabs & Regional Filter)"
             >
@@ -2095,11 +2095,11 @@ export default function NosProjetsChildrensSmileCameroun() {
                   trailing={
                     <label className="flex items-center gap-2 min-w-0">
                       <span className="sr-only">Filtrer par région</span>
-                      <span aria-hidden="true" className="flex shrink-0 items-center text-[#424751]">
+                      <span aria-hidden="true" className="flex shrink-0 items-center text-ink-700">
                         <Icon name="mapPin" size={16.667} />
                       </span>
                       <select
-                        className="min-w-0 max-w-full cursor-pointer rounded-[8px] border-0 bg-white py-2 pl-4 pr-9 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-[#131b2e] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b5cab]"
+                        className="min-w-0 max-w-full cursor-pointer rounded-control border-0 bg-white py-2 pl-4 pr-9 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-ink-900 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b5cab]"
                         onChange={(event) => setRegionFilter(event.target.value)}
                         value={regionFilter}
                       >
@@ -2123,15 +2123,15 @@ export default function NosProjetsChildrensSmileCameroun() {
               </div>
             </div>
               <div
-                className="flex w-full flex-col items-center justify-center gap-2 rounded-[16px] border border-dashed border-[#c7cdf5] bg-white px-6 py-14 text-center"
+                className="flex w-full flex-col items-center justify-center gap-2 rounded-panel border border-dashed border-[#c7cdf5] bg-white px-6 py-14 text-center"
                 data-empty-state="projects"
                 role="status"
                 style={{ display: visibleProjectCount === 0 ? 'flex' : 'none' }}
               >
-                <span aria-hidden="true" className="flex size-12 items-center justify-center rounded-full bg-[#eaedff] text-[#0b5cab]">
+                <span aria-hidden="true" className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-700">
                   <Icon name="search" size={22} />
                 </span>
-                <p className="font-['Montserrat:Bold'] text-[16px] font-bold text-[#131b2e]">
+                <p className="font-['Montserrat:Bold'] text-[16px] font-bold text-ink-900">
                   Aucun projet ne correspond à ces filtres
                 </p>
                 <p className="max-w-[46ch] font-['Inter:Regular'] text-[14px] text-[#5d626e]">
@@ -2140,7 +2140,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 </p>
                 <button
                   type="button"
-                  className="mt-2 cursor-pointer rounded-[9999px] bg-[#004484] px-5 py-2.5 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-white transition-colors hover:bg-[#0b5cab] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004484]"
+                  className="mt-2 cursor-pointer rounded-pill bg-brand-900 px-5 py-2.5 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-white transition-colors hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004484]"
                   onClick={() => {
                     setProjectFilter('all')
                     setRegionFilter('all')
@@ -2151,17 +2151,17 @@ export default function NosProjetsChildrensSmileCameroun() {
               </div>
 
             <div
-              className="bg-[#f2f3ff] content-stretch flex flex-col items-start px-[56px] py-[64px] relative shrink-0 w-full"
+              className="bg-surface-muted content-stretch flex flex-col items-start py-[64px] relative shrink-0 w-full shell"
               data-node-id="5:3543"
               data-name="Section: Proposer une école partenaire / Signaler une urgence"
             >
               <div
-                className="bg-white content-stretch flex flex-col items-start p-[48px] relative rounded-[16px] shrink-0 w-full"
+                className="bg-white content-stretch flex flex-col items-start p-[48px] relative rounded-panel shrink-0 w-full"
                 data-node-id="5:3544"
                 data-name="Background"
               >
                 <div
-                  className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[16px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]"
+                  className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-panel shadow-float"
                   data-node-id="5:3545"
                   data-name="Overlay+Shadow"
                 />
@@ -2176,7 +2176,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex gap-[8px] items-center px-[12px] py-[4px] relative rounded-[9999px] shrink-0"
+                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex gap-[8px] items-center px-[12px] py-[4px] relative rounded-pill shrink-0"
                       data-node-id="5:3548"
                       data-name="Overlay"
                     >
@@ -2192,7 +2192,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#006e2d] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                         data-node-id="5:3551"
                       >
                         <p className="leading-[16px]">
@@ -2206,7 +2206,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Heading 2"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#131b2e] text-[32px] tracking-[-0.8px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[32px] tracking-[-0.8px] w-full"
                         data-node-id="5:3553"
                       >
                         <p className="leading-[40px] mb-0">
@@ -2224,7 +2224,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[16px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] w-full"
                         data-node-id="5:3555"
                       >
                         <p className="leading-[26px] mb-0">{`Vous êtes directeur d'école, membre d'une APE, chef`}</p>
@@ -2272,7 +2272,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] whitespace-nowrap"
                                 data-node-id="5:3563"
                               >
                                 <p className="leading-[20px]">{`Visite d'audit de terrain systématique`}</p>
@@ -2284,7 +2284,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                                 data-node-id="5:3565"
                               >
                                 <p className="leading-[20px] mb-0">
@@ -2325,7 +2325,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] whitespace-nowrap"
                                 data-node-id="5:3571"
                               >
                                 <p className="leading-[20px]">
@@ -2339,7 +2339,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                                 data-node-id="5:3573"
                               >
                                 <p className="leading-[20px] mb-0">
@@ -2359,7 +2359,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Margin"
                     >
                       <div
-                        className="bg-[rgba(0,68,132,0.05)] content-stretch flex gap-[16px] items-center p-[16px] relative rounded-[12px] shrink-0 w-full"
+                        className="bg-[rgba(0,68,132,0.05)] content-stretch flex gap-[16px] items-center p-[16px] relative rounded-card shrink-0 w-full"
                         data-node-id="5:3575"
                         data-name="Overlay"
                       >
@@ -2380,7 +2380,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] whitespace-nowrap"
                             data-node-id="5:3579"
                           >
                             <p className="mb-0">
@@ -2391,7 +2391,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </p>
                             <p>
                               <span className="font-['Inter:Regular'] font-normal leading-[20px]">{`WhatsApp terrain au `}</span>
-                              <span className="font-['Inter:Bold'] font-bold leading-[20px] text-[#004484]">
+                              <span className="font-['Inter:Bold'] font-bold leading-[20px] text-brand-900">
                                 +237 699 09 86 88
                               </span>
                             </p>
@@ -2401,7 +2401,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-[#faf8ff] content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-[1_0_0] flex-col items-start min-w-px p-[32px] relative rounded-[12px]"
+                    className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start min-w-px p-[32px] relative rounded-card"
                     data-node-id="5:3580"
                     data-name="Proposal Form"
                   >
@@ -2426,14 +2426,14 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Label"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] w-full"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] w-full"
                               data-node-id="5:3585"
                             >
                               <p className="leading-[16px]">{`Nom de l'École ou Établissement *`}</p>
                             </div>
                           </div>
                           <div
-                            className="bg-white content-stretch flex items-start justify-center overflow-clip pb-[12px] pt-[11px] px-[16px] relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0 w-full"
+                            className="bg-white content-stretch flex items-start justify-center overflow-clip pb-[12px] pt-[11px] px-[16px] relative rounded-control shadow-raised shrink-0 w-full"
                             data-node-id="5:3586"
                             data-name="Input"
                           >
@@ -2443,7 +2443,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                                 data-node-id="5:3588"
                               >
                                 <p className="leading-[normal]">
@@ -2464,7 +2464,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Label"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] w-full"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] w-full"
                               data-node-id="5:3591"
                             >
                               <p className="leading-[16px]">
@@ -2473,7 +2473,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center justify-center pl-[20px] pr-[32px] py-[10px] relative rounded-[8px] shrink-0 w-full"
+                            className="bg-white content-stretch drop-shadow-card flex items-center justify-center pl-[20px] pr-[32px] py-[10px] relative rounded-control shrink-0 w-full"
                             data-node-id="5:3592"
                             data-name="Options"
                           >
@@ -2483,7 +2483,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                                 data-node-id="5:3594"
                               >
                                 <p className="leading-[17px]">
@@ -2510,7 +2510,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Label"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] w-full"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] w-full"
                               data-node-id="5:3598"
                             >
                               <p className="leading-[16px]">
@@ -2519,7 +2519,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-white content-stretch flex items-start justify-center overflow-clip pb-[12px] pt-[11px] px-[16px] relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0 w-full"
+                            className="bg-white content-stretch flex items-start justify-center overflow-clip pb-[12px] pt-[11px] px-[16px] relative rounded-control shadow-raised shrink-0 w-full"
                             data-node-id="5:3599"
                             data-name="Input"
                           >
@@ -2529,7 +2529,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                                 data-node-id="5:3601"
                               >
                                 <p className="leading-[normal]">
@@ -2550,7 +2550,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Label"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] w-full"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] w-full"
                               data-node-id="5:3604"
                             >
                               <p className="leading-[16px]">
@@ -2559,7 +2559,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </div>
                           </div>
                           <div
-                            className="bg-white content-stretch flex items-start justify-center overflow-clip pb-[12px] pt-[11px] px-[16px] relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0 w-full"
+                            className="bg-white content-stretch flex items-start justify-center overflow-clip pb-[12px] pt-[11px] px-[16px] relative rounded-control shadow-raised shrink-0 w-full"
                             data-node-id="5:3605"
                             data-name="Input"
                           >
@@ -2569,7 +2569,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                                 data-node-id="5:3607"
                               >
                                 <p className="leading-[normal]">
@@ -2591,14 +2591,14 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Label"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] w-full"
                             data-node-id="5:3610"
                           >
                             <p className="leading-[16px]">{`Type d'urgence prioritaire *`}</p>
                           </div>
                         </div>
                         <div
-                          className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center justify-center pl-[20px] pr-[32px] py-[10px] relative rounded-[8px] shrink-0 w-full"
+                          className="bg-white content-stretch drop-shadow-card flex items-center justify-center pl-[20px] pr-[32px] py-[10px] relative rounded-control shrink-0 w-full"
                           data-node-id="5:3611"
                           data-name="Options"
                         >
@@ -2608,7 +2608,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Container"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[14px] w-full"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
                               data-node-id="5:3613"
                             >
                               <p className="leading-[17px]">{`Nature des travaux ou de l'aide`}</p>
@@ -2627,7 +2627,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Label"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] w-full"
                             data-node-id="5:3616"
                           >
                             <p className="leading-[16px]">
@@ -2636,7 +2636,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           </div>
                         </div>
                         <div
-                          className="bg-white content-stretch flex items-start justify-center overflow-auto pb-[50px] pt-[10px] px-[16px] relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0 w-full"
+                          className="bg-white content-stretch flex items-start justify-center overflow-auto pb-[50px] pt-[10px] px-[16px] relative rounded-control shadow-raised shrink-0 w-full"
                           data-node-id="5:3617"
                           data-name="Textarea"
                         >
@@ -2646,7 +2646,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Container"
                           >
                             <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#c2c6d3] text-[14px] w-full"
+                              className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[14px] w-full"
                               data-node-id="5:3619"
                             >
                               <p className="leading-[20px]">{`Précisez le nombre d'élèves affectés et la localité précise...`}</p>
@@ -2665,7 +2665,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#424751] text-[11px] whitespace-nowrap"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
                             data-node-id="5:3622"
                           >
                             <p className="leading-[16px]">
@@ -2674,12 +2674,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                           </div>
                         </div>
                         <div
-                          className="bg-[#006e2d] content-stretch flex gap-[8px] items-center px-[24px] py-[12px] relative rounded-[9999px] shrink-0"
+                          className="bg-accent-700 content-stretch flex gap-[8px] items-center relative rounded-pill shrink-0 btn-md btn"
                           data-node-id="5:3623"
                           data-name="Button"
                         >
                           <div
-                            className="absolute bg-[rgba(255,255,255,0)] inset-[0_0.25px_0_0] rounded-[9999px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]"
+                            className="absolute bg-[rgba(255,255,255,0)] inset-[0_0.25px_0_0] rounded-pill shadow-float"
                             data-node-id="5:3624"
                             data-name="Button:shadow"
                           />
@@ -2710,12 +2710,12 @@ export default function NosProjetsChildrensSmileCameroun() {
               </div>
             </div>
             <div
-              className="content-stretch flex flex-col items-start max-w-[1280px] px-[56px] py-[64px] relative shrink-0 w-full"
+              className="content-stretch flex flex-col items-start py-[64px] relative shrink-0 w-full shell"
               data-node-id="5:3628"
               data-name="Section: Transparence, Gouvernance & Traçabilit"
             >
               <div
-                className="content-stretch flex flex-col items-start overflow-clip p-[48px] relative rounded-[16px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] shrink-0 w-full"
+                className="content-stretch flex flex-col items-start overflow-clip p-[48px] relative rounded-panel shadow-hero shrink-0 w-full"
                 data-node-id="5:3629"
                 style={{
                   backgroundImage:
@@ -2724,7 +2724,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Background+Shadow"
               >
                 <div
-                  className="absolute bg-[rgba(17,94,174,0.2)] blur-[32px] bottom-[-0.33px] right-0 rounded-[9999px] size-[320px]"
+                  className="absolute bg-[rgba(17,94,174,0.2)] blur-[32px] bottom-[-0.33px] right-0 rounded-pill size-[320px]"
                   data-node-id="5:3630"
                   data-name="Overlay+Blur"
                 />
@@ -2760,7 +2760,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Container"
                       >
                         <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
+                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[11px] tracking-[1.1px] uppercase whitespace-nowrap"
                           data-node-id="5:3637"
                         >
                           <p className="leading-[16px]">
@@ -2789,7 +2789,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#bfd6ff] text-[16px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-brand-300 text-[16px] w-full"
                         data-node-id="5:3641"
                       >
                         <p className="leading-[26px] mb-0">{`Chez Children's Smile Cameroun, aucun don ne disparaît dans l'opacité. Chaque`}</p>
@@ -2803,7 +2803,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px pb-[32px] pt-[16px] px-[16px] relative rounded-[12px]"
+                        className="backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px pb-[32px] pt-[16px] px-[16px] relative rounded-card"
                         data-node-id="5:3643"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -2813,7 +2813,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[20px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[20px] w-full"
                             data-node-id="5:3645"
                           >
                             <p className="leading-[28px]">100%</p>
@@ -2825,7 +2825,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#d5e3ff] text-[11px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] w-full"
                             data-node-id="5:3647"
                           >
                             <p className="leading-[16px]">{`Factures visées & archivées`}</p>
@@ -2833,7 +2833,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px pb-[32px] pt-[16px] px-[16px] relative rounded-[12px]"
+                        className="backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px pb-[32px] pt-[16px] px-[16px] relative rounded-card"
                         data-node-id="5:3648"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -2843,7 +2843,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[20px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[20px] w-full"
                             data-node-id="5:3650"
                           >
                             <p className="leading-[28px]">0 FCFA</p>
@@ -2855,7 +2855,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#d5e3ff] text-[11px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] w-full"
                             data-node-id="5:3652"
                           >
                             <p className="leading-[16px]">{`Frais d'intermédiaire obscur`}</p>
@@ -2863,7 +2863,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[16px] relative rounded-[12px]"
+                        className="backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px p-[16px] relative rounded-card"
                         data-node-id="5:3653"
                         data-name="Overlay+OverlayBlur"
                       >
@@ -2873,7 +2873,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[20px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[20px] w-full"
                             data-node-id="5:3655"
                           >
                             <p className="leading-[28px]">Mensuel</p>
@@ -2885,7 +2885,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#d5e3ff] text-[11px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] w-full"
                             data-node-id="5:3657"
                           >
                             <p className="leading-[16px] mb-0">
@@ -2898,12 +2898,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-px p-[24px] relative rounded-[12px]"
+                    className="bg-white content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-px p-[24px] relative rounded-card"
                     data-node-id="5:3658"
                     data-name="Background"
                   >
                     <div
-                      className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[12px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
+                      className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-card shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
                       data-node-id="5:3659"
                       data-name="Overlay+Shadow"
                     />
@@ -2924,7 +2924,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         />
                       </div>
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#004484] text-[18px] whitespace-nowrap"
+                        className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[18px] whitespace-nowrap"
                         data-node-id="5:3663"
                       >
                         <p className="leading-[24px]">
@@ -2938,7 +2938,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                         data-node-id="5:3665"
                       >
                         <p className="leading-[20px] mb-0">{`Téléchargez les comptes-rendus d'exécution physique et`}</p>
@@ -2953,7 +2953,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#f2f3ff] content-stretch flex items-center justify-between p-[12px] relative rounded-[8px] shrink-0 w-full"
+                        className="bg-surface-muted content-stretch flex items-center justify-between p-[12px] relative rounded-control shrink-0 w-full"
                         data-node-id="5:3667"
                         data-name="Link"
                       >
@@ -2984,7 +2984,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                                 data-node-id="5:3673"
                               >
                                 <p className="leading-[16px]">{`Rapport Chantiers Est & Grand Nord 2024`}</p>
@@ -2996,7 +2996,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#727783] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3675"
                               >
                                 <p className="leading-[16px]">
@@ -3019,7 +3019,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="bg-[#f2f3ff] content-stretch flex items-center justify-between p-[12px] relative rounded-[8px] shrink-0 w-full"
+                        className="bg-surface-muted content-stretch flex items-center justify-between p-[12px] relative rounded-control shrink-0 w-full"
                         data-node-id="5:3678"
                         data-name="Link"
                       >
@@ -3050,7 +3050,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#131b2e] text-[12px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[12px] whitespace-nowrap"
                                 data-node-id="5:3684"
                               >
                                 <p className="leading-[16px]">{`Charte de Sauvegarde de l'Enfance en Chantier`}</p>
@@ -3062,7 +3062,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               data-name="Container"
                             >
                               <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#727783] text-[11px] whitespace-nowrap"
+                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] whitespace-nowrap"
                                 data-node-id="5:3686"
                               >
                                 <p className="leading-[16px]">
@@ -3091,7 +3091,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="bg-[#004484] content-stretch flex flex-col items-center py-[10px] relative rounded-[9999px] shrink-0 w-full"
+                        className="bg-brand-900 content-stretch flex flex-col items-center relative rounded-pill shrink-0 w-full btn-md btn"
                         data-node-id="5:3690"
                         data-name="Link"
                       >
@@ -3117,12 +3117,12 @@ export default function NosProjetsChildrensSmileCameroun() {
           data-name="Header"
         >
           <div
-            className="bg-[#004484] content-stretch flex flex-col items-start px-[56px] py-[6px] relative shrink-0 w-full"
+            className="bg-brand-900 content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full shell"
             data-node-id="50:1148"
             data-name="Background"
           >
             <div
-              className="content-stretch flex items-center justify-between max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex items-center justify-between relative shrink-0 w-full shell"
               data-node-id="50:1149"
               data-name="Container"
             >
@@ -3206,7 +3206,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#bfd6ff] text-[12px] tracking-[0.6px] uppercase whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-300 text-[12px] tracking-[0.6px] uppercase whitespace-nowrap"
                     data-node-id="50:1165"
                   >
                     <p className="leading-[16px]">
@@ -3218,7 +3218,7 @@ export default function NosProjetsChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="h-[80px] max-w-[1280px] relative shrink-0 w-full"
+            className="h-[80px] relative shrink-0 w-full shell"
             data-node-id="50:1166"
             data-name="Container"
           >
@@ -3228,11 +3228,11 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Container"
             >
               <div
-                className="max-w-[331.29998779296875px] relative rounded-[9999px] shrink-0 size-[32px]"
+                className="max-w-[331.29998779296875px] relative rounded-pill shrink-0 size-[32px]"
                 data-node-id="50:1168"
                 data-name="Profile"
               >
-                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[9999px]">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                   <img
                     alt=""
                     className="absolute left-0 max-w-none size-full top-0"
@@ -3251,7 +3251,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-[#004484] text-[20px] tracking-[-0.5px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] tracking-[-0.5px] whitespace-nowrap"
                     data-node-id="50:1171"
                   >
                     <p className="leading-[20px]">{`Children's Smile Cameroun`}</p>
@@ -3268,7 +3268,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#006e2d] text-[11px] tracking-[0.55px] uppercase w-full"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] tracking-[0.55px] uppercase w-full"
                       data-node-id="50:1174"
                     >
                       <p className="leading-[16px]">
@@ -3290,7 +3290,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1177"
                 >
                   <p className="leading-[20px]">Accueil</p>
@@ -3302,7 +3302,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1179"
                 >
                   <p className="leading-[20px] mb-0">À</p>
@@ -3315,7 +3315,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1181"
                 >
                   <p className="leading-[20px] mb-0">Nos</p>
@@ -3323,7 +3323,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 </div>
               </div>
               <div
-                className="bg-[#0b5cab] content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-[9999px] shrink-0"
+                className="bg-brand-700 content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-pill shrink-0"
                 data-node-id="50:1182"
                 data-name="Link"
               >
@@ -3341,7 +3341,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1185"
                 >
                   <p className="leading-[20px] mb-0">Notre</p>
@@ -3354,7 +3354,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1187"
                 >
                   <p className="leading-[20px]">Actualités</p>
@@ -3366,7 +3366,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1189"
                 >
                   <p className="leading-[20px] mb-0">Nous</p>
@@ -3379,7 +3379,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1191"
                 >
                   <p className="leading-[20px]">Contact</p>
@@ -3392,19 +3392,19 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Container"
             >
               <div
-                className="bg-white content-stretch drop-shadow-[0px_1px_2px_rgba(0,110,45,0.15)] flex items-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                className="bg-white content-stretch drop-shadow-[0px_1px_2px_rgba(0,110,45,0.15)] flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                 data-node-id="50:1193"
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#006e2d] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1194"
                 >
                   <p className="leading-[20px]">Devenir Partenaire</p>
                 </div>
               </div>
               <div
-                className="bg-[#a33900] content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex items-center px-[20px] py-[10px] relative rounded-[9999px] shrink-0"
+                className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex items-center relative rounded-pill shrink-0 btn-md btn"
                 data-node-id="50:1195"
                 data-name="Link"
               >
@@ -3419,17 +3419,17 @@ export default function NosProjetsChildrensSmileCameroun() {
           </div>
         </div>
         <div
-          className="absolute backdrop-blur-[12px] bg-[rgba(255,255,255,0.95)] content-stretch flex flex-col items-start left-0 shadow-[0px_2px_12px_0px_rgba(11,92,171,0.06)] top-0 w-[1280px]"
+          className="absolute backdrop-blur-[12px] bg-[rgba(255,255,255,0.95)] content-stretch flex flex-col items-start left-0 shadow-[0px_2px_12px_0px_rgba(11,92,171,0.06)] top-0 w-full max-w-shell"
           data-node-id="5:3787"
           data-name="Header"
         >
           <div
-            className="bg-[#004484] content-stretch flex flex-col items-start px-[56px] py-[6px] relative shrink-0 w-full"
+            className="bg-brand-900 content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full shell"
             data-node-id="5:3788"
             data-name="Background"
           >
             <div
-              className="content-stretch flex items-center justify-between max-w-[1280px] relative shrink-0 w-full"
+              className="content-stretch flex items-center justify-between relative shrink-0 w-full shell"
               data-node-id="5:3789"
               data-name="Container"
             >
@@ -3523,7 +3523,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#bfd6ff] text-[12px] tracking-[0.6px] uppercase whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-300 text-[12px] tracking-[0.6px] uppercase whitespace-nowrap"
                     data-node-id="5:3805"
                   >
                     <p className="leading-[16px]">
@@ -3535,7 +3535,7 @@ export default function NosProjetsChildrensSmileCameroun() {
             </div>
           </div>
           <div
-            className="h-[80px] max-w-[1280px] relative shrink-0 w-full"
+            className="h-[80px] relative shrink-0 w-full shell"
             data-node-id="5:3806"
             data-name="Container"
           >
@@ -3545,11 +3545,11 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Container"
             >
               <div
-                className="max-w-[331.2699890136719px] relative rounded-[9999px] shrink-0 size-[32px]"
+                className="max-w-[331.2699890136719px] relative rounded-pill shrink-0 size-[32px]"
                 data-node-id="5:3808"
                 data-name="Profile"
               >
-                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[9999px]">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                   <img
                     alt=""
                     className="absolute left-0 max-w-none size-full top-0"
@@ -3568,7 +3568,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-name="Container"
                 >
                   <div
-                    className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-[#004484] text-[20px] tracking-[-0.5px] whitespace-nowrap"
+                    className="[word-break:break-word] flex flex-col font-['Montserrat:SemiBold'] font-semibold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] tracking-[-0.5px] whitespace-nowrap"
                     data-node-id="5:3811"
                   >
                     <p className="leading-[20px]">{`Children's Smile Cameroun`}</p>
@@ -3585,7 +3585,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     data-name="Container"
                   >
                     <div
-                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#006e2d] text-[11px] tracking-[0.55px] uppercase w-full"
+                      className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] tracking-[0.55px] uppercase w-full"
                       data-node-id="5:3814"
                     >
                       <p className="leading-[16px]">
@@ -3607,7 +3607,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3817"
                 >
                   <p className="leading-[20px]">Accueil</p>
@@ -3619,7 +3619,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3819"
                 >
                   <p className="leading-[20px] mb-0">À</p>
@@ -3632,7 +3632,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3821"
                 >
                   <p className="leading-[20px] mb-0">Nos</p>
@@ -3640,7 +3640,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 </div>
               </div>
               <div
-                className="bg-[#0b5cab] content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-[9999px] shrink-0"
+                className="bg-brand-700 content-stretch flex flex-col items-start px-[8px] py-[4px] relative rounded-pill shrink-0"
                 data-node-id="5:3822"
                 data-name="Link"
               >
@@ -3658,7 +3658,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3825"
                 >
                   <p className="leading-[20px] mb-0">Notre</p>
@@ -3671,7 +3671,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3827"
                 >
                   <p className="leading-[20px]">Actualités</p>
@@ -3683,7 +3683,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3829"
                 >
                   <p className="leading-[20px] mb-0">Nous</p>
@@ -3696,7 +3696,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#424751] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3831"
                 >
                   <p className="leading-[20px]">Contact</p>
@@ -3709,19 +3709,19 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Container"
             >
               <div
-                className="bg-white content-stretch drop-shadow-[0px_1px_2px_rgba(0,110,45,0.15)] flex items-center px-[16px] py-[8px] relative rounded-[9999px] shrink-0"
+                className="bg-white content-stretch drop-shadow-[0px_1px_2px_rgba(0,110,45,0.15)] flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
                 data-node-id="5:3833"
                 data-name="Link"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#006e2d] text-[14px] whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3834"
                 >
                   <p className="leading-[20px]">Devenir Partenaire</p>
                 </div>
               </div>
               <div
-                className="bg-[#a33900] content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex items-center px-[20px] py-[10px] relative rounded-[9999px] shrink-0"
+                className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex items-center relative rounded-pill shrink-0 btn-md btn"
                 data-node-id="5:3835"
                 data-name="Link"
               >
@@ -3736,7 +3736,7 @@ export default function NosProjetsChildrensSmileCameroun() {
           </div>
         </div>
         <div
-          className="bg-[#004484] content-stretch flex flex-col gap-[32px] items-start pb-[32px] pt-[64px] px-[56px] relative shrink-0 w-full"
+          className="bg-brand-900 content-stretch flex flex-col gap-[32px] items-start pb-[32px] pt-[64px] relative shrink-0 w-full shell"
           data-node-id="50:1464"
           data-name="Footer"
         >
@@ -3756,11 +3756,11 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-name="Brand Row"
               >
                 <div
-                  className="relative rounded-[9999px] shrink-0 size-[32px]"
+                  className="relative rounded-pill shrink-0 size-[32px]"
                   data-node-id="50:1468"
                   data-name="Profile"
                 >
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[9999px]">
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                     <img
                       alt=""
                       className="absolute left-0 max-w-none size-full top-0"
@@ -3776,22 +3776,16 @@ export default function NosProjetsChildrensSmileCameroun() {
                 </div>
               </div>
               <div
-                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] min-w-full relative shrink-0 text-[#7ffc97] text-[11px] tracking-[0.55px] uppercase w-[min-content]"
+                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] min-w-full relative shrink-0 text-accent-200 text-[11px] tracking-[0.55px] uppercase w-full"
                 data-node-id="50:1470"
               >
-                <p className="leading-[16px]">
-                  ASSISTANCE • ÉDUCATION • DÉVELOPPEMENT
-                </p>
+                <p className="leading-[16px]">{`ASSISTANCE • ÉDUCATION • DÉVELOPPEMENT`}</p>
               </div>
               <div
-                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#d5e3ff] text-[14px] w-[min-content]"
+                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-brand-100 text-[14px] w-full"
                 data-node-id="50:1471"
               >
-                <p className="leading-[22px]">
-                  Nous accompagnons les écoles rurales, les communautés locales
-                  et les enfants vulnérables au Cameroun grâce à des projets
-                  concrets, des suivis de terrain et une transparence totale.
-                </p>
+                <p className="leading-[22px]">{`Nous accompagnons les écoles rurales, les communautés locales et les enfants vulnérables au Cameroun grâce à des projets concrets, des suivis de terrain et une transparence totale.`}</p>
               </div>
             </div>
             <div
@@ -3800,7 +3794,7 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Navigation"
             >
               <div
-                className="flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-[#7ffc97] text-[11px] tracking-[0.55px] uppercase"
+                className="flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-accent-200 text-[11px] tracking-[0.55px] uppercase"
                 data-node-id="50:1473"
               >
                 <p className="leading-[16px]">Navigation</p>
@@ -3866,7 +3860,7 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Contact"
             >
               <div
-                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                 data-node-id="50:1484"
               >
                 <p className="leading-[16px]">Contact</p>
@@ -3947,36 +3941,36 @@ export default function NosProjetsChildrensSmileCameroun() {
               data-name="Newsletter"
             >
               <div
-                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#7ffc97] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
+                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-200 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
                 data-node-id="50:1495"
               >
                 <p className="leading-[16px]">Newsletter</p>
               </div>
               <div
-                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#d5e3ff] text-[14px] w-[min-content]"
+                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-brand-100 text-[14px] w-full"
                 data-node-id="50:1496"
               >
                 <p className="leading-[22px]">{`Recevez les nouveaux chantiers, les bilans d'impact et les appels à parrainage.`}</p>
               </div>
               <div
-                className="bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.2)] border-solid content-stretch flex items-center px-[16px] py-[12px] relative rounded-[9999px] shrink-0 w-full"
+                className="bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.2)] border-solid content-stretch flex items-center relative rounded-pill shrink-0 w-full btn-md btn"
                 data-node-id="50:1497"
                 data-name="Email Input"
               >
                 <div
-                  className="[word-break:break-word] flex flex-[1_0_0] flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-px not-italic relative text-[#d5e3ff] text-[14px]"
+                  className="[word-break:break-word] flex flex-[1_0_0] flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-px not-italic relative text-brand-100 text-[14px]"
                   data-node-id="50:1498"
                 >
                   <p className="leading-[20px]">Votre adresse e-mail</p>
                 </div>
               </div>
               <div
-                className="bg-[#7ffc97] content-stretch flex flex-col items-center justify-center px-[16px] py-[12px] relative rounded-[9999px] shrink-0 w-full"
+                className="bg-accent-200 content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
                 data-node-id="50:1499"
                 data-name="Subscribe Button"
               >
                 <div
-                  className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#004484] text-[14px] text-center whitespace-nowrap"
+                  className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
                   data-node-id="50:1500"
                 >
                   <p className="leading-[20px]">{`S'inscrire`}</p>
@@ -3990,7 +3984,7 @@ export default function NosProjetsChildrensSmileCameroun() {
             data-name="Divider"
           />
           <div
-            className="[word-break:break-word] content-stretch flex font-['Inter:Regular'] font-normal items-center justify-between leading-[0] not-italic relative shrink-0 text-[#d5e3ff] text-[13px] w-full whitespace-nowrap"
+            className="[word-break:break-word] content-stretch flex font-['Inter:Regular'] font-normal items-center justify-between leading-[0] not-italic relative shrink-0 text-brand-100 text-[13px] w-full whitespace-nowrap"
             data-node-id="50:1502"
             data-name="Bottom"
           >
