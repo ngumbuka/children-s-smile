@@ -85,7 +85,7 @@ export function TabBar({
               aria-controls={panelId}
               aria-selected={selected}
               className={[
-                'flex items-center gap-2 rounded-pill px-4 py-2 text-sm font-["Inter:Semi_Bold"] font-semibold',
+                'flex items-center gap-2 rounded-pill min-h-11 px-5 py-2.5 text-sm font-["Inter:Semi_Bold"] font-semibold transition-colors',
                 'transition-colors duration-150 cursor-pointer whitespace-nowrap',
                 'shrink-0 max-w-full',
                 variant === 'pill'

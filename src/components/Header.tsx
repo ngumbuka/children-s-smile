@@ -66,8 +66,8 @@ export function Header() {
           </div>
         </div>
       </div>
-      <div className="flex min-h-20 items-center justify-between gap-4 py-3 w-full shell">
-        <Link to="/" className="flex gap-3 items-center">
+      <div className="flex min-h-20 items-center justify-between gap-4 py-3 w-full shell-chrome">
+        <Link to="/" className="flex gap-3 items-center shrink-0">
           <div className="relative rounded-pill shrink-0 size-8">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
               <img
@@ -78,8 +78,8 @@ export function Header() {
             </div>
           </div>
           <div className="hidden flex-col font-['Montserrat'] font-bold items-start min-[420px]:flex">
-            <p className="leading-[25px] text-brand-900 text-xl tracking-[-0.5px]">{`Children's Smile`}</p>
-            <p className="leading-4 text-ink-700 text-[11px] tracking-[1.1px] uppercase">{`CAMEROUN • ENFANCE & AVENIR`}</p>
+            <p className="leading-[25px] text-brand-900 text-xl tracking-[-0.5px] whitespace-nowrap">{`Children's Smile`}</p>
+            <p className="leading-4 text-ink-700 text-[11px] tracking-[1.1px] uppercase whitespace-nowrap">{`CAMEROUN • ENFANCE & AVENIR`}</p>
           </div>
         </Link>
         <nav className="hidden gap-1 items-center xl:flex">
