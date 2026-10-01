@@ -296,8 +296,20 @@
      wrappers both get this so a CTA looks the same whichever page it is
      on. */
   .btn > svg,
+  /* An icon inside a control is sized by the control, not by the
+     call site. Without a size here the glyph fell back to the 24px
+     component default and was then overridden per button class, which
+     is why one row showed 12, 16, 18 and 20px icons side by side. */
   .btn-icon {
     flex: none;
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .btn-sm > svg,
+  .btn-sm > .btn-icon {
+    height: 0.875rem;
+    width: 0.875rem;
   }
 
   .btn-md > svg,
