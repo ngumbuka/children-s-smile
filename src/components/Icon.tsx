@@ -142,7 +142,6 @@ export function Icon({ name, size = 24, strokeWidth = 1.8, label, className, ...
       aria-label={label}
       className={className}
       fill={filled ? 'currentColor' : 'none'}
-      height={size}
       role={label ? 'img' : undefined}
       stroke="currentColor"
       strokeLinecap="round"
@@ -150,6 +149,7 @@ export function Icon({ name, size = 24, strokeWidth = 1.8, label, className, ...
       strokeWidth={filled ? 0 : strokeWidth}
       viewBox="0 0 24 24"
       width={size}
+      style={{ width: size, height: size, ...rest.style }}
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >

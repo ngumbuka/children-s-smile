@@ -859,7 +859,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           to="/don"
                         >
                           <span className="btn-label">{`Finaliser ce projet`}</span>
-                          <Icon name="arrowRight" className="btn-icon" />
+                          <Icon name="arrowRight" size={16} className="btn-icon" />
                         </Link>
                       </div>
                       </div>

@@ -295,17 +295,13 @@
      squeezed by a long label. Direct-child SVG and the Figma img
      wrappers both get this so a CTA looks the same whichever page it is
      on. */
+  /* An icon inside a control gets a size from the control, not from the
+     call site, so every CTA carries the same optical weight. These are
+     fallbacks: Icon applies an explicit size inline, which outranks them,
+     so a deliberate `size` on a single call site still wins. They mainly
+     exist for raw SVGs coming out of the Figma export. */
   .btn > svg,
-  /* An icon inside a control is sized by the control, not by the
-     call site. Without a size here the glyph fell back to the 24px
-     component default and was then overridden per button class, which
-     is why one row showed 12, 16, 18 and 20px icons side by side. */
-  .btn-icon {
-    flex: none;
-    height: 1rem;
-    width: 1rem;
-  }
-
+  .btn > .btn-icon,
   .btn-sm > svg,
   .btn-sm > .btn-icon {
     height: 0.875rem;
@@ -322,6 +318,11 @@
   .btn-lg > .btn-icon {
     height: 1.25rem;
     width: 1.25rem;
+  }
+
+  /* Never let a glyph be squeezed or stretched by a flex parent. */
+  .btn-icon {
+    flex: none;
   }
 
   /* Figma exports icons as a sized wrapper holding a stretched img. Both
