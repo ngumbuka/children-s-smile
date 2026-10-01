@@ -158,7 +158,7 @@ export async function recordDonation(input: {
     settledAt: settled ? now : null,
   })
 
-  if (input.projectSlug) await resyncProject(input.projectSlug)
+  if (input.projectSlug && tx.status === 'succeeded') await applyToProject(input.projectSlug, tx.amount)
   return tx
 }
 
@@ -173,25 +173,28 @@ export async function setTransactionStatus(
     status,
     settledAt: status === 'pending' ? null : current.settledAt ?? new Date().toISOString(),
   })
-  if (current.projectSlug) await resyncProject(current.projectSlug)
+  if (current.projectSlug) {
+    const was = current.status === 'succeeded' ? current.amount : 0
+    const now = status === 'succeeded' ? current.amount : 0
+    await applyToProject(current.projectSlug, now - was)
+  }
   return next
 }
 
 /**
- * Recomputes a project's money fields from its ledger. `donations` and
- * `donors` are read from the project document, not the ledger, because
- * the seed represents a multi-year history while the ledger only holds
- * recent transactions; only `raised` and `progress` are derived.
+ * Moves a project's `raised` by `delta` and re-derives its progress.
+ *
+ * `raised` is the authoritative cumulative total, not a sum of the ledger.
+ * The ledger is the audit trail behind it and already overlaps it, so
+ * re-adding the ledger total on every write would count the same money
+ * once per donation. Callers pass the amount that actually changed.
  */
-export async function resyncProject(slug: string) {
+async function applyToProject(slug: string, delta: number) {
+  if (delta === 0) return
   const project = await projects.findOne({ slug })
   if (!project) return
-  const rows = await transactions.find({ projectSlug: slug })
-  const raised = rows.filter((t) => t.status === 'succeeded').reduce((a, t) => a + t.amount, 0)
-  await projects.update(project._id, {
-    raised: project.raised + raised,
-    progress: pct(project.raised + raised, project.target),
-  })
+  const raised = Math.max(0, project.raised + delta)
+  await projects.update(project._id, { raised, progress: pct(raised, project.target) })
 }
 
 export const pct = (raised: number, target: number) =>
