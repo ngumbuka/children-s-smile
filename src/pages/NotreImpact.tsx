@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
@@ -341,7 +342,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-name="Hero Content"
               >
                 <div
-                  className="content-stretch flex flex-col gap-[24px] items-start relative shell-prose"
+                  className="content-stretch flex flex-col gap-[24px] items-start relative shell-prose" id="cartographie"
                   data-node-id="50:52"
                   data-name="Hero Copy"
                 >
@@ -383,8 +384,8 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-node-id="50:59"
                     data-name="Frame"
                   >
-                    <div
-                      className="bg-brand-900 content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-md btn btn-icon-stack"
+                    <button onClick={() => document.getElementById('cartographie')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} type="button"
+                      className="bg-brand-900 content-stretch flex flex-row items-center justify-center relative rounded-pill btn-md btn btn-icon-stack"
                       data-node-id="50:60"
                       data-name="Frame"
                     >
@@ -395,9 +396,9 @@ export default function NotreImpactChildrensSmileCameroun() {
                       >
                         Explorer la cartographie
                       </p>
-                    </div>
-                    <div
-                      className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-md btn btn-icon-stack"
+                    </button>
+                    <button disabled title="Publication en cours" type="button"
+                      className="bg-surface-subtle content-stretch drop-shadow-card flex flex-row items-center justify-center relative rounded-pill btn-md btn btn-icon-stack"
                       data-node-id="50:63"
                       data-name="Frame"
                     >
@@ -406,7 +407,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                         className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[20px] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
                         data-node-id="50:65"
                       >{`Rapports d'audits certifiés`}</p>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2782,8 +2783,8 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-node-id="50:474"
                     data-name="Frame"
                   >
-                    <div
-                      className="bg-brand-900 content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn btn-icon-stack"
+                    <button disabled title="Le rapport n'est pas encore publié" type="button"
+                      className="bg-brand-900 content-stretch flex flex-row items-center justify-center relative rounded-pill w-full btn-md btn btn-icon-stack"
                       data-node-id="50:475"
                       data-name="Frame"
                     >
@@ -2794,7 +2795,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       >
                         Télécharger le rapport
                       </p>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2865,8 +2866,8 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-node-id="50:487"
                     data-name="Frame"
                   >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn btn-icon-stack"
+                    <button disabled title="La traçabilité est en cours de mise en ligne" type="button"
+                      className="bg-surface-tint content-stretch flex flex-row items-center justify-center relative rounded-pill w-full btn-md btn btn-icon-stack"
                       data-node-id="50:488"
                       data-name="Frame"
                     >
@@ -2877,7 +2878,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       >
                         Consulter la traçabilité
                       </p>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2945,8 +2946,8 @@ export default function NotreImpactChildrensSmileCameroun() {
                     data-node-id="50:500"
                     data-name="Frame"
                   >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn btn-icon-stack"
+                    <button disabled title="La certification est en cours de vérification" type="button"
+                      className="bg-surface-tint content-stretch flex flex-row items-center justify-center relative rounded-pill w-full btn-md btn btn-icon-stack"
                       data-node-id="50:501"
                       data-name="Frame"
                     >
@@ -2957,7 +2958,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                       >
                         Voir la certification
                       </p>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3022,8 +3023,8 @@ export default function NotreImpactChildrensSmileCameroun() {
                 data-node-id="50:514"
                 data-name="Frame"
               >
-                <div
-                  className="bg-accent-700 content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-lg btn btn-icon-stack"
+                <Link to="/don"
+                  className="bg-accent-700 content-stretch flex flex-row items-center justify-center relative rounded-pill btn-lg btn btn-icon-stack"
                   data-node-id="50:515"
                   data-name="Frame"
                 >
@@ -3032,9 +3033,9 @@ export default function NotreImpactChildrensSmileCameroun() {
                     className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap"
                     data-node-id="50:517"
                   >{`Parrainer un chantier d'école`}</p>
-                </div>
-                <div
-                  className="bg-surface-subtle content-stretch flex flex-col items-start justify-center relative rounded-pill shrink-0 btn-lg btn btn-icon-stack"
+                </Link>
+                <Link to="/nos-projets"
+                  className="bg-surface-subtle content-stretch flex flex-row items-center justify-center relative rounded-pill btn-lg btn btn-icon-stack"
                   data-node-id="50:518"
                   data-name="Frame"
                 >
@@ -3045,7 +3046,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   >
                     Découvrir nos projets en cours
                   </p>
-                </div>
+                </Link>
               </div>
               <div
                 className="content-stretch flex gap-[24px] items-center justify-center pt-[16px] relative shrink-0 w-full"

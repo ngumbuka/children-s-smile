@@ -344,9 +344,22 @@
 
   /* An icon stacked over its label is a vertical CTA, not a horizontal
      one; it should be centred and the gap collapsed. */
+  /* Figma exported these pills with the icon stacked above the label, which
+     read as a vertical card rather than a button: a directional arrow
+     floating over left-aligned text inside a pill. The icon belongs inline
+     before the label, and the pill content is centred. */
   .btn-icon-stack {
-    flex-direction: column;
-    gap: 0.25rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* A control we have not built a destination for yet. It stays visible so
+     the layout holds, but it is a real disabled button rather than a div
+     that pretends to be clickable. */
+  .btn-unavailable {
+    cursor: not-allowed;
+    opacity: 0.55;
   }
 
   /* Keyboard users need to see where they are. 37 of the 40 calls to
