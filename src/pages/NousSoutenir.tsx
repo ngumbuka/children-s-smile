@@ -124,7 +124,7 @@ export default function NousSoutenir() {
             <div className="flex flex-col gap-4 items-start w-full lg:w-[560px] lg:shrink-0">
               <div className="flex flex-wrap gap-2 items-center max-w-full">
                 <div className="bg-brand-900 flex gap-1.5 items-center justify-center px-3 py-1 rounded-pill">
-                  <Icon name="heartPulse" size={11.67} className="shrink-0" />
+                  <Icon name="heartPulse" size={12} className="shrink-0" />
                   <p className="font-['Montserrat'] font-bold text-[10px] text-white tracking-[1.1px] uppercase whitespace-nowrap">PLATEFORME OFFICIELLE DE SOLIDARITÉ</p>
                 </div>
                 <p className="font-['Montserrat'] font-bold text-accent-700 text-[10px] tracking-[0.55px] uppercase whitespace-nowrap">CAMEROUN • 10 RÉGIONS</p>
@@ -236,7 +236,7 @@ export default function NousSoutenir() {
                   </div>
                   {selectedTier === i && (
                     <div className="flex items-center gap-1.5 w-full">
-                      <Icon name="check" size={4.0} className="shrink-0" />
+                      <Icon name="check" size={12} className="shrink-0" />
                       <p className="font-['Inter'] font-semibold text-accent-700 text-xs">Palier sélectionné</p>
                     </div>
                   )}
@@ -265,7 +265,7 @@ export default function NousSoutenir() {
                 to="/don"
                 className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex items-center justify-center rounded-pill w-full hover:bg-warn-800 transition-colors sm:w-auto btn-md btn"
               >
-                <Icon name="lock" size={18} className="shrink-0" />
+                <Icon name="lock" size={16} className="shrink-0" />
                 <p className="btn-label font-['Inter'] font-bold text-sm text-white">Finaliser ce Don</p>
               </Link>
             </div>
@@ -300,8 +300,8 @@ export default function NousSoutenir() {
               <div className="flex flex-col gap-4 items-start w-full">
                 <div className="flex items-center justify-between w-full">
                   <div className="flex gap-3 items-center">
-                    <Icon name="smartphone" size={20.0} className="shrink-0" />
-                    <Icon name="whatsapp" size={20.0} className="shrink-0" />
+                    <Icon name="smartphone" size={20} className="shrink-0" />
+                    <Icon name="whatsapp" size={20} className="shrink-0" />
                   </div>
                   <div className="bg-[rgba(0,110,45,0.15)] px-3 py-1 rounded-pill">
                     <p className="font-['Montserrat'] font-bold text-accent-700 text-[10px] uppercase whitespace-nowrap">CAMEROUN LOCAL</p>
@@ -314,7 +314,7 @@ export default function NousSoutenir() {
                 <div className="flex flex-col gap-3 w-full">
                   <div className="bg-[#fff7f0] border border-[rgba(163,57,0,0.2)] flex items-center justify-between p-4 rounded-lg">
                     <div className="flex gap-3 items-center">
-                      <Icon name="wallet" size={8.0} className="shrink-0" />
+                      <Icon name="wallet" size={12} className="shrink-0" />
                       <div className="flex flex-col gap-0.5">
                         <p className="font-['Montserrat'] font-bold text-warn-700 text-xs">ORANGE MONEY</p>
                         <p className="font-['Cousine'] font-bold text-ink-900 text-sm">+237 699 09 86 88</p>
@@ -326,7 +326,7 @@ export default function NousSoutenir() {
                   </div>
                   <div className="bg-[#f0f6ff] border border-[rgba(0,68,132,0.2)] flex items-center justify-between p-4 rounded-lg">
                     <div className="flex gap-3 items-center">
-                      <Icon name="smartphone" size={8.0} className="shrink-0" />
+                      <Icon name="smartphone" size={12} className="shrink-0" />
                       <div className="flex flex-col gap-0.5">
                         <p className="font-['Montserrat'] font-bold text-brand-900 text-xs">MTN MOBILE MONEY</p>
                         <p className="font-['Cousine'] font-bold text-ink-900 text-sm">+237 650 88 11 55</p>
@@ -346,7 +346,7 @@ export default function NousSoutenir() {
               </div>
               <div className="pt-6 w-full">
                 <button className="bg-accent-700 flex gap-2 items-center justify-center py-2.5 rounded-lg w-full hover:bg-[#005a24] transition-colors">
-                  <Icon name="heartPulse" size={11.67} className="shrink-0" />
+                  <Icon name="heartPulse" size={12} className="shrink-0" />
                   <p className="font-['Inter'] font-bold text-sm text-white">Copier les Numéros Certifiés</p>
                 </button>
               </div>
@@ -386,7 +386,7 @@ export default function NousSoutenir() {
               </div>
               <div className="pt-6 w-full">
                 <button className="bg-surface-tint flex gap-2 items-center justify-center py-2.5 rounded-lg w-full hover:bg-[#d5dcff] transition-colors">
-                  <Icon name="copy" size={12.19} className="shrink-0" />
+                  <Icon name="copy" size={12} className="shrink-0" />
                   <p className="font-['Inter'] font-bold text-brand-900 text-sm">Copier les coordonnées RIB complètes</p>
                 </button>
               </div>
@@ -427,7 +427,7 @@ export default function NousSoutenir() {
               </div>
               <div className="pt-6 w-full">
                 <button className="bg-brand-900 drop-shadow-card flex gap-2 items-center justify-center py-2.5 rounded-lg w-full hover:bg-[#003570] transition-colors">
-                  <Icon name="globe" size={15.0} className="shrink-0" />
+                  <Icon name="globe" size={16} className="shrink-0" />
                   <p className="font-['Inter'] font-bold text-sm text-white">Demander les Identifiants Diaspora</p>
                 </button>
               </div>
@@ -547,14 +547,14 @@ export default function NousSoutenir() {
                 </p>
                 <div className="flex items-center justify-between pt-4 w-full border-t border-border-subtle">
                   <div className="flex gap-1 items-center">
-                    <Icon name="award" size={14.67} className="shrink-0" />
+                    <Icon name="award" size={12} className="shrink-0" />
                     <p className="font-['Inter'] font-normal text-ink-700 text-xs">Donateur certifié depuis 3 ans</p>
                   </div>
                   <p className="font-['Cousine'] font-normal text-ink-700 text-xs">Contribution : 50 000 FCFA/mois</p>
                 </div>
               </div>
               <div className="bg-white drop-shadow-card flex gap-3 items-center p-4 rounded-lg w-full">
-                <Icon name="scrollText" size={23.33} className="shrink-0" />
+                <Icon name="scrollText" size={24} className="shrink-0" />
                 <div className="flex flex-col gap-0.5">
                   <p className="font-['Inter'] font-bold text-ink-900 text-xs">Agrément MINAT N° 000214/A/MINAT/SG/DAP/SDLP/SAC</p>
                   <p className="font-['Inter'] font-normal text-ink-700 text-xs leading-4">Comptabilité certifiée soumise annuellement à la Direction des Affaires Politiques du Cameroun.</p>
@@ -626,7 +626,7 @@ export default function NousSoutenir() {
         {/* ── FINAL CTA BANDEAU ── */}
         <div className="bg-brand-900 flex flex-col items-center gutter py-12 w-full lg:py-10">
           <div className="flex flex-col gap-4 items-center w-full shell-prose">
-            <Icon name="handHeart" size={7.0} className="shrink-0" />
+            <Icon name="handHeart" size={12} className="shrink-0" />
             <h2 className="font-['Montserrat'] font-bold text-white text-[32px] text-center leading-10">
               Un Enfant au Cameroun Attend Votre Coup de Pouce
             </h2>
@@ -638,14 +638,14 @@ export default function NousSoutenir() {
                 to="/don"
                 className="bg-warn-700 flex items-center justify-center rounded-pill hover:bg-warn-800 transition-colors btn-md btn"
               >
-                <Icon name="handHeart" size={18} className="shrink-0" />
+                <Icon name="handHeart" size={16} className="shrink-0" />
                 <p className="btn-label font-['Inter'] font-bold text-sm text-white">Envoyer un Don Maintenant</p>
               </Link>
               <a
                 href="tel:+237699098688"
                 className="bg-brand-700 flex items-center justify-center rounded-pill hover:bg-[#094e97] transition-colors btn-md btn"
               >
-                <Icon name="phone" size={18} className="shrink-0" />
+                <Icon name="phone" size={16} className="shrink-0" />
                 <p className="btn-label font-['Inter'] font-semibold text-sm text-white">Parler à un Responsable (+237 699 09 86 88)</p>
               </a>
             </div>

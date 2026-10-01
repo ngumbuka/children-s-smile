@@ -401,10 +401,91 @@
     width: 100%;
   }
 
+  /* ---- Badges: a category, a place, a status ------------------------
+     The same pill shape appears in three colours across project cards
+     and detail pages, so the mapping lives here once. Status is the
+     only one that carries meaning, so it is the only one with a
+     dedicated modifier. */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: var(--radius-pill);
+    padding-block: 0.25rem;
+    padding-inline: 0.625rem;
+    font-size: var(--text-caption);
+    line-height: var(--text-caption--line-height);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .badge-brand {
+    background-color: var(--color-brand-100);
+    color: var(--color-brand-900);
+  }
+
+  /* A place or region is context, not emphasis. */
+  .badge-neutral {
+    background-color: var(--color-surface-tint);
+    color: var(--color-ink-700);
+  }
+
+  .badge-success {
+    background-color: var(--color-accent-200);
+    color: var(--color-accent-900);
+  }
+
+  .badge-warn {
+    background-color: var(--color-warn-100);
+    color: var(--color-warn-900);
+  }
+
+  /* ---- Text links ---------------------------------------------------
+     Anchors that sit in body copy or a card heading. Underlined on
+     hover only: a permanently underlined heading reads as a link
+     before the reader reaches it. */
+  .link-body {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .link-body:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .link-body:focus-visible {
+    outline: 2px solid var(--color-brand-700);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* A back link above a detail page. */
+  .link-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-brand-700);
+    font-size: var(--text-small);
+    line-height: var(--text-small--line-height);
+    text-decoration: none;
+  }
+
+  .link-back:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .link-back:focus-visible {
+    outline: 2px solid var(--color-brand-700);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
   /* ---- Buttons: inside a card ---------------------------------------
      A 48px page call to action is right at the top level and wrong
      inside a project card: two of them stacked pushed the card past
-     600px tall and the metric block above them lost its alignment.
+     600px tall and the metric block above them lost their alignment.
      Card actions are 36px and allowed to shrink, so a long label
      shortens the pill rather than overflowing the card. */
   .btn-card {

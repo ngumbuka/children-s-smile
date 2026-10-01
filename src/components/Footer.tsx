@@ -48,7 +48,7 @@ export function Footer() {
           {/* Piliers */}
           <div className="flex flex-col gap-4 items-start w-full shrink-0 xl:w-[224px]">
             <div className="flex gap-2 items-center">
-              <Icon name="pillars" size={17.5} className="shrink-0" />
+              <Icon name="pillars" size={16} className="shrink-0" />
               <p className="font-['Montserrat'] font-bold text-brand-900 text-lg whitespace-nowrap">{`Piliers d'Intervention`}</p>
             </div>
             <div className="flex flex-col gap-2 items-start">
@@ -74,7 +74,7 @@ export function Footer() {
           {/* Transparence */}
           <div className="flex flex-col gap-4 items-start w-full shrink-0 xl:w-[224px]">
             <div className="flex gap-2 items-center">
-              <Icon name="shieldCheck" size={16.67} className="shrink-0" />
+              <Icon name="shieldCheck" size={16} className="shrink-0" />
               <p className="font-['Montserrat'] font-bold text-brand-900 text-lg">
                 {`Transparence &`}
                 <br />
@@ -106,12 +106,12 @@ export function Footer() {
           {/* Contact */}
           <div className="flex flex-col gap-4 items-start w-full shrink-0 xl:w-[224px]">
             <div className="flex gap-2 items-center">
-              <Icon name="phone" size={16.67} className="shrink-0" />
+              <Icon name="phone" size={16} className="shrink-0" />
               <p className="font-['Montserrat'] font-bold text-brand-900 text-lg">{`Ligne Directe & Soutien`}</p>
             </div>
             <div className="flex flex-col gap-3 items-start">
               <div className="flex gap-2 items-start">
-                <Icon name="phone" size={13.5} className="shrink-0 mt-0.5" />
+                <Icon name="phone" size={12} className="shrink-0 mt-0.5" />
                 <div className="flex flex-col gap-0.5">
                   <p className="font-['Inter'] font-bold text-ink-900 text-sm">Permanence Siège :</p>
                   <p className="font-['Inter'] font-normal text-ink-700 text-sm">+237 699 09 86 88</p>
@@ -119,14 +119,14 @@ export function Footer() {
                 </div>
               </div>
               <div className="flex gap-2 items-start">
-                <Icon name="whatsapp" size={15.0} className="shrink-0 mt-0.5" />
+                <Icon name="whatsapp" size={16} className="shrink-0 mt-0.5" />
                 <div className="flex flex-col gap-0.5">
                   <p className="font-['Inter'] font-bold text-ink-900 text-sm whitespace-nowrap">WhatsApp Coordination :</p>
                   <p className="font-['Inter'] font-normal text-ink-700 text-sm">+237 699 09 86 88 (Direct Terrain)</p>
                 </div>
               </div>
               <div className="flex gap-2 items-start">
-                <Icon name="wallet" size={16.5} className="shrink-0 mt-0.5" />
+                <Icon name="wallet" size={16} className="shrink-0 mt-0.5" />
                 <div className="flex flex-col gap-0.5">
                   <p className="font-['Inter'] font-bold text-ink-900 text-sm whitespace-nowrap">Canaux de Dons Certifiés :</p>
                   <p className="font-['Inter'] font-normal text-ink-700 text-xs">{`Orange Money & MTN MoMo officiels`}</p>

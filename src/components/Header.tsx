@@ -41,13 +41,13 @@ export function Header() {
         <div className="flex items-center justify-between py-3 w-full shell">
           <div className="flex gap-4 items-center">
             <div className="bg-brand-700 flex gap-1 items-center px-2 py-0.5 rounded-pill">
-              <Icon name="shieldCheck" size={12.83} className="shrink-0" />
+              <Icon name="shieldCheck" size={12} className="shrink-0" />
               <p className="font-['Montserrat'] font-bold text-brand-300 text-[10px] tracking-[0.55px] uppercase whitespace-nowrap">
                 ONG AGRÉÉE RÉPUBLIQUE DU CAMEROUN - 10 RÉGIONS
               </p>
             </div>
             <div className="flex gap-1 items-center">
-              <Icon name="phone" size={10.5} className="shrink-0" />
+              <Icon name="phone" size={12} className="shrink-0" />
               <p className="font-['Inter'] font-semibold text-brand-100 text-[11px] whitespace-nowrap">
                 +237 699 09 86 88 / 650 88 11 55
               </p>
@@ -55,7 +55,7 @@ export function Header() {
           </div>
           <div className="flex gap-4 items-center">
             <div className="flex gap-1 items-center">
-              <Icon name="mapPin" size={11.67} className="shrink-0" />
+              <Icon name="mapPin" size={12} className="shrink-0" />
               <p className="font-['Inter'] font-semibold text-brand-100 text-[11px] whitespace-nowrap">
                 Yaoundé • Douala • Grand-Nord • Est
               </p>

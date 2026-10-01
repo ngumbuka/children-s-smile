@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { ProgressMeter } from '../components/shared/ProgressMeter';
+import { formatXOF, getProject, recordDonation } from '../lib/repositories';
+import type { ProjectDoc } from '../lib/models';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
@@ -29,14 +33,80 @@ const imgMountain = `${assetPathPrefix}/f4d30.svg`;
 
 export default function FormulaireDon() {
   const [paymentMethod, setPaymentMethod] = useState<'mobile' | 'card' | 'bank'>('mobile');
+  const [params] = useSearchParams();
+  // A gift arriving from a project page is attributed to that project, so
+  // the meter the donor lands on afterwards already includes it.
+  const projectSlug = params.get('project');
+  const [project, setProject] = useState<ProjectDoc | null>(null);
+  const [receipt, setReceipt] = useState<{ reference: string; amount: number; slug: string | null } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const AMOUNT = 25000;
+
+  useEffect(() => {
+    if (!projectSlug) return;
+    void getProject(projectSlug).then(setProject);
+  }, [projectSlug]);
+
+  async function submitDonation() {
+    setSubmitting(true);
+    const tx = await recordDonation({
+      projectSlug,
+      amount: AMOUNT,
+      donorName: 'Donateur anonyme',
+      donorEmail: 'anonyme@example.org',
+      channel: paymentMethod,
+    });
+    setReceipt({ reference: tx.reference, amount: tx.amount, slug: tx.projectSlug });
+    setSubmitting(false);
+  }
 
   return (
     <div className="donation-checkout-page bg-surface-subtle flex flex-col items-start w-full min-h-screen overflow-x-hidden">
       <Header />
 
+      {receipt ? (
+        <main id="main-content" className="bg-surface-subtle flex flex-1 items-center justify-center w-full px-4 py-24">
+          <div className="rounded-card bg-surface max-w-[34rem] p-8 text-center shadow-raised">
+            <p className="text-caption text-accent-700">DON ENREGISTRÉ</p>
+            <h1 className="text-h2 mt-3 text-balance text-brand-900">Merci pour votre soutien</h1>
+            <p className="text-body mt-3 text-pretty text-ink-700">
+              Votre contribution de {formatXOF(receipt.amount)} a bien été enregistrée sous la référence{' '}
+              <span className="font-semibold text-brand-900">{receipt.reference}</span>.
+            </p>
+            {receipt.slug ? (
+              <Link className="btn btn-md btn-primary btn-block mt-6" to={`/nos-projets/${receipt.slug}`}>
+                <span className="btn-label">Voir le projet et son avancement</span>
+              </Link>
+            ) : null}
+            <Link className="btn btn-md btn-secondary btn-block mt-3" to="/nous-soutenir">
+              <span className="btn-label">Retour à la page de don</span>
+            </Link>
+          </div>
+        </main>
+      ) : (
+      <>
       {/* Main */}
       <main id="main-content" className="bg-surface-subtle flex flex-col items-start pb-16 pt-10 w-full lg:pb-20 lg:pt-12">
         <div className="flex flex-col gap-12 items-start w-full mx-auto shell">
+          {project ? (
+            <div className="rounded-card bg-surface flex flex-col gap-3 p-5 w-full shadow-raised sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <p className="text-caption text-ink-500">Votre don sera affecté à</p>
+                <p className="text-h4 mt-1 text-balance text-brand-900">{project.title}</p>
+              </div>
+              <div className="sm:w-64 sm:shrink-0">
+                <ProgressMeter
+                  value={project.progress}
+                  raised={project.raised}
+                  target={project.target}
+                  showAmounts
+                  size="sm"
+                />
+                <p className="mt-2 text-caption text-ink-600">{project.progress} % financé</p>
+              </div>
+            </div>
+          ) : null}
           {/* Progress Header */}
           <div className="flex flex-col gap-4 items-start w-full">
             <div className="flex gap-2 items-center whitespace-nowrap">
@@ -380,7 +450,12 @@ export default function FormulaireDon() {
                   </div>
                 </div>
                 <div className="flex flex-col items-start w-full">
-                  <button type="button" className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex items-center justify-center rounded-pill w-full cursor-pointer hover:bg-warn-800 transition-colors btn-lg btn">
+                  <button
+                    type="button"
+                    onClick={submitDonation}
+                    disabled={submitting}
+                    className="bg-warn-700 drop-shadow-[0px_4px_7px_rgba(163,57,0,0.35)] flex items-center justify-center rounded-pill w-full cursor-pointer hover:bg-warn-800 transition-colors btn-lg btn disabled:opacity-60"
+                  >
                     <div className="btn-icon relative shrink-0">
                       <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgLock} />
                     </div>
@@ -414,6 +489,8 @@ export default function FormulaireDon() {
           </div>
         </div>
       </main>
+      </>
+      )}
 
       <Footer />
     </div>

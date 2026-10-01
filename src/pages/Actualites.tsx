@@ -69,28 +69,28 @@ const imgContainer46 = `${assetPathPrefix}/e290d.svg`
 const imgContainer47 = `${assetPathPrefix}/e0bd5.svg`
 
 const NEWS_FILTERS = [
-  { value: "all", label: "Tous les articles", icon: <Icon name="sparkles" size={14} /> },
-  { value: "field", label: "Sur le terrain", icon: <Icon name="mapPin" size={14} /> },
-  { value: "stories", label: "Histoires humaines", icon: <Icon name="quote" size={14} /> },
+  { value: "all", label: "Tous les articles", icon: <Icon name="sparkles" size={12} /> },
+  { value: "field", label: "Sur le terrain", icon: <Icon name="mapPin" size={12} /> },
+  { value: "stories", label: "Histoires humaines", icon: <Icon name="quote" size={12} /> },
   {
     value: "education",
     label: "Éducation & Pédagogie",
-    icon: <Icon name="graduationCap" size={14} />,
+    icon: <Icon name="graduationCap" size={12} />,
   },
   {
     value: "protection",
     label: "Protection & Santé de l'enfant",
-    icon: <Icon name="shieldCheck" size={14} />,
+    icon: <Icon name="shieldCheck" size={12} />,
   },
   {
     value: "association",
     label: "Vie de l'association & Partenariats",
-    icon: <Icon name="handshake" size={14} />,
+    icon: <Icon name="handshake" size={12} />,
   },
   {
     value: "official",
     label: "Communiqués officiels",
-    icon: <Icon name="scrollText" size={14} />,
+    icon: <Icon name="scrollText" size={12} />,
   },
 ] as const
 
@@ -2416,7 +2416,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                 style={{ display: hiddenNews.size === 6 ? 'flex' : 'none' }}
               >
                 <span aria-hidden="true" className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-900">
-                  <Icon name="search" size={22} />
+                  <Icon name="search" size={20} />
                 </span>
                 <p className="font-['Montserrat:Bold'] text-[16px] font-bold text-ink-900">
                   Aucun article dans cette thématique

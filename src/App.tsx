@@ -8,6 +8,7 @@ import NosActions from "./pages/NosActions"
 import NosProjets from "./pages/NosProjets"
 import NotreImpact from "./pages/NotreImpact"
 import Actualites from "./pages/Actualites"
+import ProjetDetail from "./pages/ProjetDetail"
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/nos-actions" element={<NosActions />} />
         <Route path="/nos-projets" element={<NosProjets />} />
+        <Route path="/nos-projets/:slug" element={<ProjetDetail />} />
         <Route path="/notre-impact" element={<NotreImpact />} />
         <Route path="/actualites" element={<Actualites />} />
         <Route path="/contact" element={<Contact />} />

@@ -43,19 +43,19 @@ const imgMail = `${assetPathPrefix}/34fa3.svg`
 const imgMessageCircle = `${assetPathPrefix}/c5fc5.svg`
 
 const PROJECT_FILTERS = [
-  { value: "all", label: "Tous les projets", icon: <Icon name="pillars" size={14} /> },
+  { value: "all", label: "Tous les projets", icon: <Icon name="pillars" size={12} /> },
   {
     value: "school",
     label: "Écoles & Salles de classe",
-    icon: <Icon name="graduationCap" size={14} />,
+    icon: <Icon name="graduationCap" size={12} />,
   },
-  { value: "water", label: "Eau potable & WASH", icon: <Icon name="droplet" size={14} /> },
+  { value: "water", label: "Eau potable & WASH", icon: <Icon name="droplet" size={12} /> },
   {
     value: "books",
     label: "Bibliothèques & Livres",
-    icon: <Icon name="bookOpen" size={14} />,
+    icon: <Icon name="bookOpen" size={12} />,
   },
-  { value: "health", label: "Santé & Secours", icon: <Icon name="heartPulse" size={14} /> },
+  { value: "health", label: "Santé & Secours", icon: <Icon name="heartPulse" size={12} /> },
 ] as const
 
 /** Catégories (onglets) et région de chaque carte projet, dans l'ordre de la grille. */
@@ -1679,7 +1679,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                     <label className="flex items-center gap-2 min-w-0">
                       <span className="sr-only">Filtrer par région</span>
                       <span aria-hidden="true" className="flex shrink-0 items-center text-ink-700">
-                        <Icon name="mapPin" size={16.667} />
+                        <Icon name="mapPin" size={16} />
                       </span>
                       <select
                         className="min-w-0 max-w-full cursor-pointer rounded-control border-0 bg-white py-2 pl-4 pr-9 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-ink-900 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b5cab]"
@@ -1712,7 +1712,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                 style={{ display: visibleProjectCount === 0 ? 'flex' : 'none' }}
               >
                 <span aria-hidden="true" className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-700">
-                  <Icon name="search" size={22} />
+                  <Icon name="search" size={20} />
                 </span>
                 <p className="font-['Montserrat:Bold'] text-[16px] font-bold text-ink-900">
                   Aucun projet ne correspond à ces filtres
@@ -2752,7 +2752,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-node-id="50:1158"
                   data-name="Container"
                 >
-                  <Icon name="phone" size={12.0} className="shrink-0" />
+                  <Icon name="phone" size={12} className="shrink-0" />
                   <div
                     className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] lowercase not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
                     data-node-id="50:1161"
