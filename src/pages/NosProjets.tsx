@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react"
+import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
 import { TabBar } from "../components/TabBar"
+import { PROJECTS } from "../lib/projects"
 
 const assetPathPrefix = "/assets"
 const imgAb6AXuA92XXmwsh8KZfkVqhDTr7SutCi9Zg97Qv2EOhbVbPxfM9XJiu0CeP4Co7F9DeqwFQ71UwfTlEvwu3GIf8H7SsXnPoOElAwWvEFj3VLi0RqWlbQwC9EzkW44AeHoPbrZwhBw5WhkZcjGvj2TGrwFzrbLmkZxlMg5KlAvwWbIboIh8NcpOyhrZ6B8QQCnDgQAuHxVhM8PYrRqmBiKiWtjkBgBwYbYeHrM2QozgRq1F4F6Ho2H6GmA = `${assetPathPrefix}/8894c.png`
@@ -551,13 +553,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3315"
                           >
-                            <p className="leading-[24.75px] mb-0">{`Réhabilitation de l'école primaire`}</p>
-                            <p className="leading-[24.75px]">
-                              publique de Dimako
-                            </p>
+                            <p className="text-balance">{`Réhabilitation de l'école primaire publique de Dimako`}</p>
                           </div>
                         </div>
                         <div
@@ -566,18 +565,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                             data-node-id="5:3317"
                           >
-                            <p className="leading-[20px] mb-0">
-                              Réfection complète de 3 salles de classe
-                            </p>
-                            <p className="leading-[20px] mb-0">
-                              endommagées, remplacement total de la toiture
-                            </p>
-                            <p className="leading-[20px]">
-                              avec étanchéité renforcée, et livraison de 120...
-                            </p>
+                            <p className="text-pretty">{`Réfection complète de 3 salles de classe endommagées, remplacement total de la toiture avec étanchéité renforcée, et livraison de 120...`}</p>
                           </div>
                         </div>
                       </div>
@@ -591,51 +582,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3319"
                           data-name="Background"
                         >
-                          <div
-                            className="content-stretch flex items-center justify-between relative shrink-0 w-full"
-                            data-node-id="5:3320"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex gap-[4px] items-center pr-[49.55px] relative shrink-0"
-                              data-node-id="5:3321"
-                              data-name="Container"
-                            >
-                              <div
-                                className="h-[8px] relative shrink-0 w-[16px]"
-                                data-node-id="5:3322"
-                                data-name="Container"
-                              >
-                                <img
-                                  alt=""
-                                  className="absolute block inset-0 max-w-none size-full"
-                                  src={imgContainer3}
-                                />
-                              </div>
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3324"
-                              >
-                                <p className="leading-[24px] mb-0">Impact</p>
-                                <p className="leading-[24px]">constaté</p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start pr-[75.8px] relative shrink-0"
-                              data-node-id="5:3325"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3326"
-                              >
-                                <p className="leading-[24px] mb-0">
-                                  340 élèves
-                                </p>
-                                <p className="leading-[24px]">réintégrés</p>
-                              </div>
-                            </div>
-                          </div>
+                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`340 élèves réintégrés`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Impact constaté</p></div>
                           <div
                             className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3327"
@@ -676,11 +623,13 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-node-id="5:3333"
                             data-name="Button"
                           >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
-                              data-node-id="5:3334"
-                            >
-                              <p className="leading-[20px]">{`Fiche détaillée & Bilan`}</p>
+                                                        <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
+                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/rehabilitation-ecole-dimako`}>
+                                <span className="btn-label">{`Fiche détaillée & Bilan`}</span>
+                              </Link>
+                              <Link className="btn btn-card btn-warn" to="/don">
+                                <span className="btn-label">{`Voir le rapport photo`}</span>
+                              </Link>
                             </div>
                             <div
                               className="relative shrink-0 size-[12px]"
@@ -812,13 +761,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3355"
                           >
-                            <p className="leading-[24.75px] mb-0">{`Forage d'eau potable et bloc`}</p>
-                            <p className="leading-[24.75px]">
-                              sanitaire sécurisé à Mora
-                            </p>
+                            <p className="text-balance">{`Forage d'eau potable et bloc sanitaire sécurisé à Mora`}</p>
                           </div>
                         </div>
                         <div
@@ -827,16 +773,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                             data-node-id="5:3357"
                           >
-                            <p className="leading-[20px] mb-0">{`Création d'un point d'adduction d'eau à 65`}</p>
-                            <p className="leading-[20px] mb-0">
-                              mètres de profondeur et construction de latrines
-                            </p>
-                            <p className="leading-[20px]">
-                              écologiques séparées filles/garçons pour...
-                            </p>
+                            <p className="text-pretty">{`Création d'un point d'adduction d'eau à 65 mètres de profondeur et construction de latrines écologiques séparées filles/garçons pour...`}</p>
                           </div>
                         </div>
                       </div>
@@ -850,49 +790,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3359"
                           data-name="Background"
                         >
-                          <div
-                            className="content-stretch flex items-center justify-between relative shrink-0 w-full"
-                            data-node-id="5:3360"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                              data-node-id="5:3361"
-                              data-name="Container"
-                            >
-                              <div
-                                className="h-[13.333px] relative shrink-0 w-[10.667px]"
-                                data-node-id="5:3362"
-                                data-name="Container"
-                              >
-                                <img
-                                  alt=""
-                                  className="absolute block inset-0 max-w-none size-full"
-                                  src={imgContainer6}
-                                />
-                              </div>
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3364"
-                              >
-                                <p className="leading-[24px]">
-                                  Bénéficiaires directs
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative shrink-0"
-                              data-node-id="5:3365"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3366"
-                              >
-                                <p className="leading-[24px]">800 écoliers</p>
-                              </div>
-                            </div>
-                          </div>
+                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`800 écoliers`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Bénéficiaires directs</p></div>
                           <div
                             className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3367"
@@ -943,53 +841,27 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-node-id="5:3374"
                         data-name="Margin"
                       >
-                        <div
-                          className="content-stretch flex items-center justify-between pr-[0.01px] pt-[8px] relative shrink-0 w-full"
-                          data-node-id="5:3375"
-                          data-name="Container"
+                      <div
+                        className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full"
+                        data-node-id="5:3375"
+                        data-name="Container"
+                      >
+                        <Link
+                          className="btn btn-card btn-secondary"
+                          data-node-id="5:3376"
+                          to={`/nos-projets/${PROJECTS[1].slug}`}
                         >
-                          <div
-                            className="content-stretch flex flex-col items-center justify-center pl-[29.17px] pr-[29.19px] relative shrink-0"
-                            data-node-id="5:3376"
-                            data-name="Button"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
-                              data-node-id="5:3377"
-                            >
-                              <p className="leading-[20px] mb-0">
-                                Consulter le
-                              </p>
-                              <p className="leading-[20px]">chantier</p>
-                            </div>
-                          </div>
-                          <div
-                            className="bg-warn-700 content-stretch drop-shadow-card flex gap-[6px] items-center pl-[16px] pr-[57.98px] py-[8px] relative rounded-pill shrink-0"
-                            data-node-id="5:3378"
-                            data-name="Link"
-                          >
-                            <div
-                              className="h-[13.667px] relative shrink-0 w-[14px]"
-                              data-node-id="5:3379"
-                              data-name="Container"
-                            >
-                              <img
-                                alt=""
-                                className="absolute block inset-0 max-w-none size-full"
-                                src={imgContainer7}
-                              />
-                            </div>
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
-                              data-node-id="5:3381"
-                            >
-                              <p className="leading-[20px] mb-0">
-                                Finaliser ce
-                              </p>
-                              <p className="leading-[20px]">projet</p>
-                            </div>
-                          </div>
-                        </div>
+                          <span className="btn-label">{`Consulter le chantier`}</span>
+                        </Link>
+                        <Link
+                          className="btn btn-card btn-warn"
+                          data-node-id="5:3378"
+                          to="/don"
+                        >
+                          <span className="btn-label">{`Finaliser ce projet`}</span>
+                          <Icon name="arrowRight" className="btn-icon" />
+                        </Link>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -1096,13 +968,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3398"
                           >
-                            <p className="leading-[24.75px] mb-0">
-                              Bibliothèque rurale et malle aux
-                            </p>
-                            <p className="leading-[24.75px]">livres de Penja</p>
+                            <p className="text-balance">{`Bibliothèque rurale et malle aux livres de Penja`}</p>
                           </div>
                         </div>
                         <div
@@ -1111,16 +980,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                             data-node-id="5:3400"
                           >
-                            <p className="leading-[20px] mb-0">{`Acquisition et aménagement d'un fonds`}</p>
-                            <p className="leading-[20px] mb-0">
-                              documentaire de 1 200 livres jeunesse
-                            </p>
-                            <p className="leading-[20px]">
-                              francophones et anglophones, caisses mobiles...
-                            </p>
+                            <p className="text-pretty">{`Acquisition et aménagement d'un fonds documentaire de 1 200 livres jeunesse francophones et anglophones, caisses mobiles...`}</p>
                           </div>
                         </div>
                       </div>
@@ -1134,49 +997,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3402"
                           data-name="Background"
                         >
-                          <div
-                            className="content-stretch flex items-center justify-between relative shrink-0 w-full"
-                            data-node-id="5:3403"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                              data-node-id="5:3404"
-                              data-name="Container"
-                            >
-                              <div
-                                className="h-[10.667px] relative shrink-0 w-[14.667px]"
-                                data-node-id="5:3405"
-                                data-name="Container"
-                              >
-                                <img
-                                  alt=""
-                                  className="absolute block inset-0 max-w-none size-full"
-                                  src={imgContainer8}
-                                />
-                              </div>
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3407"
-                              >
-                                <p className="leading-[24px]">
-                                  Ouvrages ciblés
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative shrink-0"
-                              data-node-id="5:3408"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3409"
-                              >
-                                <p className="leading-[24px]">1 200 livres</p>
-                              </div>
-                            </div>
-                          </div>
+                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`1 200 livres`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Ouvrages ciblés</p></div>
                           <div
                             className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3410"
@@ -1227,35 +1048,13 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-node-id="5:3417"
                         data-name="Margin"
                       >
-                        <div
-                          className="content-stretch flex items-center justify-between pt-[8px] relative shrink-0 w-full"
-                          data-node-id="5:3418"
-                          data-name="Container"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-center justify-center relative shrink-0"
-                            data-node-id="5:3419"
-                            data-name="Button"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
-                              data-node-id="5:3420"
-                            >
-                              <p className="leading-[20px]">Détails du fonds</p>
-                            </div>
-                          </div>
-                          <div
-                            className="bg-white content-stretch drop-shadow-card flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
-                            data-node-id="5:3421"
-                            data-name="Link"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
-                              data-node-id="5:3422"
-                            >
-                              <p className="leading-[20px]">Parrainer</p>
-                            </div>
-                          </div>
+                                                <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
+                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/forage-mora-wash`}>
+                            <span className="btn-label">{`Détails du fonds`}</span>
+                          </Link>
+                          <Link className="btn btn-card btn-warn" to="/don">
+                            <span className="btn-label">{`Parrainer`}</span>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -1374,15 +1173,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3439"
                           >
-                            <p className="leading-[24.75px] mb-0">
-                              Équipement didactique et kits
-                            </p>
-                            <p className="leading-[24.75px]">
-                              secourisme à Ngambé-Tikar
-                            </p>
+                            <p className="text-balance">{`Équipement didactique et kits secourisme à Ngambé-Tikar`}</p>
                           </div>
                         </div>
                         <div
@@ -1391,16 +1185,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                             data-node-id="5:3441"
                           >
-                            <p className="leading-[20px] mb-0">{`Dotation en armoires à pharmacie d'urgence,`}</p>
-                            <p className="leading-[20px] mb-0">
-                              déparasitage annuel et mallettes de premier
-                            </p>
-                            <p className="leading-[20px]">
-                              secours pour 6 écoles primaires de brousse...
-                            </p>
+                            <p className="text-pretty">{`Dotation en armoires à pharmacie d'urgence, déparasitage annuel et mallettes de premier secours pour 6 écoles primaires de brousse...`}</p>
                           </div>
                         </div>
                       </div>
@@ -1414,53 +1202,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3443"
                           data-name="Background"
                         >
-                          <div
-                            className="content-stretch flex items-center justify-between relative shrink-0 w-full"
-                            data-node-id="5:3444"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex gap-[4px] items-center pr-[43.71px] relative shrink-0"
-                              data-node-id="5:3445"
-                              data-name="Container"
-                            >
-                              <div
-                                className="relative shrink-0 size-[13.333px]"
-                                data-node-id="5:3446"
-                                data-name="Container"
-                              >
-                                <img
-                                  alt=""
-                                  className="absolute block inset-0 max-w-none size-full"
-                                  src={imgContainer9}
-                                />
-                              </div>
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3448"
-                              >
-                                <p className="leading-[24px] mb-0">
-                                  Couverture
-                                </p>
-                                <p className="leading-[24px]">planifiée</p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start pr-[38px] relative shrink-0"
-                              data-node-id="5:3449"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3450"
-                              >
-                                <p className="leading-[24px] mb-0">
-                                  6 écoles / 920
-                                </p>
-                                <p className="leading-[24px]">enfants</p>
-                              </div>
-                            </div>
-                          </div>
+                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`6 écoles / 920 enfants`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Couverture planifiée</p></div>
                           <div
                             className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3451"
@@ -1511,35 +1253,13 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-node-id="5:3458"
                         data-name="Margin"
                       >
-                        <div
-                          className="content-stretch flex items-center justify-between pt-[8px] relative shrink-0 w-full"
-                          data-node-id="5:3459"
-                          data-name="Container"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-center justify-center relative shrink-0"
-                            data-node-id="5:3460"
-                            data-name="Button"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
-                              data-node-id="5:3461"
-                            >
-                              <p className="leading-[20px]">{`Consulter l'inventaire`}</p>
-                            </div>
-                          </div>
-                          <div
-                            className="bg-brand-900 content-stretch drop-shadow-card flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
-                            data-node-id="5:3462"
-                            data-name="Link"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
-                              data-node-id="5:3463"
-                            >
-                              <p className="leading-[20px]">Soutenir ce lot</p>
-                            </div>
-                          </div>
+                                                <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
+                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/bibliotheque-penja`}>
+                            <span className="btn-label">{`Consulter l'inventaire`}</span>
+                          </Link>
+                          <Link className="btn btn-card btn-warn" to="/don">
+                            <span className="btn-label">{`Soutenir ce lot`}</span>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -1647,15 +1367,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3480"
                           >
-                            <p className="leading-[24.75px] mb-0">
-                              Rénovation de la toiture de la
-                            </p>
-                            <p className="leading-[24.75px]">
-                              maternelle bilingue de Foumban
-                            </p>
+                            <p className="text-balance">{`Rénovation de la toiture de la maternelle bilingue de Foumban`}</p>
                           </div>
                         </div>
                         <div
@@ -1664,19 +1379,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                             data-node-id="5:3482"
                           >
-                            <p className="leading-[20px] mb-0">
-                              Remplacement de 420 m² de charpente
-                            </p>
-                            <p className="leading-[20px] mb-0">
-                              fragilisée par les infiltrations pour protéger 215
-                            </p>
-                            <p className="leading-[20px]">
-                              tout-petits avant la saison des pluies
-                              torrentielles
-                            </p>
+                            <p className="text-pretty">{`Remplacement de 420 m² de charpente fragilisée par les infiltrations pour protéger 215 tout-petits avant la saison des pluies torrentielles`}</p>
                           </div>
                         </div>
                       </div>
@@ -1690,51 +1396,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3484"
                           data-name="Background"
                         >
-                          <div
-                            className="content-stretch flex items-center justify-between relative shrink-0 w-full"
-                            data-node-id="5:3485"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                              data-node-id="5:3486"
-                              data-name="Container"
-                            >
-                              <div
-                                className="h-[11.333px] relative shrink-0 w-[14.667px]"
-                                data-node-id="5:3487"
-                                data-name="Container"
-                              >
-                                <img
-                                  alt=""
-                                  className="absolute block inset-0 max-w-none size-full"
-                                  src={imgContainer10}
-                                />
-                              </div>
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3489"
-                              >
-                                <p className="leading-[24px]">
-                                  Surface toiture
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative shrink-0"
-                              data-node-id="5:3490"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3491"
-                              >
-                                <p className="leading-[24px]">
-                                  420 m² à sécuriser
-                                </p>
-                              </div>
-                            </div>
-                          </div>
+                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`420 m² à sécuriser`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Surface toiture</p></div>
                           <div
                             className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3492"
@@ -1787,37 +1449,13 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-node-id="5:3499"
                         data-name="Margin"
                       >
-                        <div
-                          className="content-stretch flex items-center justify-between pt-[8px] relative shrink-0 w-full"
-                          data-node-id="5:3500"
-                          data-name="Container"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-center justify-center relative shrink-0"
-                            data-node-id="5:3501"
-                            data-name="Button"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
-                              data-node-id="5:3502"
-                            >
-                              <p className="leading-[20px]">
-                                Voir le dossier technique
-                              </p>
-                            </div>
-                          </div>
-                          <div
-                            className="bg-warn-700 content-stretch drop-shadow-card flex items-center px-[16px] py-[8px] relative rounded-pill shrink-0"
-                            data-node-id="5:3503"
-                            data-name="Link"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
-                              data-node-id="5:3504"
-                            >
-                              <p className="leading-[20px]">Adopter ce toit</p>
-                            </div>
-                          </div>
+                                                <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
+                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/kits-secourisme-ngambe-tikar`}>
+                            <span className="btn-label">{`Voir le dossier technique`}</span>
+                          </Link>
+                          <Link className="btn btn-card btn-warn" to="/don">
+                            <span className="btn-label">{`Adopter ce toit`}</span>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -1925,13 +1563,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Heading 3"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[18px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3521"
                           >
-                            <p className="leading-[24.75px] mb-0">
-                              Don de 250 kits scolaires
-                            </p>
-                            <p className="leading-[24.75px]">{`complets au Cycle 1 & 2 à Batouri`}</p>
+                            <p className="text-balance">{`Don de 250 kits scolaires complets au Cycle 1 & 2 à Batouri`}</p>
                           </div>
                         </div>
                         <div
@@ -1940,18 +1575,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-name="Container"
                         >
                           <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                             data-node-id="5:3523"
                           >
-                            <p className="leading-[20px] mb-0">
-                              Distribution directe aux orphelins et enfants de
-                            </p>
-                            <p className="leading-[20px] mb-0">
-                              réfugiés : cartables imperméables, boîtes de
-                            </p>
-                            <p className="leading-[20px]">
-                              craies, cahiers, ardoises et manuels officiels du
-                            </p>
+                            <p className="text-pretty">{`Distribution directe aux orphelins et enfants de réfugiés : cartables imperméables, boîtes de craies, cahiers, ardoises et manuels officiels du`}</p>
                           </div>
                         </div>
                       </div>
@@ -1965,51 +1592,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3525"
                           data-name="Background"
                         >
-                          <div
-                            className="content-stretch flex items-center justify-between relative shrink-0 w-full"
-                            data-node-id="5:3526"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                              data-node-id="5:3527"
-                              data-name="Container"
-                            >
-                              <div
-                                className="h-[13.333px] relative shrink-0 w-[10.667px]"
-                                data-node-id="5:3528"
-                                data-name="Container"
-                              >
-                                <img
-                                  alt=""
-                                  className="absolute block inset-0 max-w-none size-full"
-                                  src={imgContainer11}
-                                />
-                              </div>
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3530"
-                              >
-                                <p className="leading-[24px]">
-                                  Dotations remises
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative shrink-0"
-                              data-node-id="5:3531"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[16px] whitespace-nowrap"
-                                data-node-id="5:3532"
-                              >
-                                <p className="leading-[24px]">
-                                  250 kits complets
-                                </p>
-                              </div>
-                            </div>
-                          </div>
+                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`250 kits complets`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Dotations remises</p></div>
                           <div
                             className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full"
                             data-node-id="5:3533"
@@ -2050,13 +1633,13 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-node-id="5:3539"
                             data-name="Button"
                           >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] text-center whitespace-nowrap"
-                              data-node-id="5:3540"
-                            >
-                              <p className="leading-[20px]">
-                                Rapport photographique
-                              </p>
+                                                        <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
+                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/toiture-maternelle-foumban`}>
+                                <span className="btn-label">{`Rapport photographique`}</span>
+                              </Link>
+                              <Link className="btn btn-card btn-warn" to="/don">
+                                <span className="btn-label">{`Voir le bilan`}</span>
+                              </Link>
                             </div>
                           </div>
                           <div
@@ -2287,13 +1870,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                                 data-node-id="5:3565"
                               >
-                                <p className="leading-[20px] mb-0">
-                                  Nos équipes se déplacent pour certifier la
-                                  faisabilité et le
-                                </p>
-                                <p className="leading-[20px]">
-                                  devis technique.
-                                </p>
+                                <p>{`Nos équipes se déplacent pour certifier la
+                                  faisabilité et le devis technique.`}</p>
                               </div>
                             </div>
                           </div>
@@ -2342,11 +1920,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                                 className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                                 data-node-id="5:3573"
                               >
-                                <p className="leading-[20px] mb-0">
-                                  Priorité donnée aux menuisiers, maçons et
-                                  électriciens du
-                                </p>
-                                <p className="leading-[20px]">terroir.</p>
+                                <p>{`Priorité donnée aux menuisiers, maçons et
+                                  électriciens du terroir.`}</p>
                               </div>
                             </div>
                           </div>
@@ -2938,13 +2513,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-name="Container"
                     >
                       <div
-                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+                        className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
                         data-node-id="5:3665"
                       >
-                        <p className="leading-[20px] mb-0">{`Téléchargez les comptes-rendus d'exécution physique et`}</p>
-                        <p className="leading-[20px]">
-                          financière des projets clôturés.
-                        </p>
+                        <p>{`Téléchargez les comptes-rendus d'exécution physique et financière des projets clôturés.`}</p>
                       </div>
                     </div>
                     <div
@@ -3305,8 +2877,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1179"
                 >
-                  <p className="leading-[20px] mb-0">À</p>
-                  <p className="leading-[20px]">propos</p>
+                  <p>{`À propos`}</p>
                 </div>
               </div>
               <div
@@ -3318,8 +2889,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1181"
                 >
-                  <p className="leading-[20px] mb-0">Nos</p>
-                  <p className="leading-[20px]">actions</p>
+                  <p>{`Nos actions`}</p>
                 </div>
               </div>
               <div
@@ -3331,8 +2901,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
                   data-node-id="50:1183"
                 >
-                  <p className="leading-[20px] mb-0">Nos</p>
-                  <p className="leading-[20px]">projets</p>
+                  <p>{`Nos projets`}</p>
                 </div>
               </div>
               <div
@@ -3344,8 +2913,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1185"
                 >
-                  <p className="leading-[20px] mb-0">Notre</p>
-                  <p className="leading-[20px]">impact</p>
+                  <p>{`Notre impact`}</p>
                 </div>
               </div>
               <div
@@ -3369,8 +2937,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="50:1189"
                 >
-                  <p className="leading-[20px] mb-0">Nous</p>
-                  <p className="leading-[20px]">soutenir</p>
+                  <p>{`Nous soutenir`}</p>
                 </div>
               </div>
               <div
@@ -3622,8 +3189,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3819"
                 >
-                  <p className="leading-[20px] mb-0">À</p>
-                  <p className="leading-[20px]">propos</p>
+                  <p>{`À propos`}</p>
                 </div>
               </div>
               <div
@@ -3635,8 +3201,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3821"
                 >
-                  <p className="leading-[20px] mb-0">Nos</p>
-                  <p className="leading-[20px]">actions</p>
+                  <p>{`Nos actions`}</p>
                 </div>
               </div>
               <div
@@ -3648,8 +3213,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap"
                   data-node-id="5:3823"
                 >
-                  <p className="leading-[20px] mb-0">Nos</p>
-                  <p className="leading-[20px]">projets</p>
+                  <p>{`Nos projets`}</p>
                 </div>
               </div>
               <div
@@ -3661,8 +3225,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3825"
                 >
-                  <p className="leading-[20px] mb-0">Notre</p>
-                  <p className="leading-[20px]">impact</p>
+                  <p>{`Notre impact`}</p>
                 </div>
               </div>
               <div
@@ -3686,8 +3249,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                   data-node-id="5:3829"
                 >
-                  <p className="leading-[20px] mb-0">Nous</p>
-                  <p className="leading-[20px]">soutenir</p>
+                  <p>{`Nous soutenir`}</p>
                 </div>
               </div>
               <div

@@ -95,6 +95,34 @@
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
 
+  /* ---- Type scale (semantic, role-named) -----------------------------
+     Figma handed us every size as a one-off arbitrary value, so dense
+     regions like the 10-region map had 7 different font sizes with no
+     shared rhythm. These steps are the only sanctioned sizes; each pairs
+     its own line height so a token can never be applied with a leading
+     that was tuned for a different size.
+
+     --text-micro is the new floor: eyebrows and badges that were
+     already sitting at 11px and had nowhere smaller to go. */
+  --text-micro: 0.625rem; /* 10px */
+  --text-micro--line-height: 1.4rem;
+  --text-caption: 0.6875rem; /* 11px */
+  --text-caption--line-height: 1rem;
+  --text-small: 0.75rem; /* 12px */
+  --text-small--line-height: 1rem;
+  --text-body: 0.8125rem; /* 13px */
+  --text-body--line-height: 1.375rem;
+  --text-lead: 0.875rem; /* 14px */
+  --text-lead--line-height: 1.5rem;
+  --text-h4: 1rem; /* 16px */
+  --text-h4--line-height: 1.5rem;
+  --text-h3: 1.125rem; /* 18px */
+  --text-h3--line-height: 1.75rem;
+  --text-h2: 1.5rem; /* 24px */
+  --text-h2--line-height: 1.75rem;
+  --text-h1: 2rem; /* 32px */
+  --text-h1--line-height: 2.25rem;
+
   /* ---- Buttons: horizontal padding per size -------------------------- */
   --btn-pad-md: 1.5rem;
   --btn-pad-lg: 2rem;
@@ -303,9 +331,130 @@
     outline-offset: 2px;
   }
 
+  /* ---- Buttons: colour variants -------------------------------------
+     The CTAs were hardcoded to one blue in every page file, so a
+     donation button and a partner button were indistinguishable. These
+     four are the sanctioned intents. */
+  .btn-primary {
+    background-color: var(--color-brand-900);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-brand-800);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-surface-tint);
+    color: var(--color-ink-900);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-brand-200);
+  }
+
+  .btn-warn {
+    background-color: var(--color-warn-700);
+    color: #fff;
+  }
+
+  .btn-warn:hover {
+    background-color: var(--color-warn-800);
+  }
+
+  /* Ghost is the low-emphasis tertiary action. It needs a visible edge
+     or it disappears against the card it sits in. */
+  .btn-ghost {
+    background-color: transparent;
+    border: 1px solid var(--color-border-subtle);
+    color: var(--color-ink-700);
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--color-surface-muted);
+    color: var(--color-brand-900);
+  }
+
+  /* ---- Buttons: small size ------------------------------------------
+     32px is the inline chip height; it is for actions inside a card or
+     a table row, never for a page-level call to action. */
+  .btn-sm {
+    min-height: 32px;
+    padding-inline: 0.875rem;
+  }
+
+  .btn-sm > svg,
+  .btn-sm > .btn-icon {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+
+  .btn-sm .btn-label {
+    font-size: var(--text-small);
+  }
+
+  /* A full-width action: the primary choice inside a narrow card or a
+     mobile drawer, where a pill that only fills its text reads as
+     unclickable. */
+  .btn-block {
+    display: flex;
+    width: 100%;
+  }
+
+  /* ---- Buttons: inside a card ---------------------------------------
+     A 48px page call to action is right at the top level and wrong
+     inside a project card: two of them stacked pushed the card past
+     600px tall and the metric block above them lost its alignment.
+     Card actions are 36px and allowed to shrink, so a long label
+     shortens the pill rather than overflowing the card. */
+  .btn-card {
+    min-height: 36px;
+    padding-inline: 0.875rem;
+  }
+
+  .btn-card > svg,
+  .btn-card > .btn-icon {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .btn-card .btn-label {
+    font-size: var(--text-small);
+  }
+
+  /* A pair of card actions shares the row and gives up width before the
+     row is allowed to exceed the card. */
+  .btn-card {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
   /* Respect the OS reduced-motion setting for every button transition. */
   @media (prefers-reduced-motion: reduce) {
     .btn {
+      transition: none;
+    }
+  }
+
+  /* ---- Footer: cross-links into the site ---------------------------
+     The footer listed every pillar and every governance document as plain
+     text, so it was the one place a reader could not navigate. These keep
+     the same size as the surrounding copy, so nothing shifts. */
+  .footer-link {
+    color: var(--color-ink-700);
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--color-brand-900);
+    text-decoration: underline;
+  }
+
+  /* Respect the OS reduced-motion setting. */
+  @media (prefers-reduced-motion: reduce) {
+    .footer-link {
       transition: none;
     }
   }

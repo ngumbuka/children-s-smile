@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Icon } from './Icon';
 
 const assetPathPrefix = '/assets';
@@ -21,7 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 items-start w-full md:grid-cols-2 xl:grid-cols-[424px_repeat(3,224px)] xl:gap-6">
           {/* Brand */}
           <div className="flex flex-col gap-4 items-start w-full shrink-0 xl:w-[424px]">
-            <div className="flex gap-3 items-center">
+            <Link className="flex gap-3 items-center rounded-xs" to="/">
               <div className="relative rounded-pill shrink-0 size-8">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-pill">
                   <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgLogo} />
@@ -31,7 +32,7 @@ export function Footer() {
                 <p className="leading-[25px] text-brand-900 text-xl">{`Children's Smile`}</p>
                 <p className="leading-4 text-ink-700 text-[11px] tracking-[1.1px] uppercase">CAMEROUN</p>
               </div>
-            </div>
+            </Link>
             <p className="font-['Inter'] font-normal leading-[22px] text-ink-700 text-sm">
               Organisation humanitaire à but non lucratif dédiée à la protection,{' '}
               {`l'éducation civique, la santé et l'épanouissement des enfants`}{' '}
@@ -52,16 +53,20 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-2 items-start">
               {[
-                { color: '#004484', text: `Scolarisation & Kits Pédagogiques` },
-                { color: '#006e2d', text: `Cantines Solidaires & Nutrition Rurale` },
-                { color: '#a33900', text: `Protection Infantile & État Civil` },
-                { color: '#0b5cab', text: `Santé Préventive & Eau Potable` },
-                { color: '#7cf994', text: `Mentorat & Autonomisation Communautaire` },
+                { color: '#004484', text: `Scolarisation & Kits Pédagogiques`, to: '/nos-actions' },
+                { color: '#006e2d', text: `Cantines Solidaires & Nutrition Rurale`, to: '/nos-actions' },
+                { color: '#a33900', text: `Protection Infantile & État Civil`, to: '/nos-actions' },
+                { color: '#0b5cab', text: `Santé Préventive & Eau Potable`, to: '/nos-actions' },
+                { color: '#7cf994', text: `Mentorat & Autonomisation Communautaire`, to: '/nos-actions' },
               ].map((item) => (
-                <div key={item.text} className="flex gap-2 items-center">
+                <Link
+                  key={item.text}
+                  className="flex gap-2 items-center footer-link rounded-xs"
+                  to={item.to}
+                >
                   <div className="rounded-pill shrink-0 size-1.5" style={{ backgroundColor: item.color }} />
-                  <p className="font-['Inter'] font-normal text-ink-700 text-sm">{item.text}</p>
-                </div>
+                  <p className="font-['Inter'] font-normal text-sm">{item.text}</p>
+                </Link>
               ))}
             </div>
           </div>
@@ -78,18 +83,22 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-2 items-start">
               {[
-                { icon: imgDocIcon, iconW: 'w-[10.67px]', iconH: 'h-[13.33px]', text: `Rapports Annuels & Audits CEMAC` },
-                { icon: imgCertIcon, iconW: 'w-[13.33px]', iconH: 'h-[13.33px]', text: `Comptes Certifiés BEAC & MinFi` },
-                { icon: imgScaleIcon, iconW: 'w-[16px]', iconH: 'h-[8px]', text: `Conseil d'Administration Indépendant` },
-                { icon: imgPartnerIcon, iconW: 'w-[14.67px]', iconH: 'h-[13.33px]', text: `Partenariats Institutionnels & ONGs` },
-                { icon: imgImpactIcon, iconW: 'w-[12px]', iconH: 'h-[12px]', text: `Suivi Terrain & Taux d'Impact 92%` },
+                { icon: imgDocIcon, iconW: 'w-[10.67px]', iconH: 'h-[13.33px]', text: `Rapports Annuels & Audits CEMAC`, to: '/notre-impact' },
+                { icon: imgCertIcon, iconW: 'w-[13.33px]', iconH: 'h-[13.33px]', text: `Comptes Certifiés BEAC & MinFi`, to: '/notre-impact' },
+                { icon: imgScaleIcon, iconW: 'w-[16px]', iconH: 'h-[8px]', text: `Conseil d'Administration Indépendant`, to: '/a-propos' },
+                { icon: imgPartnerIcon, iconW: 'w-[14.67px]', iconH: 'h-[13.33px]', text: `Partenariats Institutionnels & ONGs`, to: '/a-propos' },
+                { icon: imgImpactIcon, iconW: 'w-[12px]', iconH: 'h-[12px]', text: `Suivi Terrain & Taux d'Impact 92%`, to: '/notre-impact' },
               ].map((item) => (
-                <div key={item.text} className="flex gap-2 items-center">
+                <Link
+                  key={item.text}
+                  className="flex gap-2 items-center footer-link rounded-xs"
+                  to={item.to}
+                >
                   <div className={`relative shrink-0 ${item.iconW} ${item.iconH}`}>
                     <img alt="" className="absolute block inset-0 max-w-none size-full" src={item.icon} />
                   </div>
-                  <p className="font-['Inter'] font-normal text-ink-700 text-sm">{item.text}</p>
-                </div>
+                  <p className="font-['Inter'] font-normal text-sm">{item.text}</p>
+                </Link>
               ))}
             </div>
           </div>
@@ -121,6 +130,12 @@ export function Footer() {
                 <div className="flex flex-col gap-0.5">
                   <p className="font-['Inter'] font-bold text-ink-900 text-sm whitespace-nowrap">Canaux de Dons Certifiés :</p>
                   <p className="font-['Inter'] font-normal text-ink-700 text-xs">{`Orange Money & MTN MoMo officiels`}</p>
+                  <Link
+                    className="font-['Inter'] font-semibold text-accent-700 text-sm footer-link rounded-xs underline"
+                    to="/nous-soutenir"
+                  >
+                    {`Faire un don maintenant`}
+                  </Link>
                 </div>
               </div>
             </div>
