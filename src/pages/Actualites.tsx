@@ -2896,7 +2896,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
               data-name="Section - ENCADRÉ DÉONTOLOGIE & PROTECTION DE L'ENFANT (CHARTE ÉTHIQUE DU MAGAZINE):margin"
             >
               <div
-                className="bg-surface-tint content-stretch flex flex-col items-start overflow-clip p-[40px] relative rounded-panel shadow-raised shrink-0 w-full"
+                className="bg-surface-tint content-stretch flex flex-col items-start p-[40px] relative rounded-panel shadow-raised shrink-0 w-full"
                 data-node-id="5:1152"
                 data-name="Section - ENCADRÉ DÉONTOLOGIE & PROTECTION DE L'ENFANT (CHARTE ÉTHIQUE DU MAGAZINE)"
               >
