@@ -559,7 +559,14 @@
      The footer listed every pillar and every governance document as plain
      text, so it was the one place a reader could not navigate. These keep
      the same size as the surrounding copy, so nothing shifts. */
+  /*
+   * Footer navigation is a primary tap surface on small screens, so every link
+   * gets at least a 44px target even though its label sits on a single text line.
+   */
   .footer-link {
+    align-items: center;
+    display: inline-flex;
+    min-height: 44px;
     color: var(--color-ink-700);
     text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
     text-underline-offset: 3px;

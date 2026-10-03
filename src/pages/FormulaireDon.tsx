@@ -119,9 +119,9 @@ export default function FormulaireDon() {
               </p>
             </div>
             <div className="flex flex-col gap-6 items-start justify-between w-full lg:flex-row lg:items-end">
-              <p className="font-['Montserrat'] font-extrabold leading-tight text-brand-900 text-3xl sm:text-4xl lg:leading-[44px] lg:whitespace-nowrap">
+              <h1 className="font-['Montserrat'] font-extrabold leading-tight text-brand-900 text-3xl sm:text-4xl lg:leading-[44px] lg:whitespace-nowrap">
                 Formulaire de Don Sécurisé
-              </p>
+              </h1>
               {/* Steps */}
               <div className="flex gap-3 items-center overflow-x-auto max-w-full pb-1 sm:gap-4">
                 <div className="flex gap-2 items-center">

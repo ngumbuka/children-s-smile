@@ -410,8 +410,9 @@ export default function NosActionsChildrensSmileCameroun() {
                       className="[word-break:break-word] flex flex-col font-['Montserrat:ExtraBold'] font-extrabold justify-center leading-[0] relative shrink-0 text-ink-900 text-[48px] tracking-[-1.2px] whitespace-nowrap"
                       data-node-id="5:2797"
                     >
-                      <p className="leading-[56px] mb-0">{`Une action intégrée pour l'école et`}</p>
-                      <p className="leading-[56px]">{`l'enfance au Cameroun`}</p>
+                      <h1 className="leading-[56px] mb-0">
+                        {`Une action intégrée pour l'école et `} <br /> {`l'enfance au Cameroun`}
+                      </h1>
                     </div>
                   </div>
                   <div

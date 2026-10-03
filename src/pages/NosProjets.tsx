@@ -257,11 +257,9 @@ export default function NosProjetsChildrensSmileCameroun() {
                         className="[word-break:break-word] flex flex-col font-['Montserrat:ExtraBold'] font-extrabold justify-center leading-[0] relative shrink-0 text-[48px] text-white tracking-[-1.2px] w-full"
                         data-node-id="5:3267"
                       >
-                        <p className="leading-[56px] mb-0">{`Nos Chantiers & Projets`}</p>
-                        <p className="leading-[56px] mb-0">
-                          Scolaires À Travers le
-                        </p>
-                        <p className="leading-[56px]">Cameroun</p>
+                        <h1 className="leading-[56px] mb-0">
+                          {`Nos Chantiers & Projets `} <br /> {`Scolaires À Travers le Cameroun`}
+                        </h1>
                       </div>
                     </div>
                     <div

@@ -366,11 +366,11 @@ export default function NotreImpactChildrensSmileCameroun() {
                       className="[word-break:break-word] font-['Montserrat:ExtraBold'] font-extrabold leading-[0] min-w-full relative shrink-0 text-brand-900 text-[48px] tracking-[-1.2px] w-full"
                       data-node-id="50:57"
                     >
-                      <p className="leading-[56px]">
+                      <h1 className="leading-[56px]">
                         {`Un Impact Éducatif Réel, `}
                         <span className="text-warn-700">{` Mesurable `}</span>
                         {` et Transparent au Cameroun`}
-                      </p>
+                      </h1>
                     </div>
                     <div
                       className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-ink-700 text-[18px] w-full"
