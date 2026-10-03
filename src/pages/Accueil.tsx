@@ -1,8 +1,11 @@
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Icon } from '../components/Icon';
 import type { IconName } from '../components/Icon';
+import { formatXOF, getTransactionStats, listProjects } from '../lib/repositories';
+import type { ProjectDoc } from '../lib/models';
 
 const assetPathPrefix = '/assets';
 const imgHero = `${assetPathPrefix}/1720c.png`;
@@ -12,13 +15,6 @@ const imgProjectClassroom = `${assetPathPrefix}/8894c.png`;
 const imgProjectWater = `${assetPathPrefix}/6a646.png`;
 const imgProjectNutrition = `${assetPathPrefix}/70a8f.png`;
 const imgCheck = `${assetPathPrefix}/2d5a7.svg`;
-
-const stats = [
-  { value: '3 420', label: 'Écoliers équipés', color: 'text-accent-700' },
-  { value: '47', label: 'Salles rénovées', color: 'text-brand-900' },
-  { value: '10', label: 'Régions couvertes', color: 'text-warn-700' },
-  { value: '92%', label: `Taux d'impact`, color: 'text-brand-700' },
-];
 
 const pillars = [
   {
@@ -47,27 +43,6 @@ const pillars = [
   },
 ];
 
-const projects = [
-  {
-    image: imgProjectClassroom,
-    location: 'Région du Centre',
-    title: 'Des salles de classe dignes et équipées',
-    desc: `Réhabilitation des bâtiments, fabrication locale de bancs-pupitres et distribution de kits pédagogiques.`,
-  },
-  {
-    image: imgProjectWater,
-    location: 'Grand-Nord',
-    title: `L'eau potable au plus près des écoles`,
-    desc: `Installation de points d'eau durables et sensibilisation aux gestes d'hygiène dans les villages isolés.`,
-  },
-  {
-    image: imgProjectNutrition,
-    location: 'Zones rurales',
-    title: 'Une cantine pour mieux apprendre',
-    desc: `Des repas équilibrés, préparés avec les communautés, pour réduire l'absentéisme scolaire.`,
-  },
-];
-
 const steps = [
   {
     number: '01',
@@ -87,6 +62,39 @@ const steps = [
 ];
 
 export default function Accueil() {
+  const [projects, setProjects] = useState<ProjectDoc[]>([])
+  const [stats, setStats] = useState<{ label: string; value: string; color: string }[]>([])
+
+  useEffect(() => {
+    let live = true
+    void (async () => {
+      const [all, totals] = await Promise.all([listProjects(), getTransactionStats()])
+      if (!live) return
+      setProjects(all.slice(0, 3))
+      setStats([
+        { value: String(totals.donors), label: 'Donateurs', color: 'text-accent-700' },
+        {
+          value: `${formatXOF(totals.total).replace(/\u00a0/g, ' ')}`,
+          label: 'Collecté à ce jour',
+          color: 'text-brand-900',
+        },
+        {
+          value: String(all.length),
+          label: 'Projets documentés',
+          color: 'text-warn-700',
+        },
+        {
+          value: String(new Set(all.map((doc) => doc.region)).size),
+          label: 'Régions couvertes',
+          color: 'text-brand-700',
+        },
+      ])
+    })()
+    return () => {
+      live = false
+    }
+  }, [])
+
   return (
     <div className="bg-surface-subtle flex flex-col min-h-screen overflow-x-hidden">
       <Header />
@@ -230,16 +238,24 @@ export default function Accueil() {
             </div>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               {projects.map((project) => (
-                <article key={project.title} className="border border-surface-tint flex flex-col overflow-hidden rounded-2xl">
-                  <img alt={project.title} className="aspect-[16/10] object-cover w-full" src={project.image} />
+                <Link
+                  className="border border-surface-tint flex flex-col overflow-hidden rounded-2xl hover:border-brand-700 transition-colors"
+                  key={project._id}
+                  to={`/nos-projets/${project.slug}`}
+                >
+                  <img
+                    alt={project.title}
+                    className="aspect-[16/10] object-cover w-full"
+                    src={`${assetPathPrefix}/${project.image}`}
+                  />
                   <div className="flex flex-1 flex-col gap-3 items-start p-5 sm:p-6">
                     <p className="bg-[#e9f8ef] font-['Montserrat'] font-bold px-3 py-1 rounded-pill text-accent-700 text-[10px] tracking-[0.5px] uppercase">
-                      {project.location}
+                      {project.region}
                     </p>
                     <h3 className="font-['Montserrat'] font-bold text-brand-900 text-xl leading-7">{project.title}</h3>
-                    <p className="font-['Inter'] font-normal text-ink-700 text-sm leading-6">{project.desc}</p>
+                    <p className="font-['Inter'] font-normal text-ink-700 text-sm leading-6">{project.excerpt}</p>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
