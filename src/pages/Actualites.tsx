@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom"
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
+import { listArticles } from "../lib/repositories"
+import type { ArticleDoc } from "../lib/models"
 import { TabBar } from "../components/TabBar"
 
 const assetPathPrefix = "/assets"
@@ -106,6 +108,19 @@ const NEWS_ARTICLE_CATEGORIES: Record<string, readonly string[]> = {
 }
 
 export default function ActualitesHistoiresChildrensSmileCameroun() {
+  const [articles, setArticles] = useState<ArticleDoc[]>([])
+
+  useEffect(() => {
+    let live = true
+    void (async () => {
+      const all = await listArticles()
+      if (live) setArticles(all)
+    })()
+    return () => {
+      live = false
+    }
+  }, [])
+
   const [newsFilter, setNewsFilter] = useState("all")
 
   const newsFilterCounts = useMemo(() => {
@@ -992,7 +1007,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     data-node-id="5:865"
                     style={{ display: hiddenNews.has("5:865") ? "none" : undefined }}
                     data-name="Article - ARTICLE 1: EAU & SANTÉ SCOLAIRE"
-                  >
+                  ><Link aria-label={articles[0]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[0]?.slug ?? ""}`} />
                     <div
                       className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
                       data-node-id="5:892"
@@ -1123,14 +1138,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                             data-node-id="5:878"
                           >
-                            <p className="leading-[27.5px] mb-0">
-                              Forage solaire à Mora : quand
-                            </p>
-                            <p className="leading-[27.5px] mb-0">{`l'accès à l'eau potable stabilise`}</p>
-                            <p className="leading-[27.5px] mb-0">
-                              la scolarisation des jeunes
-                            </p>
-                            <p className="leading-[27.5px]">filles</p>
+                            <p className="leading-[27.5px] mb-0">{articles[0]?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1221,7 +1229,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     data-node-id="5:900"
                     style={{ display: hiddenNews.has("5:900") ? "none" : undefined }}
                     data-name="Article - ARTICLE 2: ÉDUCATION & BILINGUISME"
-                  >
+                  ><Link aria-label={articles[1]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[1]?.slug ?? ""}`} />
                     <div
                       className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
                       data-node-id="5:927"
@@ -1350,16 +1358,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                             data-node-id="5:913"
                           >
-                            <p className="leading-[27.5px] mb-0">
-                              1 200 livres jeunesse livrés à
-                            </p>
-                            <p className="leading-[27.5px] mb-0">
-                              Penja : ouverture de la
-                            </p>
-                            <p className="leading-[27.5px] mb-0">
-                              première bibliothèque rurale
-                            </p>
-                            <p className="leading-[27.5px]">partagée</p>
+                            <p className="leading-[27.5px] mb-0">{articles[1]?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1452,7 +1451,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     data-node-id="5:935"
                     style={{ display: hiddenNews.has("5:935") ? "none" : undefined }}
                     data-name="Article - ARTICLE 3: VIE DE L'ASSOCIATION & GOUVERNANCE"
-                  >
+                  ><Link aria-label={articles[2]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[2]?.slug ?? ""}`} />
                     <div
                       className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
                       data-node-id="5:962"
@@ -1581,14 +1580,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                             data-node-id="5:948"
                           >
-                            <p className="leading-[27.5px] mb-0">{`Clôture de l'Assemblée`}</p>
-                            <p className="leading-[27.5px] mb-0">
-                              Générale 2024 : validation
-                            </p>
-                            <p className="leading-[27.5px] mb-0">
-                              unanime des comptes audités
-                            </p>
-                            <p className="leading-[27.5px]">et cap sur 2025</p>
+                            <p className="leading-[27.5px] mb-0">{articles[2]?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1688,7 +1680,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     data-node-id="5:970"
                     style={{ display: hiddenNews.has("5:970") ? "none" : undefined }}
                     data-name="Article - ARTICLE 4: PROTECTION DE L'ENFANT"
-                  >
+                  ><Link aria-label={articles[3]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[3]?.slug ?? ""}`} />
                     <div
                       className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
                       data-node-id="5:997"
@@ -1819,18 +1811,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                             data-node-id="5:983"
                           >
-                            <p className="leading-[27.5px] mb-0">
-                              Formation de 45 maîtres-
-                            </p>
-                            <p className="leading-[27.5px] mb-0">
-                              parents aux premiers secours
-                            </p>
-                            <p className="leading-[27.5px] mb-0">
-                              et au protocole de
-                            </p>
-                            <p className="leading-[27.5px]">
-                              bientraitance scolaire
-                            </p>
+                            <p className="leading-[27.5px] mb-0">{articles[3]?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1923,7 +1904,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     data-node-id="5:1005"
                     style={{ display: hiddenNews.has("5:1005") ? "none" : undefined }}
                     data-name="Article - ARTICLE 5: PARTENARIATS & MÉCÉNAT"
-                  >
+                  ><Link aria-label={articles[4]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[4]?.slug ?? ""}`} />
                     <div
                       className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
                       data-node-id="5:1032"
@@ -2052,14 +2033,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                             data-node-id="5:1018"
                           >
-                            <p className="leading-[27.5px] mb-0">
-                              Les entreprises citoyennes
-                            </p>
-                            <p className="leading-[27.5px] mb-0">{`s'engagent : 500 tables-bancs`}</p>
-                            <p className="leading-[27.5px] mb-0">
-                              cofinancées par des acteurs de
-                            </p>
-                            <p className="leading-[27.5px]">la diaspora</p>
+                            <p className="leading-[27.5px] mb-0">{articles[4]?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -2152,7 +2126,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     data-node-id="5:1040"
                     style={{ display: hiddenNews.has("5:1040") ? "none" : undefined }}
                     data-name="Article - ARTICLE 6: COMMUNIQUÉ OFFICIEL"
-                  >
+                  ><Link aria-label={articles[5]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[5]?.slug ?? ""}`} />
                     <div
                       className="bg-brand-900 content-stretch flex flex-col h-[224px] items-start justify-between overflow-clip p-[24px] relative shrink-0 w-full"
                       data-node-id="5:1067"
@@ -2309,16 +2283,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
                             data-node-id="5:1053"
                           >
-                            <p className="leading-[27.5px] mb-0">{`Note d'orientation sur la`}</p>
-                            <p className="leading-[27.5px] mb-0">
-                              rentrée scolaire et consignes
-                            </p>
-                            <p className="leading-[27.5px] mb-0">
-                              de sauvegarde sanitaire dans
-                            </p>
-                            <p className="leading-[27.5px]">
-                              les zones forestières
-                            </p>
+                            <p className="leading-[27.5px] mb-0">{articles[5]?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
