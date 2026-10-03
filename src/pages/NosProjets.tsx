@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
 import { TabBar } from "../components/TabBar"
-import { PROJECTS } from "../lib/projects"
+import { listProjects } from "../lib/repositories"
+import type { ProjectDoc } from "../lib/models"
 
 const assetPathPrefix = "/assets"
 const imgAb6AXuA92XXmwsh8KZfkVqhDTr7SutCi9Zg97Qv2EOhbVbPxfM9XJiu0CeP4Co7F9DeqwFQ71UwfTlEvwu3GIf8H7SsXnPoOElAwWvEFj3VLi0RqWlbQwC9EzkW44AeHoPbrZwhBw5WhkZcjGvj2TGrwFzrbLmkZxlMg5KlAvwWbIboIh8NcpOyhrZ6B8QQCnDgQAuHxVhM8PYrRqmBiKiWtjkBgBwYbYeHrM2QozgRq1F4F6Ho2H6GmA = `${assetPathPrefix}/8894c.png`
@@ -58,47 +59,68 @@ const PROJECT_FILTERS = [
   { value: "health", label: "Santé & Secours", icon: <Icon name="heartPulse" size={12} /> },
 ] as const
 
-/** Catégories (onglets) et région de chaque carte projet, dans l'ordre de la grille. */
-const PROJECT_CARDS: Record<
-  string,
-  { categories: readonly string[]; region: string; duplicate?: boolean }
-> = {
-  "5:3299": { categories: ["school"], region: "Est" },
-  "5:3339": { categories: ["water"], region: "Extrême-Nord" },
-  "5:3382": { categories: ["water"], region: "Extrême-Nord", duplicate: true },
-  "5:3423": { categories: ["books"], region: "Littoral" },
-  "5:3464": { categories: ["health"], region: "Centre" },
-  "5:3505": { categories: ["school"], region: "Ouest" },
+/**
+ * Each grid slot, bound to the project it renders. Layout and imagery stay in the
+ * markup, but every category, region and title comes from the repository, so the
+ * card and its filters cannot drift apart the way a duplicated map of node ids did.
+ */
+const PROJECT_CARD_SLUGS: Record<string, string> = {
+  "5:3299": "rehabilitation-ecole-dimako",
+  "5:3339": "forage-mora-wash",
+  "5:3382": "kits-scolaires-batouri",
+  "5:3423": "bibliotheque-penja",
+  "5:3464": "kits-secourisme-ngambe-tikar",
+  "5:3505": "toiture-maternelle-foumban",
 }
-
-const PROJECT_REGIONS = [
-  "all",
-  ...Array.from(new Set(Object.values(PROJECT_CARDS).map((card) => card.region))),
-] as const
 
 export default function NosProjetsChildrensSmileCameroun() {
   const [projectFilter, setProjectFilter] = useState("all")
+  const [projectDocs, setProjectDocs] = useState<Record<string, ProjectDoc>>({})
+
+  useEffect(() => {
+    let live = true
+    void (async () => {
+      const all = await listProjects()
+      if (!live) return
+      setProjectDocs(Object.fromEntries(all.map((doc) => [doc.slug, doc])))
+    })()
+    return () => {
+      live = false
+    }
+  }, [])
+
+  /** Slot -> project record, dropping any slot whose project no longer exists. */
+  const projectCards = useMemo(
+    () =>
+      Object.entries(PROJECT_CARD_SLUGS)
+        .map(([id, slug]) => ({ id, doc: projectDocs[slug] }))
+        .filter((entry): entry is { id: string; doc: ProjectDoc } => Boolean(entry.doc)),
+    [projectDocs],
+  )
+
+  const projectRegions = useMemo(
+    () => ["all", ...Array.from(new Set(projectCards.map((c) => c.doc.region)))],
+    [projectCards],
+  )
   const [regionFilter, setRegionFilter] = useState("all")
 
   const projectRegionCounts = useMemo(() => {
     const counts: Record<string, number> = { all: 0 }
-    for (const card of Object.values(PROJECT_CARDS)) {
-      if (card.duplicate) continue
+    for (const { doc } of projectCards) {
       counts.all += 1
-      counts[card.region] = (counts[card.region] ?? 0) + 1
+      counts[doc.region] = (counts[doc.region] ?? 0) + 1
     }
     return counts
-  }, [])
+  }, [projectCards])
 
   const visibleProjectCount = useMemo(
     () =>
-      Object.values(PROJECT_CARDS).filter(
-        (card) =>
-          !card.duplicate &&
-          (projectFilter === "all" || card.categories.includes(projectFilter)) &&
-          (regionFilter === "all" || card.region === regionFilter),
+      projectCards.filter(
+        ({ doc }) =>
+          (projectFilter === "all" || doc.category === projectFilter) &&
+          (regionFilter === "all" || doc.region === regionFilter),
       ).length,
-    [projectFilter, regionFilter],
+    [projectCards, projectFilter, regionFilter],
   )
 
   /** Maps each grid row to the project node ids it contains, so empty rows can collapse. */
@@ -112,17 +134,13 @@ export default function NosProjetsChildrensSmileCameroun() {
 
   const hiddenProjects = useMemo(() => {
     const hidden = new Set<string>()
-    for (const [id, card] of Object.entries(PROJECT_CARDS)) {
-      if (card.duplicate) {
-        hidden.add(id)
-        continue
-      }
-      const categoryMatch = projectFilter === "all" || card.categories.includes(projectFilter)
-      const regionMatch = regionFilter === "all" || card.region === regionFilter
+    for (const { id, doc } of projectCards) {
+      const categoryMatch = projectFilter === "all" || doc.category === projectFilter
+      const regionMatch = regionFilter === "all" || doc.region === regionFilter
       if (!categoryMatch || !regionMatch) hidden.add(id)
     }
     return hidden
-  }, [projectFilter, regionFilter])
+  }, [projectCards, projectFilter, regionFilter])
 
   const hiddenProjectRows = useMemo(
     () =>
@@ -400,7 +418,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         onChange={(event) => setRegionFilter(event.target.value)}
                         value={regionFilter}
                       >
-                        {PROJECT_REGIONS.map((region) => (
+                        {projectRegions.map((region) => (
                           <option key={region} value={region}>
                             {region === 'all'
                               ? `Toutes les régions (${projectRegionCounts.all})`
@@ -608,7 +626,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3315"
                           >
-                            <p className="text-balance">{`Réhabilitation de l'école primaire publique de Dimako`}</p>
+                            <p className="text-balance">{projectDocs['rehabilitation-ecole-dimako']?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -676,7 +694,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                                                         <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/rehabilitation-ecole-dimako`}>
+                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["rehabilitation-ecole-dimako"]?.slug ?? "rehabilitation-ecole-dimako"}`}>
                                 <span className="btn-label">{`Fiche détaillée & Bilan`}</span>
                               </Link>
                               <Link className="btn btn-card btn-warn" to="/don">
@@ -816,7 +834,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3355"
                           >
-                            <p className="text-balance">{`Forage d'eau potable et bloc sanitaire sécurisé à Mora`}</p>
+                            <p className="text-balance">{projectDocs['forage-mora-wash']?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -901,7 +919,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         <Link
                           className="btn btn-card btn-secondary"
                           data-node-id="5:3376"
-                          to={`/nos-projets/${PROJECTS[1].slug}`}
+                          to={`/nos-projets/${projectDocs['forage-mora-wash']?.slug ?? "forage-mora-wash"}`}
                         >
                           <span className="btn-label">{`Consulter le chantier`}</span>
                         </Link>
@@ -1023,7 +1041,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3398"
                           >
-                            <p className="text-balance">{`Bibliothèque rurale et malle aux livres de Penja`}</p>
+                            <p className="text-balance">{projectDocs['kits-scolaires-batouri']?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1101,7 +1119,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                                                 <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/forage-mora-wash`}>
+                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["kits-scolaires-batouri"]?.slug ?? "kits-scolaires-batouri"}`}>
                             <span className="btn-label">{`Détails du fonds`}</span>
                           </Link>
                           <Link className="btn btn-card btn-warn" to="/don">
@@ -1228,7 +1246,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3439"
                           >
-                            <p className="text-balance">{`Équipement didactique et kits secourisme à Ngambé-Tikar`}</p>
+                            <p className="text-balance">{projectDocs['bibliotheque-penja']?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1306,7 +1324,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                                                 <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/bibliotheque-penja`}>
+                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["bibliotheque-penja"]?.slug ?? "bibliotheque-penja"}`}>
                             <span className="btn-label">{`Consulter l'inventaire`}</span>
                           </Link>
                           <Link className="btn btn-card btn-warn" to="/don">
@@ -1422,7 +1440,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3480"
                           >
-                            <p className="text-balance">{`Rénovation de la toiture de la maternelle bilingue de Foumban`}</p>
+                            <p className="text-balance">{projectDocs['kits-secourisme-ngambe-tikar']?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1502,7 +1520,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-name="Margin"
                       >
                                                 <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/kits-secourisme-ngambe-tikar`}>
+                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["kits-secourisme-ngambe-tikar"]?.slug ?? "kits-secourisme-ngambe-tikar"}`}>
                             <span className="btn-label">{`Voir le dossier technique`}</span>
                           </Link>
                           <Link className="btn btn-card btn-warn" to="/don">
@@ -1618,7 +1636,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
                             data-node-id="5:3521"
                           >
-                            <p className="text-balance">{`Don de 250 kits scolaires complets au Cycle 1 & 2 à Batouri`}</p>
+                            <p className="text-balance">{projectDocs['toiture-maternelle-foumban']?.title ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -1686,7 +1704,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-name="Button"
                           >
                                                         <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/toiture-maternelle-foumban`}>
+                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["toiture-maternelle-foumban"]?.slug ?? "toiture-maternelle-foumban"}`}>
                                 <span className="btn-label">{`Rapport photographique`}</span>
                               </Link>
                               <Link className="btn btn-card btn-warn" to="/don">
