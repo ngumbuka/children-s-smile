@@ -162,7 +162,7 @@ export default function Accueil() {
             <div className="relative">
               <img
                 alt="Enfants souriants dans une classe rurale au Cameroun"
-                className="aspect-[4/3] object-cover rounded-2xl w-full"
+                className="aspect-[4/3] object-cover rounded-xl w-full"
                 src={imgMission}
               />
               <div className="absolute bg-white bottom-4 left-4 max-w-[240px] p-4 rounded-xl shadow-[0px_8px_30px_rgba(0,68,132,0.16)] sm:bottom-6 sm:left-6">
@@ -210,7 +210,7 @@ export default function Accueil() {
             </div>
             <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
               {pillars.map((pillar) => (
-                <article key={pillar.title} className="bg-white border border-surface-tint flex flex-col gap-4 items-start p-6 rounded-2xl shadow-[0px_2px_10px_rgba(0,68,132,0.05)] card-lift">
+                <article key={pillar.title} className="bg-white border border-surface-tint flex flex-col gap-4 items-start p-6 rounded-xl shadow-[0px_2px_10px_rgba(0,68,132,0.05)] card-lift">
                   <div className={`${pillar.color} flex items-center justify-center rounded-pill size-12`}>
                     <Icon className="text-brand-900 max-h-6 max-w-6" name={pillar.icon as IconName} />
                   </div>
@@ -239,7 +239,7 @@ export default function Accueil() {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               {projects.map((project) => (
                 <Link
-                  className="border border-surface-tint flex flex-col overflow-hidden rounded-2xl hover:border-brand-700 transition-colors card-lift"
+                  className="border border-surface-tint flex flex-col overflow-hidden rounded-xl hover:border-brand-700 transition-colors card-lift"
                   key={project._id}
                   to={`/nos-projets/${project.slug}`}
                 >
@@ -269,7 +269,7 @@ export default function Accueil() {
             </div>
             <div className="grid gap-5 lg:grid-cols-3">
               {steps.map((step) => (
-                <article key={step.number} className="bg-white border border-surface-tint flex gap-5 items-start p-6 rounded-2xl lg:flex-col card-lift">
+                <article key={step.number} className="bg-white border border-surface-tint flex gap-5 items-start p-6 rounded-xl lg:flex-col card-lift">
                   <p className="font-['Montserrat'] font-extrabold text-[#5c7599] text-3xl">{step.number}</p>
                   <div className="flex flex-col gap-2">
                     <h3 className="font-['Montserrat'] font-bold text-brand-900 text-lg">{step.title}</h3>
@@ -293,7 +293,7 @@ export default function Accueil() {
                 Consulter notre impact →
               </Link>
             </div>
-            <div className="bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] flex flex-col gap-5 p-6 rounded-2xl sm:p-8">
+            <div className="bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] flex flex-col gap-5 p-6 rounded-xl sm:p-8">
               <div className="flex items-end justify-between gap-4">
                 <div>
                   <p className="font-['Montserrat'] font-extrabold text-white text-5xl">88%</p>
@@ -319,7 +319,7 @@ export default function Accueil() {
         </section>
 
         <section className="bg-surface-muted px-4 py-16 w-full sm:px-8 sm:py-20 lg:px-14">
-          <div className="bg-white border border-surface-tint flex flex-col gap-6 items-center max-w-[960px] mx-auto px-5 py-10 rounded-2xl text-center w-full sm:px-10 sm:py-14">
+          <div className="bg-white border border-surface-tint flex flex-col gap-6 items-center max-w-[960px] mx-auto px-5 py-10 rounded-xl text-center w-full sm:px-10 sm:py-14">
             <p className="font-['Montserrat'] font-bold text-warn-700 text-[11px] tracking-[1.1px] uppercase">Agir maintenant</p>
             <h2 className="font-['Montserrat'] font-bold text-brand-900 text-3xl leading-tight max-w-[680px] sm:text-4xl">
               Ensemble, faisons grandir les sourires et les possibilités
