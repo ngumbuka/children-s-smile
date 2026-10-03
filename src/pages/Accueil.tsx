@@ -210,7 +210,7 @@ export default function Accueil() {
             </div>
             <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
               {pillars.map((pillar) => (
-                <article key={pillar.title} className="bg-white border border-surface-tint flex flex-col gap-4 items-start p-6 rounded-2xl shadow-[0px_2px_10px_rgba(0,68,132,0.05)]">
+                <article key={pillar.title} className="bg-white border border-surface-tint flex flex-col gap-4 items-start p-6 rounded-2xl shadow-[0px_2px_10px_rgba(0,68,132,0.05)] card-lift">
                   <div className={`${pillar.color} flex items-center justify-center rounded-pill size-12`}>
                     <Icon className="text-brand-900 max-h-6 max-w-6" name={pillar.icon as IconName} />
                   </div>
@@ -239,7 +239,7 @@ export default function Accueil() {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               {projects.map((project) => (
                 <Link
-                  className="border border-surface-tint flex flex-col overflow-hidden rounded-2xl hover:border-brand-700 transition-colors"
+                  className="border border-surface-tint flex flex-col overflow-hidden rounded-2xl hover:border-brand-700 transition-colors card-lift"
                   key={project._id}
                   to={`/nos-projets/${project.slug}`}
                 >
@@ -269,7 +269,7 @@ export default function Accueil() {
             </div>
             <div className="grid gap-5 lg:grid-cols-3">
               {steps.map((step) => (
-                <article key={step.number} className="bg-white border border-surface-tint flex gap-5 items-start p-6 rounded-2xl lg:flex-col">
+                <article key={step.number} className="bg-white border border-surface-tint flex gap-5 items-start p-6 rounded-2xl lg:flex-col card-lift">
                   <p className="font-['Montserrat'] font-extrabold text-[#5c7599] text-3xl">{step.number}</p>
                   <div className="flex flex-col gap-2">
                     <h3 className="font-['Montserrat'] font-bold text-brand-900 text-lg">{step.title}</h3>

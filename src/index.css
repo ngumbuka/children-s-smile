@@ -178,6 +178,9 @@
 
   /* ---- Elevation ---------------------------------------------------- */
   --shadow-card: 0 1px 1px rgb(0 0 0 / 0.05);
+
+  /* Sits a card above the page on hover; stronger than the resting edge. */
+  --shadow-lift: 0 6px 16px rgb(0 68 132 / 0.12);
   --shadow-raised: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-float:
     0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -585,6 +588,26 @@
     }
   }
 
+/*
+ * Anything animated elsewhere on the site still stops for visitors who
+ * ask for reduced motion at the OS level, not just the rules written
+ * per component.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
   .section-sm {
     padding-block: var(--section-y-sm);
   }
@@ -601,6 +624,42 @@
 :focus-visible {
   outline: 3px solid #0b5cab;
   outline-offset: 3px;
+}
+
+/*
+ * Anchor targets land below the sticky header rather than under it, so
+ * in-page jumps such as the cartography and contact form buttons reveal
+ * the heading they point at instead of hiding it.
+ */
+html {
+  scroll-padding-block-start: 6rem;
+  scroll-behavior: smooth;
+}
+
+/* Brand-tinted text selection keeps the accent from feeling absent. */
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+/*
+ * Shared elevation for card surfaces. Kept as one class so a hover
+ * response stays identical across the homepage, project and article
+ * cards rather than being re-invented per page.
+ */
+.card-lift {
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card-lift:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.card-lift:focus-within {
+  box-shadow: var(--shadow-lift);
 }
 
 [class*='rounded-pill'][class*='size-'],
