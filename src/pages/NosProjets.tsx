@@ -2248,8 +2248,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </p>
                           </div>
                         </div>
-                        <div
-                          className="bg-accent-700 content-stretch flex gap-[8px] items-center relative rounded-pill shrink-0 btn-md btn"
+                        <Link to="/contact"
+                          className="bg-accent-700 content-stretch flex gap-[8px] items-center relative rounded-pill btn-md btn"
                           data-node-id="5:3623"
                           data-name="Button"
                         >
@@ -2277,7 +2277,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                               Transmettre le dossier
                             </p>
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -2662,8 +2662,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-node-id="5:3689"
                       data-name="Container"
                     >
-                      <div
-                        className="bg-brand-900 content-stretch flex flex-col items-center relative rounded-pill shrink-0 w-full btn-md btn"
+                      <Link to="/notre-impact"
+                        className="bg-brand-900 content-stretch flex flex-row items-center relative rounded-pill w-full btn-md btn"
                         data-node-id="5:3690"
                         data-name="Link"
                       >
@@ -2675,7 +2675,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             Découvrir nos bilans financiers complets
                           </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 </div>

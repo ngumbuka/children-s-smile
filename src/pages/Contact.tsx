@@ -185,7 +185,7 @@ function ContactContent() {
                 </div>
               </div>
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="5:1468" data-name="Container">
-                <div className="bg-accent-700 content-stretch flex gap-[10px] items-center justify-center relative rounded-pill shrink-0 btn-lg btn" data-node-id="5:1469" data-name="Link">
+                <a href="https://wa.me/237699098688" rel="noopener noreferrer" target="_blank" className="bg-accent-700 content-stretch flex gap-[10px] items-center justify-center relative rounded-pill btn-lg btn" data-node-id="5:1469" data-name="Link">
                   <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.02px_0_0] rounded-pill shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]" data-node-id="5:1470" data-name="Link:shadow" />
                   <div className="btn-icon relative shrink-0" data-node-id="5:1471" data-name="Container">
                     <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer7} />
@@ -195,14 +195,14 @@ function ContactContent() {
                       <p className="leading-[24px]">Ouvrir une conversation WhatsApp</p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div className="content-stretch flex flex-col items-start py-[40px] relative shrink-0 w-full shell" data-node-id="5:1475" data-name="Section - FORMULAIRE OFFICIEL MULTI-PROFILS & IMPLANTATIONS">
           <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(12,minmax(0,1fr))] grid-rows-[_1157px] relative shrink-0 w-full" data-node-id="5:1476" data-name="Container">
-            <div className="bg-white col-[1/span_7] content-stretch flex flex-col items-start justify-self-stretch p-[40px] relative rounded-card row-1 self-start shrink-0" data-node-id="5:1477" data-name="Colonne Gauche : Formulaire Institutionnel">
+            <div className="bg-white col-[1/span_7] content-stretch flex flex-col items-start justify-self-stretch p-[40px] relative rounded-card row-1 self-start shrink-0" data-node-id="5:1477" data-name="Colonne Gauche : Formulaire Institutionnel" id="contact-form" scroll-mt-28>
               <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_0.01px_0_0] rounded-card shadow-float" data-node-id="5:1478" data-name="Overlay+Shadow" />
               <div className="content-stretch flex flex-col gap-[8px] items-start pb-[24px] relative shrink-0 w-full" data-node-id="5:1479" data-name="Container">
                 <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-node-id="5:1480" data-name="Container">
@@ -434,7 +434,7 @@ function ContactContent() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-col items-start pt-[12px] relative shrink-0 w-full" data-node-id="5:1569" data-name="Bouton d'Envoi">
-                  <div className="bg-accent-700 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-lg btn" data-node-id="5:1570" data-name="Button">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="5:1570" data-name="Button">
                     <button aria-label="Envoyer la demande par email" className="absolute inset-0 z-10 cursor-pointer rounded-pill" onClick={() => { window.location.href = 'mailto:contact@childrenssmile-cm.org'; }} type="button" />
                     <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_0.01px_0_0] rounded-pill shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]" data-node-id="5:1571" data-name="Button:shadow" />
                     <div className="h-[14.667px] relative shrink-0 w-[17.417px]" data-node-id="5:1572" data-name="Container">
@@ -730,7 +730,7 @@ function ContactContent() {
                     </div>
                   </div>
                   <div className="content-stretch flex flex-col items-start pt-[8px] relative shrink-0 w-full" data-node-id="5:1704" data-name="Container">
-                    <div className="bg-brand-900 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn" data-node-id="5:1705" data-name="Link">
+                    <button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} type="button" className="bg-brand-900 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill w-full btn-md btn" data-node-id="5:1705" data-name="Link">
                       <div className="absolute bg-[rgba(255,255,255,0)] inset-[0_-0.01px_0_0] rounded-pill shadow-float" data-node-id="5:1706" data-name="Link:shadow" />
                       <div className="h-[16.667px] relative shrink-0 w-[15px]" data-node-id="5:1707" data-name="Container">
                         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer19} />
@@ -740,7 +740,7 @@ function ContactContent() {
                           <p className="leading-[20px]">Solliciter un rendez-vous en agence</p>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>

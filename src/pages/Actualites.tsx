@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useMemo, useState } from "react"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
@@ -843,8 +844,8 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className="bg-brand-900 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill shrink-0 btn-md btn"
+                    <Link to="/actualites"
+                      className="bg-brand-900 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill btn-md btn"
                       data-node-id="5:844"
                       data-name="Link"
                     >
@@ -877,7 +878,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           src={imgContainer15}
                         />
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -3373,8 +3374,8 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                         data-node-id="5:1225"
                         data-name="Button:margin"
                       >
-                        <div
-                          className="bg-warn-700 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill shrink-0 w-full btn-md btn"
+                        <button disabled title="La lettre d'information n'a pas encore de formulaire" type="button"
+                          className="bg-warn-700 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill w-full btn-md btn"
                           data-node-id="5:1226"
                           data-name="Button"
                         >
@@ -3406,7 +3407,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                               src={imgContainer36}
                             />
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>

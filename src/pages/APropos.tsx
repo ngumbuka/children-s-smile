@@ -521,14 +521,14 @@ function AProposContent() {
               </div>
             </div>
             <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="5:4033" data-name="Container">
-              <div className="bg-brand-900 content-stretch drop-shadow-card flex gap-[8px] items-center relative rounded-pill shrink-0 btn-md btn" data-node-id="5:4034" data-name="Link">
+              <Link to="/contact" className="bg-brand-900 content-stretch drop-shadow-card flex gap-[8px] items-center relative rounded-pill btn-md btn" data-node-id="5:4034" data-name="Link">
                 <div className="h-[12px] relative shrink-0 w-[16.5px]" data-node-id="5:4035" data-name="Container">
                   <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgContainer14} />
                 </div>
                 <div className="btn-label [word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative text-[14px] text-white" data-node-id="5:4037">
                   <p className="leading-[20px]">Rejoindre la communauté</p>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="content-stretch flex gap-[32px] items-start justify-center relative shrink-0 w-full" data-node-id="5:4038" data-name="Container">

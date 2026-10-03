@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 
@@ -1918,8 +1919,8 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-node-id="5:3027"
                     data-name="Container"
                   >
-                    <div
-                      className="bg-white content-stretch flex gap-[8px] items-center relative rounded-pill shrink-0 btn-md btn"
+                    <Link to="/notre-impact"
+                      className="bg-white content-stretch flex gap-[8px] items-center relative rounded-pill btn-md btn"
                       data-node-id="5:3028"
                       data-name="Link"
                     >
@@ -1942,7 +1943,7 @@ export default function NosActionsChildrensSmileCameroun() {
                           src={imgContainer11}
                         />
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -2582,8 +2583,8 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-node-id="5:3121"
                   data-name="Container"
                 >
-                  <div
-                    className="bg-surface-tint content-stretch flex flex-col items-center relative rounded-pill shrink-0 btn-md btn"
+                  <Link to="/nos-projets"
+                    className="bg-surface-tint content-stretch flex flex-row items-center relative rounded-pill btn-md btn"
                     data-node-id="5:3122"
                     data-name="Link"
                   >
@@ -2595,9 +2596,9 @@ export default function NosActionsChildrensSmileCameroun() {
                         Découvrir les chantiers en cours
                       </p>
                     </div>
-                  </div>
-                  <div
-                    className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex flex-col items-center min-w-0 relative rounded-pill btn-md btn"
+                  </Link>
+                  <Link to="/don"
+                    className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex flex-row items-center min-w-0 relative rounded-pill btn-md btn"
                     data-node-id="5:3124"
                     data-name="Link"
                   >
@@ -2607,7 +2608,7 @@ export default function NosActionsChildrensSmileCameroun() {
                     >
                       <p className="leading-[20px]">Soutenir une action</p>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
