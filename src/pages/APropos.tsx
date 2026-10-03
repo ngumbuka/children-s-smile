@@ -273,9 +273,7 @@ function AProposContent() {
             </div>
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="5:3940" data-name="Heading 2">
               <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[32px] tracking-[-0.8px] w-full" data-node-id="5:3941">
-                <p className="leading-[40px] mb-0">{`Née de l'urgence de voir chaque`}</p>
-                <p className="leading-[40px] mb-0">{`enfant s'épanouir dans la dignité,`}</p>
-                <p className="leading-[40px]">{`l'instruction et la santé.`}</p>
+<h1 className="leading-[40px] mb-0">Née de l'urgence de voir chaque <br/> enfant s'épanouir dans la dignité, <br/> l'instruction et la santé.</h1>
               </div>
             </div>
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="5:3942" data-name="Container">

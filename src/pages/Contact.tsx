@@ -217,8 +217,7 @@ function ContactContent() {
                 </div>
                 <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="5:1485" data-name="Heading 2">
                   <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-900 text-[32px] w-full" data-node-id="5:1486">
-                    <p className="leading-[40px] mb-0">Formulaire Officiel de</p>
-                    <p className="leading-[40px]">Correspondance</p>
+<h1 className="leading-[40px] mb-0">Formulaire Officiel de <br/> Correspondance</h1>
                   </div>
                 </div>
                 <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="5:1487" data-name="Container">

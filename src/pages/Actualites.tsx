@@ -287,8 +287,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                         className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[40px] tracking-[-1px] whitespace-nowrap"
                         data-node-id="5:727"
                       >
-                        <p className="leading-[48px] mb-0">{`Actualités, Carnets de Terrain &`}</p>
-                        <p className="leading-[48px]">Histoires de Vie</p>
+<h1 className="leading-[48px] mb-0">Actualités, Carnets de Terrain & <br/> Histoires de Vie</h1>
                       </div>
                     </div>
                     <div
