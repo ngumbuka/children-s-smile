@@ -586,7 +586,7 @@ export default function NousSoutenir() {
                       aria-expanded={isOpen}
                       id={`faq-tab-${i}`}
                       onClick={() => setOpenFaq(isOpen ? -1 : i)}
-                      className="flex cursor-pointer items-start justify-between gap-4 p-5 w-full text-left rounded-xl focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#004484] hover:bg-[#f7f8ff]"
+                      className="flex cursor-pointer items-center justify-between gap-4 p-5 w-full text-left rounded-xl focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#004484] hover:bg-[#f7f8ff]"
                     >
                       <span className="font-['Montserrat'] font-bold text-brand-900 text-[17px] leading-[26px] sm:text-lg">
                         {item.q}

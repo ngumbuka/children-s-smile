@@ -61,14 +61,14 @@ const PROJECT_FILTERS = [
 /** Catégories (onglets) et région de chaque carte projet, dans l'ordre de la grille. */
 const PROJECT_CARDS: Record<
   string,
-  { categories: readonly string[]; region: string }
+  { categories: readonly string[]; region: string; duplicate?: boolean }
 > = {
   "5:3299": { categories: ["school"], region: "Est" },
   "5:3339": { categories: ["water"], region: "Extrême-Nord" },
-  "5:3382": { categories: ["books"], region: "Littoral" },
-  "5:3423": { categories: ["health"], region: "Centre" },
-  "5:3464": { categories: ["school"], region: "Ouest" },
-  "5:3505": { categories: ["school"], region: "Est" },
+  "5:3382": { categories: ["water"], region: "Extrême-Nord", duplicate: true },
+  "5:3423": { categories: ["books"], region: "Littoral" },
+  "5:3464": { categories: ["health"], region: "Centre" },
+  "5:3505": { categories: ["school"], region: "Ouest" },
 }
 
 const PROJECT_REGIONS = [
@@ -83,6 +83,7 @@ export default function NosProjetsChildrensSmileCameroun() {
   const projectRegionCounts = useMemo(() => {
     const counts: Record<string, number> = { all: 0 }
     for (const card of Object.values(PROJECT_CARDS)) {
+      if (card.duplicate) continue
       counts.all += 1
       counts[card.region] = (counts[card.region] ?? 0) + 1
     }
@@ -93,6 +94,7 @@ export default function NosProjetsChildrensSmileCameroun() {
     () =>
       Object.values(PROJECT_CARDS).filter(
         (card) =>
+          !card.duplicate &&
           (projectFilter === "all" || card.categories.includes(projectFilter)) &&
           (regionFilter === "all" || card.region === regionFilter),
       ).length,
@@ -111,6 +113,10 @@ export default function NosProjetsChildrensSmileCameroun() {
   const hiddenProjects = useMemo(() => {
     const hidden = new Set<string>()
     for (const [id, card] of Object.entries(PROJECT_CARDS)) {
+      if (card.duplicate) {
+        hidden.add(id)
+        continue
+      }
       const categoryMatch = projectFilter === "all" || card.categories.includes(projectFilter)
       const regionMatch = regionFilter === "all" || card.region === regionFilter
       if (!categoryMatch || !regionMatch) hidden.add(id)
@@ -368,6 +374,52 @@ export default function NosProjetsChildrensSmileCameroun() {
                 </div>
               </div>
             </div>
+            <div
+              className="bg-surface-muted content-stretch drop-shadow-card flex flex-col items-start py-[16px] relative shrink-0 w-full shell"
+              data-node-id="5:3692"
+              data-name="Interactive Controls Section (Tabs & Regional Filter)"
+            >
+              <div
+                className="flex flex-col gap-3 items-stretch py-4 relative shrink-0 w-full"
+                data-node-id="5:3693"
+                data-name="Category Tabs"
+              >
+                <TabBar
+                  items={PROJECT_FILTERS}
+                  label="Catégories de projets"
+                  onChange={selectProjectFilter}
+                  panelId="projects-grid"
+                  trailing={
+                    <label className="flex items-center gap-2 min-w-0">
+                      <span className="sr-only">Filtrer par région</span>
+                      <span aria-hidden="true" className="flex shrink-0 items-center text-ink-700">
+                        <Icon name="mapPin" size={16} />
+                      </span>
+                      <select
+                        className="min-w-0 max-w-full cursor-pointer rounded-control border-0 bg-white py-2 pl-4 pr-9 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-ink-900 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b5cab]"
+                        onChange={(event) => setRegionFilter(event.target.value)}
+                        value={regionFilter}
+                      >
+                        {PROJECT_REGIONS.map((region) => (
+                          <option key={region} value={region}>
+                            {region === 'all'
+                              ? `Toutes les régions (${projectRegionCounts.all})`
+                              : `${region} (${projectRegionCounts[region] ?? 0})`}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  }
+                  value={projectFilter}
+                  variant="outline"
+                />
+                <p className="font-['Inter:Regular'] text-[#5d626e] text-[12px] leading-4">
+                  {visibleProjectCount} projet{visibleProjectCount > 1 ? 's' : ''} sur{' '}
+                  {projectRegionCounts.all} au total
+                </p>
+              </div>
+            </div>
+
             <div
               className="content-stretch flex flex-col gap-[32px] items-start py-[48px] relative shrink-0 w-full shell"
               data-node-id="5:3287"
@@ -1658,51 +1710,6 @@ export default function NosProjetsChildrensSmileCameroun() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              className="bg-surface-muted content-stretch drop-shadow-card flex flex-col items-start py-[16px] relative shrink-0 w-full shell"
-              data-node-id="5:3692"
-              data-name="Interactive Controls Section (Tabs & Regional Filter)"
-            >
-              <div
-                className="flex flex-col gap-3 items-stretch py-4 relative shrink-0 w-full"
-                data-node-id="5:3693"
-                data-name="Category Tabs"
-              >
-                <TabBar
-                  items={PROJECT_FILTERS}
-                  label="Catégories de projets"
-                  onChange={selectProjectFilter}
-                  panelId="projects-grid"
-                  trailing={
-                    <label className="flex items-center gap-2 min-w-0">
-                      <span className="sr-only">Filtrer par région</span>
-                      <span aria-hidden="true" className="flex shrink-0 items-center text-ink-700">
-                        <Icon name="mapPin" size={16} />
-                      </span>
-                      <select
-                        className="min-w-0 max-w-full cursor-pointer rounded-control border-0 bg-white py-2 pl-4 pr-9 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-ink-900 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b5cab]"
-                        onChange={(event) => setRegionFilter(event.target.value)}
-                        value={regionFilter}
-                      >
-                        {PROJECT_REGIONS.map((region) => (
-                          <option key={region} value={region}>
-                            {region === 'all'
-                              ? 'Toutes les régions (10)'
-                              : `${region} (${projectRegionCounts[region] ?? 0})`}
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                  }
-                  value={projectFilter}
-                  variant="outline"
-                />
-                <p className="font-['Inter:Regular'] text-[#5d626e] text-[12px] leading-4">
-                  {visibleProjectCount} projet{visibleProjectCount > 1 ? 's' : ''} sur{' '}
-                  {projectRegionCounts.all} au total
-                </p>
               </div>
             </div>
               <div

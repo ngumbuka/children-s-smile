@@ -108,7 +108,7 @@ export default function Accueil() {
               </p>
             </div>
             <div className="flex flex-col gap-5 max-w-[820px]">
-              <h1 className="font-['Montserrat'] font-extrabold text-white text-4xl leading-[1.08] tracking-[-1px] sm:text-5xl lg:text-6xl">
+              <h1 className="font-['Montserrat'] font-extrabold text-white text-4xl leading-[1.15] tracking-[-1px] sm:text-5xl lg:text-6xl">
                 Chaque enfant mérite une école, un repas et un avenir.
               </h1>
               <p className="font-['Inter'] font-normal text-brand-100 text-base leading-7 max-w-[720px] sm:text-lg sm:leading-8">
