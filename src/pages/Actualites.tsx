@@ -1047,7 +1047,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
                           data-node-id="5:897"
                         >
-                          <p className="leading-[16px]">{`EAU & SANTÉ SCOLAIRE`}</p>
+                          <p className="leading-[16px]">{articles[0]?.kicker ?? ""}</p>
                         </div>
                       </div>
                       <div
@@ -1149,11 +1149,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:880"
                           >
-                            <p className="leading-[22.75px] mb-0">{`L'installation d'une borne fontaine sécurisée`}</p>
-                            <p className="leading-[22.75px] mb-0">{`dans l'école réduit drastiquement l'absentéisme`}</p>
-                            <p className="leading-[22.75px]">
-                              saisonnier et écarte les maladies hydriques.
-                            </p>
+                            <p className="leading-[22.75px] mb-0">{articles[0]?.excerpt ?? ""}</p>
                           </div>
                         </div>
                       </div>
@@ -1269,7 +1265,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
                           data-node-id="5:932"
                         >
-                          <p className="leading-[16px]">{`ÉDUCATION & BILINGUISME`}</p>
+                          <p className="leading-[16px]">{articles[1]?.kicker ?? ""}</p>
                         </div>
                       </div>
                       <div
@@ -1369,13 +1365,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:915"
                           >
-                            <p className="leading-[22.75px] mb-0">
-                              Contes camerounais, dictionnaires et albums
-                            </p>
-                            <p className="leading-[22.75px] mb-0">
-                              illustrés : les enseignants bénéficient désormais
-                            </p>
-                            <p className="leading-[22.75px]">{`d'un fond pédagogique bilingue de référence.`}</p>
+                            <p className="leading-[22.75px] mb-0">{articles[1]?.excerpt ?? ""}</p>
                           </div>
                         </div>
                       </div>
@@ -1491,7 +1481,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-700 text-[11px] uppercase whitespace-nowrap"
                           data-node-id="5:967"
                         >
-                          <p className="leading-[16px]">{`VIE ASSOCIATIVE & GOUVERNANCE`}</p>
+                          <p className="leading-[16px]">{articles[2]?.kicker ?? ""}</p>
                         </div>
                       </div>
                       <div
@@ -1591,13 +1581,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:950"
                           >
-                            <p className="leading-[22.75px] mb-0">
-                              Présentation détaillée du rapport moral et
-                            </p>
-                            <p className="leading-[22.75px] mb-0">{`financier, réélection du Conseil d'Administration`}</p>
-                            <p className="leading-[22.75px]">
-                              et priorité absolue aux écoles enclavées.
-                            </p>
+                            <p className="leading-[22.75px] mb-0">{articles[2]?.excerpt ?? ""}</p>
                           </div>
                         </div>
                       </div>
@@ -1720,7 +1704,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] uppercase whitespace-nowrap"
                           data-node-id="5:1002"
                         >
-                          <p className="leading-[16px]">{`PROTECTION DE L'ENFANT`}</p>
+                          <p className="leading-[16px]">{articles[3]?.kicker ?? ""}</p>
                         </div>
                       </div>
                       <div
@@ -1822,13 +1806,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:985"
                           >
-                            <p className="leading-[22.75px] mb-0">
-                              Dotation de trousses de secours médicalisées et
-                            </p>
-                            <p className="leading-[22.75px] mb-0">{`ateliers d'écoute bienveillante dans les écoles de`}</p>
-                            <p className="leading-[22.75px]">
-                              brousse de Ngambé-Tikar.
-                            </p>
+                            <p className="leading-[22.75px] mb-0">{articles[3]?.excerpt ?? ""}</p>
                           </div>
                         </div>
                       </div>
@@ -1944,7 +1922,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
                           data-node-id="5:1037"
                         >
-                          <p className="leading-[16px]">{`PARTENARIATS & MÉCÉNAT`}</p>
+                          <p className="leading-[16px]">{articles[4]?.kicker ?? ""}</p>
                         </div>
                       </div>
                       <div
@@ -2044,13 +2022,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:1020"
                           >
-                            <p className="leading-[22.75px] mb-0">{`Un modèle d'action solidaire où chaque franc est`}</p>
-                            <p className="leading-[22.75px] mb-0">
-                              tracé et injecté directement auprès des
-                            </p>
-                            <p className="leading-[22.75px]">
-                              menuisiers des arrondissements concernés.
-                            </p>
+                            <p className="leading-[22.75px] mb-0">{articles[4]?.excerpt ?? ""}</p>
                           </div>
                         </div>
                       </div>
@@ -2156,9 +2128,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
                             data-node-id="5:1072"
                           >
-                            <p className="leading-[16px]">
-                              COMMUNIQUÉ OFFICIEL
-                            </p>
+                            <p className="leading-[16px]">{articles[5]?.kicker ?? ""}</p>
                           </div>
                         </div>
                         <div
@@ -2294,13 +2264,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                             className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
                             data-node-id="5:1055"
                           >
-                            <p className="leading-[22.75px] mb-0">
-                              Téléchargez la circulaire officielle adressée à
-                            </p>
-                            <p className="leading-[22.75px] mb-0">
-                              toutes les délégations départementales
-                            </p>
-                            <p className="leading-[22.75px]">{`partenaires et comités d'écoles.`}</p>
+                            <p className="leading-[22.75px] mb-0">{articles[5]?.excerpt ?? ""}</p>
                           </div>
                         </div>
                       </div>
