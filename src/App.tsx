@@ -9,6 +9,7 @@ import NosProjets from "./pages/NosProjets"
 import NotreImpact from "./pages/NotreImpact"
 import Actualites from "./pages/Actualites"
 import ProjetDetail from "./pages/ProjetDetail"
+import ArticleDetail from "./pages/ArticleDetail"
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/nos-projets/:slug" element={<ProjetDetail />} />
         <Route path="/notre-impact" element={<NotreImpact />} />
         <Route path="/actualites" element={<Actualites />} />
+        <Route path="/actualites/:slug" element={<ArticleDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </HashRouter>
