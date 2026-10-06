@@ -167,6 +167,28 @@
   --color-surface-muted: #f2f3ff;
   --color-surface-tint: #eaedff;
   --color-border-subtle: #e1e4ed;
+  --color-border-200: #e1e4ed;
+
+  /* ---- Semantic aliases ---------------------------------------------
+     The ramps above are the source of truth; these are the names the
+     backoffice UI kit (`src/admin/components/ui.tsx`) asks for. They must
+     exist: an undefined token leaves the utility ungenerated, so a
+     `bg-brand` button renders transparent white-on-white and looks
+     unclickable. Each alias points at a step of a ramp above. */
+  --color-brand: #004788;
+  --color-brand-strong: #004484;
+  --color-brand-soft: #eef0ff;
+  --color-brand-muted: #d5e3ff;
+  --color-ink: #131b2e;
+  --color-ink-muted: #424751;
+  --color-ink-subtle: #727783;
+  --color-ink-800: #303747;
+  --color-danger: #ba1a1a;
+  --color-danger-strong: #93000a;
+  --color-danger-soft: #ffdad6;
+  --color-warning: #a33900;
+  --color-warning-soft: #ffdbce;
+  --color-warning-strong: #7c2900;
 
   /* ---- Radius (semantic, so intent is explicit) --------------------- */
   --radius-chip: 4px;
@@ -542,6 +564,9 @@
 
   .btn-card .btn-label {
     font-size: var(--text-small);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   /* A pair of card actions shares the row and gives up width before the
@@ -860,7 +885,10 @@ html {
 
 .contact-page [data-name='Input']:has(input) > [data-name='Container'],
 .contact-page [data-name='Options']:has(select) > [data-name='Container'],
-.contact-page [data-name='Textarea']:has(textarea) > [data-name='Container'] {
+.contact-page [data-name='Textarea']:has(textarea) > [data-name='Container'],
+.nos-projets-page [data-name='Input']:has(input) > [data-name='Container'],
+.nos-projets-page [data-name='Options']:has(select) > [data-name='Container'],
+.nos-projets-page [data-name='Textarea']:has(textarea) > [data-name='Container'] {
   visibility: hidden;
 }
 
@@ -1471,9 +1499,27 @@ html {
 /* --------------------------------------------------------------------------
    Inputs inherit the font, otherwise iOS zooms on focus
    -------------------------------------------------------------------------- */
-:is(.nous-soutenir-page, .contact-page, .donation-checkout-page) input,
-:is(.nous-soutenir-page, .contact-page, .donation-checkout-page) select,
-:is(.nous-soutenir-page, .contact-page, .donation-checkout-page) textarea {
+:is(
+    .nous-soutenir-page,
+    .contact-page,
+    .donation-checkout-page,
+    .nos-projets-page
+  )
+  input,
+:is(
+    .nous-soutenir-page,
+    .contact-page,
+    .donation-checkout-page,
+    .nos-projets-page
+  )
+  select,
+:is(
+    .nous-soutenir-page,
+    .contact-page,
+    .donation-checkout-page,
+    .nos-projets-page
+  )
+  textarea {
   font-size: max(16px, 1em);
 }
 
@@ -1609,8 +1655,8 @@ html {
       .donation-checkout-page
     )
     div[class*='flex']:not([class*='flex-col']):not([class*='flex-wrap']):not(
-      [class*='absolute']
-    ):not(.btn) {
+      [class*='flex-nowrap']
+    ):not([class*='absolute']):not(.btn) {
     flex-wrap: wrap;
   }
 }
@@ -1632,8 +1678,8 @@ html {
       .donation-checkout-page
     )
     div[class*='flex']:not([class*='flex-col']):not([class*='flex-wrap']):not(
-      [class*='absolute']
-    )
+      [class*='flex-nowrap']
+    ):not([class*='absolute'])
     > [class*='flex-[1_0_0]'] {
     flex-basis: 100%;
   }

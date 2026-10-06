@@ -1,64 +1,62 @@
-import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
 import { ProgressMeter } from "../components/shared/ProgressMeter"
-import {
-  formatXOF,
-  getProject,
-  listProjects,
-  listTransactions,
-} from "../lib/repositories"
-import type { ProjectDoc, TransactionDoc } from "../lib/models"
+import { formatXOF } from "../lib/repositories"
+import { usePublishedProjects, usePublicGifts } from "../lib/public"
+import { useStoreReady } from "../lib/live"
 
 export default function ProjetDetail() {
   const { slug = "" } = useParams()
-  const [project, setProject] = useState<ProjectDoc | null>(null)
-  const [related, setRelated] = useState<ProjectDoc[]>([])
-  const [gifts, setGifts] = useState<TransactionDoc[]>([])
-  const [state, setState] = useState<"loading" | "ready" | "missing">("loading")
+  const ready = useStoreReady()
+  // Live reads off the shared store: a project is published or edited in the
+  // backoffice and this page follows without a reload, in any open tab.
+  const projects = usePublishedProjects()
+  const allGifts = usePublicGifts()
 
-  useEffect(() => {
-    let live = true
-    setState("loading")
-    void (async () => {
-      const found = await getProject(slug)
-      if (!live) return
-      setProject(found)
-      if (!found) {
-        setState("missing")
-        return
-      }
-      const [all, txs] = await Promise.all([listProjects(), listTransactions({ projectSlug: slug })])
-      if (!live) return
-      setRelated(
-        all.filter((p) => p.slug !== slug && (p.category === found.category || p.region === found.region)).slice(0, 3),
-      )
-      setGifts(txs.filter((t) => t.status === "succeeded").slice(0, 5))
-      setState("ready")
-    })()
-    return () => {
-      live = false
-    }
-  }, [slug])
+  const project = projects.find((p) => p.slug === slug) ?? null
+  const gifts = allGifts
+    .filter((t) => t.projectSlug === slug)
+    .slice(0, 5)
+  const related = projects
+    .filter(
+      (p) =>
+        p.slug !== slug &&
+        (p.category === project?.category || p.region === project?.region),
+    )
+    .slice(0, 3)
 
-  if (state === "loading") {
+  if (!ready) {
     return (
       <div className="bg-surface-subtle min-h-screen text-ink-600">
         <Header />
-        <main className="mx-auto w-full max-w-[1168px] px-4 py-24 text-body">Chargement du projet…</main>
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="mx-auto w-full max-w-[1168px] px-4 py-24 text-body"
+        >
+          Chargement du projet…
+        </main>
         <Footer />
       </div>
     )
   }
 
-  if (state === "missing" || !project) {
+  // A record the backoffice has not published is a draft: the detail route
+  // treats it as missing rather than previewing unpublished work.
+  if (!project) {
     return (
       <div className="bg-surface-subtle min-h-screen text-ink-600">
         <Header />
-        <main className="mx-auto w-full max-w-[1168px] px-4 py-24">
-          <p className="text-body">Ce projet n'existe pas ou n'est plus publié.</p>
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="mx-auto w-full max-w-[1168px] px-4 py-24"
+        >
+          <p className="text-body">
+            Ce projet n'existe pas ou n'est plus publié.
+          </p>
           <Link className="btn btn-md btn-primary mt-6" to="/nos-projets">
             <span className="btn-label">Retour aux projets</span>
           </Link>
@@ -74,7 +72,7 @@ export default function ProjetDetail() {
     <div className="bg-surface-subtle flex min-h-screen flex-col text-ink-900">
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1">
         <div className="mx-auto w-full max-w-[1168px] px-4 pt-10">
           <Link className="link-back" to="/nos-projets">
             <Icon name="arrowLeftRight" className="btn-icon scale-x-[-1]" />
@@ -87,14 +85,20 @@ export default function ProjetDetail() {
             <span className="badge badge-brand">{project.categoryLabel}</span>
             <span className="badge badge-neutral">{project.location}</span>
             <span
-              className={`badge ${project.status === "delivered" ? "badge-success" : "badge-warn"}`}
+              className={`badge ${
+                project.status === "delivered" ? "badge-success" : "badge-warn"
+              }`}
             >
               {project.statusLabel}
             </span>
           </div>
 
-          <h1 className="text-h1 mt-4 max-w-[22ch] text-balance text-brand-900">{project.title}</h1>
-          <p className="text-lead mt-4 max-w-[62ch] text-pretty text-ink-700">{project.excerpt}</p>
+          <h1 className="text-h1 mt-4 max-w-[22ch] text-balance text-brand-900">
+            {project.title}
+          </h1>
+          <p className="text-lead mt-4 max-w-[62ch] text-pretty text-ink-700">
+            {project.excerpt}
+          </p>
         </section>
 
         <section className="mx-auto mt-10 w-full max-w-[1168px] px-4">
@@ -115,13 +119,19 @@ export default function ProjetDetail() {
                   <li key={m.label} className="flex items-center gap-3">
                     <span
                       className={`flex size-5 shrink-0 items-center justify-center rounded-pill text-[10px] ${
-                        m.done ? "bg-accent-700 text-white" : "bg-brand-200 text-brand-900"
+                        m.done
+                          ? "bg-accent-700 text-white"
+                          : "bg-brand-200 text-brand-900"
                       }`}
                       aria-hidden="true"
                     >
                       {m.done ? "✓" : ""}
                     </span>
-                    <span className={`text-small ${m.done ? "text-ink-900" : "text-ink-500"}`}>
+                    <span
+                      className={`text-small ${
+                        m.done ? "text-ink-900" : "text-ink-500"
+                      }`}
+                    >
                       {m.label}
                     </span>
                   </li>
@@ -140,13 +150,16 @@ export default function ProjetDetail() {
                   showAmounts
                 />
                 <p className="mt-3 text-small text-ink-600">
-                  {formatXOF(project.raised)} collectés sur {formatXOF(project.target)}
+                  {formatXOF(project.raised)} collectés sur{" "}
+                  {formatXOF(project.target)}
                 </p>
 
                 <dl className="mt-5 grid grid-cols-2 gap-3 border-t border-border-subtle pt-4">
                   <div>
                     <dt className="text-caption text-ink-500">Contributions</dt>
-                    <dd className="text-h4 text-brand-900">{project.contributions}</dd>
+                    <dd className="text-h4 text-brand-900">
+                      {project.contributions}
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-caption text-ink-500">Donateurs</dt>
@@ -154,7 +167,10 @@ export default function ProjetDetail() {
                   </div>
                 </dl>
 
-                <Link className="btn btn-md btn-warn btn-block mt-5" to={`/don?project=${project.slug}`}>
+                <Link
+                  className="btn btn-md btn-warn btn-block mt-5"
+                  to={`/don?project=${project.slug}`}
+                >
                   <span className="btn-label">Soutenir ce projet</span>
                   <Icon name="arrowRight" className="btn-icon" />
                 </Link>
@@ -167,8 +183,12 @@ export default function ProjetDetail() {
 
               <div className="rounded-card bg-surface p-6 shadow-raised">
                 <p className="text-caption text-ink-500">Impact constaté</p>
-                <p className="text-h3 mt-2 text-balance text-brand-900">{project.impactValue}</p>
-                <p className="mt-1 text-small text-ink-600">{project.impactNote}</p>
+                <p className="text-h3 mt-2 text-balance text-brand-900">
+                  {project.impactValue}
+                </p>
+                <p className="mt-1 text-small text-ink-600">
+                  {project.impactNote}
+                </p>
               </div>
             </aside>
           </div>
@@ -186,7 +206,9 @@ export default function ProjetDetail() {
                   <span className="text-ink-700">
                     {t.donorName} · {formatDateShort(t.createdAt)}
                   </span>
-                  <span className="shrink-0 text-h4 text-brand-900">{formatXOF(t.amount)}</span>
+                  <span className="shrink-0 text-h4 text-brand-900">
+                    {formatXOF(t.amount)}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -198,12 +220,18 @@ export default function ProjetDetail() {
             <h2 className="text-h3 text-brand-900">Projets liés</h2>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((p) => (
-                <li key={p.slug} className="rounded-card bg-surface p-5 shadow-raised">
+                <li
+                  key={p.slug}
+                  className="rounded-card bg-surface p-5 shadow-raised relative"
+                >
+                  <Link
+                    aria-label={p.title}
+                    className="absolute inset-0 z-10 rounded-card focus-visible:outline-2 focus-visible:outline-brand-700"
+                    to={`/nos-projets/${p.slug}`}
+                  />
                   <span className="badge badge-neutral">{p.categoryLabel}</span>
                   <h3 className="text-h4 mt-3 text-balance text-brand-900">
-                    <Link className="link-body" to={`/nos-projets/${p.slug}`}>
-                      {p.title}
-                    </Link>
+                    {p.title}
                   </h3>
                   <ProgressMeter
                     className="mt-4"
@@ -212,7 +240,9 @@ export default function ProjetDetail() {
                     target={p.target}
                     size="sm"
                   />
-                  <p className="mt-2 text-caption text-ink-600">{p.progress} % financé</p>
+                  <p className="mt-2 text-caption text-ink-600">
+                    {p.progress} % financé
+                  </p>
                 </li>
               ))}
             </ul>
@@ -228,5 +258,9 @@ export default function ProjetDetail() {
 }
 
 function formatDateShort(iso: string) {
-  return new Date(iso).toLocaleDateString("fr-FR", { day: "2-digit", month: "2-digit", year: "numeric" })
+  return new Date(iso).toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  })
 }

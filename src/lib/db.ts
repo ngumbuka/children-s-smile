@@ -8,6 +8,12 @@
  * The in-memory implementation below is seeded from `seed.ts`, which keeps
  * the site fully functional with no server. `MongoAdapter` documents the
  * shape a real driver has to satisfy; it is intentionally not wired up.
+ *
+ * The store is also the app's single source of truth at runtime: the public
+ * site and the `/admin` backoffice read and write the same collections, so a
+ * donation recorded on the donation form moves the backoffice's treasury
+ * figures. Writes notify subscribers, which is how both views stay in step
+ * without either of them knowing the other exists.
  */
 
 export type Doc = { _id: string } & Record<string, unknown>
@@ -20,9 +26,22 @@ export interface Collection<T extends Doc> {
   findById(id: string): Promise<T | null>
   findOne(query: Query): Promise<T | null>
   count(query?: Query): Promise<number>
-  insert(doc: Omit<T, '_id'> & { _id?: string }): Promise<T>
+  insert(doc: Omit<T, "_id"> & { _id?: string }): Promise<T>
   update(id: string, patch: Partial<T>): Promise<T | null>
   remove(id: string): Promise<boolean>
+
+  /**
+   * Synchronous reads.
+   *
+   * The backoffice derives whole view models (KPI tiles, treasury breakdowns,
+   * status-coloured row sets) in one pass and would otherwise need a loading
+   * state for data that is already in memory. These let it read the store
+   * directly. A networked driver implements them over a cache it keeps warm
+   * from the async methods above; every read still goes through one store.
+   */
+  snapshot(): T[]
+  findSync(query?: Query): T[]
+  findByIdSync(id: string): T | null
 }
 
 export type Adapter = {
@@ -38,10 +57,233 @@ const store = new Map<string, Map<string, Doc>>()
 let counter = 0
 const nextId = () => `id_${(++counter).toString(36)}_${Date.now().toString(36)}`
 
+/* ------------------------------------------------------------------ */
+/* Change notification                                                  */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Monotonic write counter. Subscribers compare it to decide whether their
+ * query needs re-running, and the snapshot check in `useLiveQuery` uses it to
+ * prove a re-render was caused by a write rather than by an unrelated render.
+ */
+let revision = 0
+
+const subscribers = new Set<() => void>()
+
+/** Subscribes to every write. Returns the unsubscribe function. */
+export function subscribe(listener: () => void): () => void {
+  subscribers.add(listener)
+  return () => {
+    subscribers.delete(listener)
+  }
+}
+
+export const getRevision = () => revision
+
+/** Called after any mutation so every live view re-reads the store. */
+function publish() {
+  revision += 1
+  for (const listener of [...subscribers]) listener()
+  persistSoon()
+}
+
+/* ------------------------------------------------------------------ */
+/* Shared mock database persistence                                    */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The in-memory store is mirrored to `localStorage` under one versioned key,
+ * so edits made in the backoffice survive a reload and are picked up by the
+ * public site -- and vice versa. Two tabs share the same snapshot, which is
+ * what "one shared mock database" means here:
+ *
+ *  - every store write schedules a quiet-period save (debounced);
+ *  - a save that would leave the stored JSON unchanged is skipped, which is
+ *    what stops a tab from echoing its own write back and looping;
+ *  - the `storage` event fires only for writes from *another* tab, so the
+ *    receiving tab reloads the store and republishes.
+ *
+ * A real backend replaces `memory` with a networked adapter; the doc comment
+ * at the top of this file (and the Mongo sketch below) spells out the shape.
+ */
+
+const STORAGE_KEY = "childrensmile.mockdb.v1"
+
+type Snapshot = {
+  version: number
+  seeded: boolean
+  collections: Record<string, Doc[]>
+}
+
+/**
+ * True once the seed has fully run in this tab, so serialized snapshots
+ * advertise that they already contain the canonical data set and hydration
+ * can trust an incompletely stocked store comes from the user, not from an
+ * interrupted seed.
+ */
+let seedCompleted = false
+
+/** `seeded` flag of the last snapshot that was hydrated from storage. */
+let storedSeedComplete = false
+
+function readSnapshot(): Snapshot | null {
+  if (typeof window === "undefined") return null
+  let json: string | null = null
+  try {
+    json = window.localStorage.getItem(STORAGE_KEY)
+  } catch {
+    return null
+  }
+  if (!json) return null
+  try {
+    return JSON.parse(json) as Snapshot
+  } catch {
+    return null
+  }
+}
+
+function serialize(): string {
+  const collections: Record<string, Doc[]> = {}
+  for (const [name, table] of store) collections[name] = [...table.values()]
+  return JSON.stringify({ version: 1, seeded: seedCompleted, collections })
+}
+
+/**
+ * Replaces the whole store with a previously persisted snapshot. Returns true
+ * when a snapshot was actually applied, so the caller knows the seed is
+ * redundant. A missing, corrupt or outdated snapshot is ignored and the seed
+ * refills the store from scratch.
+ */
+function hydrate(): boolean {
+  const snapshot = readSnapshot()
+  if (!snapshot || snapshot.version !== 1 || !snapshot.collections) return false
+  store.clear()
+  for (const [name, docs] of Object.entries(snapshot.collections)) {
+    if (!Array.isArray(docs) || !docs.length) continue
+    const table = new Map<string, Doc>()
+    for (const doc of docs) {
+      if (doc && typeof doc._id === "string") table.set(doc._id, doc)
+    }
+    if (table.size) store.set(name, table)
+  }
+  storedSeedComplete = snapshot.seeded === true
+  // Keep `nextId` ahead of every id it may have read, so a later insert can
+  // never collide with a persisted document.
+  for (const table of store.values()) {
+    for (const id of table.keys()) {
+      const match = /^id_(\d+)_/.exec(id)
+      if (match) counter = Math.max(counter, Number(match[1]))
+    }
+  }
+  return true
+}
+
+let persistTimer: ReturnType<typeof setTimeout> | null = null
+
+/** Persists the store shortly after the most recent write. */
+function persistSoon() {
+  if (persistTimer !== null) clearTimeout(persistTimer)
+  persistTimer = setTimeout(() => {
+    persistTimer = null
+    persistNow()
+  }, 200)
+}
+
+/** Writes the store if it differs from what is already on disk. */
+function persistNow() {
+  if (typeof window === "undefined") return
+  const json = serialize()
+  try {
+    if (window.localStorage.getItem(STORAGE_KEY) === json) return
+    window.localStorage.setItem(STORAGE_KEY, json)
+  } catch {
+    // Storage full or blocked (private mode): the in-memory store still works
+    // for this tab, it just stops syncing.
+  }
+}
+
+let crossTabInstalled = false
+
+/** Receives writes made by another tab and reloads the store from them. */
+function installCrossTabSync() {
+  if (crossTabInstalled || typeof window === "undefined") return
+  crossTabInstalled = true
+  window.addEventListener("storage", (event) => {
+    if (event.key !== STORAGE_KEY) return
+    if (!hydrate()) return
+    publish()
+  })
+}
+
+/* ------------------------------------------------------------------ */
+/* Seed orchestration                                                  */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Runs an initialiser exactly once per store, whatever order modules load in.
+ *
+ * The previous `if (seeded) return` guard was checked before the first
+ * `await`, so two importers racing on the first render both saw `seeded ===
+ * false` and seeded the collections twice.
+ *
+ * Hydration happens here, once, before the seed has a chance to run: a
+ * persisted snapshot restores the store (its `fill` skips any collection that
+ * already has rows, so edits are never overwritten) and the seed is skipped
+ * entirely when the snapshot says it had already completed.
+ */
+const initialisers = new Map<string, Promise<void>>()
+const completed = new Set<string>()
+
+/** True once the named initialiser has finished, for views that must not
+ *  render an empty result while the seed is still filling collections. */
+export function isSeeded(key: string): boolean {
+  return completed.has(key)
+}
+
+export function seedOnce(
+  key: string,
+  initialise: () => Promise<void>,
+): Promise<void> {
+  const running = initialisers.get(key)
+  if (running) return running
+  const promise = (async () => {
+    if (hydrate() && storedSeedComplete) {
+      seedCompleted = true
+      return
+    }
+    await initialise()
+    seedCompleted = true
+    // Save the freshly seeded store right away so a crash before the next
+    // debounced write cannot leave a partial snapshot behind.
+    persistNow()
+  })().then(() => {
+    completed.add(key)
+    // Bump the revision so subscribers re-read: readiness changed, but no
+    // collection write happened to announce it.
+    publish()
+  })
+  initialisers.set(key, promise)
+  return promise
+}
+
+installCrossTabSync()
+
+/** Reads a dotted path so a query can address a nested field. */
+function readPath(doc: Doc, path: string): unknown {
+  if (!path.includes(".")) return doc[path]
+  let cursor: unknown = doc
+  for (const segment of path.split(".")) {
+    if (cursor === null || typeof cursor !== "object") return undefined
+    cursor = (cursor as Record<string, unknown>)[segment]
+  }
+  return cursor
+}
+
 function matches(doc: Doc, query: Query): boolean {
   return Object.entries(query).every(([key, want]) => {
-    const got = doc[key]
-    if (Array.isArray(want)) return Array.isArray(got) && want.every((w) => got.includes(w))
+    const got = readPath(doc, key)
+    if (Array.isArray(want))
+      return Array.isArray(got) && want.every((w) => got.includes(w))
     return got === want
   })
 }
@@ -59,17 +301,29 @@ class MemoryCollection<T extends Doc> implements Collection<T> {
   }
 
   async all() {
+    return this.snapshot()
+  }
+
+  snapshot() {
     return [...this.table().values()] as T[]
   }
 
-  async find(query: Query = {}) {
+  findSync(query: Query = {}) {
     const keys = Object.keys(query)
-    if (!keys.length) return this.all()
-    return (await this.all()).filter((d) => matches(d, query))
+    if (!keys.length) return this.snapshot()
+    return this.snapshot().filter((d) => matches(d, query))
+  }
+
+  findByIdSync(id: string) {
+    return this.table().get(id) as T ?? null
+  }
+
+  async find(query: Query = {}) {
+    return this.findSync(query)
   }
 
   async findById(id: string) {
-    return (this.table().get(id) as T) ?? null
+    return this.table().get(id) as T ?? null
   }
 
   async findOne(query: Query) {
@@ -80,10 +334,11 @@ class MemoryCollection<T extends Doc> implements Collection<T> {
     return (await this.find(query)).length
   }
 
-  async insert(doc: Omit<T, '_id'> & { _id?: string }) {
+  async insert(doc: Omit<T, "_id"> & { _id?: string }) {
     const _id = doc._id ?? nextId()
     const row = { ...doc, _id } as T
     this.table().set(_id, row)
+    publish()
     return row
   }
 
@@ -92,16 +347,19 @@ class MemoryCollection<T extends Doc> implements Collection<T> {
     if (!cur) return null
     const row = { ...cur, ...patch, _id: id } as T
     this.table().set(id, row)
+    publish()
     return row
   }
 
   async remove(id: string) {
-    return this.table().delete(id)
+    const removed = this.table().delete(id)
+    if (removed) publish()
+    return removed
   }
 }
 
 export const memory: Adapter = {
-  collection<T extends Doc>(name: string): Collection<T> {
+  collection<T extends Doc,>(name: string): Collection<T> {
     return new MemoryCollection<T>(name)
   },
 }
@@ -151,7 +409,31 @@ export const memory: Adapter = {
 
 export const db = memory
 
-export const projects = db.collection<Doc>('projects')
-export const articles = db.collection<Doc>('articles')
-export const transactions = db.collection<Doc>('transactions')
-export const campaigns = db.collection<Doc>('campaigns')
+/* ------------------------------------------------------------------ */
+/* Collections                                                          */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Every document type in the app lives here, once. The public site reads
+ * projects, articles, transactions, campaigns and schools; the backoffice
+ * additionally owns the network, people and governance collections.
+ */
+export const projects = db.collection<Doc>("projects")
+export const articles = db.collection<Doc>("articles")
+export const transactions = db.collection<Doc>("transactions")
+export const campaigns = db.collection<Doc>("campaigns")
+export const schools = db.collection<Doc>("schools")
+export const alerts = db.collection<Doc>("alerts")
+export const antennas = db.collection<Doc>("antennas")
+export const users = db.collection<Doc>("users")
+export const notificationPrefs = db.collection<Doc>("notificationPrefs")
+export const securityChecks = db.collection<Doc>("securityChecks")
+export const governance = db.collection<Doc>("governance")
+export const reports = db.collection<Doc>("reports")
+export const complianceRows = db.collection<Doc>("complianceRows")
+export const milestones = db.collection<Doc>("milestones")
+export const testimonials = db.collection<Doc>("testimonials")
+export const impactRegions = db.collection<Doc>("impactRegions")
+export const organisation = db.collection<Doc>("organisation")
+/** Messages sent from the public contact form. Starts empty; not seeded. */
+export const messages = db.collection<Doc>("messages")

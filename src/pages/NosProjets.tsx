@@ -1,26 +1,21 @@
-import { useEffect, useMemo, useState } from "react"
+import { type FormEvent, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
+import { Pagination, usePagination } from "../components/Pagination"
 import { TabBar } from "../components/TabBar"
-import { listProjects } from "../lib/repositories"
+import { usePublishedProjects } from "../lib/public"
+import { saveMessage } from "../lib/repositories"
 import type { ProjectDoc } from "../lib/models"
 
 const assetPathPrefix = "/assets"
-const imgAb6AXuA92XXmwsh8KZfkVqhDTr7SutCi9Zg97Qv2EOhbVbPxfM9XJiu0CeP4Co7F9DeqwFQ71UwfTlEvwu3GIf8H7SsXnPoOElAwWvEFj3VLi0RqWlbQwC9EzkW44AeHoPbrZwhBw5WhkZcjGvj2TGrwFzrbLmkZxlMg5KlAvwWbIboIh8NcpOyhrZ6B8QQCnDgQAuHxVhM8PYrRqmBiKiWtjkBgBwYbYeHrM2QozgRq1F4F6Ho2H6GmA = `${assetPathPrefix}/8894c.png`
-const imgAb6AXuDgbXg5EbRgIuJnajOpfZ09UYf8ANitg3TqQZkMrLmMtxukyzTvDfm4R6VdI9NiH2ZlLkzQxdp14MeEnqfT4AbFytdDyw0Omooy8HyUmDQdKlAv7Z22WereOyxniFPMxs60RqsUluioMdPep5WDefpIcUSdWebr34Q6NfwcRpaOalQdPmt7SbZRmPQckkWgEwd0BdYswmPwUaTiXr1Q891DhbRpKqQmg8BAd7TYobtWTW7G = `${assetPathPrefix}/6a646.png`
-const imgAb6AXuDzu7T1AwKtuDFmP5J1QMafTq4DcyDWjVixPg5XkUyAi0XNFnkFxlqwAkvbFg8O3R6Q0StVUbWxw6S4Ri2OApHszL7BkllA3Kb3GVkgWQcbNt6NY89UNcYi06Ih3Ky5Kp3HzFNnBZvLwp0FpWazOMoAlxh6ITVnMEzeC4TpjhkhsHiFyShseIjiCJnBxNwhLqAqdIsbiw08GHKuoMiUulBxdHoCfHQePuY52EcbbmeQdJstn9Q = `${assetPathPrefix}/70a8f.png`
-const imgAb6AXuBvUvW31MCd9OVmQanZsJk3UB1Jq4UYleR1CHYn4UxNixv346CHkdzjdqpY0LjZhBxAk8T4Mj3Q4X8UQmU6Y37E6QcnLoWw2RRyKexHzMsEhZLb3GRnmRpN4Y3Nm51BrXSmrF08WoOgHtgTkLcXXMaGb7MFMhyGDzEhQwQlc63Y0N9SGfXjdDfh2HrdYcLtHg77JyxhgWiHDqouTUgJcPcyKmVPs4KZnm5NLuhL0WhUtkNp6AuQ = `${assetPathPrefix}/07a06.png`
-const imgAb6AXuDzqoLzpTqt6Ps1EfCb4TqfoNs6RJeVnVbhA98LaQ5NIj11FhbDl8FxgKkBwRbRmk8IvvS7BgSeZyaUivZ3N3Wo61PjbPttIn1Lp211XGlKUlab21E1AeeQxXqe5TnsysNeKKe69FN3KsX4Gt5QSOfUqOLieNmYsAgMzQf88Rrm6YRg4TXvX7IcsOu8WZdmqdiShNmKIcmG1ToHkovQRqDCmq3M8KyQdOlF7A0QEi1UViN8Epyw = `${assetPathPrefix}/7ce9b.png`
-const imgAb6AXuDTheAj1Znd44VupYyScgyknksVqgeDZhAahT1PMq9ATulGVwxMsrEdrVDbwLFqnJpYiYisWx3C1K1KxmnTnGmepU5T0EbQrfWgf5ZqWcRlDoySi8Mzr3YR1D99K0DnIxGt8If65VuQfcokSUxLSjZu042IrMcqym0PbKgQbrn2CaWkEi8FriK6QexE94FNdHzth8AdbaP7MCe3DnFSt3WzJkHdi1JlD0ApBIsxTc5UHgXl1Yw = `${assetPathPrefix}/e0d6c.png`
 const imgProfile = `${assetPathPrefix}/1fe61.png`
 const imgContainer = `${assetPathPrefix}/ff01e.svg`
 const imgContainer1 = `${assetPathPrefix}/fe6ed.svg`
 const imgContainer2 = `${assetPathPrefix}/577c1.svg`
 const imgContainer3 = `${assetPathPrefix}/eb619.svg`
 const imgContainer4 = `${assetPathPrefix}/99d0c.svg`
-const imgContainer5 = `${assetPathPrefix}/5eef3.svg`
 const imgContainer6 = `${assetPathPrefix}/fa57f.svg`
 const imgContainer7 = `${assetPathPrefix}/f76dc.svg`
 const imgContainer8 = `${assetPathPrefix}/f4ced.svg`
@@ -44,116 +39,322 @@ const imgMail = `${assetPathPrefix}/34fa3.svg`
 const imgMessageCircle = `${assetPathPrefix}/c5fc5.svg`
 
 const PROJECT_FILTERS = [
-  { value: "all", label: "Tous les projets", icon: <Icon name="pillars" size={12} /> },
+  {
+    value: "all",
+    label: "Tous les projets",
+    icon: <Icon name="pillars" size={12} />,
+  },
   {
     value: "school",
     label: "Écoles & Salles de classe",
     icon: <Icon name="graduationCap" size={12} />,
   },
-  { value: "water", label: "Eau potable & WASH", icon: <Icon name="droplet" size={12} /> },
+  {
+    value: "water",
+    label: "Eau potable & WASH",
+    icon: <Icon name="droplet" size={12} />,
+  },
   {
     value: "books",
     label: "Bibliothèques & Livres",
     icon: <Icon name="bookOpen" size={12} />,
   },
-  { value: "health", label: "Santé & Secours", icon: <Icon name="heartPulse" size={12} /> },
+  {
+    value: "health",
+    label: "Santé & Secours",
+    icon: <Icon name="heartPulse" size={12} />,
+  },
 ] as const
 
 /**
- * Each grid slot, bound to the project it renders. Layout and imagery stay in the
- * markup, but every category, region and title comes from the repository, so the
- * card and its filters cannot drift apart the way a duplicated map of node ids did.
+ * The card as one component.
+ *
+ * It used to exist as six hand-written blocks of Figma markup, each pinned to
+ * one project slug and each carrying its own copy of the title, category,
+ * region, impact line and progress. A seventh published project could not
+ * appear, and editing a project in the backoffice left the card showing its
+ * old text. The markup below is that block, unchanged, with every value read
+ * off the record it renders.
  */
-const PROJECT_CARD_SLUGS: Record<string, string> = {
-  "5:3299": "rehabilitation-ecole-dimako",
-  "5:3339": "forage-mora-wash",
-  "5:3382": "kits-scolaires-batouri",
-  "5:3423": "bibliotheque-penja",
-  "5:3464": "kits-secourisme-ngambe-tikar",
-  "5:3505": "toiture-maternelle-foumban",
+function ProjectCard({ doc }: { doc: ProjectDoc }) {
+  return (
+    <div
+      className="bg-white content-stretch flex flex-col items-start w-full min-w-0 overflow-clip relative rounded-card shadow-raised"
+      data-project-category={doc.category}
+      data-project-region={doc.region}
+      data-name={doc.title}
+    >
+      <Link
+        aria-label={doc.title}
+        className="absolute inset-0 z-[5] rounded-card focus-visible:outline-2 focus-visible:outline-brand-700"
+        to={`/nos-projets/${doc.slug}`}
+      />
+      <div className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]">
+        <div className="flex-[1_0_0] min-h-px relative w-full">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {doc.image ? (
+              <img
+                alt=""
+                className="absolute h-full left-[-5.05%] max-w-none object-cover top-0 w-[110.11%]"
+                src={`${assetPathPrefix}/${doc.image}`}
+              />
+            ) : null}
+          </div>
+        </div>
+        <div className="absolute bg-accent-300 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]">
+          <div className="bg-accent-700 relative rounded-pill shrink-0 size-[8px]" />
+          <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#007230] text-[11px] whitespace-nowrap">
+            <p className="leading-[16px]">{doc.statusLabel}</p>
+          </div>
+        </div>
+        <div className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-pill">
+          <div className="h-[11.667px] relative shrink-0 w-[9.333px]">
+            <img
+              alt=""
+              className="absolute block inset-0 max-w-none size-full"
+              src={imgContainer2}
+            />
+          </div>
+          <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap">
+            <p className="leading-[16px]">{doc.location}</p>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-1 flex-col items-start justify-between p-[24px] relative shrink-0 w-full">
+        <div className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full">
+          <div className="content-stretch flex items-center relative shrink-0 w-full">
+            <div className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0">
+              <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap">
+                <p className="leading-[16px]">{doc.categoryLabel}</p>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+            <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full">
+              <p className="line-clamp-2 text-balance">{doc.title}</p>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full">
+            <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full">
+              <p className="line-clamp-3 text-pretty">{shorten(doc.excerpt)}</p>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full">
+          <div className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full">
+            <div className="flex flex-col gap-[2px] items-start w-full">
+              <p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">
+                {doc.impactValue}
+              </p>
+              <p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">
+                {doc.impactLabel}
+              </p>
+            </div>
+            <div className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full">
+              {/* The bar used to be a full-width fill on every card, so a
+                  chantier at 40 % still read as complete. */}
+              <div
+                className="bg-accent-700 h-full min-h-px relative rounded-pill"
+                style={{ width: `${doc.progress}%` }}
+              />
+            </div>
+            <div className="content-stretch flex flex-col items-end relative shrink-0 w-full">
+              <div className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-right whitespace-nowrap">
+                <p className="leading-[16px]">{doc.impactNote}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full">
+          <div className="content-stretch flex flex-nowrap items-center gap-[8px] relative z-[10] shrink-0 w-full">
+            <Link
+              className="btn btn-card btn-secondary"
+              to={`/nos-projets/${doc.slug}`}
+            >
+              <span className="btn-label">{doc.primaryCta}</span>
+              <span
+                aria-hidden="true"
+                className="relative shrink-0 size-4"
+              >
+                <img
+                  alt=""
+                  className="absolute block inset-0 max-w-none size-full"
+                  src={imgContainer4}
+                />
+              </span>
+            </Link>
+            <Link
+              className="btn btn-card btn-warn"
+              to={`/nos-projets/${doc.slug}`}
+            >
+              <span className="btn-label">{doc.secondaryCta}</span>
+              <span
+                aria-hidden="true"
+                className="relative shrink-0 size-4"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 3.5L10.5 8L6 12.5"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/** Keeps a card to the excerpt length the design was drawn with. */
+const shorten = (text: string, limit = 150) =>
+  text.length > limit ? `${text.slice(0, limit).trimEnd()}…` : text
+
+/** The field "cellule WhatsApp terrain" printed on the proposal card. */
+const WHATSAPP_CELLULE = "237699098688"
+
+/**
+ * The WhatsApp draft handed to the visitor's messenger once a proposal is
+ * recorded. Delivery happens there — there is no SMS gateway here — while the
+ * same fields were already written to the store, so the backoffice sees it.
+ */
+function buildWhatsApp(fields: {
+  school: string
+  region: string
+  referent: string
+  phone: string
+  urgencyType: string
+  description: string
+}) {
+  return [
+    `Bonjour, je vous contacte via l'appel aux communautés locales.`,
+    "",
+    `École / établissement : ${fields.school}`,
+    `Région : ${fields.region}`,
+    `Référent : ${fields.referent}`,
+    `Téléphone : ${fields.phone}`,
+    `Type d'urgence : ${fields.urgencyType}`,
+    "",
+    `Description : ${fields.description}`,
+  ].join("\n")
+}
+
+/** Cards are laid out three across, the way the Figma frame is. */
+const chunkRows = <T,>(items: T[], size = 3): T[][] => {
+  const rows: T[][] = []
+  for (let index = 0; index < items.length; index += size) {
+    rows.push(items.slice(index, index + size))
+  }
+  return rows
 }
 
 export default function NosProjetsChildrensSmileCameroun() {
   const [projectFilter, setProjectFilter] = useState("all")
-  const [projectDocs, setProjectDocs] = useState<Record<string, ProjectDoc>>({})
 
-  useEffect(() => {
-    let live = true
-    void (async () => {
-      const all = await listProjects()
-      if (!live) return
-      setProjectDocs(Object.fromEntries(all.map((doc) => [doc.slug, doc])))
-    })()
-    return () => {
-      live = false
-    }
-  }, [])
-
-  /** Slot -> project record, dropping any slot whose project no longer exists. */
-  const projectCards = useMemo(
-    () =>
-      Object.entries(PROJECT_CARD_SLUGS)
-        .map(([id, slug]) => ({ id, doc: projectDocs[slug] }))
-        .filter((entry): entry is { id: string; doc: ProjectDoc } => Boolean(entry.doc)),
-    [projectDocs],
-  )
+  /**
+   * Read live rather than loaded in an effect: a project published in the
+   * backoffice reaches this grid on its own, and the grid never paints as
+   * empty on the way in.
+   */
+  const projectCards = usePublishedProjects()
 
   const projectRegions = useMemo(
-    () => ["all", ...Array.from(new Set(projectCards.map((c) => c.doc.region)))],
+    () => ["all", ...Array.from(new Set(projectCards.map((c) => c.region)))],
     [projectCards],
   )
   const [regionFilter, setRegionFilter] = useState("all")
 
   const projectRegionCounts = useMemo(() => {
     const counts: Record<string, number> = { all: 0 }
-    for (const { doc } of projectCards) {
+    for (const doc of projectCards) {
       counts.all += 1
       counts[doc.region] = (counts[doc.region] ?? 0) + 1
     }
     return counts
   }, [projectCards])
 
-  const visibleProjectCount = useMemo(
+  /**
+   * Filtering used to hide cards with an inline `display: none` keyed on
+   * Figma node ids. A filtered-out row still left its gaps, and ids could not
+   * follow a new project. Filtering the list before it is chunked into rows
+   * makes an empty row impossible by construction.
+   */
+  const visibleProjects = useMemo(
     () =>
       projectCards.filter(
-        ({ doc }) =>
+        (doc) =>
           (projectFilter === "all" || doc.category === projectFilter) &&
           (regionFilter === "all" || doc.region === regionFilter),
-      ).length,
+      ),
     [projectCards, projectFilter, regionFilter],
   )
 
-  /** Maps each grid row to the project node ids it contains, so empty rows can collapse. */
   const projectRows = useMemo(
-    () => [
-      ["5:3299", "5:3339", "5:3382"],
-      ["5:3423", "5:3464", "5:3505"],
-    ],
-    [],
+    () => chunkRows(visibleProjects),
+    [visibleProjects],
   )
 
-  const hiddenProjects = useMemo(() => {
-    const hidden = new Set<string>()
-    for (const { id, doc } of projectCards) {
-      const categoryMatch = projectFilter === "all" || doc.category === projectFilter
-      const regionMatch = regionFilter === "all" || doc.region === regionFilter
-      if (!categoryMatch || !regionMatch) hidden.add(id)
-    }
-    return hidden
-  }, [projectCards, projectFilter, regionFilter])
+  // 3 rows of 3 cards per page (9 projects); reset when a filter moves the
+  // grid so the pager never shows an old slice.
+  const {
+    page,
+    pageCount,
+    pageItems: pageProjectRows,
+    setPage,
+  } = usePagination(projectRows, 3, `${projectFilter}:${regionFilter}`)
 
-  const hiddenProjectRows = useMemo(
-    () =>
-      new Set(
-        projectRows
-          .filter((row) => row.every((id) => hiddenProjects.has(id)))
-          .map((row) => row[0]),
-      ),
-    [projectRows, hiddenProjects],
-  )
+  const visibleProjectCount = visibleProjects.length
 
   const selectProjectFilter = (filter: string) => {
     setProjectFilter(filter)
+  }
+
+  const [sent, setSent] = useState(false)
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    const fields = {
+      school: String(data.get("school") ?? "").trim(),
+      region: String(data.get("region") ?? ""),
+      referent: String(data.get("referent") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim(),
+      urgencyType: String(data.get("urgencyType") ?? ""),
+      description: String(data.get("description") ?? "").trim(),
+    }
+
+    // Recorded first: the messenger may never be allowed to open, and the
+    // backoffice should still know a dossier came in through the community
+    // call.
+    await saveMessage({
+      name: fields.referent || "Anonyme",
+      email: "",
+      phone: fields.phone,
+      organisation: fields.school,
+      profile: "school",
+      region: fields.region,
+      subject: fields.urgencyType || "Requête via l'appel aux communautés",
+      body: fields.description,
+    })
+    setSent(true)
+
+    window.open(
+      `https://wa.me/${WHATSAPP_CELLULE}?text=${encodeURIComponent(
+        buildWhatsApp(fields),
+      )}`,
+      "_blank",
+      "noopener",
+    )
   }
 
   return (
@@ -258,7 +459,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                         data-node-id="5:3267"
                       >
                         <h1 className="leading-[56px] mb-0">
-                          {`Nos Chantiers & Projets `} <br /> {`Scolaires À Travers le Cameroun`}
+                          {`Nos Chantiers & Projets `} <br />{" "}
+                          {`Scolaires À Travers le Cameroun`}
                         </h1>
                       </div>
                     </div>
@@ -408,17 +610,22 @@ export default function NosProjetsChildrensSmileCameroun() {
                   trailing={
                     <label className="flex items-center gap-2 min-w-0">
                       <span className="sr-only">Filtrer par région</span>
-                      <span aria-hidden="true" className="flex shrink-0 items-center text-ink-700">
+                      <span
+                        aria-hidden="true"
+                        className="flex shrink-0 items-center text-ink-700"
+                      >
                         <Icon name="mapPin" size={16} />
                       </span>
                       <select
                         className="min-w-0 max-w-full cursor-pointer rounded-control border-0 bg-white py-2 pl-4 pr-9 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-ink-900 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b5cab]"
-                        onChange={(event) => setRegionFilter(event.target.value)}
+                        onChange={(event) =>
+                          setRegionFilter(event.target.value)
+                        }
                         value={regionFilter}
                       >
                         {projectRegions.map((region) => (
                           <option key={region} value={region}>
-                            {region === 'all'
+                            {region === "all"
                               ? `Toutes les régions (${projectRegionCounts.all})`
                               : `${region} (${projectRegionCounts[region] ?? 0})`}
                           </option>
@@ -430,7 +637,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                   variant="outline"
                 />
                 <p className="font-['Inter:Regular'] text-[#5d626e] text-[12px] leading-4">
-                  {visibleProjectCount} projet{visibleProjectCount > 1 ? 's' : ''} sur{' '}
+                  {visibleProjectCount} projet
+                  {visibleProjectCount > 1 ? "s" : ""} sur{" "}
                   {projectRegionCounts.all} au total
                 </p>
               </div>
@@ -512,1250 +720,59 @@ export default function NosProjetsChildrensSmileCameroun() {
                 data-node-id="5:3298"
                 data-name="Cards Grid"
               >
-                <div
-                  className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full"
-                  data-node-id="50:1146"
-                  data-name="Row 1"
-                  style={{ display: hiddenProjectRows.has("5:3299") ? "none" : undefined }}
-                >
+                {pageProjectRows.map((row, rowIndex) => (
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-project-category="school"
-                    data-project-region="Est"
-                    data-node-id="5:3299"
-                    style={{ display: hiddenProjects.has("5:3299") ? "none" : undefined }}
-                    data-name="Article - Projet 1: Réalis"
+                    key={`row-${rowIndex}`}
+                    className="content-stretch grid grid-cols-1 gap-[24px] items-stretch relative shrink-0 w-full sm:grid-cols-2 xl:grid-cols-3"
                   >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
-                      data-node-id="5:3300"
-                      data-name="Background"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:3301"
-                        data-name="AB6AXuA92xXMWSH8KZfkVqhDTr7sutCI9Zg97Qv2eOhbVbPxfM9xJiu0ceP4CO7F9DEQW_fQ71UWFTlEvwu3gIf8H7SsXNPo-OElAwWvEFj3VLi0rqWlbQwC9EzkW44AEHoPbrZwhBW5WHKZcjGVJ2tGRWFzrbLmkZXLMg5KlAVWWb_iboIh8NCP_OyhrZ6B8qQCnDgQAu_HXVhM8PYrRqmBiKiWTJKBgBwYbYEHrM2QozgRq1F4F6ho2h6gmA"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuA92XXmwsh8KZfkVqhDTr7SutCi9Zg97Qv2EOhbVbPxfM9XJiu0CeP4Co7F9DeqwFQ71UwfTlEvwu3GIf8H7SsXnPoOElAwWvEFj3VLi0RqWlbQwC9EzkW44AeHoPbrZwhBw5WhkZcjGvj2TGrwFzrbLmkZxlMg5KlAvwWbIboIh8NcpOyhrZ6B8QQCnDgQAuHxVhM8PYrRqmBiKiWtjkBgBwYbYeHrM2QozgRq1F4F6Ho2H6GmA
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute bg-accent-300 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
-                        data-node-id="5:3302"
-                        data-name="Background+Shadow"
-                      >
-                        <div
-                          className="bg-accent-700 relative rounded-pill shrink-0 size-[8px]"
-                          data-node-id="5:3303"
-                          data-name="Background"
-                        />
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#007230] text-[11px] whitespace-nowrap"
-                          data-node-id="5:3304"
-                        >
-                          <p className="leading-[16px]">{`Réalisé & Livré`}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-pill"
-                        data-node-id="5:3305"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:3306"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer2}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3308"
-                        >
-                          <p className="leading-[16px]">Dimako • Est</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full z-[1]"
-                      data-node-id="5:3309"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:3310"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex items-center relative shrink-0 w-full"
-                          data-node-id="5:3311"
-                          data-name="Container"
-                        >
-                          <div
-                            className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
-                            data-node-id="5:3312"
-                            data-name="Background"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
-                              data-node-id="5:3313"
-                            >
-                              <p className="leading-[16px]">{`ÉCOLES & SALLES DE CLASSE`}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:3314"
-                          data-name="Heading 3"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
-                            data-node-id="5:3315"
-                          >
-                            <p className="text-balance">{projectDocs['rehabilitation-ecole-dimako']?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full"
-                          data-node-id="5:3316"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
-                            data-node-id="5:3317"
-                          >
-                            <p className="text-pretty">{`Réfection complète de 3 salles de classe endommagées, remplacement total de la toiture avec étanchéité renforcée, et livraison de 120...`}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full"
-                        data-node-id="5:3318"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3319"
-                          data-name="Background"
-                        >
-                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`340 élèves réintégrés`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Impact constaté</p></div>
-                          <div
-                            className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full"
-                            data-node-id="5:3327"
-                            data-name="Background"
-                          >
-                            <div
-                              className="bg-accent-700 flex-[1_0_0] min-h-px relative rounded-pill w-full"
-                              data-node-id="5:3328"
-                              data-name="Background"
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-end relative shrink-0 w-full"
-                            data-node-id="5:3329"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-right whitespace-nowrap"
-                              data-node-id="5:3330"
-                            >
-                              <p className="leading-[16px]">100% Réalisé</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full"
-                        data-node-id="5:3331"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="content-stretch flex items-center justify-between pt-[8px] relative shrink-0 w-full"
-                          data-node-id="5:3332"
-                          data-name="Container"
-                        >
-                          <div
-                            className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                            data-node-id="5:3333"
-                            data-name="Button"
-                          >
-                                                        <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["rehabilitation-ecole-dimako"]?.slug ?? "rehabilitation-ecole-dimako"}`}>
-                                <span className="btn-label">{`Fiche détaillée & Bilan`}</span>
-                              </Link>
-                              <Link className="btn btn-card btn-warn" to="/don">
-                                <span className="btn-label">{`Voir le rapport photo`}</span>
-                              </Link>
-                            </div>
-                            <div
-                              className="relative shrink-0 size-[12px]"
-                              data-node-id="5:3335"
-                              data-name="Container"
-                            >
-                              <img
-                                alt=""
-                                className="absolute block inset-0 max-w-none size-full"
-                                src={imgContainer4}
-                              />
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[18.333px]"
-                            data-node-id="5:3337"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer5}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    {row.map((doc) => (
+                      <ProjectCard key={doc._id} doc={doc} />
+                    ))}
                   </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-project-category="water"
-                    data-project-region="Extrême-Nord"
-                    data-node-id="5:3339"
-                    style={{ display: hiddenProjects.has("5:3339") ? "none" : undefined }}
-                    data-name="Article - Projet 2: En cours (75%)"
-                  >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
-                      data-node-id="5:3340"
-                      data-name="Background"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:3341"
-                        data-name="AB6AXuDgbXG5EbRGIu_jnajOpfZ09uYf-8aNitg3tqQZkMrLMMtxukyzTvDFM4r6vdI9niH2ZLLkzQXDP14meEnqfT4_ABFytdDYW0Omooy8hy-umDQdKlAv7z22WereOyxniF_PMxs60_RqsULUIOMdPep5WDefpIcUSdWEBR34q6NFWCRpaOalQdPMT7SbZRmPQckkWgEWD0bdYswmPWUaTiXR1Q891Dhb_RpKQQmg8BAd7tYobt-wT_w7_g"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuDgbXg5EbRgIuJnajOpfZ09UYf8ANitg3TqQZkMrLmMtxukyzTvDfm4R6VdI9NiH2ZlLkzQxdp14MeEnqfT4AbFytdDyw0Omooy8HyUmDQdKlAv7Z22WereOyxniFPMxs60RqsUluioMdPep5WDefpIcUSdWebr34Q6NfwcRpaOalQdPmt7SbZRmPQckkWgEwd0BdYswmPwUaTiXr1Q891DhbRpKqQmg8BAd7TYobtWTW7G
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute bg-warn-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
-                        data-node-id="5:3342"
-                        data-name="Background+Shadow"
-                      >
-                        <div
-                          className="bg-warn-900 relative rounded-pill shrink-0 size-[8px]"
-                          data-node-id="5:3343"
-                          data-name="Background"
-                        />
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#370e00] text-[11px] whitespace-nowrap"
-                          data-node-id="5:3344"
-                        >
-                          <p className="leading-[16px]">En cours • 75%</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[12.01px] rounded-pill"
-                        data-node-id="5:3345"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:3346"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer2}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3348"
-                        >
-                          <p className="leading-[16px]">Mora • Extrême-Nord</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full z-[1]"
-                      data-node-id="5:3349"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:3350"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex items-center relative shrink-0 w-full"
-                          data-node-id="5:3351"
-                          data-name="Container"
-                        >
-                          <div
-                            className="bg-brand-200 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
-                            data-node-id="5:3352"
-                            data-name="Background"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
-                              data-node-id="5:3353"
-                            >
-                              <p className="leading-[16px]">{`EAU POTABLE & WASH`}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:3354"
-                          data-name="Heading 3"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
-                            data-node-id="5:3355"
-                          >
-                            <p className="text-balance">{projectDocs['forage-mora-wash']?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full"
-                          data-node-id="5:3356"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
-                            data-node-id="5:3357"
-                          >
-                            <p className="text-pretty">{`Création d'un point d'adduction d'eau à 65 mètres de profondeur et construction de latrines écologiques séparées filles/garçons pour...`}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full"
-                        data-node-id="5:3358"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3359"
-                          data-name="Background"
-                        >
-                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`800 écoliers`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Bénéficiaires directs</p></div>
-                          <div
-                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
-                            data-node-id="5:3367"
-                            data-name="Background"
-                          >
-                            <div
-                              className="absolute bg-warn-700 inset-[0_25.01%_0_0] rounded-pill"
-                              data-node-id="5:3368"
-                              data-name="Background"
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex items-start justify-between relative shrink-0 w-full"
-                            data-node-id="5:3369"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3370"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3371"
-                              >
-                                <p className="leading-[16px]">
-                                  Pompe installée
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3372"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-900 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3373"
-                              >
-                                <p className="leading-[16px]">{`75% financé & réalisé`}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full"
-                        data-node-id="5:3374"
-                        data-name="Margin"
-                      >
-                      <div
-                        className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full"
-                        data-node-id="5:3375"
-                        data-name="Container"
-                      >
-                        <Link
-                          className="btn btn-card btn-secondary"
-                          data-node-id="5:3376"
-                          to={`/nos-projets/${projectDocs['forage-mora-wash']?.slug ?? "forage-mora-wash"}`}
-                        >
-                          <span className="btn-label">{`Consulter le chantier`}</span>
-                        </Link>
-                        <Link
-                          className="btn btn-card btn-warn"
-                          data-node-id="5:3378"
-                          to="/don"
-                        >
-                          <span className="btn-label">{`Finaliser ce projet`}</span>
-                          <Icon name="arrowRight" size={16} className="btn-icon" />
-                        </Link>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-project-category="books"
-                    data-project-region="Littoral"
-                    data-node-id="5:3382"
-                    style={{ display: hiddenProjects.has("5:3382") ? "none" : undefined }}
-                    data-name="Article - Projet 3: En cours (40%)"
-                  >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
-                      data-node-id="5:3383"
-                      data-name="Background"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:3384"
-                        data-name="AB6AXuDZU7T1AWKtuDFmP5j1qMAFTq4DcyDWjVIXPg5XkUYAi0xNFnkFXLQWAkvbFG8o3R-6q0StVUbWxw6s4RI2OApHszL7BkllA3Kb3GVkgWQcbNT6nY89UNcYi06ih3KY5kp3HzFNnBZvLwp0fpWazOMoALXH6iTVnMEze_C4tpjhkhsHi-fySHSEIjiCJnBxNwhLqAQD-Isbiw08gHKuoMI_uulBxd-hoCF-hQEPuY52EcbbmeQdJSTN9Q"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuDzu7T1AwKtuDFmP5J1QMafTq4DcyDWjVixPg5XkUyAi0XNFnkFxlqwAkvbFg8O3R6Q0StVUbWxw6S4Ri2OApHszL7BkllA3Kb3GVkgWQcbNt6NY89UNcYi06Ih3Ky5Kp3HzFNnBZvLwp0FpWazOMoAlxh6ITVnMEzeC4TpjhkhsHiFyShseIjiCJnBxNwhLqAqdIsbiw08GHKuoMiUulBxdHoCfHQePuY52EcbbmeQdJstn9Q
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute bg-warn-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
-                        data-node-id="5:3385"
-                        data-name="Background+Shadow"
-                      >
-                        <div
-                          className="bg-warn-900 relative rounded-pill shrink-0 size-[8px]"
-                          data-node-id="5:3386"
-                          data-name="Background"
-                        />
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#370e00] text-[11px] whitespace-nowrap"
-                          data-node-id="5:3387"
-                        >
-                          <p className="leading-[16px]">En cours • 40%</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[11.99px] rounded-pill"
-                        data-node-id="5:3388"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:3389"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer2}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3391"
-                        >
-                          <p className="leading-[16px]">Penja • Littoral</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full z-[1]"
-                      data-node-id="5:3392"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:3393"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex items-center relative shrink-0 w-full"
-                          data-node-id="5:3394"
-                          data-name="Container"
-                        >
-                          <div
-                            className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
-                            data-node-id="5:3395"
-                            data-name="Background"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
-                              data-node-id="5:3396"
-                            >
-                              <p className="leading-[16px]">{`BIBLIOTHÈQUES & LIVRES`}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:3397"
-                          data-name="Heading 3"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
-                            data-node-id="5:3398"
-                          >
-                            <p className="text-balance">{projectDocs['kits-scolaires-batouri']?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full"
-                          data-node-id="5:3399"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
-                            data-node-id="5:3400"
-                          >
-                            <p className="text-pretty">{`Acquisition et aménagement d'un fonds documentaire de 1 200 livres jeunesse francophones et anglophones, caisses mobiles...`}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full"
-                        data-node-id="5:3401"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3402"
-                          data-name="Background"
-                        >
-                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`1 200 livres`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Ouvrages ciblés</p></div>
-                          <div
-                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
-                            data-node-id="5:3410"
-                            data-name="Background"
-                          >
-                            <div
-                              className="absolute bg-brand-700 inset-[0_60%_0_0] rounded-pill"
-                              data-node-id="5:3411"
-                              data-name="Background"
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex items-start justify-between relative shrink-0 w-full"
-                            data-node-id="5:3412"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3413"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3414"
-                              >
-                                <p className="leading-[16px]">
-                                  Mobilier fabriqué
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3415"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3416"
-                              >
-                                <p className="leading-[16px]">{`40% d'avancement`}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full"
-                        data-node-id="5:3417"
-                        data-name="Margin"
-                      >
-                                                <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["kits-scolaires-batouri"]?.slug ?? "kits-scolaires-batouri"}`}>
-                            <span className="btn-label">{`Détails du fonds`}</span>
-                          </Link>
-                          <Link className="btn btn-card btn-warn" to="/don">
-                            <span className="btn-label">{`Parrainer`}</span>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full"
-                  data-node-id="50:1147"
-                  data-name="Row 2"
-                  style={{ display: hiddenProjectRows.has("5:3423") ? "none" : undefined }}
-                >
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-project-category="health"
-                    data-project-region="Centre"
-                    data-node-id="5:3423"
-                    style={{ display: hiddenProjects.has("5:3423") ? "none" : undefined }}
-                    data-name="Article - Projet 4: En préparation"
-                  >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
-                      data-node-id="5:3424"
-                      data-name="Background"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:3425"
-                        data-name="AB6AXuBVUvW31MCd9o-vmQanZsJk3uB1Jq4UYleR1cHYn4UxNixv346cHkdzjdqpY0Lj_ZhBxAK8t4Mj3q4x8UQmU6Y37e6qcnLoWW2rRyKEXHzMSEhZLb3gRnmRpN4Y3nm51BrXSmr_F08WoOgHtgTKLc-xXMaGB7mFMhyGDzEhQwQLC6-3y0n9sGfXJDDfh2HrdYcLtHG77JyxhgWiHDqouTUgJcPcyKmVPs4kZnm5N-luhL0whUTKNp6auQ"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuBvUvW31MCd9OVmQanZsJk3UB1Jq4UYleR1CHYn4UxNixv346CHkdzjdqpY0LjZhBxAk8T4Mj3Q4X8UQmU6Y37E6QcnLoWw2RRyKexHzMsEhZLb3GRnmRpN4Y3Nm51BrXSmrF08WoOgHtgTkLcXXMaGb7MFMhyGDzEhQwQlc63Y0N9SGfXjdDfh2HrdYcLtHg77JyxhgWiHDqouTUgJcPcyKmVPs4KZnm5NLuhL0WhUtkNp6AuQ
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute bg-brand-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
-                        data-node-id="5:3426"
-                        data-name="Background+Shadow"
-                      >
-                        <div
-                          className="bg-brand-900 relative rounded-pill shrink-0 size-[8px]"
-                          data-node-id="5:3427"
-                          data-name="Background"
-                        />
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3428"
-                        >
-                          <p className="leading-[16px]">
-                            En préparation • T2 2025
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[12px] rounded-pill"
-                        data-node-id="5:3429"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:3430"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer2}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3432"
-                        >
-                          <p className="leading-[16px]">
-                            Ngambé-Tikar • Centre
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full z-[1]"
-                      data-node-id="5:3433"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:3434"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex items-center relative shrink-0 w-full"
-                          data-node-id="5:3435"
-                          data-name="Container"
-                        >
-                          <div
-                            className="bg-[#ffdad6] content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
-                            data-node-id="5:3436"
-                            data-name="Background"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#93000a] text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
-                              data-node-id="5:3437"
-                            >
-                              <p className="leading-[16px]">{`SANTÉ & SECOURS`}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:3438"
-                          data-name="Heading 3"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
-                            data-node-id="5:3439"
-                          >
-                            <p className="text-balance">{projectDocs['bibliotheque-penja']?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full"
-                          data-node-id="5:3440"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
-                            data-node-id="5:3441"
-                          >
-                            <p className="text-pretty">{`Dotation en armoires à pharmacie d'urgence, déparasitage annuel et mallettes de premier secours pour 6 écoles primaires de brousse...`}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full"
-                        data-node-id="5:3442"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3443"
-                          data-name="Background"
-                        >
-                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`6 écoles / 920 enfants`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Couverture planifiée</p></div>
-                          <div
-                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
-                            data-node-id="5:3451"
-                            data-name="Background"
-                          >
-                            <div
-                              className="absolute bg-brand-900 inset-[0_85%_0_0] rounded-pill"
-                              data-node-id="5:3452"
-                              data-name="Background"
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex items-start justify-between pr-[0.01px] relative shrink-0 w-full"
-                            data-node-id="5:3453"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3454"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3455"
-                              >
-                                <p className="leading-[16px]">{`Phase d'achat groupé`}</p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3456"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3457"
-                              >
-                                <p className="leading-[16px]">
-                                  Budget à boucler
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full"
-                        data-node-id="5:3458"
-                        data-name="Margin"
-                      >
-                                                <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["bibliotheque-penja"]?.slug ?? "bibliotheque-penja"}`}>
-                            <span className="btn-label">{`Consulter l'inventaire`}</span>
-                          </Link>
-                          <Link className="btn btn-card btn-warn" to="/don">
-                            <span className="btn-label">{`Soutenir ce lot`}</span>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-project-category="school"
-                    data-project-region="Ouest"
-                    data-node-id="5:3464"
-                    style={{ display: hiddenProjects.has("5:3464") ? "none" : undefined }}
-                    data-name="Article - Projet 5: En préparation"
-                  >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
-                      data-node-id="5:3465"
-                      data-name="Background"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:3466"
-                        data-name="AB6AXuDZQOLzpTQT6Ps1efCB4TQFONs6R-JeVn-vbhA98LaQ5nIj11fhbDL8FxgKkBwRbRMK8ivvS7bgSEZyaUivZ3N3WO61pjbPttIn1LP211XGlKUlab21E1AEEQxXqe5TnsysNeKKe69fN3KsX4gt5qSOfUqOLieNmYsAgMz_QF88RRM6yRg4TXvX7icsOU8wZDMQDIShNm-kIcm-g1ToHkovQRqDCmq3m8KYQdOlF7a0QEi1UVi_n8Epyw"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuDzqoLzpTqt6Ps1EfCb4TqfoNs6RJeVnVbhA98LaQ5NIj11FhbDl8FxgKkBwRbRmk8IvvS7BgSeZyaUivZ3N3Wo61PjbPttIn1Lp211XGlKUlab21E1AeeQxXqe5TnsysNeKKe69FN3KsX4Gt5QSOfUqOLieNmYsAgMzQf88Rrm6YRg4TXvX7IcsOu8WZdmqdiShNmKIcmG1ToHkovQRqDCmq3M8KyQdOlF7A0QEi1UViN8Epyw
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute bg-brand-100 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
-                        data-node-id="5:3467"
-                        data-name="Background+Shadow"
-                      >
-                        <div
-                          className="bg-brand-900 relative rounded-pill shrink-0 size-[8px]"
-                          data-node-id="5:3468"
-                          data-name="Background"
-                        />
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3469"
-                        >
-                          <p className="leading-[16px]">En préparation</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[4px] items-center px-[10px] py-[4px] right-[12px] rounded-pill"
-                        data-node-id="5:3470"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:3471"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer2}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3473"
-                        >
-                          <p className="leading-[16px]">Foumban • Ouest</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full z-[1]"
-                      data-node-id="5:3474"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:3475"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex items-center relative shrink-0 w-full"
-                          data-node-id="5:3476"
-                          data-name="Container"
-                        >
-                          <div
-                            className="bg-brand-100 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
-                            data-node-id="5:3477"
-                            data-name="Background"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-800 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
-                              data-node-id="5:3478"
-                            >
-                              <p className="leading-[16px]">{`ÉCOLES & SALLES DE CLASSE`}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:3479"
-                          data-name="Heading 3"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
-                            data-node-id="5:3480"
-                          >
-                            <p className="text-balance">{projectDocs['kits-secourisme-ngambe-tikar']?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full"
-                          data-node-id="5:3481"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
-                            data-node-id="5:3482"
-                          >
-                            <p className="text-pretty">{`Remplacement de 420 m² de charpente fragilisée par les infiltrations pour protéger 215 tout-petits avant la saison des pluies torrentielles`}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full"
-                        data-node-id="5:3483"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3484"
-                          data-name="Background"
-                        >
-                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`420 m² à sécuriser`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Surface toiture</p></div>
-                          <div
-                            className="bg-surface-tint h-[10px] overflow-clip relative rounded-pill shrink-0 w-full"
-                            data-node-id="5:3492"
-                            data-name="Background"
-                          >
-                            <div
-                              className="absolute bg-brand-900 bottom-0 left-0 right-3/4 rounded-pill top-0"
-                              data-node-id="5:3493"
-                              data-name="Background"
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex items-start justify-between relative shrink-0 w-full"
-                            data-node-id="5:3494"
-                            data-name="Container"
-                          >
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3495"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3496"
-                              >
-                                <p className="leading-[16px]">
-                                  Devis communautaire validé
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className="content-stretch flex flex-col items-start relative self-stretch shrink-0"
-                              data-node-id="5:3497"
-                              data-name="Container"
-                            >
-                              <div
-                                className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
-                                data-node-id="5:3498"
-                              >
-                                <p className="leading-[16px]">
-                                  Recherche de parrain
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full"
-                        data-node-id="5:3499"
-                        data-name="Margin"
-                      >
-                                                <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                          <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["kits-secourisme-ngambe-tikar"]?.slug ?? "kits-secourisme-ngambe-tikar"}`}>
-                            <span className="btn-label">{`Voir le dossier technique`}</span>
-                          </Link>
-                          <Link className="btn btn-card btn-warn" to="/don">
-                            <span className="btn-label">{`Adopter ce toit`}</span>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col isolate items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-project-category="school"
-                    data-project-region="Est"
-                    data-node-id="5:3505"
-                    style={{ display: hiddenProjects.has("5:3505") ? "none" : undefined }}
-                    data-name="Article - Projet 6: Réalis"
-                  >
-                    <div
-                      className="bg-surface-tint content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full z-[2]"
-                      data-node-id="5:3506"
-                      data-name="Background"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:3507"
-                        data-name="AB6AXuDTheAj1_Znd44vupYYScgyknksVqge_dZHAahT1pMQ9aTulGVwxMsrEdrVDbwLFqnJpYiYisWX3c1K1KxmnTNGmepU5t0EBQrfWgf5zqWCRlDoySI8Mzr3yR1D99k0DNIxGt8-If_65vuQfcokSUx_l_SJZu042irMCQYM0PbKGQbrn2caWKEi8FriK6QEX_e94fNdHZTH8AdbaP7mCe3DnFSt3WzJkHDI1JlD0ApBIsxTc5UHgXL1yw"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuDTheAj1Znd44VupYyScgyknksVqgeDZhAahT1PMq9ATulGVwxMsrEdrVDbwLFqnJpYiYisWx3C1K1KxmnTnGmepU5T0EbQrfWgf5ZqWcRlDoySi8Mzr3YR1D99K0DnIxGt8If65VuQfcokSUxLSjZu042IrMcqym0PbKgQbrn2CaWkEi8FriK6QexE94FNdHzth8AdbaP7MCe3DnFSt3WzJkHdi1JlD0ApBIsxTc5UHgXl1Yw
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute bg-accent-300 content-stretch drop-shadow-card flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill top-[14px]"
-                        data-node-id="5:3508"
-                        data-name="Background+Shadow"
-                      >
-                        <div
-                          className="bg-accent-700 relative rounded-pill shrink-0 size-[8px]"
-                          data-node-id="5:3509"
-                          data-name="Background"
-                        />
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[#007230] text-[11px] whitespace-nowrap"
-                          data-node-id="5:3510"
-                        >
-                          <p className="leading-[16px]">{`Réalisé & Distribué`}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.85)] bottom-[12px] content-stretch flex gap-[3.99px] items-center px-[10px] py-[4px] right-[11.99px] rounded-pill"
-                        data-node-id="5:3511"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:3512"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer2}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:3514"
-                        >
-                          <p className="leading-[16px]">Batouri • Est</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full z-[1]"
-                      data-node-id="5:3515"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[7.4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:3516"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex items-center relative shrink-0 w-full"
-                          data-node-id="5:3517"
-                          data-name="Container"
-                        >
-                          <div
-                            className="bg-accent-200 content-stretch flex flex-col items-start px-[10px] py-[2px] relative rounded-pill shrink-0"
-                            data-node-id="5:3518"
-                            data-name="Background"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-900 text-[11px] tracking-[0.55px] uppercase whitespace-nowrap"
-                              data-node-id="5:3519"
-                            >
-                              <p className="leading-[16px]">{`ÉDUCATION & BOURSES`}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:3520"
-                          data-name="Heading 3"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center relative shrink-0 text-ink-900 text-h4 w-full"
-                            data-node-id="5:3521"
-                          >
-                            <p className="text-balance">{projectDocs['toiture-maternelle-foumban']?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start overflow-clip pt-[0.6px] relative shrink-0 w-full"
-                          data-node-id="5:3522"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center not-italic relative shrink-0 text-ink-700 text-body w-full"
-                            data-node-id="5:3523"
-                          >
-                            <p className="text-pretty">{`Distribution directe aux orphelins et enfants de réfugiés : cartables imperméables, boîtes de craies, cahiers, ardoises et manuels officiels du`}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[24px] relative shrink-0 w-full"
-                        data-node-id="5:3524"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="bg-surface-muted content-stretch flex flex-col gap-[4px] items-start pb-[14px] pt-[16px] px-[14px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3525"
-                          data-name="Background"
-                        >
-                          <div className="flex flex-col gap-[2px] items-start w-full"><p className="font-['Inter:Bold'] font-bold leading-[22px] text-accent-700 text-h4">{`250 kits complets`}</p><p className="font-['Inter:Regular'] font-normal leading-[18px] text-ink-700 text-small">Dotations remises</p></div>
-                          <div
-                            className="bg-surface-tint content-stretch flex flex-col h-[8px] items-start justify-center overflow-clip relative rounded-pill shrink-0 w-full"
-                            data-node-id="5:3533"
-                            data-name="Background"
-                          >
-                            <div
-                              className="bg-accent-700 flex-[1_0_0] min-h-px relative rounded-pill w-full"
-                              data-node-id="5:3534"
-                              data-name="Background"
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-end relative shrink-0 w-full"
-                            data-node-id="5:3535"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-500 text-[11px] text-right whitespace-nowrap"
-                              data-node-id="5:3536"
-                            >
-                              <p className="leading-[16px]">100% Clôturé</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col items-start pt-[20px] relative shrink-0 w-full"
-                        data-node-id="5:3537"
-                        data-name="Margin"
-                      >
-                        <div
-                          className="content-stretch flex items-center justify-between pt-[8px] relative shrink-0 w-full"
-                          data-node-id="5:3538"
-                          data-name="Container"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-center justify-center relative shrink-0"
-                            data-node-id="5:3539"
-                            data-name="Button"
-                          >
-                                                        <div className="flex flex-wrap gap-[8px] items-center justify-between pt-[8px] w-full">
-                              <Link className="btn btn-card btn-secondary" to={`/nos-projets/${projectDocs["toiture-maternelle-foumban"]?.slug ?? "toiture-maternelle-foumban"}`}>
-                                <span className="btn-label">{`Rapport photographique`}</span>
-                              </Link>
-                              <Link className="btn btn-card btn-warn" to="/don">
-                                <span className="btn-label">{`Voir le bilan`}</span>
-                              </Link>
-                            </div>
-                          </div>
-                          <div
-                            className="h-[19.25px] relative shrink-0 w-[20.167px]"
-                            data-node-id="5:3541"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer12}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
+                <Pagination
+                  page={page}
+                  pageCount={pageCount}
+                  onChange={setPage}
+                  label={
+                    visibleProjectCount > 0
+                      ? `Page ${page} sur ${pageCount} · ${visibleProjectCount} projets`
+                      : undefined
+                  }
+                  className="w-full"
+                />
               </div>
-            </div>
               <div
                 className="flex w-full flex-col items-center justify-center gap-2 rounded-panel border border-dashed border-[#c7cdf5] bg-white px-6 py-14 text-center"
                 data-empty-state="projects"
                 role="status"
-                style={{ display: visibleProjectCount === 0 ? 'flex' : 'none' }}
+                style={{ display: visibleProjectCount === 0 ? "flex" : "none" }}
               >
-                <span aria-hidden="true" className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-700">
+                <span
+                  aria-hidden="true"
+                  className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-700"
+                >
                   <Icon name="search" size={20} />
                 </span>
                 <p className="font-['Montserrat:Bold'] text-[16px] font-bold text-ink-900">
                   Aucun projet ne correspond à ces filtres
                 </p>
                 <p className="max-w-[46ch] font-['Inter:Regular'] text-[14px] text-[#5d626e]">
-                  Essayez une autre région ou la catégorie « Tous les projets » pour voir
-                  l'ensemble des chantiers en cours.
+                  Essayez une autre région ou la catégorie « Tous les projets »
+                  pour voir l'ensemble des chantiers en cours.
                 </p>
                 <button
                   type="button"
                   className="mt-2 cursor-pointer rounded-pill bg-brand-900 px-5 py-2.5 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-white transition-colors hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004484]"
                   onClick={() => {
-                    setProjectFilter('all')
-                    setRegionFilter('all')
+                    setProjectFilter("all")
+                    setRegionFilter("all")
                   }}
                 >
                   Réinitialiser les filtres
                 </button>
               </div>
-
+            </div>
             <div
               className="bg-surface-muted content-stretch flex flex-col items-start py-[64px] relative shrink-0 w-full shell"
               data-node-id="5:3543"
@@ -1772,12 +789,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                   data-name="Overlay+Shadow"
                 />
                 <div
-                  className="content-stretch flex gap-[48px] items-start relative shrink-0 w-full"
+                  className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full lg:flex-row lg:gap-[48px]"
                   data-node-id="5:3546"
                   data-name="Container"
                 >
                   <div
-                    className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-px relative"
+                    className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full lg:flex-[1_0_0] lg:min-w-px"
                     data-node-id="5:3547"
                     data-name="Container"
                   >
@@ -1998,23 +1015,39 @@ export default function NosProjetsChildrensSmileCameroun() {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start min-w-px p-[32px] relative rounded-card"
+                  <form
+                    className="bg-surface-subtle content-stretch drop-shadow-card flex flex-col items-start p-[32px] relative rounded-card shrink-0 w-full lg:flex-[1_0_0] lg:min-w-px"
                     data-node-id="5:3580"
                     data-name="Proposal Form"
+                    onSubmit={handleSubmit}
                   >
+                    {sent ? (
+                      <div
+                        role="status"
+                        className="bg-[#e9f8ef] border border-[#9be3b8] flex flex-col gap-1 items-start mb-4 p-4 rounded-lg w-full"
+                      >
+                        <p className="font-['Montserrat'] font-bold text-accent-700 text-sm">
+                          Dossier transmis à la cellule terrain
+                        </p>
+                        <p className="font-['Inter'] text-ink-700 text-[13px] leading-5">
+                          Votre WhatsApp s'est ouverte pour l'envoi final. Notre
+                          comité retrouve aussi votre dossier dans le back-office
+                          et vous répond sous 72h ouvrées.
+                        </p>
+                      </div>
+                    ) : null}
                     <div
                       className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full"
                       data-node-id="5:3581"
                       data-name="Form"
                     >
                       <div
-                        className="content-stretch flex gap-[15.99px] items-start justify-center relative shrink-0 w-full"
+                        className="content-stretch grid grid-cols-1 gap-[16px] items-start relative shrink-0 w-full sm:grid-cols-2"
                         data-node-id="5:3582"
                         data-name="Container"
                       >
                         <div
-                          className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-[262.66px]"
+                          className="content-stretch flex flex-col gap-[4px] items-start relative min-w-0 w-full"
                           data-node-id="5:3583"
                           data-name="Container"
                         >
@@ -2035,6 +1068,14 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-node-id="5:3586"
                             data-name="Input"
                           >
+                            <input
+                              aria-label="Nom de l'école ou établissement"
+                              autoComplete="organization"
+                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              name="school"
+                              placeholder="ex: École Publique de Bafia Centre"
+                              required
+                            />
                             <div
                               className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative"
                               data-node-id="5:3587"
@@ -2052,7 +1093,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           </div>
                         </div>
                         <div
-                          className="content-stretch flex flex-col gap-[4px] items-start pb-px relative shrink-0 w-[262.67px]"
+                          className="content-stretch flex flex-col gap-[4px] items-start pb-px relative min-w-0 w-full"
                           data-node-id="5:3589"
                           data-name="Container"
                         >
@@ -2075,6 +1116,33 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-node-id="5:3592"
                             data-name="Options"
                           >
+                            <select
+                              aria-label="Région administrative"
+                              className="absolute inset-0 z-10 appearance-none bg-transparent pl-[20px] pr-[16px] font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              defaultValue=""
+                              name="region"
+                              required
+                            >
+                              <option value="" disabled>
+                                Sélectionner une région
+                              </option>
+                              {[
+                                "Adamaoua",
+                                "Centre",
+                                "Est",
+                                "Extrême-Nord",
+                                "Littoral",
+                                "Nord",
+                                "Nord-Ouest",
+                                "Ouest",
+                                "Sud",
+                                "Sud-Ouest",
+                              ].map((region) => (
+                                <option key={region} value={region}>
+                                  {region}
+                                </option>
+                              ))}
+                            </select>
                             <div
                               className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px py-px relative"
                               data-node-id="5:3593"
@@ -2093,12 +1161,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="content-stretch flex gap-[15.99px] items-start justify-center relative shrink-0 w-full"
+                        className="content-stretch grid grid-cols-1 gap-[16px] items-start relative shrink-0 w-full sm:grid-cols-2"
                         data-node-id="5:3595"
                         data-name="Container"
                       >
                         <div
-                          className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-[262.66px]"
+                          className="content-stretch flex flex-col gap-[4px] items-start relative min-w-0 w-full"
                           data-node-id="5:3596"
                           data-name="Container"
                         >
@@ -2121,6 +1189,14 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-node-id="5:3599"
                             data-name="Input"
                           >
+                            <input
+                              aria-label="Nom du référent"
+                              autoComplete="name"
+                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              name="referent"
+                              placeholder="Votre nom complet"
+                              required
+                            />
                             <div
                               className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative"
                               data-node-id="5:3600"
@@ -2138,7 +1214,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           </div>
                         </div>
                         <div
-                          className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-[262.67px]"
+                          className="content-stretch flex flex-col gap-[4px] items-start relative min-w-0 w-full"
                           data-node-id="5:3602"
                           data-name="Container"
                         >
@@ -2161,6 +1237,16 @@ export default function NosProjetsChildrensSmileCameroun() {
                             data-node-id="5:3605"
                             data-name="Input"
                           >
+                            <input
+                              aria-label="Numéro téléphone / WhatsApp"
+                              autoComplete="tel"
+                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              inputMode="tel"
+                              name="phone"
+                              placeholder="+237 6xx xx xx xx"
+                              required
+                              type="tel"
+                            />
                             <div
                               className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative"
                               data-node-id="5:3606"
@@ -2195,24 +1281,51 @@ export default function NosProjetsChildrensSmileCameroun() {
                             <p className="leading-[16px]">{`Type d'urgence prioritaire *`}</p>
                           </div>
                         </div>
-                        <div
-                          className="bg-white content-stretch drop-shadow-card flex items-center justify-center pl-[20px] pr-[32px] py-[10px] relative rounded-control shrink-0 w-full"
-                          data-node-id="5:3611"
-                          data-name="Options"
-                        >
-                          <div
-                            className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px py-px relative"
-                            data-node-id="5:3612"
-                            data-name="Container"
+<div
+                            className="bg-white content-stretch drop-shadow-card flex items-center justify-center pl-[20px] pr-[32px] py-[10px] relative rounded-control shrink-0 w-full"
+                            data-node-id="5:3611"
+                            data-name="Options"
                           >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
-                              data-node-id="5:3613"
+                            <select
+                              aria-label="Type d'urgence prioritaire"
+                              className="absolute inset-0 z-10 appearance-none bg-transparent pl-[20px] pr-[16px] font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              defaultValue=""
+                              name="urgencyType"
+                              required
                             >
-                              <p className="leading-[17px]">{`Nature des travaux ou de l'aide`}</p>
+                              <option value="" disabled>
+                                Nature des travaux ou de l'aide
+                              </option>
+                              <option value="Rehabilitation de salles de classe">
+                                Réhabilitation de salles de classe
+                              </option>
+                              <option value="Toiture / Infiltrations">
+                                Toiture / Infiltrations
+                              </option>
+                              <option value="Latrines & WASH">
+                                Latrines & WASH
+                              </option>
+                              <option value="Point d'eau potable">
+                                Point d'eau potable
+                              </option>
+                              <option value="Mobilier scolaire">
+                                Mobilier scolaire
+                              </option>
+                              <option value="Autre urgence">Autre urgence</option>
+                            </select>
+                            <div
+                              className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px py-px relative"
+                              data-node-id="5:3612"
+                              data-name="Container"
+                            >
+                              <div
+                                className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-900 text-[14px] w-full"
+                                data-node-id="5:3613"
+                              >
+                                <p className="leading-[17px]">{`Nature des travaux ou de l'aide`}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
                       </div>
                       <div
                         className="content-stretch flex flex-col gap-[4px] items-start pb-[6px] relative shrink-0 w-full"
@@ -2238,6 +1351,14 @@ export default function NosProjetsChildrensSmileCameroun() {
                           data-node-id="5:3617"
                           data-name="Textarea"
                         >
+                          <textarea
+                            aria-label="Description succincte de la situation"
+                            autoComplete="off"
+                            className="absolute inset-0 z-10 resize-none bg-transparent px-4 pt-[10px] font-['Inter:Regular'] text-base leading-5 text-ink-900 outline-none"
+                            name="description"
+                            placeholder="Précisez le nombre d'élèves affectés et la localité précise..."
+                            required
+                          />
                           <div
                             className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px relative"
                             data-node-id="5:3618"
@@ -2253,7 +1374,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                       </div>
                       <div
-                        className="content-stretch flex items-center justify-between pt-[8px] relative shrink-0 w-full"
+                        className="content-stretch flex flex-wrap gap-[12px] items-center justify-between pt-[8px] relative shrink-0 w-full"
                         data-node-id="5:3620"
                         data-name="Container"
                       >
@@ -2271,7 +1392,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                             </p>
                           </div>
                         </div>
-                        <Link to="/contact"
+                        <button
+                          type="submit"
                           className="bg-accent-700 content-stretch flex gap-[8px] items-center relative rounded-pill btn-md btn"
                           data-node-id="5:3623"
                           data-name="Button"
@@ -2300,10 +1422,10 @@ export default function NosProjetsChildrensSmileCameroun() {
                               Transmettre le dossier
                             </p>
                           </div>
-                        </Link>
+                        </button>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -2685,7 +1807,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                       data-node-id="5:3689"
                       data-name="Container"
                     >
-                      <Link to="/notre-impact"
+                      <Link
+                        to="/notre-impact"
                         className="bg-brand-900 content-stretch flex flex-row items-center relative rounded-pill w-full btn-md btn"
                         data-node-id="5:3690"
                         data-name="Link"
@@ -2747,7 +1870,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                     className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.28px] uppercase whitespace-nowrap"
                     data-node-id="50:1154"
                   >
-                    <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                    <p
+                      className="leading-[16px]"
+                      data-decorative-separator="true"
+                    >
+                      •
+                    </p>
                   </div>
                 </div>
                 <div
@@ -3049,7 +2177,12 @@ export default function NosProjetsChildrensSmileCameroun() {
                     className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.275px] uppercase whitespace-nowrap"
                     data-node-id="5:3794"
                   >
-                    <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                    <p
+                      className="leading-[16px]"
+                      data-decorative-separator="true"
+                    >
+                      •
+                    </p>
                   </div>
                 </div>
                 <div
@@ -3493,7 +2626,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                   className="[word-break:break-word] flex flex-[1_0_0] flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] min-w-px not-italic relative text-[14px] text-white"
                   data-node-id="50:1490"
                 >
-                  <p className="leading-[20px]">contact@childrenssmile.cm</p>
+                  <p className="leading-[20px]">contact@childrensmile-cm.org</p>
                 </div>
               </div>
               <div

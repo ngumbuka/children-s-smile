@@ -77,7 +77,12 @@ export default function NosActionsChildrensSmileCameroun() {
                     className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.275px] uppercase whitespace-nowrap"
                     data-node-id="5:3208"
                   >
-                    <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                    <p
+                      className="leading-[16px]"
+                      data-decorative-separator="true"
+                    >
+                      •
+                    </p>
                   </div>
                 </div>
                 <div
@@ -411,7 +416,8 @@ export default function NosActionsChildrensSmileCameroun() {
                       data-node-id="5:2797"
                     >
                       <h1 className="leading-[56px] mb-0">
-                        {`Une action intégrée pour l'école et `} <br /> {`l'enfance au Cameroun`}
+                        {`Une action intégrée pour l'école et `} <br />{" "}
+                        {`l'enfance au Cameroun`}
                       </h1>
                     </div>
                   </div>
@@ -1920,7 +1926,8 @@ export default function NosActionsChildrensSmileCameroun() {
                     data-node-id="5:3027"
                     data-name="Container"
                   >
-                    <Link to="/notre-impact"
+                    <Link
+                      to="/notre-impact"
                       className="bg-white content-stretch flex gap-[8px] items-center relative rounded-pill btn-md btn"
                       data-node-id="5:3028"
                       data-name="Link"
@@ -2584,7 +2591,8 @@ export default function NosActionsChildrensSmileCameroun() {
                   data-node-id="5:3121"
                   data-name="Container"
                 >
-                  <Link to="/nos-projets"
+                  <Link
+                    to="/nos-projets"
                     className="bg-surface-tint content-stretch flex flex-row items-center relative rounded-pill btn-md btn"
                     data-node-id="5:3122"
                     data-name="Link"
@@ -2598,7 +2606,8 @@ export default function NosActionsChildrensSmileCameroun() {
                       </p>
                     </div>
                   </Link>
-                  <Link to="/don"
+                  <Link
+                    to="/don"
                     className="bg-warn-700 content-stretch drop-shadow-[0px_4px_7px_rgba(163,57,0,0.3)] flex flex-row items-center min-w-0 relative rounded-pill btn-md btn"
                     data-node-id="5:3124"
                     data-name="Link"

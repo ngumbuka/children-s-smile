@@ -17,7 +17,7 @@ This is the canonical project structure. Start with task-relevant files below. O
 - `src/App.tsx` - Primary application component and the usual starting point for UI work
 - `src/index.css` - Global CSS entrypoint and Tailwind CSS v4 import
 - `index.html` - Vite HTML shell containing the `#root` element and loading `src/main.tsx`
-- `package.json` - Project dependencies and the Vite build, development, preview, and formatting scripts
+- `package.json` - Project dependencies and the Vite build, development, preview, typecheck, and formatting scripts
 - `vite.config.ts` - Vite configuration with React, Tailwind CSS v4, and Figma Make plugins plus the `@` alias for `src`
 - `.mise.toml` - Toolchain versions for Node.js and pnpm
 
@@ -33,3 +33,9 @@ This is the canonical project structure. Start with task-relevant files below. O
 This project uses **Tailwind CSS v4** through the `@tailwindcss/vite` plugin configured in `vite.config.ts`. `src/index.css` imports Tailwind with `@import 'tailwindcss';`. Use Tailwind utility classes directly in JSX and put global CSS or Tailwind v4 theme customization in `src/index.css`. This scaffold does not need a Tailwind config file or PostCSS config.
 
 `src/main.tsx` imports `src/index.css`, so global font wiring belongs in `src/index.css`. Keep CSS `@import` statements first, then add any `@font-face` rules and font-family defaults there.
+
+## Formatting
+
+`npm run format` runs oxfmt and then `tsc --noEmit`, which is deliberate. **oxfmt 0.2.0 corrupts inline type literals**: it drops the separator between members, turning `type Row = { a: string, b: number }` into `type Row = { a: string b: number }`, which then fails to parse. Multiline type literals are unaffected.
+
+The trailing typecheck exists so that corruption fails the command immediately instead of surfacing later as a broken build. If `npm run format` reports parse errors, run `git checkout -- src` and format again only after oxfmt is upgraded.

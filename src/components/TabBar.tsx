@@ -1,51 +1,54 @@
-import { useCallback, useRef, type ReactNode } from 'react';
+import { useCallback, useRef, type ReactNode } from "react"
 
-export type TabItem = { value: string; label: string; icon?: ReactNode };
+export type TabItem = { value: string; label: string; icon?: ReactNode }
 
-type AnyTabItem = Readonly<TabItem>;
+type AnyTabItem = Readonly<TabItem>
 
 type TabBarProps = {
   /** Accessible name for the tab list. */
-  label: string;
-  items: readonly AnyTabItem[];
-  value: string;
-  onChange: (value: string) => void;
+  label: string
+  items: readonly AnyTabItem[]
+  value: string
+  onChange: (value: string) => void
   /**
    * Visual variant. `pill` is the dark-blue active chip used on the news grid,
    * `outline` is the white active chip used on the project catalogue.
    */
-  variant?: 'pill' | 'outline';
-  className?: string;
+  variant?: "pill" | "outline"
+  className?: string
   /** Extra node rendered after the tabs (e.g. a region selector). */
-  trailing?: ReactNode;
+  trailing?: ReactNode
   /** id of the panel the tabs control, for `aria-controls`. */
-  panelId?: string;
-};
+  panelId?: string
+}
 
 export function TabBar({
   label,
   items,
   value,
   onChange,
-  variant = 'pill',
-  className = '',
+  variant = "pill",
+  className = "",
   trailing,
   panelId,
 }: TabBarProps) {
-  const listRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null)
 
   const focusTab = useCallback((index: number) => {
-    const tabs = listRef.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]');
-    if (!tabs?.length) return;
-    const next = (index + tabs.length) % tabs.length;
-    tabs[next]?.focus();
-    tabs[next]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-  }, []);
+    const tabs =
+      listRef.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')
+    if (!tabs?.length) return
+    const next = (index + tabs.length) % tabs.length
+    tabs[next]?.focus()
+    tabs[next]?.scrollIntoView({ block: "nearest", inline: "nearest" })
+  }, [])
 
-  const active = items.find((item) => item.value === value) ?? items[0];
+  const active = items.find((item) => item.value === value) ?? items[0]
 
   return (
-    <div className={`flex flex-wrap items-center gap-x-3 gap-y-2 w-full min-w-0 ${className}`}>
+    <div
+      className={`flex flex-wrap items-center gap-x-3 gap-y-2 w-full min-w-0 ${className}`}
+    >
       <div
         ref={listRef}
         aria-label={label}
@@ -53,21 +56,21 @@ export function TabBar({
         onKeyDown={(event) => {
           const index = items.findIndex((item) => item.value === value)
           switch (event.key) {
-            case 'ArrowRight':
-            case 'ArrowDown':
+            case "ArrowRight":
+            case "ArrowDown":
               event.preventDefault()
               focusTab(index + 1)
               break
-            case 'ArrowLeft':
-            case 'ArrowUp':
+            case "ArrowLeft":
+            case "ArrowUp":
               event.preventDefault()
               focusTab(index - 1)
               break
-            case 'Home':
+            case "Home":
               event.preventDefault()
               focusTab(0)
               break
-            case 'End':
+            case "End":
               event.preventDefault()
               focusTab(items.length - 1)
               break
@@ -86,16 +89,16 @@ export function TabBar({
               aria-selected={selected}
               className={[
                 'flex items-center gap-2 rounded-pill min-h-11 px-5 py-2 text-sm leading-5 font-["Inter:Semi_Bold"] font-semibold transition-colors',
-                'transition-colors duration-150 cursor-pointer whitespace-nowrap',
-                'shrink-0 max-w-full',
-                variant === 'pill'
+                "transition-colors duration-150 cursor-pointer whitespace-nowrap",
+                "shrink-0 max-w-full",
+                variant === "pill"
                   ? selected
-                    ? 'bg-brand-900 text-white drop-shadow-card'
-                    : 'bg-surface-tint text-ink-700 hover:bg-[#dde1ff]'
+                    ? "bg-brand-900 text-white drop-shadow-card"
+                    : "bg-surface-tint text-ink-700 hover:bg-[#dde1ff]"
                   : selected
-                    ? 'bg-brand-700 text-white drop-shadow-card'
-                    : 'bg-white text-ink-700 hover:bg-surface-muted border border-surface-tint',
-              ].join(' ')}
+                    ? "bg-brand-700 text-white drop-shadow-card"
+                    : "bg-white text-ink-700 hover:bg-surface-muted border border-surface-tint",
+              ].join(" ")}
               data-filter={item.value}
               onClick={() => onChange(item.value)}
               role="tab"
@@ -113,7 +116,7 @@ export function TabBar({
       </div>
       {trailing}
       <span aria-live="polite" className="sr-only">
-        {`${active?.label ?? ''} sélectionné`}
+        {`${active?.label ?? ""} sélectionné`}
       </span>
     </div>
   )

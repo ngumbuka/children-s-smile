@@ -1,30 +1,20 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
-import { listArticles } from "../lib/repositories"
-import type { ArticleDoc } from "../lib/models"
+import { Pagination, usePagination } from "../components/Pagination"
+import { formatDate } from "../lib/repositories"
+import type { ArticleCategory, ArticleDoc } from "../lib/models"
+import { usePublishedArticles } from "../lib/public"
 import { TabBar } from "../components/TabBar"
 
 const assetPathPrefix = "/assets"
 const imgEcoliersCamerounaisEpanouisLevantLaMainEnClasse = `${assetPathPrefix}/22911.png`
-const imgAb6AXuD66RnhFdYnn2QdgGrLrj4PyQxlsWddx2YW7NOe6KhOhrtvXae1MUxI2XMu0YmfTg6Lg2R2Z5YOam5IPiEfDrKupC2Gw8JSyv6SlHnhVoqWqeEslhdZnnZxKyDcReaylLzaHWeEoArxsQbbJvZIoWscpEoaHl0614VuAcylOLaSqjqnhMiLffpTbXl5Rju6NiU9U97EXdSeU9K55E5Cq37LWhMu4PXOtecl65NinEhwGtDw = `${assetPathPrefix}/8147f.png`
-const imgAb6AXuAmRgs14AOftZhmXNlCrTkmmPpDViKjcWsUofz0Oj9M0DKTx9SWDkiUZzzNa7QzSiT2BeD10B6Bx0UjcFkJisXiPx7ZadFJs8DEylybmyxx16RpGh1KJcTgQdSC0BuDXrDco0Ts0KyLlEhV81IkAtAGt9EA1Z0CCyXkdjBb0YQiInD7L1D3I3SRih2ZrF1KxEZeWPwa3XTr3KOKhW8VQtfZzunltujKrBAnNp7OjGHdmqx33BQ = `${assetPathPrefix}/1b4f7.png`
-const imgAb6AXuAJdDjpVzbKdzdz3VjUrk1VrswzgZy3QJfsclz3FsWqNlG6Tr28DxDqkkCAaqrcldzlUUgYEkedCyOrCaWbulPwpgeaQdw0Mr9La6OCQlVarfQp4Su06GKEoakH0Pfu2OgNEpiiUkiNlq75UcnB0Enc6UPcVdUxpg9Rj6OGdcPgVV5QTqXkhb61KykOvc4AJrGvOfTjjZGOhJ6Ms9HO4KlulVXfrfuelsMdOv4Luidg = `${assetPathPrefix}/e6593.png`
-const imgAb6AXuDWtlsScnVk3XRyXdeSaOgMtvJYNl99Od7JHyDDw5ZqPp93GmJzKeOoCzHczKo0Uw4F7LteqgXuVkBkIvelP0Da2EyXZrP010Dq2OrGcqBk56V9T46PtlM0FO60M5WBuuh8Sb9D2Hkc4K7Efjo5WvCbzEddclZp82TMn6CebHJjJAcfZQlP724Fxyb4SigbJh2NKbNqkTbQyOvBdrxw05MpCFiPtltfc4FbNuSso7Ga = `${assetPathPrefix}/c30d1.png`
-const imgAb6AXuDf4HjsQmaihI98JmPrLg6RXfclHkn2Xw0Gr4CmaMoYtZNqnjf7U9LBjc7MxvFpfu61Xf8Zkj3WDm7ZtD18MSp3Dv9WivwWg5UIamEoQaDa7Bjubfr6I7Fqug4VAodLf52KsXtRekkWlYpSkeiue9W7HpEcVnh3QVwzDziVkLzJxYjGjMdBwscWlsu6RfFkhJdderQq6ZnlIDraShwljpYLXhidyHtEhAwMqhJ1KsWvKirof2OkSq = `${assetPathPrefix}/e8c8e.png`
 const imgLogoChildrensSmileCameroun = `${assetPathPrefix}/1fe61.png`
 const imgContainer = `${assetPathPrefix}/d7d0b.svg`
 const imgContainer1 = `${assetPathPrefix}/a2adb.svg`
 const imgContainer2 = `${assetPathPrefix}/d0461.svg`
-const imgContainer3 = `${assetPathPrefix}/9a996.svg`
-const imgContainer4 = `${assetPathPrefix}/9c404.svg`
-const imgContainer5 = `${assetPathPrefix}/62628.svg`
-const imgContainer6 = `${assetPathPrefix}/3a9f9.svg`
-const imgContainer7 = `${assetPathPrefix}/402b2.svg`
-const imgContainer8 = `${assetPathPrefix}/1a3d5.svg`
-const imgContainer9 = `${assetPathPrefix}/0979c.svg`
 const imgContainer10 = `${assetPathPrefix}/cbc77.svg`
 const imgContainer11 = `${assetPathPrefix}/6077e.svg`
 const imgContainer12 = `${assetPathPrefix}/ffd72.svg`
@@ -36,14 +26,6 @@ const imgContainer16 = `${assetPathPrefix}/d0865.svg`
 const imgContainer17 = `${assetPathPrefix}/4a238.svg`
 const imgContainer18 = `${assetPathPrefix}/7040c.svg`
 const imgContainer19 = `${assetPathPrefix}/b8e01.svg`
-const imgContainer20 = `${assetPathPrefix}/95d57.svg`
-const imgContainer21 = `${assetPathPrefix}/cf0be.svg`
-const imgContainer22 = `${assetPathPrefix}/ccbeb.svg`
-const imgContainer23 = `${assetPathPrefix}/6b8b8.svg`
-const imgContainer24 = `${assetPathPrefix}/ab5f9.svg`
-const imgIcon1 = `${assetPathPrefix}/6f0c7.svg`
-const imgContainer25 = `${assetPathPrefix}/3d565.svg`
-const imgContainer26 = `${assetPathPrefix}/dbec8.svg`
 const imgContainer27 = `${assetPathPrefix}/f9d8b.svg`
 const imgContainer28 = `${assetPathPrefix}/90630.svg`
 const imgContainer29 = `${assetPathPrefix}/f307d.svg`
@@ -72,9 +54,21 @@ const imgContainer46 = `${assetPathPrefix}/e290d.svg`
 const imgContainer47 = `${assetPathPrefix}/e0bd5.svg`
 
 const NEWS_FILTERS = [
-  { value: "all", label: "Tous les articles", icon: <Icon name="sparkles" size={12} /> },
-  { value: "field", label: "Sur le terrain", icon: <Icon name="mapPin" size={12} /> },
-  { value: "stories", label: "Histoires humaines", icon: <Icon name="quote" size={12} /> },
+  {
+    value: "all",
+    label: "Tous les articles",
+    icon: <Icon name="sparkles" size={12} />,
+  },
+  {
+    value: "field",
+    label: "Sur le terrain",
+    icon: <Icon name="mapPin" size={12} />,
+  },
+  {
+    value: "stories",
+    label: "Histoires humaines",
+    icon: <Icon name="quote" size={12} />,
+  },
   {
     value: "education",
     label: "Éducation & Pédagogie",
@@ -97,70 +91,294 @@ const NEWS_FILTERS = [
   },
 ] as const
 
-/** Catégories thématiques de chaque article de la grille (un article peut en avoir plusieurs). */
-const NEWS_ARTICLE_CATEGORIES: Record<string, readonly string[]> = {
-  "5:865": ["field", "protection"],
-  "5:900": ["education", "field"],
-  "5:935": ["association"],
-  "5:970": ["protection", "stories"],
-  "5:1005": ["association", "stories"],
-  "5:1040": ["official"],
+/**
+ * The article card as one component.
+ *
+ * It existed as six hand-written Figma blocks bound to `articles[0]` through
+ * `articles[5]` by position, each with its own pinned photograph, date,
+ * location and reading time, and each filtered through a map of Figma node ids
+ * to category. A seventh article could not appear, and republishing an article
+ * moved it between blocks instead of changing it. The markup is that block,
+ * unchanged, with every value read off the record.
+ */
+function NewsCard({ doc }: { doc: ArticleDoc }) {
+  return (
+    <div
+      className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
+      data-news-category={doc.categories.join(" ")}
+    >
+      <Link
+        aria-label={doc.title}
+        className="absolute inset-0 z-10"
+        to={`/actualites/${doc.slug}`}
+      />
+      <div
+        className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
+        data-node-id="5:892"
+        data-name="Container"
+      >
+        <div
+          className="flex-[1_0_0] min-h-px relative w-full"
+          data-node-id="5:893"
+          data-name="AB6AXuD66RnhFdYNN2QdgGRLrj4pyQXLSWddx2yW7NOe6khOhrtv-Xae1MUxI2XMu0ymfTG6Lg--2R2z5yOAM5iPi-EFDrKupC2Gw8JSyv6slHnh_VoqWqeEslhd-znnZXKyDC-reayl_LzaH-weEoARXSQbbJvZIoWscpEOAHl0614VUAcylOLaSQJQNHMiLffpTBXl5Rju6NiU9U97eXdSeU-9k55E5cq37LWhMu4pXOtecl65ninEHWGtDw"
+        >
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img
+              alt=""
+              className="absolute h-full left-[-5.05%] max-w-none object-cover top-0 w-[110.11%]"
+              src={doc.image ? `${assetPathPrefix}/${doc.image}` : undefined}
+            />
+          </div>
+        </div>
+        <div
+          className="absolute backdrop-blur-[6px] bg-[rgba(255,255,255,0.95)] content-stretch flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill shadow-raised top-[12px]"
+          data-node-id="5:894"
+          data-name="Background+Shadow+OverlayBlur"
+        >
+          <div
+            className="h-[11.667px] relative shrink-0 w-[9.333px]"
+            data-node-id="5:895"
+            data-name="Container"
+          >
+            <img
+              alt=""
+              className="absolute block inset-0 max-w-none size-full"
+              src={imgContainer16}
+            />
+          </div>
+          <div
+            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
+            data-node-id="5:897"
+          >
+            <p className="leading-[16px]">{doc.kicker}</p>
+          </div>
+        </div>
+        <div
+          className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.8)] bottom-[12px] content-stretch flex flex-col items-start px-[10px] py-[2px] right-[12px] rounded-control"
+          data-node-id="5:898"
+          data-name="Overlay+OverlayBlur"
+        >
+          <div
+            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
+            data-node-id="5:899"
+          >
+            <p className="leading-[16px]">{doc.location}</p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
+        data-node-id="5:866"
+        data-name="Container"
+      >
+        <div
+          className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
+          data-node-id="5:867"
+          data-name="Container"
+        >
+          <div
+            className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
+            data-node-id="5:868"
+            data-name="Container"
+          >
+            <div
+              className="h-[12.5px] relative shrink-0 w-[11.25px]"
+              data-node-id="5:869"
+              data-name="Container"
+            >
+              <img
+                alt=""
+                className="absolute block inset-0 max-w-none size-full"
+                src={imgContainer17}
+              />
+            </div>
+            <div
+              className="content-stretch flex flex-col items-start relative shrink-0"
+              data-node-id="5:871"
+              data-name="Container"
+            >
+              <div
+                className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
+                data-node-id="5:872"
+              >
+                <p className="leading-[16px]">{formatDate(doc.publishedAt)}</p>
+              </div>
+            </div>
+            <div
+              className="content-stretch flex flex-col items-start relative shrink-0"
+              data-node-id="5:873"
+              data-name="Container"
+            >
+              <div
+                className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
+                data-node-id="5:874"
+              >
+                <p className="leading-[16px]" data-decorative-separator="true">
+                  •
+                </p>
+              </div>
+            </div>
+            <div
+              className="content-stretch flex flex-col items-start relative shrink-0"
+              data-node-id="5:875"
+              data-name="Container"
+            >
+              <div
+                className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[12px] whitespace-nowrap"
+                data-node-id="5:876"
+              >
+                <p className="leading-[16px]">Mission Hydraulique</p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
+            data-node-id="5:877"
+            data-name="Heading 4"
+          >
+            <div
+              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
+              data-node-id="5:878"
+            >
+              <p className="leading-[27.5px] mb-0">{doc.title}</p>
+            </div>
+          </div>
+          <div
+            className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
+            data-node-id="5:879"
+            data-name="Container"
+          >
+            <div
+              className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
+              data-node-id="5:880"
+            >
+              <p className="leading-[22.75px] mb-0">{doc.excerpt}</p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="content-stretch flex items-center justify-between pt-[16px] relative shrink-0 w-full"
+          data-node-id="5:881"
+          data-name="Container"
+        >
+          <div
+            className="content-stretch flex gap-[4px] items-center relative shrink-0"
+            data-node-id="5:882"
+            data-name="Container"
+          >
+            <div
+              className="relative shrink-0 size-[13.333px]"
+              data-node-id="5:883"
+              data-name="Container"
+            >
+              <img
+                alt=""
+                className="absolute block inset-0 max-w-none size-full"
+                src={imgContainer18}
+              />
+            </div>
+            <div
+              className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
+              data-node-id="5:885"
+            >
+              <p className="leading-[16px]">
+                {doc.readingMinutes} min de lecture
+              </p>
+            </div>
+          </div>
+          <div
+            className="content-stretch flex gap-[4px] items-center relative shrink-0"
+            data-node-id="5:886"
+            data-name="Link"
+          >
+            <div
+              className="content-stretch flex flex-col items-start relative shrink-0"
+              data-node-id="5:887"
+              data-name="Container"
+            >
+              <div
+                className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
+                data-node-id="5:888"
+              >
+                <p className="leading-[20px]">Découvrir</p>
+              </div>
+            </div>
+            <div
+              className="relative shrink-0 size-[10.667px]"
+              data-node-id="5:889"
+              data-name="Container"
+            >
+              <img
+                alt=""
+                className="absolute block inset-0 max-w-none size-full"
+                src={imgContainer19}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bg-accent-700 h-[4px] relative shrink-0 w-[373.33px]"
+        data-node-id="5:891"
+        data-name="Accent indicator strip"
+      />
+    </div>
+  )
 }
 
 export default function ActualitesHistoiresChildrensSmileCameroun() {
-  const [articles, setArticles] = useState<ArticleDoc[]>([])
+  /** Read live, so a story published in the backoffice appears without a reload. */
+  const articles = usePublishedArticles()
 
-  useEffect(() => {
-    let live = true
-    void (async () => {
-      const all = await listArticles()
-      if (live) setArticles(all)
-    })()
-    return () => {
-      live = false
-    }
-  }, [])
+  /** The hero's "Lire le grand reportage" opens the latest audited report
+   *  instead of pointing back at the same listing. */
+  const featuredReport =
+    articles.find((article) => article.format === "report") ?? articles[0]
 
-  const [newsFilter, setNewsFilter] = useState("all")
+  // Typed as the model's own vocabulary so a category that does not exist
+  // cannot be filtered on, and so the counts and the tab strip agree.
+  const [newsFilter, setNewsFilter] = useState<ArticleCategory | "all">("all")
 
+  /** Counts come off the articles themselves, not a map of design node ids. */
   const newsFilterCounts = useMemo(() => {
-    const counts: Record<string, number> = { all: 0 }
-    for (const categories of Object.values(NEWS_ARTICLE_CATEGORIES)) {
-      counts.all += 1
-      for (const category of categories) {
+    const counts: Record<string, number> = { all: articles.length }
+    for (const article of articles) {
+      for (const category of article.categories) {
         counts[category] = (counts[category] ?? 0) + 1
       }
     }
     return counts
-  }, [])
+  }, [articles])
 
-  /** Which grid row each article belongs to, so fully filtered-out rows can collapse. */
-  const newsRows = useMemo(
-    () => [
-      ["5:865", "5:900", "5:935"],
-      ["5:970", "5:1005", "5:1040"],
-    ],
-    [],
-  )
-
-  const hiddenNews = useMemo(() => {
-    if (newsFilter === "all") return new Set<string>()
-    const hidden = new Set<string>()
-    for (const [id, categories] of Object.entries(NEWS_ARTICLE_CATEGORIES)) {
-      if (!categories.includes(newsFilter)) hidden.add(id)
-    }
-    return hidden
-  }, [newsFilter])
-
-  const hiddenNewsRows = useMemo(
+  /**
+   * Filtering used to hide cards by node id, so choosing a category left blank
+   * spaces where the hidden cards had been. Filtering the list before it is
+   * chunked into rows makes that impossible.
+   */
+  const visibleNews = useMemo(
     () =>
-      new Set(
-        newsRows
-          .filter((row) => row.every((id) => hiddenNews.has(id)))
-          .map((row) => row[0]),
-      ),
-    [newsRows, hiddenNews],
+      newsFilter === "all"
+        ? articles
+        : articles.filter((article) => article.categories.includes(newsFilter)),
+    [articles, newsFilter],
   )
+
+  const newsRows = useMemo(() => {
+    const rows: ArticleDoc[][] = []
+    for (let index = 0; index < visibleNews.length; index += 3) {
+      rows.push(visibleNews.slice(index, index + 3))
+    }
+    return rows
+  }, [visibleNews])
+
+  // 3 rows of 3 cards per page (9 articles) — the archive grows as the
+  // backoffice publishes, so the grid is paginated instead of endless.
+  const {
+    page,
+    pageCount,
+    pageItems: pageNewsRows,
+    setPage,
+  } = usePagination(newsRows, 3, newsFilter)
 
   return (
     <>
@@ -287,7 +505,10 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                         className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[40px] tracking-[-1px] whitespace-nowrap"
                         data-node-id="5:727"
                       >
-<h1 className="leading-[48px] mb-0">Actualités, Carnets de Terrain & <br/> Histoires de Vie</h1>
+                        <h1 className="leading-[48px] mb-0">
+                          Actualités, Carnets de Terrain & <br /> Histoires de
+                          Vie
+                        </h1>
                       </div>
                     </div>
                     <div
@@ -394,15 +615,17 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                   <TabBar
                     items={NEWS_FILTERS}
                     label="Filtres thématiques des actualités"
-                    onChange={setNewsFilter}
+                    onChange={(next) =>
+                      setNewsFilter(next as ArticleCategory | "all")
+                    }
                     panelId="news-grid"
                     value={newsFilter}
                     variant="pill"
                   />
                   <p className="font-['Inter:Regular'] text-[#5d626e] text-[12px] leading-4">
                     {newsFilterCounts[newsFilter] ?? 0} article
-                    {(newsFilterCounts[newsFilter] ?? 0) > 1 ? 's' : ''} dans cette
-                    catégorie
+                    {(newsFilterCounts[newsFilter] ?? 0) > 1 ? "s" : ""} dans
+                    cette catégorie
                   </p>
                 </div>
               </div>
@@ -566,7 +789,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
                           data-node-id="5:799"
                         >
-                          <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                          <p
+                            className="leading-[16px]"
+                            data-decorative-separator="true"
+                          >
+                            •
+                          </p>
                         </div>
                       </div>
                       <div
@@ -601,7 +829,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
                           data-node-id="5:805"
                         >
-                          <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                          <p
+                            className="leading-[16px]"
+                            data-decorative-separator="true"
+                          >
+                            •
+                          </p>
                         </div>
                       </div>
                       <div
@@ -858,7 +1091,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                         </div>
                       </div>
                     </div>
-                    <Link to="/actualites"
+                    <Link
+                      to={
+                        featuredReport
+                          ? `/actualites/${featuredReport.slug}`
+                          : "/actualites"
+                      }
                       className="bg-brand-900 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill btn-md btn"
                       data-node-id="5:844"
                       data-name="Link"
@@ -938,7 +1176,11 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                       className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] whitespace-nowrap"
                       data-node-id="5:857"
                     >
-                      <p className="leading-[16px]">6 articles récents</p>
+                      <p className="leading-[16px]">
+                        {articles.length} article
+                        {articles.length > 1 ? "s" : ""} récent
+                        {articles.length > 1 ? "s" : ""}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -982,9 +1224,9 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
               </div>
             </div>
             <div
-                id="news-grid"
-                role="tabpanel"
-                aria-label="Articles et reportages"
+              id="news-grid"
+              role="tabpanel"
+              aria-label="Articles et reportages"
               className="content-stretch flex flex-col items-start pb-[64px] relative shrink-0 w-full shell"
               data-node-id="5:863"
               data-name="Section - GRILLE DES HISTOIRES ET REPORTAGES RÉCENTS:margin"
@@ -994,1374 +1236,52 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                 data-node-id="5:864"
                 data-name="Section - GRILLE DES HISTOIRES ET REPORTAGES RÉCENTS"
               >
-                <div
-                  className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full"
-                  data-node-id="50:617"
-                  data-name="Row 1"
-                  style={{ display: hiddenNewsRows.has("5:865") ? "none" : undefined }}
-                >
+                {pageNewsRows.map((row, rowIndex) => (
                   <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-news-category="field protection"
-                    data-node-id="5:865"
-                    style={{ display: hiddenNews.has("5:865") ? "none" : undefined }}
-                    data-name="Article - ARTICLE 1: EAU & SANTÉ SCOLAIRE"
-                  ><Link aria-label={articles[0]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[0]?.slug ?? ""}`} />
-                    <div
-                      className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
-                      data-node-id="5:892"
-                      data-name="Container"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:893"
-                        data-name="AB6AXuD66RnhFdYNN2QdgGRLrj4pyQXLSWddx2yW7NOe6khOhrtv-Xae1MUxI2XMu0ymfTG6Lg--2R2z5yOAM5iPi-EFDrKupC2Gw8JSyv6slHnh_VoqWqeEslhd-znnZXKyDC-reayl_LzaH-weEoARXSQbbJvZIoWscpEOAHl0614VUAcylOLaSQJQNHMiLffpTBXl5Rju6NiU9U97eXdSeU-9k55E5cq37LWhMu4pXOtecl65ninEHWGtDw"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuD66RnhFdYnn2QdgGrLrj4PyQxlsWddx2YW7NOe6KhOhrtvXae1MUxI2XMu0YmfTg6Lg2R2Z5YOam5IPiEfDrKupC2Gw8JSyv6SlHnhVoqWqeEslhdZnnZxKyDcReaylLzaHWeEoArxsQbbJvZIoWscpEoaHl0614VuAcylOLaSqjqnhMiLffpTbXl5Rju6NiU9U97EXdSeU9K55E5Cq37LWhMu4PXOtecl65NinEhwGtDw
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[6px] bg-[rgba(255,255,255,0.95)] content-stretch flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill shadow-raised top-[12px]"
-                        data-node-id="5:894"
-                        data-name="Background+Shadow+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:895"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer16}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
-                          data-node-id="5:897"
-                        >
-                          <p className="leading-[16px]">{articles[0]?.kicker ?? ""}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.8)] bottom-[12px] content-stretch flex flex-col items-start px-[10px] py-[2px] right-[12px] rounded-control"
-                        data-node-id="5:898"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:899"
-                        >
-                          <p className="leading-[16px]">Mora • Extrême-Nord</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:866"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
-                        data-node-id="5:867"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
-                          data-node-id="5:868"
-                          data-name="Container"
-                        >
-                          <div
-                            className="h-[12.5px] relative shrink-0 w-[11.25px]"
-                            data-node-id="5:869"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer17}
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:871"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:872"
-                            >
-                              <p className="leading-[16px]">28 Janvier 2025</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:873"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:874"
-                            >
-                              <p className="leading-[16px]" data-decorative-separator="true">•</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:875"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:876"
-                            >
-                              <p className="leading-[16px]">
-                                Mission Hydraulique
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
-                          data-node-id="5:877"
-                          data-name="Heading 4"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
-                            data-node-id="5:878"
-                          >
-                            <p className="leading-[27.5px] mb-0">{articles[0]?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
-                          data-node-id="5:879"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
-                            data-node-id="5:880"
-                          >
-                            <p className="leading-[22.75px] mb-0">{articles[0]?.excerpt ?? ""}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex items-center justify-between pt-[16px] relative shrink-0 w-full"
-                        data-node-id="5:881"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:882"
-                          data-name="Container"
-                        >
-                          <div
-                            className="relative shrink-0 size-[13.333px]"
-                            data-node-id="5:883"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer18}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                            data-node-id="5:885"
-                          >
-                            <p className="leading-[16px]">4 min de lecture</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:886"
-                          data-name="Link"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:887"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
-                              data-node-id="5:888"
-                            >
-                              <p className="leading-[20px]">Découvrir</p>
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:889"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer19}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bg-accent-700 h-[4px] relative shrink-0 w-[373.33px]"
-                      data-node-id="5:891"
-                      data-name="Accent indicator strip"
-                    />
+                    key={`news-row-${rowIndex}`}
+                    className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full"
+                  >
+                    {row.map((doc) => (
+                      <NewsCard key={doc._id} doc={doc} />
+                    ))}
                   </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-news-category="education field"
-                    data-node-id="5:900"
-                    style={{ display: hiddenNews.has("5:900") ? "none" : undefined }}
-                    data-name="Article - ARTICLE 2: ÉDUCATION & BILINGUISME"
-                  ><Link aria-label={articles[1]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[1]?.slug ?? ""}`} />
-                    <div
-                      className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
-                      data-node-id="5:927"
-                      data-name="Container"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:928"
-                        data-name="AB6AXuAmRgs_14aOFTZhmXNlCR_tkmmPpDViKjcWs-Uofz0Oj9M0dKTx-9sWDkiU-zzzNa7QZSiT2BeD10b6Bx0UjcFKJisXIPx7zadFJs8dEylybmyxx16rpGH1kJcTGQdS_c0BuDXrDCO0Ts0KYLlEhV81IKAtAGt9eA1Z0cCyXKDJBb0YQiInD7l1D3I3SRih2ZrF1KxE_ZeWPwa3xTr3kOKhW8vQtfZzunltujKrBAnNp7OjGHdmqx33bQ"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuAmRgs14AOftZhmXNlCrTkmmPpDViKjcWsUofz0Oj9M0DKTx9SWDkiUZzzNa7QzSiT2BeD10B6Bx0UjcFkJisXiPx7ZadFJs8DEylybmyxx16RpGh1KJcTgQdSC0BuDXrDco0Ts0KyLlEhV81IkAtAGt9EA1Z0CCyXkdjBb0YQiInD7L1D3I3SRih2ZrF1KxEZeWPwa3XTr3KOKhW8VQtfZzunltujKrBAnNp7OjGHdmqx33BQ
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[6px] bg-[rgba(255,255,255,0.95)] content-stretch flex gap-[5.99px] items-center left-[12px] px-[12px] py-[4px] rounded-pill shadow-raised top-[12px]"
-                        data-node-id="5:929"
-                        data-name="Background+Shadow+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.375px] relative shrink-0 w-[12.833px]"
-                          data-node-id="5:930"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer20}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
-                          data-node-id="5:932"
-                        >
-                          <p className="leading-[16px]">{articles[1]?.kicker ?? ""}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.8)] bottom-[12px] content-stretch flex flex-col items-start px-[10px] py-[2px] right-[12px] rounded-control"
-                        data-node-id="5:933"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:934"
-                        >
-                          <p className="leading-[16px]">Penja • Littoral</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:901"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
-                        data-node-id="5:902"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
-                          data-node-id="5:903"
-                          data-name="Container"
-                        >
-                          <div
-                            className="h-[12.5px] relative shrink-0 w-[11.25px]"
-                            data-node-id="5:904"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer17}
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:906"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:907"
-                            >
-                              <p className="leading-[16px]">15 Janvier 2025</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:908"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:909"
-                            >
-                              <p className="leading-[16px]" data-decorative-separator="true">•</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:910"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[12px] whitespace-nowrap"
-                              data-node-id="5:911"
-                            >
-                              <p className="leading-[16px]">Pédagogie Rurale</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
-                          data-node-id="5:912"
-                          data-name="Heading 4"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
-                            data-node-id="5:913"
-                          >
-                            <p className="leading-[27.5px] mb-0">{articles[1]?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
-                          data-node-id="5:914"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
-                            data-node-id="5:915"
-                          >
-                            <p className="leading-[22.75px] mb-0">{articles[1]?.excerpt ?? ""}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex items-center justify-between pt-[16px] relative shrink-0 w-full"
-                        data-node-id="5:916"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:917"
-                          data-name="Container"
-                        >
-                          <div
-                            className="relative shrink-0 size-[13.333px]"
-                            data-node-id="5:918"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer18}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                            data-node-id="5:920"
-                          >
-                            <p className="leading-[16px]">5 min de lecture</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:921"
-                          data-name="Link"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:922"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
-                              data-node-id="5:923"
-                            >
-                              <p className="leading-[20px]">Découvrir</p>
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:924"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer19}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bg-brand-900 h-[4px] relative shrink-0 w-[373.33px]"
-                      data-node-id="5:926"
-                      data-name="Background"
-                    />
-                  </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-news-category="association"
-                    data-node-id="5:935"
-                    style={{ display: hiddenNews.has("5:935") ? "none" : undefined }}
-                    data-name="Article - ARTICLE 3: VIE DE L'ASSOCIATION & GOUVERNANCE"
-                  ><Link aria-label={articles[2]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[2]?.slug ?? ""}`} />
-                    <div
-                      className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
-                      data-node-id="5:962"
-                      data-name="Container"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:963"
-                        data-name="AB6AXuAJdDjpVzbKdzdz3VjUrk1VRSWZGZy3Q_Jfsclz3-_fsWQNlG6Tr28dxDqkkCAaqrcldzlUUgYEkedCyORCa-WbulPwpgeaQDW0mr9La6oCQlVarf_QP4su06G_K_EoakH0pfu2Og-NEpiiUKINlq75UCN_b0Enc6U_PC-vdUXPG9RJ6oGdcPg-vV5qTQXkhb61kykOVC4AJrGVOfTjjZ-GOhJ6MS9hO4klulV-XFRFUELSMdOv4Luidg"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuAJdDjpVzbKdzdz3VjUrk1VrswzgZy3QJfsclz3FsWqNlG6Tr28DxDqkkCAaqrcldzlUUgYEkedCyOrCaWbulPwpgeaQdw0Mr9La6OCQlVarfQp4Su06GKEoakH0Pfu2OgNEpiiUkiNlq75UcnB0Enc6UPcVdUxpg9Rj6OGdcPgVV5QTqXkhb61KykOvc4AJrGvOfTjjZGOhJ6Ms9HO4KlulVXfrfuelsMdOv4Luidg
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[6px] bg-[rgba(255,255,255,0.95)] content-stretch flex gap-[5.99px] items-center left-[12px] px-[12px] py-[4px] rounded-pill shadow-raised top-[12px]"
-                        data-node-id="5:964"
-                        data-name="Background+Shadow+OverlayBlur"
-                      >
-                        <div
-                          className="relative shrink-0 size-[11.667px]"
-                          data-node-id="5:965"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer21}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-warn-700 text-[11px] uppercase whitespace-nowrap"
-                          data-node-id="5:967"
-                        >
-                          <p className="leading-[16px]">{articles[2]?.kicker ?? ""}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.8)] bottom-[12px] content-stretch flex flex-col items-start px-[10px] py-[2px] right-[11.99px] rounded-control"
-                        data-node-id="5:968"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:969"
-                        >
-                          <p className="leading-[16px]">Siège • Yaoundé</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:936"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
-                        data-node-id="5:937"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
-                          data-node-id="5:938"
-                          data-name="Container"
-                        >
-                          <div
-                            className="h-[12.5px] relative shrink-0 w-[11.25px]"
-                            data-node-id="5:939"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer17}
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:941"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:942"
-                            >
-                              <p className="leading-[16px]">20 Décembre 2024</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:943"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:944"
-                            >
-                              <p className="leading-[16px]" data-decorative-separator="true">•</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:945"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-warn-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:946"
-                            >
-                              <p className="leading-[16px]">Audit Certifié</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
-                          data-node-id="5:947"
-                          data-name="Heading 4"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
-                            data-node-id="5:948"
-                          >
-                            <p className="leading-[27.5px] mb-0">{articles[2]?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
-                          data-node-id="5:949"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
-                            data-node-id="5:950"
-                          >
-                            <p className="leading-[22.75px] mb-0">{articles[2]?.excerpt ?? ""}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex items-center justify-between pt-[16px] relative shrink-0 w-full"
-                        data-node-id="5:951"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:952"
-                          data-name="Container"
-                        >
-                          <div
-                            className="relative shrink-0 size-[13.333px]"
-                            data-node-id="5:953"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer18}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                            data-node-id="5:955"
-                          >
-                            <p className="leading-[16px]">7 min de lecture</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:956"
-                          data-name="Link"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:957"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
-                              data-node-id="5:958"
-                            >
-                              <p className="leading-[20px]">Lire le bilan</p>
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:959"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer19}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bg-warn-700 h-[4px] relative shrink-0 w-[373.34px]"
-                      data-node-id="5:961"
-                      data-name="Background"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full"
-                  data-node-id="50:618"
-                  data-name="Row 2"
-                  style={{ display: hiddenNewsRows.has("5:970") ? "none" : undefined }}
-                >
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-news-category="protection stories"
-                    data-node-id="5:970"
-                    style={{ display: hiddenNews.has("5:970") ? "none" : undefined }}
-                    data-name="Article - ARTICLE 4: PROTECTION DE L'ENFANT"
-                  ><Link aria-label={articles[3]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[3]?.slug ?? ""}`} />
-                    <div
-                      className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
-                      data-node-id="5:997"
-                      data-name="Container"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:998"
-                        data-name="AB6AXuDWtlsScn_Vk3-xRYXdeSaOgMtvJ-YNl99OD7jHyDDw5-ZQPp93gmJz_keOo_CzHCZKo0uw4f7LTEQGXuVkBkIVEL-p0da2EyX_zrP0-10dq2orGcqBK56V9t46PtlM0fO60M5WBuuh8SB9d2hkc4K7Efjo5WvCBZ-EddclZp82tMn6-cebHJjJ_AcfZQlP724Fxyb4SIGBJh2NKbNqkTbQYOvBDRXW0_5MpCFiPtltfc-4FBNuSSO7GA"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuDWtlsScnVk3XRyXdeSaOgMtvJYNl99Od7JHyDDw5ZqPp93GmJzKeOoCzHczKo0Uw4F7LteqgXuVkBkIvelP0Da2EyXZrP010Dq2OrGcqBk56V9T46PtlM0FO60M5WBuuh8Sb9D2Hkc4K7Efjo5WvCbzEddclZp82TMn6CebHJjJAcfZQlP724Fxyb4SigbJh2NKbNqkTbQyOvBdrxw05MpCFiPtltfc4FbNuSso7Ga
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[6px] bg-[rgba(255,255,255,0.95)] content-stretch flex gap-[6px] items-center left-[12px] px-[12px] py-[4px] rounded-pill shadow-raised top-[12px]"
-                        data-node-id="5:999"
-                        data-name="Background+Shadow+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                          data-node-id="5:1000"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer22}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-accent-700 text-[11px] uppercase whitespace-nowrap"
-                          data-node-id="5:1002"
-                        >
-                          <p className="leading-[16px]">{articles[3]?.kicker ?? ""}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.8)] bottom-[12px] content-stretch flex flex-col items-start px-[10px] py-[2px] right-[12.01px] rounded-control"
-                        data-node-id="5:1003"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:1004"
-                        >
-                          <p className="leading-[16px]">
-                            Ngambé-Tikar • Centre
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:971"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
-                        data-node-id="5:972"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
-                          data-node-id="5:973"
-                          data-name="Container"
-                        >
-                          <div
-                            className="h-[12.5px] relative shrink-0 w-[11.25px]"
-                            data-node-id="5:974"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer17}
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:976"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:977"
-                            >
-                              <p className="leading-[16px]">05 Décembre 2024</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:978"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:979"
-                            >
-                              <p className="leading-[16px]" data-decorative-separator="true">•</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:980"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-accent-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:981"
-                            >
-                              <p className="leading-[16px]">Formation Pilote</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
-                          data-node-id="5:982"
-                          data-name="Heading 4"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
-                            data-node-id="5:983"
-                          >
-                            <p className="leading-[27.5px] mb-0">{articles[3]?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
-                          data-node-id="5:984"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
-                            data-node-id="5:985"
-                          >
-                            <p className="leading-[22.75px] mb-0">{articles[3]?.excerpt ?? ""}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex items-center justify-between pt-[16px] relative shrink-0 w-full"
-                        data-node-id="5:986"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:987"
-                          data-name="Container"
-                        >
-                          <div
-                            className="relative shrink-0 size-[13.333px]"
-                            data-node-id="5:988"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer18}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                            data-node-id="5:990"
-                          >
-                            <p className="leading-[16px]">4 min de lecture</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:991"
-                          data-name="Link"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:992"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
-                              data-node-id="5:993"
-                            >
-                              <p className="leading-[20px]">Découvrir</p>
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:994"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer19}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bg-accent-700 h-[4px] relative shrink-0 w-[373.33px]"
-                      data-node-id="5:996"
-                      data-name="Background"
-                    />
-                  </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-news-category="association stories"
-                    data-node-id="5:1005"
-                    style={{ display: hiddenNews.has("5:1005") ? "none" : undefined }}
-                    data-name="Article - ARTICLE 5: PARTENARIATS & MÉCÉNAT"
-                  ><Link aria-label={articles[4]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[4]?.slug ?? ""}`} />
-                    <div
-                      className="content-stretch flex flex-col h-[224px] items-start justify-center overflow-clip relative shrink-0 w-full"
-                      data-node-id="5:1032"
-                      data-name="Container"
-                    >
-                      <div
-                        className="flex-[1_0_0] min-h-px relative w-full"
-                        data-node-id="5:1033"
-                        data-name="AB6AXuDf4hjsQmaihI98JmPrLg6rXfclHkn2XW0Gr4CmaMoYtZNqnjf7U9lBJC7MxvFPFU61xf8Zkj3wDM7ztD18MSp3Dv9WivwWg5UIamEOQaDa7Bjubfr_6i7fqug4VAodLF52KSXtRekkWlYPSkeiue9W7hpECVnh3q-VWZDziVkLzJxYjGjMdBWSC_wlsu6rfFkhJdderQq6ZnlIDraShwljpY-LXhidyHtEhAWMqhJ1KSWvKirof2okSQ"
-                      >
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img
-                            alt=""
-                            className="absolute h-full left-[-5.05%] max-w-none top-0 w-[110.11%]"
-                            src={
-                              imgAb6AXuDf4HjsQmaihI98JmPrLg6RXfclHkn2Xw0Gr4CmaMoYtZNqnjf7U9LBjc7MxvFpfu61Xf8Zkj3WDm7ZtD18MSp3Dv9WivwWg5UIamEoQaDa7Bjubfr6I7Fqug4VAodLf52KsXtRekkWlYpSkeiue9W7HpEcVnh3QVwzDziVkLzJxYjGjMdBwscWlsu6RfFkhJdderQq6ZnlIDraShwljpYLXhidyHtEhAwMqhJ1KsWvKirof2OkSq
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[6px] bg-[rgba(255,255,255,0.95)] content-stretch flex gap-[5.99px] items-center left-[12px] px-[12px] py-[4px] rounded-pill shadow-raised top-[12px]"
-                        data-node-id="5:1034"
-                        data-name="Background+Shadow+OverlayBlur"
-                      >
-                        <div
-                          className="h-[11.667px] relative shrink-0 w-[12.839px]"
-                          data-node-id="5:1035"
-                          data-name="Container"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgContainer23}
-                          />
-                        </div>
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
-                          data-node-id="5:1037"
-                        >
-                          <p className="leading-[16px]">{articles[4]?.kicker ?? ""}</p>
-                        </div>
-                      </div>
-                      <div
-                        className="absolute backdrop-blur-[2px] bg-[rgba(40,48,68,0.8)] bottom-[12px] content-stretch flex flex-col items-start px-[10px] py-[2px] right-[12px] rounded-control"
-                        data-node-id="5:1038"
-                        data-name="Overlay+OverlayBlur"
-                      >
-                        <div
-                          className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-050 text-[11px] whitespace-nowrap"
-                          data-node-id="5:1039"
-                        >
-                          <p className="leading-[16px]">{`Douala & Diaspora`}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:1006"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
-                        data-node-id="5:1007"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
-                          data-node-id="5:1008"
-                          data-name="Container"
-                        >
-                          <div
-                            className="h-[12.5px] relative shrink-0 w-[11.25px]"
-                            data-node-id="5:1009"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer17}
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1011"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:1012"
-                            >
-                              <p className="leading-[16px]">18 Novembre 2024</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1013"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:1014"
-                            >
-                              <p className="leading-[16px]" data-decorative-separator="true">•</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1015"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[12px] whitespace-nowrap"
-                              data-node-id="5:1016"
-                            >
-                              <p className="leading-[16px]">Économie Locale</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
-                          data-node-id="5:1017"
-                          data-name="Heading 4"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
-                            data-node-id="5:1018"
-                          >
-                            <p className="leading-[27.5px] mb-0">{articles[4]?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
-                          data-node-id="5:1019"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
-                            data-node-id="5:1020"
-                          >
-                            <p className="leading-[22.75px] mb-0">{articles[4]?.excerpt ?? ""}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex items-center justify-between pr-[0.01px] pt-[16px] relative shrink-0 w-full"
-                        data-node-id="5:1021"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:1022"
-                          data-name="Container"
-                        >
-                          <div
-                            className="relative shrink-0 size-[13.333px]"
-                            data-node-id="5:1023"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer18}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                            data-node-id="5:1025"
-                          >
-                            <p className="leading-[16px]">5 min de lecture</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex gap-[4.01px] items-center relative shrink-0"
-                          data-node-id="5:1026"
-                          data-name="Link"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1027"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-brand-900 text-[14px] whitespace-nowrap"
-                              data-node-id="5:1028"
-                            >
-                              <p className="leading-[20px]">Voir le projet</p>
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:1029"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer19}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bg-brand-700 h-[4px] relative shrink-0 w-[373.33px]"
-                      data-node-id="5:1031"
-                      data-name="Background"
-                    />
-                  </div>
-                  <div
-                    className="bg-white content-stretch flex flex-[1_0_0] flex-col h-[544.3px] items-start min-w-px overflow-clip relative rounded-card shadow-raised"
-                    data-news-category="official"
-                    data-node-id="5:1040"
-                    style={{ display: hiddenNews.has("5:1040") ? "none" : undefined }}
-                    data-name="Article - ARTICLE 6: COMMUNIQUÉ OFFICIEL"
-                  ><Link aria-label={articles[5]?.title ?? "Lire l'article"} className="absolute inset-0 z-10" to={`/actualites/${articles[5]?.slug ?? ""}`} />
-                    <div
-                      className="bg-brand-900 content-stretch flex flex-col h-[224px] items-start justify-between overflow-clip p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:1067"
-                      data-name="Background"
-                    >
-                      <div
-                        className="content-stretch flex items-start justify-between relative shrink-0 w-full"
-                        data-node-id="5:1068"
-                        data-name="Container"
-                      >
-                        <div
-                          className="bg-surface-subtle content-stretch drop-shadow-card flex gap-[5.99px] items-center px-[12px] py-[4px] relative rounded-pill shrink-0"
-                          data-node-id="5:1069"
-                          data-name="Background+Shadow"
-                        >
-                          <div
-                            className="h-[11.667px] relative shrink-0 w-[9.333px]"
-                            data-node-id="5:1070"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer24}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[11px] uppercase whitespace-nowrap"
-                            data-node-id="5:1072"
-                          >
-                            <p className="leading-[16px]">{articles[5]?.kicker ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="h-[28.5px] relative shrink-0 w-[27px]"
-                          data-node-id="5:1073"
-                          data-name="Icon"
-                        >
-                          <img
-                            alt=""
-                            className="absolute block inset-0 max-w-none size-full"
-                            src={imgIcon1}
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full"
-                        data-node-id="5:1074"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:1075"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-100 text-[11px] w-full"
-                            data-node-id="5:1076"
-                          >
-                            <p className="leading-[16px]">
-                              RÉF. CSC/DG/2024/09-B
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start relative shrink-0 w-full"
-                          data-node-id="5:1077"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-[20px] text-white w-full"
-                            data-node-id="5:1078"
-                          >
-                            <p className="leading-[25px]">
-                              Direction Générale - Yaoundé
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="content-stretch flex flex-col items-start justify-between p-[24px] relative shrink-0 w-full"
-                      data-node-id="5:1041"
-                      data-name="Container"
-                    >
-                      <div
-                        className="content-stretch flex flex-col gap-[9.3px] items-start pb-[16px] relative shrink-0 w-full"
-                        data-node-id="5:1042"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full"
-                          data-node-id="5:1043"
-                          data-name="Container"
-                        >
-                          <div
-                            className="h-[12.5px] relative shrink-0 w-[11.25px]"
-                            data-node-id="5:1044"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer17}
-                            />
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1046"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:1047"
-                            >
-                              <p className="leading-[16px]">02 Novembre 2024</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1048"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:1049"
-                            >
-                              <p className="leading-[16px]" data-decorative-separator="true">•</p>
-                            </div>
-                          </div>
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1050"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-warn-700 text-[12px] whitespace-nowrap"
-                              data-node-id="5:1051"
-                            >
-                              <p className="leading-[16px]">
-                                Circulaire Officielle
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pb-[0.75px] relative shrink-0 w-full"
-                          data-node-id="5:1052"
-                          data-name="Heading 4"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-brand-900 text-[20px] w-full"
-                            data-node-id="5:1053"
-                          >
-                            <p className="leading-[27.5px] mb-0">{articles[5]?.title ?? ""}</p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex flex-col items-start pt-[1.45px] relative shrink-0 w-full"
-                          data-node-id="5:1054"
-                          data-name="Container"
-                        >
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] w-full"
-                            data-node-id="5:1055"
-                          >
-                            <p className="leading-[22.75px] mb-0">{articles[5]?.excerpt ?? ""}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="content-stretch flex items-center justify-between pt-[16px] relative shrink-0 w-full"
-                        data-node-id="5:1056"
-                        data-name="Container"
-                      >
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:1057"
-                          data-name="Container"
-                        >
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:1058"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer25}
-                            />
-                          </div>
-                          <div
-                            className="[word-break:break-word] flex flex-col font-['Montserrat:Bold'] font-bold justify-center leading-[0] relative shrink-0 text-ink-700 text-[11px] whitespace-nowrap"
-                            data-node-id="5:1060"
-                          >
-                            <p className="leading-[16px]">
-                              Document PDF (2.4 Mo)
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          className="content-stretch flex gap-[4px] items-center relative shrink-0"
-                          data-node-id="5:1061"
-                          data-name="Link"
-                        >
-                          <div
-                            className="content-stretch flex flex-col items-start relative shrink-0"
-                            data-node-id="5:1062"
-                            data-name="Container"
-                          >
-                            <div
-                              className="[word-break:break-word] flex flex-col font-['Inter:Bold'] font-bold justify-center leading-[0] not-italic relative shrink-0 text-warn-700 text-[14px] whitespace-nowrap"
-                              data-node-id="5:1063"
-                            >
-                              <p className="leading-[20px]">Télécharger</p>
-                            </div>
-                          </div>
-                          <div
-                            className="relative shrink-0 size-[10.667px]"
-                            data-node-id="5:1064"
-                            data-name="Container"
-                          >
-                            <img
-                              alt=""
-                              className="absolute block inset-0 max-w-none size-full"
-                              src={imgContainer26}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bg-ink-500 h-[4px] relative shrink-0 w-[373.34px]"
-                      data-node-id="5:1066"
-                      data-name="Background"
-                    />
-                  </div>
-                </div>
+                ))}
+                <Pagination
+                  page={page}
+                  pageCount={pageCount}
+                  onChange={setPage}
+                  label={`Page ${page} sur ${pageCount}`}
+                  className="w-full"
+                />
               </div>
-            </div>
               <div
                 className="flex w-full flex-col items-center justify-center gap-2 rounded-panel border border-dashed border-[#c7cdf5] bg-white px-6 py-14 text-center"
                 data-empty-state="news"
                 role="status"
-                style={{ display: hiddenNews.size === 6 ? 'flex' : 'none' }}
+                style={{ display: visibleNews.length === 0 ? "flex" : "none" }}
               >
-                <span aria-hidden="true" className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-900">
+                <span
+                  aria-hidden="true"
+                  className="flex size-12 items-center justify-center rounded-pill bg-surface-tint text-brand-900"
+                >
                   <Icon name="search" size={20} />
                 </span>
                 <p className="font-['Montserrat:Bold'] text-[16px] font-bold text-ink-900">
                   Aucun article dans cette thématique
                 </p>
                 <p className="max-w-[46ch] font-['Inter:Regular'] text-[14px] text-[#5d626e]">
-                 /themes' themes' Combinez « Tous les articles » avec une autre
+                  /themes' themes' Combinez « Tous les articles » avec une autre
                   catégorie pour découvrir l'ensemble de nos publications.
                 </p>
                 <button
                   type="button"
                   className="mt-2 cursor-pointer rounded-pill bg-brand-900 px-5 py-2.5 font-['Inter:Semi_Bold'] text-[14px] font-semibold text-white transition-colors hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004484]"
-                  onClick={() => setNewsFilter('all')}
+                  onClick={() => setNewsFilter("all")}
                 >
                   Voir tous les articles
                 </button>
               </div>
+            </div>
 
             <div
               className="content-stretch flex flex-col items-start pb-[64px] relative shrink-0 w-full"
@@ -2953,7 +1873,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[12px] whitespace-nowrap"
                           data-node-id="5:1173"
                         >
-                          <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                          <p
+                            className="leading-[16px]"
+                            data-decorative-separator="true"
+                          >
+                            •
+                          </p>
                         </div>
                       </div>
                       <div
@@ -3107,7 +2032,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                           className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-white whitespace-nowrap"
                           data-node-id="5:1196"
                         >
-                          <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                          <p
+                            className="leading-[16px]"
+                            data-decorative-separator="true"
+                          >
+                            •
+                          </p>
                         </div>
                       </div>
                       <div
@@ -3302,7 +2232,10 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                         data-node-id="5:1225"
                         data-name="Button:margin"
                       >
-                        <button disabled title="La lettre d'information n'a pas encore de formulaire" type="button"
+                        <button
+                          disabled
+                          title="La lettre d'information n'a pas encore de formulaire"
+                          type="button"
                           className="bg-warn-700 content-stretch flex gap-[8px] items-center justify-center relative rounded-pill w-full btn-md btn"
                           data-node-id="5:1226"
                           data-name="Button"
@@ -4014,7 +2947,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[12px] whitespace-nowrap"
                     data-node-id="5:1340"
                   >
-                    <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                    <p
+                      className="leading-[16px]"
+                      data-decorative-separator="true"
+                    >
+                      •
+                    </p>
                   </div>
                 </div>
                 <div
@@ -4038,7 +2976,12 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                     className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold'] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-ink-300 text-[12px] whitespace-nowrap"
                     data-node-id="5:1344"
                   >
-                    <p className="leading-[16px]" data-decorative-separator="true">•</p>
+                    <p
+                      className="leading-[16px]"
+                      data-decorative-separator="true"
+                    >
+                      •
+                    </p>
                   </div>
                 </div>
                 <div

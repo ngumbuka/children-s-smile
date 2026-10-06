@@ -33,6 +33,17 @@ export function Header() {
     <div className="backdrop-blur-[6px] bg-[rgba(250,248,255,0.95)] flex flex-col items-start shadow-[0px_1px_8px_0px_rgba(11,92,171,0.08)] w-full sticky top-0 z-50">
       <a
         href="#main-content"
+        onClick={(event) => {
+          // A bare "#main-content" href must not touch the URL: it would
+          // scroll to an element the router has not painted yet on the very
+          // first render. Focus the target directly instead.
+          event.preventDefault()
+          const target = document.getElementById("main-content")
+          if (!target) return
+          target.setAttribute("tabindex", "-1")
+          target.focus({ preventScroll: true })
+          target.scrollIntoView({ behavior: "smooth", block: "start" })
+        }}
         className="absolute bg-white font-['Inter'] font-bold left-4 px-4 py-3 rounded-lg text-brand-900 -translate-y-20 focus:translate-y-2 transition-transform z-[60]"
       >
         Aller au contenu principal

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Replace <div class=...><img src={brokenEmptySvg}/></div> wrappers with <Icon name=.../>."""
+"""Replace <div class=...><img src={brokenEmptySvg}/></div> wrappers with <Icon name=.../>.
+
+The icon names below resolve against src/components/icons.tsx, which is a local
+stand-in for the icon package this workspace could not fetch. Keep the two in
+step: a name added here needs a glyph there.
+"""
 import re, sys, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
