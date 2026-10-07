@@ -483,3 +483,39 @@ export const Archive = createIcon(
     <path d="M10 12h4" />
   </>,
 )
+
+export const Upload = createIcon(
+  "Upload",
+  <>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <path d="m17 8-5-5-5 5" />
+    <path d="M12 3v12" />
+  </>,
+)
+
+export const Link2 = createIcon(
+  "Link2",
+  <>
+    <path d="M9 17H7A5 5 0 0 1 7 7h2" />
+    <path d="M15 7h2a5 5 0 1 1 0 10h-2" />
+    <path d="M8 12h8" />
+  </>,
+)
+
+export const Eye = createIcon(
+  "Eye",
+  <>
+    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+    <circle cx="12" cy="12" r="3" />
+  </>,
+)
+
+export const EyeOff = createIcon(
+  "EyeOff",
+  <>
+    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+    <path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+    <path d="M2 2l20 20" />
+  </>,
+)

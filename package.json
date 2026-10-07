@@ -8,9 +8,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.json",
+    "migrate:supabase": "tsc src/lib/seedData.ts src/lib/models.ts --module commonjs --target es2020 --moduleResolution node --esModuleInterop --skipLibCheck --outDir scripts/.generated && printf '{\"type\":\"commonjs\"}' > scripts/.generated/package.json && node scripts/seed-supabase.cjs",
     "format": "oxfmt && tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.18.4"

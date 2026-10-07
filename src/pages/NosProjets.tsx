@@ -320,9 +320,11 @@ export default function NosProjetsChildrensSmileCameroun() {
   }
 
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (submitting) return
     const data = new FormData(event.currentTarget)
     const fields = {
       school: String(data.get("school") ?? "").trim(),
@@ -336,25 +338,31 @@ export default function NosProjetsChildrensSmileCameroun() {
     // Recorded first: the messenger may never be allowed to open, and the
     // backoffice should still know a dossier came in through the community
     // call.
-    await saveMessage({
-      name: fields.referent || "Anonyme",
-      email: "",
-      phone: fields.phone,
-      organisation: fields.school,
-      profile: "school",
-      region: fields.region,
-      subject: fields.urgencyType || "Requête via l'appel aux communautés",
-      body: fields.description,
-    })
-    setSent(true)
+    setSubmitting(true)
+    try {
+      await saveMessage({
+        name: fields.referent || "Anonyme",
+        email: "",
+        phone: fields.phone,
+        organisation: fields.school,
+        profile: "school",
+        region: fields.region,
+        subject: fields.urgencyType || "Requête via l'appel aux communautés",
+        body: fields.description,
+      })
+      setSent(true)
 
-    window.open(
-      `https://wa.me/${WHATSAPP_CELLULE}?text=${encodeURIComponent(
-        buildWhatsApp(fields),
-      )}`,
-      "_blank",
-      "noopener",
-    )
+      window.open(
+        `https://wa.me/${WHATSAPP_CELLULE}?text=${encodeURIComponent(
+          buildWhatsApp(fields),
+        )}`,
+        "_blank",
+        "noopener",
+      )
+    } finally {
+      setSubmitting(false)
+      event.currentTarget.reset()
+    }
   }
 
   return (
@@ -1071,7 +1079,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             <input
                               aria-label="Nom de l'école ou établissement"
                               autoComplete="organization"
-                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                               name="school"
                               placeholder="ex: École Publique de Bafia Centre"
                               required
@@ -1192,7 +1200,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             <input
                               aria-label="Nom du référent"
                               autoComplete="name"
-                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                               name="referent"
                               placeholder="Votre nom complet"
                               required
@@ -1240,7 +1248,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                             <input
                               aria-label="Numéro téléphone / WhatsApp"
                               autoComplete="tel"
-                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                              className="absolute inset-0 z-10 bg-transparent px-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                               inputMode="tel"
                               name="phone"
                               placeholder="+237 6xx xx xx xx"
@@ -1354,7 +1362,7 @@ export default function NosProjetsChildrensSmileCameroun() {
                           <textarea
                             aria-label="Description succincte de la situation"
                             autoComplete="off"
-                            className="absolute inset-0 z-10 resize-none bg-transparent px-4 pt-[10px] font-['Inter:Regular'] text-base leading-5 text-ink-900 outline-none"
+                            className="absolute inset-0 z-10 resize-none bg-transparent px-4 pt-[10px] font-['Inter:Regular'] text-base leading-5 text-ink-900 outline-none placeholder:text-transparent"
                             name="description"
                             placeholder="Précisez le nombre d'élèves affectés et la localité précise..."
                             required
@@ -1394,7 +1402,8 @@ export default function NosProjetsChildrensSmileCameroun() {
                         </div>
                         <button
                           type="submit"
-                          className="bg-accent-700 content-stretch flex gap-[8px] items-center relative rounded-pill btn-md btn"
+                          disabled={submitting}
+                          className="bg-accent-700 content-stretch flex gap-[8px] items-center relative rounded-pill btn-md btn hover:bg-accent-900 disabled:cursor-not-allowed disabled:opacity-60"
                           data-node-id="5:3623"
                           data-name="Button"
                         >

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
-import { usePublicImpact } from "../lib/public"
+import { usePublicImpact, useFeaturedProject } from "../lib/public"
 
 const assetPathPrefix = "/assets"
 const imgFrame = `${assetPathPrefix}/1fe61.png`
@@ -80,6 +80,7 @@ function regionPupils(
 }
 export default function NotreImpactChildrensSmileCameroun() {
   const impact = usePublicImpact()
+  const featuredProject = useFeaturedProject()
   return (
     <>
       <Header />
@@ -442,81 +443,137 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-surface-tint content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-card shadow-hero"
+                  className="bg-white content-stretch flex flex-[1_0_0] flex-col items-stretch min-w-0 overflow-hidden relative rounded-[16px] shadow-hero ring-1 ring-black/5"
                   data-node-id="50:66"
                   data-name="Hero Visual"
                 >
+                  {featuredProject ? (
+                    <Link
+                      aria-label={`${featuredProject.title} — voir le projet`}
+                      className="absolute inset-0 z-[6] rounded-[16px] focus-visible:outline-2 focus-visible:outline-brand-700"
+                      to={`/nos-projets/${featuredProject.slug}`}
+                    />
+                  ) : null}
                   <div
-                    className="h-[354.5px] relative shrink-0 w-full"
+                    className="relative w-full aspect-[4/3]"
                     data-node-id="50:67"
                     data-name="Photo"
                   >
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                      <img
-                        alt="Écoliers de l'école publique de Dimako après la rénovation"
-                        className="absolute h-full left-[-18.81%] max-w-none top-0 w-[137.63%]"
-                        src={imgPhoto}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="[word-break:break-word] absolute bg-gradient-to-t content-stretch flex flex-col font-['Montserrat:Bold'] font-bold from-[rgba(0,68,132,0.8)] inset-0 items-start justify-end p-[24px] to-[rgba(0,68,132,0)] via-1/2 via-[rgba(0,68,132,0.2)]"
-                    data-node-id="50:68"
-                    data-name="Photo Overlay"
-                  >
-                    <p
-                      className="leading-[16px] relative shrink-0 text-brand-100 text-[11px] tracking-[1.1px] uppercase w-full"
-                      data-node-id="50:69"
-                    >{`ÉCOLE PUBLIQUE DE DIMAKO (RÉGION DE L'EST)`}</p>
+                    <img
+                      alt={
+                        featuredProject
+                          ? featuredProject.title
+                          : "Écoliers de l'école publique de Dimako après la rénovation"
+                      }
+                      className="absolute inset-0 size-full object-cover object-center"
+                      src={
+                        featuredProject?.image
+                          ? `${assetPathPrefix}/${featuredProject.image}`
+                          : imgPhoto
+                      }
+                    />
                     <div
-                      className="leading-[0] relative shrink-0 text-[18px] text-white w-full"
-                      data-node-id="50:70"
+                      className="absolute bg-gradient-to-t from-[rgba(0,68,132,0.88)] inset-0 justify-end p-[24px] to-[rgba(0,68,132,0)] via-[rgba(0,68,132,0.25)] via-1/2 pointer-events-none"
+                      data-node-id="50:68"
+                      data-name="Photo Overlay"
                     >
-                      <p className="leading-[24px] mb-0">
-                        100% de présence effective enregistrée post-
+                      <p
+                        className="leading-[16px] relative shrink-0 text-brand-100 text-[11px] tracking-[1.1px] uppercase w-full"
+                        data-node-id="50:69"
+                      >
+                        {featuredProject
+                          ? `${featuredProject.statusLabel} • ${(featuredProject.location || featuredProject.region).toUpperCase()}`
+                          : `ÉCOLE PUBLIQUE DE DIMAKO (RÉGION DE L'EST)`}
                       </p>
-                      <p className="leading-[24px]">rénovation</p>
+                      <p className="leading-[24px] mb-0 mt-[2px] line-clamp-2 relative shrink-0 text-white text-[18px] w-full">
+                        {featuredProject
+                          ? featuredProject.title
+                          : "100% de présence effective enregistrée"}
+                      </p>
+                      {!featuredProject ? (
+                        <p className="leading-[24px] relative shrink-0 text-white text-[18px] w-full">
+                          post-rénovation
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                   <div
-                    className="absolute bg-surface-subtle bottom-0 content-stretch drop-shadow-[0px_20px_12.5px_rgba(0,0,0,0.1),0px_8px_5px_rgba(0,0,0,0.1)] flex gap-[12px] items-center p-[16px] right-0 rounded-control"
+                    className="content-stretch flex flex-row flex-wrap gap-3 items-center justify-between relative shrink-0 w-full bg-white p-[16px] md:p-[20px]"
                     data-node-id="50:71"
                     data-name="Audit Badge"
                   >
-                    <Icon
-                      className="shrink-0 text-brand-900"
-                      label="Fabrication artisanale locale de mobilier scolaire à Obala"
-                      name="building"
-                      size={24}
-                    />
                     <div
-                      className="[word-break:break-word] content-stretch flex flex-col font-['Montserrat:Bold'] font-bold gap-[2px] items-start relative shrink-0 whitespace-nowrap"
-                      data-node-id="50:73"
+                      className="content-stretch flex gap-[12px] items-center relative shrink-0"
+                      data-node-id="50:72"
                       data-name="Frame"
                     >
-                      <p
-                        className="leading-[16px] relative shrink-0 text-ink-700 text-[11px] uppercase"
+                      <div
+                        className="bg-[rgba(0,110,45,0.1)] content-stretch flex items-center justify-center relative rounded-pill size-[40px] shrink-0"
+                        data-node-id="50:73"
+                        data-name="Frame"
+                      >
+                        <Icon
+                          className="shrink-0 text-accent-700"
+                          label="Fabrication artisanale locale de mobilier scolaire à Obala"
+                          name="building"
+                          size={20}
+                        />
+                      </div>
+                      <div
+                        className="[word-break:break-word] content-stretch flex flex-col font-['Montserrat:Bold'] font-bold gap-[4px] items-start relative shrink-0"
                         data-node-id="50:74"
+                        data-name="Frame"
                       >
-                        PROCÈS-VERBAL OFFICIEL
-                      </p>
-                      <p
-                        className="leading-[28px] relative shrink-0 text-brand-900 text-[20px]"
-                        data-node-id="50:75"
-                      >
-                        120 bancs livrés
-                      </p>
+                        <p
+                          className="leading-[14px] relative shrink-0 text-ink-700 text-[10px] tracking-[0.08em] uppercase whitespace-nowrap"
+                          data-node-id="50:75"
+                        >
+                          {featuredProject
+                            ? "CHANTER EN VEDETTE"
+                            : "PROCÈS-VERBAL OFFICIEL"}
+                        </p>
+                        {featuredProject?.impactValue ? (
+                          <p className="leading-[22px] relative shrink-0 text-accent-700 text-[18px] whitespace-nowrap">
+                            {featuredProject.impactValue}
+                          </p>
+                        ) : null}
+                        <p className="leading-[22px] relative shrink-0 text-brand-900 text-[18px]">
+                          {featuredProject ? (
+                            featuredProject.impactLabel ??
+                              featuredProject.statusLabel
+                          ) : (
+                            <>
+                              <span className="text-accent-700">120 bancs</span>{" "}
+                              livrés
+                            </>
+                          )}
+                        </p>
+                      </div>
                     </div>
+                    <span
+                      className="bg-[rgba(0,110,45,0.1)] content-stretch flex gap-[6px] items-center px-[12px] py-[6px] relative rounded-pill shrink-0 text-accent-700"
+                      data-node-id="50:76"
+                      data-name="Frame"
+                    >
+                      <Icon name="check" size={12} className="shrink-0" />
+                      <p className="[word-break:break-word] font-['Montserrat:Bold'] font-bold leading-[16px] relative shrink-0 text-[11px] tracking-[0.04em] uppercase whitespace-nowrap">
+                        {featuredProject
+                          ? featuredProject.consentVerified
+                            ? "Vérifié terrain"
+                            : featuredProject.statusLabel
+                          : "Vérifié terrain"}
+                      </p>
+                    </span>
                   </div>
                 </div>
               </div>
               <div
-                className="content-stretch flex gap-[24px] items-start pt-[24px] relative shrink-0 w-full"
+                className="content-stretch grid grid-cols-1 gap-[16px] items-start pt-[24px] relative shrink-0 w-full sm:grid-cols-2 lg:grid-cols-4"
                 data-node-id="50:76"
                 data-name="4 KPI Badges Bento"
               >
                 <div
-                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
+                  className="bg-white content-stretch drop-shadow-card flex flex-col items-start justify-between min-w-0 p-[20px] relative rounded-[16px] shadow-hero ring-1 ring-black/5"
                   data-node-id="50:77"
                   data-name="Frame"
                 >
@@ -585,7 +642,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
+                  className="bg-white content-stretch drop-shadow-card flex flex-col items-start justify-between min-w-0 p-[20px] relative rounded-[16px] shadow-hero ring-1 ring-black/5"
                   data-node-id="50:88"
                   data-name="Frame"
                 >
@@ -653,7 +710,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
+                  className="bg-white content-stretch drop-shadow-card flex flex-col items-start justify-between min-w-0 p-[20px] relative rounded-[16px] shadow-hero ring-1 ring-black/5"
                   data-node-id="50:99"
                   data-name="Frame"
                 >
@@ -718,7 +775,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                   </div>
                 </div>
                 <div
-                  className="bg-surface-subtle content-stretch drop-shadow-card flex flex-[1_0_0] flex-col items-start justify-between min-w-px p-[24px] relative rounded-card"
+                  className="bg-white content-stretch drop-shadow-card flex flex-col items-start justify-between min-w-0 p-[20px] relative rounded-[16px] shadow-hero ring-1 ring-black/5"
                   data-node-id="50:110"
                   data-name="Frame"
                 >
@@ -3262,7 +3319,7 @@ export default function NotreImpactChildrensSmileCameroun() {
                     <p
                       className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[20px] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="50:586"
-                    >{`Suivi Terrain & Taux d'Impact 92%`}</p>
+                    >{`Suivi Terrain & Taux d'Impact ${impact.impactRate}%`}</p>
                   </div>
                 </div>
               </div>

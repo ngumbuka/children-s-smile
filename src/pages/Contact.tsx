@@ -86,6 +86,7 @@ const imgContainer26 = `${assetPathPrefix}/35796.svg`
 
 function ContactContent() {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   // The duty numbers and the inbox address on this page come from the
   // organisation record, so Settings edits them without a redeploy.
   const organisation = useOrganisation()
@@ -94,6 +95,7 @@ function ContactContent() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (submitting) return
     const data = new FormData(event.currentTarget)
     const fields = {
       name: String(data.get("name") ?? "").trim(),
@@ -106,23 +108,29 @@ function ContactContent() {
       message: String(data.get("message") ?? "").trim(),
     }
 
-    // Recorded first: the mail client may never be allowed to open, and the
-    // backoffice should still know the visitor wrote to us.
-    await saveMessage({
-      name: fields.name || "Anonyme",
-      email: fields.email,
-      phone: fields.phone,
-      organisation: fields.organization,
-      profile: fields.profile,
-      region: fields.region,
-      subject: fields.subject || "Message depuis le site",
-      body: fields.message,
-    })
-    setSent(true)
+    setSubmitting(true)
+    try {
+      // Recorded first: the mail client may never be allowed to open, and the
+      // backoffice should still know the visitor wrote to us.
+      await saveMessage({
+        name: fields.name || "Anonyme",
+        email: fields.email,
+        phone: fields.phone,
+        organisation: fields.organization,
+        profile: fields.profile,
+        region: fields.region,
+        subject: fields.subject || "Message depuis le site",
+        body: fields.message,
+      })
+      setSent(true)
 
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(
-      fields.subject,
-    )}&body=${encodeURIComponent(buildBody(fields))}`
+      window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(
+        fields.subject,
+      )}&body=${encodeURIComponent(buildBody(fields))}`
+    } finally {
+      setSubmitting(false)
+      event.currentTarget.reset()
+    }
   }
 
   return (
@@ -745,7 +753,7 @@ function ContactContent() {
                     >
                       <input
                         aria-label="Nom et prénom"
-                        className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                        className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                         name="name"
                         placeholder="ex. Dr. Estelle Mballa ou M. Ibrahim Bouba"
                         required
@@ -827,7 +835,7 @@ function ContactContent() {
                     >
                       <input
                         aria-label="Organisation"
-                        className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                        className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                         name="organization"
                         placeholder="ex. École Publique de Figuil, Fondation Solidaire..."
                       />
@@ -893,7 +901,7 @@ function ContactContent() {
                       >
                         <input
                           aria-label="Adresse email"
-                          className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                          className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                           name="email"
                           placeholder="nom@domaine.cm"
                           type="email"
@@ -954,7 +962,7 @@ function ContactContent() {
                       >
                         <input
                           aria-label="Téléphone ou WhatsApp"
-                          className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                          className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                           name="phone"
                           placeholder="+237 6XX XX XX XX"
                           type="tel"
@@ -1195,7 +1203,7 @@ function ContactContent() {
                     >
                       <input
                         aria-label="Objet de la demande"
-                        className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none"
+                        className="absolute inset-0 z-10 bg-transparent pl-10 pr-4 font-['Inter:Regular'] text-base text-ink-900 outline-none placeholder:text-transparent"
                         name="subject"
                         placeholder="ex. Signalement toiture effondrée / Accord-cadre RSE / Don de manuels"
                         required
@@ -1258,7 +1266,7 @@ function ContactContent() {
                     >
                       <textarea
                         aria-label="Message détaillé"
-                        className="absolute inset-0 z-10 resize-none bg-transparent p-4 font-['Inter:Regular'] text-base leading-6 text-ink-900 outline-none"
+                        className="absolute inset-0 z-10 resize-none bg-transparent p-4 font-['Inter:Regular'] text-base leading-6 text-ink-900 outline-none placeholder:text-transparent"
                         name="message"
                         placeholder="Décrivez votre situation ou votre intention de partenariat..."
                         required
@@ -1326,13 +1334,14 @@ function ContactContent() {
                   data-name="Bouton d'Envoi"
                 >
                   <div
-                    className="content-stretch flex flex-col items-start relative shrink-0"
+                    className="btn btn-icon-stack btn-md bg-accent-700 hover:bg-accent-900 content-stretch relative shrink-0"
                     data-node-id="5:1570"
                     data-name="Button"
                   >
                     <button
                       aria-label="Envoyer la demande par email"
                       className="absolute inset-0 z-10 cursor-pointer rounded-pill"
+                      disabled={submitting}
                       type="submit"
                     />
                     <div

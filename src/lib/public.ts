@@ -56,6 +56,21 @@ export function usePublishedProjects(): ProjectDoc[] {
   )
 }
 
+/**
+ * The project the backoffice pinned for the impact page hero. The newest
+ * published, visible, featured project wins when several are flagged.
+ */
+export function useFeaturedProject(): ProjectDoc | null {
+  const ready = useStoreReady()
+  return useLiveValue(() => {
+    const rows = read<ProjectDoc>(projectCollection, ready)
+      .filter((project) => isPublic(project.publication))
+      .filter((project) => project.publication.featured)
+      .sort(byDateDesc)
+    return rows[0] ?? null
+  })
+}
+
 /** Published and visible articles, newest first. */
 export function usePublishedArticles(): ArticleDoc[] {
   const ready = useStoreReady()
@@ -130,6 +145,10 @@ export function usePublicImpact(): {
   totalPupils: number
   girlsPct: number
   totalSchools: number
+  deliveredSchools: number
+  /** Share of registered schools whose chantier is delivered — the claim the
+   *  compliance checklists back with a literal percentage, now derived. */
+  impactRate: number
   regions: { name: string; pupils: number; schools: number; share: number }[]
   testimonials: {
     author: string
@@ -163,11 +182,18 @@ export function usePublicImpact(): {
       }
     })
     const bySchool = new Map(schools.map((school) => [school._id, school]))
+    const deliveredSchools = schools.filter(
+      (school) => school.status === "delivered",
+    ).length
     return {
       coveredRegions: regions.filter((region) => region.pupils > 0).length,
       totalPupils,
       girlsPct: totalPupils && totalGirls ? Math.round((totalGirls / totalPupils) * 100) : 0,
       totalSchools: schools.length,
+      deliveredSchools,
+      impactRate: schools.length
+        ? Math.round((deliveredSchools / schools.length) * 100)
+        : 0,
       regions,
       testimonials: testimonials.map((item) => {
         const school = bySchool.get(item.schoolId)

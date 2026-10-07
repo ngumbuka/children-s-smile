@@ -1054,6 +1054,7 @@ export type AdminUserRow = {
   role: string
   region: string
   actif: boolean
+  authId: string
 }
 
 export function useAdminSettings(): {
@@ -1112,6 +1113,7 @@ export function useAdminSettings(): {
         role: USER_ROLE_LABELS[user.role],
         region: user.region ? regionLabel(user.region) : "National",
         actif: user.active,
+        authId: user.authId ?? "",
       })),
       notifications: store.notificationPrefs.map((pref) => ({ ...pref })),
       security: store.securityChecks.map((check) => ({

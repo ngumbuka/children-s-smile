@@ -418,6 +418,8 @@ export type UserDoc = {
   active: boolean
   /** The antenna this user administers, when they are scoped to one. */
   antennaId: string | null
+  /** Supabase Auth user id (set by the `manage-users` edge function). */
+  authId?: string
 }
 
 export type NotificationPrefDoc = {

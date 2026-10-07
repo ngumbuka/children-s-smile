@@ -5,15 +5,24 @@
  * module keeps the fact that one of them is signed in, so the guard on the
  * `/admin` route survives a refresh without a server.
  *
- * This is a **demonstration gate, not authentication**. The accounts carry no
- * secret: the passcode below is public, printed on the sign-in screen, and
- * stored nowhere near the user's data. Everything it protects is seed content
- * in the visitor's own browser. Real authentication needs a server to hold the
- * credentials and to authorise every write, and none of that can be faked
- * client-side — so the honest thing is to make the boundary visible here and
- * keep everything behind it behaving like a real role model.
+ * Two modes (`src/lib/auth.ts` chooses by configuration):
+ *
+ *  - **supabase** — credentials go to Supabase Auth, and the signed-in account
+ *    is the `UserDoc` whose e-mail belongs to the authenticated user. The
+ *    demo passcode is not consulted at all.
+ *
+ *  - **demo** — a public passcode gates the console. This is a
+ *    **demonstration gate, not authentication**: the accounts carry no secret
+ *    and everything they protect is seed content in the visitor's own browser.
  */
 
+import {
+  authConfigured,
+  getAuthState,
+  signInWithAuth,
+  signOutFromAuth,
+  subscribeAuth,
+} from "./auth"
 import { useSyncExternalStore } from "react"
 import { db } from "./db"
 import { useLiveValue, useStoreReady } from "./live"
@@ -71,12 +80,14 @@ export const allows = (role: UserRole, module: AdminModule) =>
   modulesFor(role).includes(module)
 
 /**
- * The passcode every seeded account shares.
+ * The passcode every seeded account shares, in demo mode.
  *
  * Printed on the sign-in screen on purpose: pretending a client-side gate is
  * real security would only make the app look safer than it is.
  */
 export const DEMO_PASSCODE = "childrensmile"
+
+export { authConfigured, authMethod } from "./auth"
 
 const SESSION_KEY = "childrensmile.session.v1"
 
@@ -111,24 +122,67 @@ function subscribe(listener: () => void) {
 
 const snapshot = () => signedInId
 
+const userByEmail = (email: string) =>
+  users.findSync().find(
+    (row) => row.email.toLocaleLowerCase("fr") === email.toLocaleLowerCase("fr"),
+  ) ?? null
+
+/** Re-resolves the signed-in account from a restored Supabase session, so a
+ *  refresh keeps the console open without re-typing the password. */
+if (authConfigured) {
+  subscribeAuth(({ account, loading }) => {
+    if (loading) return
+    if (!account) {
+      if (signedInId) store(null)
+      return
+    }
+    const user = userByEmail(account.email)
+    if (user && user.active) store(user._id)
+  })
+  const boot = getAuthState()
+  if (boot.account && !signedInId) {
+    const user = userByEmail(boot.account.email)
+    if (user && user.active) signedInId = user._id
+  }
+}
+
 export type SignInResult = { ok: true; user: UserDoc } | {
   ok: false
   error: string
 }
 
-/** Checks the passcode and the account, and starts the session. */
+/** Signs the account in. In supabase mode the second argument is the real
+ *  password; in demo mode it is the demonstration passcode. */
 export async function signIn(
   email: string,
-  passcode: string,
+  credential: string,
 ): Promise<SignInResult> {
   await ready
-  if (passcode.trim().toLocaleLowerCase() !== DEMO_PASSCODE) {
+  const wanted = email.trim().toLocaleLowerCase("fr")
+  if (authConfigured) {
+    const auth = await signInWithAuth(wanted, credential)
+    if (!auth.ok) return { ok: false, error: auth.error }
+    const authUser = userByEmail(wanted)
+    if (!authUser) {
+      await signOutFromAuth()
+      return {
+        ok: false,
+        error: "Ce compte n’a pas de profil back-office. Faites-le créer par l’administration.",
+      }
+    }
+    if (!authUser.active) {
+      await signOutFromAuth()
+      return { ok: false, error: "Ce compte est désactivé. Voyez l’antenne." }
+    }
+    store(authUser._id)
+    return { ok: true, user: authUser }
+  }
+  if (credential.trim().toLocaleLowerCase() !== DEMO_PASSCODE) {
     return {
       ok: false,
       error: "Code incorrect. Utilisez le code de démonstration ci-dessous.",
     }
   }
-  const wanted = email.trim().toLocaleLowerCase("fr")
   const user = users
     .findSync()
     .find((row) => row.email.toLocaleLowerCase("fr") === wanted)
@@ -140,7 +194,10 @@ export async function signIn(
   return { ok: true, user }
 }
 
-export const signOut = () => store(null)
+export const signOut = () => {
+  if (authConfigured) void signOutFromAuth()
+  store(null)
+}
 
 /** The signed-in account, or `null` on the sign-in screen. */
 export function useSessionUser(): UserDoc | null {

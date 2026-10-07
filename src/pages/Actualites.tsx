@@ -6,7 +6,7 @@ import { Icon } from "../components/Icon"
 import { Pagination, usePagination } from "../components/Pagination"
 import { formatDate } from "../lib/repositories"
 import type { ArticleCategory, ArticleDoc } from "../lib/models"
-import { usePublishedArticles } from "../lib/public"
+import { usePublishedArticles, usePublicImpact } from "../lib/public"
 import { TabBar } from "../components/TabBar"
 
 const assetPathPrefix = "/assets"
@@ -329,6 +329,8 @@ function NewsCard({ doc }: { doc: ArticleDoc }) {
 export default function ActualitesHistoiresChildrensSmileCameroun() {
   /** Read live, so a story published in the backoffice appears without a reload. */
   const articles = usePublishedArticles()
+  /** The impact claims on the compliance checklist come from the register. */
+  const impact = usePublicImpact()
 
   /** The hero's "Lire le grand reportage" opens the latest audited report
    *  instead of pointing back at the same listing. */
@@ -2692,7 +2694,7 @@ export default function ActualitesHistoiresChildrensSmileCameroun() {
                       className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-ink-700 text-[14px] whitespace-nowrap"
                       data-node-id="5:1298"
                     >
-                      <p className="leading-[20px]">{`Suivi Terrain & Taux d'Impact 92%`}</p>
+                      <p className="leading-[20px]">{`Suivi Terrain & Taux d'Impact ${impact.impactRate}%`}</p>
                     </div>
                   </div>
                 </div>

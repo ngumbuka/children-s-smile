@@ -6,8 +6,12 @@
  * file alone -- no page or component imports a storage engine directly.
  *
  * The in-memory implementation below is seeded from `seed.ts`, which keeps
- * the site fully functional with no server. `MongoAdapter` documents the
- * shape a real driver has to satisfy; it is intentionally not wired up.
+ * the site fully functional with no server. When a Supabase project is
+ * configured (`VITE_SUPABASE_URL` + `VITE_SUPABASE_PUBLISHABLE_KEY`), the
+ * same in-memory store becomes the working set: the store hydrates from the
+ * `documents` table, writes push through to it, and a realtime subscription
+ * keeps multiple tabs in step. Without configuration the store keeps its
+ * localStorage mirror, so a local demo and CI need no backend.
  *
  * The store is also the app's single source of truth at runtime: the public
  * site and the `/admin` backoffice read and write the same collections, so a
@@ -15,6 +19,8 @@
  * figures. Writes notify subscribers, which is how both views stay in step
  * without either of them knowing the other exists.
  */
+
+import { supabase, supabaseConfigured } from "./supabase"
 
 export type Doc = { _id: string } & Record<string, unknown>
 
@@ -56,6 +62,24 @@ const store = new Map<string, Map<string, Doc>>()
 
 let counter = 0
 const nextId = () => `id_${(++counter).toString(36)}_${Date.now().toString(36)}`
+
+/** Writes queued for the remote store, keyed by collection → ids. */
+const dirty = new Map<string, Set<string>>()
+/** Rows deleted locally that still exist remotely, keyed by collection → ids. */
+const removed = new Map<string, Set<string>>()
+
+function markDirty(name: string, id: string) {
+  let ids = dirty.get(name)
+  if (!ids) dirty.set(name, (ids = new Set()))
+  ids.add(id)
+}
+
+function markRemoved(name: string, id: string) {
+  let ids = removed.get(name)
+  if (!ids) removed.set(name, (ids = new Set()))
+  ids.add(id)
+  markDirty(name, id)
+}
 
 /* ------------------------------------------------------------------ */
 /* Change notification                                                  */
@@ -192,6 +216,10 @@ function persistSoon() {
 /** Writes the store if it differs from what is already on disk. */
 function persistNow() {
   if (typeof window === "undefined") return
+  if (supabaseConfigured) {
+    queueSync()
+    return
+  }
   const json = serialize()
   try {
     if (window.localStorage.getItem(STORAGE_KEY) === json) return
@@ -199,6 +227,207 @@ function persistNow() {
   } catch {
     // Storage full or blocked (private mode): the in-memory store still works
     // for this tab, it just stops syncing.
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Supabase persistence                                                */
+/* ------------------------------------------------------------------ */
+
+let remoteSyncing = false
+let remoteSyncPending = false
+
+/** Resolves with `fallback` when the remote operation outlasts `ms`, so a
+ *  stalled Supabase can never hold the site in an empty, pre-seed state. */
+function withTimeout<T>(promise: PromiseLike<T>, ms: number, fallback: T) {
+  return new Promise<T>((resolve) => {
+    const timer = setTimeout(() => resolve(fallback), ms)
+    promise.then(
+      (value) => {
+        clearTimeout(timer)
+        resolve(value)
+      },
+      () => {
+        clearTimeout(timer)
+        resolve(fallback)
+      },
+    )
+  })
+}
+
+/** Runs a write against Supabase and returns its error, or a synthetic
+ *  "timeout" error when the request stalls past the deadline. */
+const remoteError = async <T,>(op: PromiseLike<T>): Promise<unknown> => {
+  const outcome = await withTimeout(
+    op.then(
+      (value) =>
+        ({ error: (value as unknown as { error?: unknown }).error ?? null }) as {
+          error: unknown
+        },
+    ),
+    10000,
+    { error: { message: "timeout" } },
+  )
+  return outcome.error
+}
+
+/** Drains the dirty set, one queue at a time, so overlapping writes coalesce
+ *  instead of racing the wire. */
+function queueSync() {
+  if (remoteSyncing) {
+    remoteSyncPending = true
+    return
+  }
+  remoteSyncing = true
+  void (async () => {
+    do {
+      remoteSyncPending = false
+      await syncOnce()
+    } while (remoteSyncPending)
+    remoteSyncing = false
+  })()
+}
+
+function collectDirty() {
+  const upserts: { collection: string; id: string }[] = []
+  for (const [name, ids] of dirty) {
+    for (const id of ids) upserts.push({ collection: name, id })
+  }
+  const deletes: { collection: string; id: string }[] = []
+  for (const [name, ids] of removed) {
+    for (const id of ids) deletes.push({ collection: name, id })
+  }
+  return { upserts, deletes }
+}
+
+/** A failed write keeps its dirty markers so the next persist retries it. */
+async function syncOnce() {
+  if (!supabase) return
+  const queue = collectDirty()
+  for (const { collection, id } of queue.deletes) {
+    const error = await remoteError(
+      supabase
+        .from("documents")
+        .delete()
+        .eq("collection", collection)
+        .eq("id", id),
+    )
+    if (error) return
+  }
+  for (const { collection, id } of queue.upserts) {
+    const doc = store.get(collection)?.get(id)
+    if (!doc) continue
+    const error = await remoteError(
+      supabase
+        .from("documents")
+        .upsert(
+          { collection, id, data: doc, updated_at: new Date().toISOString() },
+          { onConflict: "collection,id" },
+        ),
+    )
+    if (error) return
+  }
+  for (const { collection, id } of queue.upserts) {
+    dirty.get(collection)?.delete(id)
+  }
+  for (const { collection, id } of queue.deletes) {
+    removed.get(collection)?.delete(id)
+    dirty.get(collection)?.delete(id)
+  }
+}
+
+/** Replaces the store with the rows already in Supabase; false when the table
+ *  is empty or unreachable (first run / offline), which lets the seed
+ *  repopulate it and leaves writes queued for the next retry. */
+async function hydrateRemote(): Promise<boolean> {
+  if (!supabase) return false
+  type RemoteRow = { collection: string; id: string; data: Doc }
+  const outcome = await withTimeout(
+    supabase
+      .from("documents")
+      .select("collection,id,data")
+      .order("collection", { ascending: true })
+      .limit(100000)
+      .then(
+        (value) =>
+          ({
+            data: (value.data ?? null) as RemoteRow[] | null,
+            error: value.error,
+          }) as { data: RemoteRow[] | null; error: unknown },
+      ),
+    6000,
+    { data: null, error: { message: "timeout" } },
+  )
+  if (outcome.error || !outcome.data || outcome.data.length === 0) return false
+  store.clear()
+  for (const row of outcome.data) {
+    let table = store.get(row.collection)
+    if (!table) {
+      table = new Map()
+      store.set(row.collection, table)
+    }
+    table.set(row.id, row.data as Doc)
+    const match = /^id_(\d+)_/.exec(row.id)
+    if (match) counter = Math.max(counter, Number(match[1]))
+  }
+  return true
+}
+
+/** Applies a single remote change to the in-memory store, skipping its own
+ *  echo and separating the change from a plain re-render. */
+function applyRemoteChange(payload: {
+  eventType: "INSERT" | "UPDATE" | "DELETE"
+  new?: { collection: string; id: string; data: Doc }
+  old?: { collection: string; id: string; data: Doc }
+}) {
+  const name = payload.new?.collection ?? payload.old?.collection
+  const id = payload.new?.id ?? payload.old?.id
+  if (!name || !id) return
+  const table = store.get(name)
+  let changed = false
+  if (payload.eventType === "DELETE") {
+    if (table) changed = table.delete(id)
+  } else if (payload.new) {
+    const doc = payload.new.data
+    const existing = table?.get(id)
+    if (!existing || JSON.stringify(existing) !== JSON.stringify(doc)) {
+      if (!table) store.set(name, new Map([[id, doc]]))
+      else table.set(id, doc)
+      changed = true
+    }
+  }
+  if (changed) publish()
+}
+
+let remoteInstalled = false
+
+/** Keeps tabs in step through Supabase Realtime instead of localStorage. */
+function installRemoteSync() {
+  if (remoteInstalled || !supabase) return
+  remoteInstalled = true
+  try {
+    supabase
+      .channel("documents")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "documents" },
+        (payload) =>
+          applyRemoteChange({
+            eventType: payload.eventType,
+            new: payload.new as
+              | { collection: string; id: string; data: Doc }
+              | undefined,
+            old: payload.old as
+              | { collection: string; id: string; data: Doc }
+              | undefined,
+          }),
+      )
+      .subscribe()
+  } catch {
+    // A second copy of this module (a Vite HMR re-transform, or a duplicate
+    // module graph node) may already hold the "documents" channel subscribed,
+    // so `.on()` after `.subscribe()` throws. Realtime is best-effort: it must
+    // never fail the module load above it, or the store would never seed.
   }
 }
 
@@ -247,7 +476,10 @@ export function seedOnce(
   const running = initialisers.get(key)
   if (running) return running
   const promise = (async () => {
-    if (hydrate() && storedSeedComplete) {
+    // Restore a persisted snapshot synchronously when not wired to Supabase.
+    // Never let the network gate readiness: seeding is fast, so the site is
+    // fully rendered first and the remote store is merged in the background.
+    if (!supabaseConfigured && hydrate() && storedSeedComplete) {
       seedCompleted = true
       return
     }
@@ -256,6 +488,18 @@ export function seedOnce(
     // Save the freshly seeded store right away so a crash before the next
     // debounced write cannot leave a partial snapshot behind.
     persistNow()
+    if (!supabaseConfigured) return
+    // Remote rows win when they exist; otherwise the seeded rows stay and are
+    // pushed up by the sync queue once the table is reachable/created.
+    const replaced = await hydrateRemote()
+    if (replaced) {
+      // The freshly seeded rows must not clobber the remote ones we just
+      // loaded, so drop the seed-time dirty/removed markers.
+      dirty.clear()
+      removed.clear()
+      return
+    }
+    queueSync()
   })().then(() => {
     completed.add(key)
     // Bump the revision so subscribers re-read: readiness changed, but no
@@ -266,7 +510,13 @@ export function seedOnce(
   return promise
 }
 
-installCrossTabSync()
+try {
+  installRemoteSync()
+  installCrossTabSync()
+} catch {
+  // Module-load side effects must never reject this module: a page that
+  // reaches here with the store still needs to render and seed.
+}
 
 /** Reads a dotted path so a query can address a nested field. */
 function readPath(doc: Doc, path: string): unknown {
@@ -338,6 +588,7 @@ class MemoryCollection<T extends Doc> implements Collection<T> {
     const _id = doc._id ?? nextId()
     const row = { ...doc, _id } as T
     this.table().set(_id, row)
+    markDirty(this.name, _id)
     publish()
     return row
   }
@@ -347,13 +598,17 @@ class MemoryCollection<T extends Doc> implements Collection<T> {
     if (!cur) return null
     const row = { ...cur, ...patch, _id: id } as T
     this.table().set(id, row)
+    markDirty(this.name, id)
     publish()
     return row
   }
 
   async remove(id: string) {
     const removed = this.table().delete(id)
-    if (removed) publish()
+    if (removed) {
+      markRemoved(this.name, id)
+      publish()
+    }
     return removed
   }
 }

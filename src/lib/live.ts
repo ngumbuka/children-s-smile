@@ -8,12 +8,11 @@
  * collections.
  *
  * The snapshot is cached per revision, so a re-render caused by something
- * else (local UI state, a parent) does not recompute the query, and
- * `useSyncExternalStore` still guarantees the value returned is the one the
- * committed render saw.
+ * else (local UI state, a parent) does not recompute the query, and the value
+ * is always worked out during the render that returns it.
  */
 
-import { useCallback, useRef, useSyncExternalStore } from "react"
+import { useEffect, useReducer, useRef } from "react"
 import { getRevision, isSeeded, subscribe } from "./db"
 
 /**
@@ -28,18 +27,21 @@ export function useLiveValue<T>(compute: () => T): T {
   const computeRef = useRef(compute)
   computeRef.current = compute
 
-  const cache = useRef<{ revision: number; value: T } | null>(null)
+  const cache = useRef<{ revision: number; value: T } | undefined>(undefined)
 
-  const getSnapshot = useCallback(() => {
-    const revision = getRevision()
-    const cached = cache.current
-    if (cached && cached.revision === revision) return cached.value
-    const value = computeRef.current()
-    cache.current = { revision, value }
-    return value
-  }, [])
+  // A store write must reach the view even when the snapshot at that instant
+  // would already have been served in the same revision; an explicit
+  // subscription to the store's notify list forces exactly one re-render.
+  const [, forceRender] = useReducer((x: number) => x + 1, 0)
+  useEffect(() => subscribe(forceRender), [])
 
-  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot)
+  const revision = getRevision()
+  const cached = cache.current
+  if (!cached || cached.revision !== revision) {
+    cache.current = { revision, value: computeRef.current() }
+    return cache.current.value
+  }
+  return cached.value
 }
 
 /**

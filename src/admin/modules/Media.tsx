@@ -82,9 +82,9 @@ const articleFormFields: EntityFormField[] = [
   },
   {
     name: "coverImage",
-    label: "URL de l’image de couverture",
-    type: "url",
-    placeholder: "https://…",
+    label: "Image de couverture",
+    type: "image",
+    placeholder: "URL d’une image https://…",
   },
   {
     name: "seoTitle",

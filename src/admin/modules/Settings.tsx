@@ -33,6 +33,7 @@ import {
   type PublicationStatus,
   type UserRole,
 } from "@/lib/models"
+import { authConfigured, manageAuthUser } from "@/lib/auth"
 import {
   EntityFormDialog,
   notify,
@@ -130,6 +131,16 @@ const userFormFields: EntityFormField[] = [
     label: "Périmètre régional",
     required: true,
     placeholder: "Ex. National ou Littoral",
+  },
+  {
+    name: "password",
+    label: "Mot de passe",
+    type: "password",
+    placeholder: authConfigured ? "Requis à la création" : "Pas utilisé en démonstration",
+    required: authConfigured,
+    help: authConfigured
+      ? "À la création, définissez le mot de passe initial. En modification, laissez vide pour ne pas le changer."
+      : "Le portail de démonstration utilise un code commun — ce champ est ignoré.",
   },
   { name: "actif", label: "Compte actif", type: "checkbox" },
 ]
@@ -233,6 +244,7 @@ export default function SettingsPage() {
             email: user.email,
             role: user.role,
             region: user.region,
+            password: "",
             actif: user.actif,
           }
         : undefined
@@ -500,8 +512,25 @@ export default function SettingsPage() {
                           `Révoquer l'accès de ${u.nom} à la console ?`,
                         )
                       ) {
-                        void deleteUser(u.id)
-                        notify(`${u.nom} n'a plus accès à la console.`)
+                        void (async () => {
+                          let authWarning = ""
+                          if (authConfigured) {
+                            const managed = await manageAuthUser({
+                              action: "delete",
+                              authId: u.authId,
+                              email: u.email,
+                            })
+                            if (!managed.ok) {
+                              authWarning = `${managed.error} ` +
+                                "Le profil local est supprimé, mais le compte d’accès peut rester actif."
+                            }
+                          }
+                          void deleteUser(u.id)
+                          notify(
+                            `${u.nom} n'a plus accès à la console.${authWarning ? ` ${authWarning}` : ""}`,
+                            authWarning ? "info" : "success",
+                          )
+                        })()
                       }
                     }}
                     className="flex size-10 items-center justify-center rounded-full text-[#727783] hover:bg-[#ffdad6] hover:text-[#ba1a1a]"
@@ -808,45 +837,90 @@ export default function SettingsPage() {
             notify("Un utilisateur portant ce nom existe déjà.", "info")
             return false
           }
+          const role = USER_ROLE_FROM_LABEL[String(values.role)] ?? "auditor"
           const row = {
             name: nom,
             email,
-            role: USER_ROLE_FROM_LABEL[String(values.role)] ?? "auditor",
+            role,
             region:
               String(values.role) === "Super Admin"
                 ? null
                 : regionFromLabel(String(values.region)),
             active: Boolean(values.actif) || String(values.role) === "Super Admin",
           }
-          const request = editingUserId
-            ? updateUser(editingUserId, row)
-            : createUser({
-                ...row,
-                // An "Admin Antenne" is useless until attached to a territorial
-                // outpost, so a brand-new one lands on the first antenna.
-                antennaId:
-                  row.role === "antenna_admin" ? antennaRecords[0]?.id ?? null : null,
+          // Provisioning the credential happens first so the settings panel
+          // can pass the Supabase Auth id it returns into the profile.
+          const existingAuthId =
+            (editingUserId
+              ? userRecords.find((u) => u.id === editingUserId)?.authId
+              : "") ?? ""
+          const needCredential = !existingAuthId
+          const password = String(values.password ?? "")
+          if (authConfigured && needCredential && !password.trim()) {
+            notify(
+              "Un mot de passe initial est requis pour créer l’accès.",
+              "info",
+            )
+            return false
+          }
+          return (async () => {
+            let authId = existingAuthId
+            let authWarning = ""
+            if (authConfigured) {
+              const managed = await manageAuthUser({
+                action: needCredential ? "create" : "update",
+                email,
+                authId: authId || undefined,
+                password: password.trim() || undefined,
+                name: nom,
+                role,
+                active: row.active,
               })
-          return request
-            .then(() => {
-              setEditingUserId(null)
-              setUserFormOpen(false)
-              notify(
-                editingUserId
-                  ? `Le profil de ${nom} a été mis à jour.`
-                  : `Le compte de ${nom} a été créé.`,
-              )
-              return true
-            })
-            .catch((error: unknown) => {
-              notify(
-                error instanceof Error
-                  ? error.message
-                  : "Enregistrement impossible.",
-                "info",
-              )
+              if (!managed.ok) {
+                authWarning = managed.error
+              } else if (managed.authId) {
+                authId = managed.authId
+              }
+            }
+            const saved = editingUserId
+              ? await updateUser(editingUserId, {
+                  ...row,
+                  ...(authId ? { authId } : {}),
+                })
+              : await createUser({
+                  ...row,
+                  // An "Admin Antenne" is useless until attached to a
+                  // territorial outpost, so a brand-new one lands on the
+                  // first antenna.
+                  antennaId:
+                    row.role === "antenna_admin"
+                      ? antennaRecords[0]?.id ?? null
+                      : null,
+                  ...(authId ? { authId } : {}),
+                })
+            if (!saved) {
+              notify("Enregistrement impossible.", "info")
               return false
-            })
+            }
+            setEditingUserId(null)
+            setUserFormOpen(false)
+            notify(
+              editingUserId
+                ? `Le profil de ${nom} a été mis à jour.`
+                : `Le compte de ${nom} a été créé.` +
+                    (authWarning ? ` ${authWarning}` : ""),
+              authWarning ? "info" : "success",
+            )
+            return true
+          })().catch((error: unknown) => {
+            notify(
+              error instanceof Error
+                ? error.message
+                : "Enregistrement impossible.",
+              "info",
+            )
+            return false
+          })
         }}
       />
     </div>

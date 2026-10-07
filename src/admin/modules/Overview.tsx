@@ -16,6 +16,7 @@ import { useState } from "react"
 import {
   adminMillions,
   useAdminAlerts,
+  useAdminArticles,
   useAdminOverview,
   useAdminProjects,
   useAdminReports,
@@ -868,6 +869,92 @@ function DonsPanel({ transactions }: { transactions: TransactionRecord[] }) {
   )
 }
 
+// Recent editorial content — surfaces upcoming publications without a detour
+// into the media module. Rows reuse the article projection (type colors, dates
+// and publication flags) that the Articles & Médiathèque grid renders.
+function ArticlesPanel() {
+  const { articles } = useAdminArticles()
+  const recent = articles.slice(0, 4)
+  const live = articles.filter((article) => article.publication.visible).length
+
+  return (
+    <Card className="overflow-hidden">
+      <div className="p-4 pb-2">
+        <div className="flex items-start justify-between">
+          <div>
+            <div className="flex gap-2 items-center mb-1">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#004484]" />
+              <p className="font-['Montserrat'] font-bold text-[#131b2e] text-[15px] leading-[22.5px]">
+                Derniers Articles
+              </p>
+            </div>
+            <p className="font-['Inter'] text-[#424751] text-xs">
+              Actualités, reportages & rapports — {articles.length} au total
+            </p>
+          </div>
+          <Badge className="bg-[#7cf994] text-[#007230] self-start">
+            {live} EN
+            <br />
+            LIGNE
+          </Badge>
+        </div>
+      </div>
+
+      <div className="px-4 mt-1 grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {recent.map((article) => (
+          <div
+            key={article.id}
+            className="flex items-start justify-between gap-2 px-2.5 py-2.5 rounded-lg bg-[#f2f3ff]"
+          >
+            <div className="min-w-0">
+              <div className="flex gap-1.5 items-center flex-wrap">
+                <span
+                  className="inline-flex items-center gap-1 font-['Montserrat'] font-bold text-[11px] px-1.5 py-0.5 rounded-full"
+                  style={{
+                    backgroundColor: article.typeBg,
+                    color: article.typeColor,
+                  }}
+                >
+                  {article.type}
+                </span>
+                <span className="font-['Inter'] text-[#727783] text-[11px] flex items-center gap-0.5">
+                  <Calendar size={10} />
+                  {article.date}
+                </span>
+              </div>
+              <p className="font-['Montserrat'] font-bold text-[#131b2e] text-xs leading-[18px] mt-1.5 truncate">
+                {article.title}
+              </p>
+              <p className="font-['Inter'] text-[#424751] text-[11px] leading-4 mt-0.5">
+                Par {article.author} • {article.region}
+              </p>
+            </div>
+            <span
+              className={`shrink-0 font-['Montserrat'] font-bold text-[10px] px-2 py-0.5 rounded-full ${
+                article.publication.visible
+                  ? "bg-[#7cf994] text-[#006e2d]"
+                  : "bg-[#eaedff] text-[#424751]"
+              }`}
+            >
+              {article.publication.visible ? "PUBLIÉ" : "BROUILLON"}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="p-4 pt-2">
+        <button
+          type="button"
+          onClick={() => navigateTo("media")}
+          className="w-full bg-[#e2e7ff] py-2 rounded-lg font-['Inter'] font-semibold text-[#004484] text-xs text-center"
+        >
+          Gérer dans Articles & Médiathèque
+        </button>
+      </div>
+    </Card>
+  )
+}
+
 // Governance strip
 function GovernanceStrip() {
   const { conformite, gouvernance, milestones } = useAdminReports()
@@ -1054,6 +1141,9 @@ export default function Overview({ readOnly = false }: { readOnly?: boolean }) {
           <DonsPanel transactions={treasuryTransactions} />
         </div>
       </div>
+
+      {/* Recent articles */}
+      <ArticlesPanel />
 
       {/* Governance strip */}
       <GovernanceStrip />

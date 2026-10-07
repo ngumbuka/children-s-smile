@@ -6,7 +6,8 @@ import {
   type FormEvent,
   type ReactNode,
 } from "react"
-import { CheckCircle2, Info, X } from "@/components/icons"
+import { CheckCircle2, Image, Info, Link2, Upload, X } from "@/components/icons"
+import { cloudinaryConfigured, uploadImage } from "@/lib/cloudinary"
 import type { PageKey } from "./Layout"
 
 type NoticeTone = "success" | "info"
@@ -303,7 +304,7 @@ export type EntityFormValue = string | boolean
 export type EntityFormField = {
   name: string
   label: string
-  type?: "text" | "number" | "email" | "url" | "tel" | "date" | "textarea" | "richtext" | "select" | "checkbox"
+  type?: "text" | "number" | "email" | "url" | "tel" | "date" | "textarea" | "richtext" | "select" | "checkbox" | "image" | "password"
   placeholder?: string
   required?: boolean
   min?: number
@@ -424,7 +425,11 @@ export function EntityFormDialog({
               return (
                 <div
                   key={field.name}
-                  className={field.type === "textarea" ? "sm:col-span-2" : ""}
+                  className={
+                    field.type === "textarea" || field.type === "image"
+                      ? "sm:col-span-2"
+                      : ""
+                  }
                 >
                   {field.type === "checkbox" ? (
                     <label
@@ -461,7 +466,19 @@ export function EntityFormDialog({
                           </span>
                         ) : null}
                       </label>
-                      {field.type === "richtext" ? (
+                      {field.type === "image" ? (
+                        <ImageField
+                          value={String(value)}
+                          required={field.required}
+                          placeholder={field.placeholder}
+                          onChange={(nextValue) =>
+                            setValues((current) => ({
+                              ...current,
+                              [field.name]: nextValue,
+                            }))
+                          }
+                        />
+                      ) : field.type === "richtext" ? (
                         <RichTextEditor
                           id={fieldId}
                           value={String(value)}
@@ -560,6 +577,123 @@ export function EntityFormDialog({
           </div>
         </form>
       </div>
+    </div>
+  )
+}
+
+/**
+ * Image picker for `type: "image"` fields.
+ *
+ * Stores a plain URL string in the document (the same value a `url` field
+ * kept), so the mock database shape is untouched. The editor can either
+ * upload a file to Cloudinary or paste any public URL; when Cloudinary is not
+ * configured, only the URL path is offered.
+ */
+function ImageField({
+  value,
+  required,
+  placeholder,
+  onChange,
+}: {
+  value: string
+  required?: boolean
+  placeholder?: string
+  onChange: (value: string) => void
+}) {
+  const fileRef = useRef<HTMLInputElement>(null)
+  const [busy, setBusy] = useState(false)
+
+  const upload = async (file: File | undefined) => {
+    if (!file) return
+    setBusy(true)
+    const result = await uploadImage(file)
+    setBusy(false)
+    if (result.ok) {
+      onChange(result.url)
+      return
+    }
+    notify(result.error, "info")
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-start gap-3">
+        {value ? (
+          <div className="relative size-20 shrink-0 overflow-hidden rounded-xl border border-[#e2e7ff] bg-[#f2f3ff]">
+            <img
+              src={value}
+              alt="Aperçu de l’image"
+              className="size-full object-cover"
+            />
+            <button
+              type="button"
+              aria-label="Retirer l’image"
+              title="Retirer l’image"
+              onClick={() => onChange("")}
+              className="absolute right-1 top-1 flex size-6 items-center justify-center rounded-full bg-[#131b2e]/70 text-white hover:bg-[#131b2e]"
+            >
+              <X aria-hidden="true" size={12} />
+            </button>
+          </div>
+        ) : (
+          <div className="flex size-20 shrink-0 flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-[#cdd3ff] bg-[#faf8ff] text-[#727783]">
+            <Image size={18} />
+            <span className="px-1 text-center text-[10px] font-semibold">
+              {busy ? "Import…" : "Aucune image"}
+            </span>
+          </div>
+        )}
+        <div className="min-w-0 flex-1 space-y-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => fileRef.current?.click()}
+              className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#004484] px-4 text-sm font-bold text-white hover:bg-[#003467] disabled:opacity-60"
+            >
+              <Upload size={14} />
+              {busy ? "Import en cours…" : "Importer une image"}
+            </button>
+            {value ? (
+              <span className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[#7cf994] px-3 text-xs font-bold text-[#006e2d]">
+                <Image size={12} />
+                Image enregistrée
+              </span>
+            ) : null}
+          </div>
+          <div className="relative">
+            <Link2
+              size={14}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#727783]"
+            />
+            <input
+              type="url"
+              required={required && !value}
+              value={value}
+              placeholder={placeholder ?? "ou collez une URL d’image https://…"}
+              onChange={(event) => onChange(event.target.value)}
+              className="min-h-11 w-full rounded-xl border border-[#e2e7ff] bg-white py-1.5 pl-9 pr-3 text-sm text-[#131b2e] outline-none transition focus:border-[#004484]"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        ref={fileRef}
+        type="file"
+        accept="image/png,image/jpeg,image/webp,image/gif"
+        className="hidden"
+        onChange={(event) => {
+          const file = event.target.files?.[0]
+          event.target.value = ""
+          void upload(file)
+        }}
+      />
+      {!cloudinaryConfigured ? (
+        <p className="text-xs text-[#727783]">
+          Import désactivé&nbsp;: Cloudinary n’est pas configuré. Collez une URL
+          d’image pour continuer.
+        </p>
+      ) : null}
     </div>
   )
 }

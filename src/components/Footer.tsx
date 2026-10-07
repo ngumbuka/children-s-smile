@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useOrganisation } from "../lib/public"
+import { useOrganisation, usePublicImpact } from "../lib/public"
 import { Icon } from "./Icon"
 
 const assetPathPrefix = "/assets"
@@ -18,6 +18,7 @@ const imgMoneyIcon = `${assetPathPrefix}/8875f.svg`
 
 export function Footer() {
   const organisation = useOrganisation()
+  const impact = usePublicImpact()
   return (
     <footer className="bg-surface-muted border-t border-[rgba(194,198,211,0.3)] flex flex-col items-start w-full">
       <div className="flex flex-col gap-10 items-start py-10 w-full shell">
@@ -156,7 +157,7 @@ export function Footer() {
                   icon: imgImpactIcon,
                   iconW: "w-[12px]",
                   iconH: "h-[12px]",
-                  text: `Suivi Terrain & Taux d'Impact 92%`,
+                  text: `Suivi Terrain & Taux d'Impact ${impact.impactRate}%`,
                   to: "/notre-impact",
                 },
               ].map((item) => (
