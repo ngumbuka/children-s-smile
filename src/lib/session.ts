@@ -23,8 +23,8 @@ import {
   signOutFromAuth,
   subscribeAuth,
 } from "./auth"
-import { useSyncExternalStore } from "react"
-import { db } from "./db"
+import { useSyncExternalStore, useMemo } from "react"
+import { db, getRevision } from "./db"
 import { useLiveValue, useStoreReady } from "./live"
 import type { UserDoc, UserRole } from "./models"
 import { ready } from "./repositories"
@@ -203,7 +203,16 @@ export const signOut = () => {
 export function useSessionUser(): UserDoc | null {
   const seeded = useStoreReady()
   const id = useSyncExternalStore(subscribe, snapshot, snapshot)
-  return useLiveValue(() => (id && seeded ? users.findByIdSync(id) : null))
+  // `useLiveValue` caches on the data store's revision, but signing in or out
+  // flips `id` without bumping that revision — the cache would keep serving
+  // the previous user (or `null`) forever. Keying the memo on the id AND the
+  // revision covers both: live logins below, and a profile edited elsewhere
+  // (or seeded) while the session is already on screen.
+  const revision = useLiveValue(() => getRevision())
+  return useMemo(
+    () => (id && seeded ? (users.findByIdSync(id) ?? null) : null),
+    [id, seeded, revision],
+  )
 }
 
 /** The accounts offered on the sign-in screen, so it works with no credentials

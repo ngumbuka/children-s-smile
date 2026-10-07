@@ -1,5 +1,11 @@
-import { Suspense, lazy } from "react"
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom"
+import { Suspense, lazy, useEffect } from "react"
+import {
+  BrowserRouter,
+  Link,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom"
 import Accueil from "./pages/Accueil"
 import { Header } from "./components/Header"
 import { Footer } from "./components/Footer"
@@ -76,9 +82,26 @@ const routerBasename =
     ? import.meta.env.BASE_URL.replace(/\/+$/, "")
     : undefined
 
+/**
+ * Client-side navigation keeps the previous page's scroll offset, so a new
+ * route can open mid-page and the global `scroll-behavior: smooth` would make
+ * any correction glide there instead of snapping. Jumping instantly to the top
+ * on every path change is what a fresh load feels like; deliberate in-page
+ * anchors (skip links, cartography and contact buttons) still animate on
+ * demand because they scroll through `scrollIntoView`.
+ */
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+  }, [pathname])
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter basename={routerBasename}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/nous-soutenir" element={<NousSoutenir />} />

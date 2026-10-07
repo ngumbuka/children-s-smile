@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
@@ -7,6 +7,7 @@ import { formatDate } from "../lib/repositories"
 import { usePublishedArticles, usePublishedProjects } from "../lib/public"
 import { useStoreReady } from "../lib/live"
 import { ARTICLE_FORMAT_LABELS } from "../lib/models"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 
@@ -82,13 +83,15 @@ export default function ArticleDetail() {
 
   // One tab title and meta description per story, taken from the fields the
   // backoffice edits, so shared links and search results read the right copy.
-  useEffect(() => {
-    if (!article) return
-    document.title = article.seoTitle || article.title
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute("content", article.seoDescription || article.excerpt)
-  }, [article])
+  usePageMeta(
+    article
+      ? `${article.seoTitle || article.title} — Children's Smile Cameroun`
+      : "Actualité — Children's Smile Cameroun",
+    article
+      ? article.seoDescription || article.excerpt
+      : "Actualités, carnets de terrain et histoires de vie de Children's Smile Cameroun.",
+    "article",
+  )
 
   const copyLink = () => {
     void copyText(window.location.href)

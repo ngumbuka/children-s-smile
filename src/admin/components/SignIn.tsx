@@ -9,7 +9,7 @@
  */
 
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { AlertTriangle, ExternalLink, Lock, LogIn, Shield } from "@/components/icons"
 import {
   DEMO_PASSCODE,
@@ -29,6 +29,7 @@ const ROLE_HINTS: Record<string, string> = {
 
 export function SignInScreen() {
   const accounts = useSignInAccounts()
+  const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [passcode, setPasscode] = useState(authConfigured ? "" : DEMO_PASSCODE)
   const [error, setError] = useState<string | null>(null)
@@ -39,7 +40,13 @@ export function SignInScreen() {
     setBusy(true)
     try {
       const result = await signIn(email, passcode)
-      if (!result.ok) setError(result.error)
+      if (!result.ok) {
+        setError(result.error)
+        return
+      }
+      // Land on the dashboard, wherever the visitor arrived from, so the
+      // overview opens directly after a successful sign-in.
+      navigate("/admin", { replace: true })
     } catch (cause) {
       setError(
         cause instanceof Error

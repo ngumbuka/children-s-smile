@@ -5,19 +5,25 @@
  * in-memory store for MongoDB, Supabase or a REST API is a change to this
  * file alone -- no page or component imports a storage engine directly.
  *
- * The in-memory implementation below is seeded from `seed.ts`, which keeps
- * the site fully functional with no server. When a Supabase project is
- * configured (`VITE_SUPABASE_URL` + `VITE_SUPABASE_PUBLISHABLE_KEY`), the
- * same in-memory store becomes the working set: the store hydrates from the
- * `documents` table, writes push through to it, and a realtime subscription
- * keeps multiple tabs in step. Without configuration the store keeps its
- * localStorage mirror, so a local demo and CI need no backend.
+ * When a Supabase project is configured (`VITE_SUPABASE_URL` +
+ * `VITE_SUPABASE_PUBLISHABLE_KEY`), **Supabase is the source of truth**: the
+ * store boots from the `documents` table and nothing else. The canonical mock
+ * dataset in `seedData.ts` is *not* loaded at runtime and is never pushed up —
+ * populating a fresh database is an explicit operation (`pnpm migrate:supabase`
+ * or edits made in the backoffice). Writes made here push through to the
+ * `documents` table, a realtime subscription keeps multiple tabs in step, and
+ * every successful sync also keeps a local mirror so a stalled remote degrades
+ * to the *last-known-good Supabase snapshot* instead of the mock data.
  *
- * The store is also the app's single source of truth at runtime: the public
- * site and the `/admin` backoffice read and write the same collections, so a
- * donation recorded on the donation form moves the backoffice's treasury
- * figures. Writes notify subscribers, which is how both views stay in step
- * without either of them knowing the other exists.
+ * Without configuration the store stays fully local: it hydrates a
+ * localStorage mirror of previous sessions, else the mock dataset seeds the
+ * canonical content. That keeps a local demo and CI working with no backend.
+ *
+ * The store is the app's single working set at runtime: the public site and
+ * the `/admin` backoffice read and write the same collections, so a donation
+ * recorded on the donation form moves the backoffice's treasury figures.
+ * Writes notify subscribers, which is how both views stay in step without
+ * either of them knowing the other exists.
  */
 
 import { supabase, supabaseConfigured } from "./supabase"
@@ -213,21 +219,23 @@ function persistSoon() {
   }, 200)
 }
 
-/** Writes the store if it differs from what is already on disk. */
+/** Writes the store to localStorage and, in a Supabase build, to the remote.
+ *
+ *  The local mirror is written in *both* modes: in a networked build it is a
+ *  cache of Supabase data (never the mock dataset), so an offline boot can
+ *  still render the last-known-good snapshot instead of an empty site. */
 function persistNow() {
   if (typeof window === "undefined") return
-  if (supabaseConfigured) {
-    queueSync()
-    return
-  }
   const json = serialize()
   try {
-    if (window.localStorage.getItem(STORAGE_KEY) === json) return
-    window.localStorage.setItem(STORAGE_KEY, json)
+    if (window.localStorage.getItem(STORAGE_KEY) !== json) {
+      window.localStorage.setItem(STORAGE_KEY, json)
+    }
   } catch {
     // Storage full or blocked (private mode): the in-memory store still works
     // for this tab, it just stops syncing.
   }
+  if (supabaseConfigured) queueSync()
 }
 
 /* ------------------------------------------------------------------ */
@@ -336,11 +344,22 @@ async function syncOnce() {
   }
 }
 
-/** Replaces the store with the rows already in Supabase; false when the table
- *  is empty or unreachable (first run / offline), which lets the seed
- *  repopulate it and leaves writes queued for the next retry. */
-async function hydrateRemote(): Promise<boolean> {
-  if (!supabase) return false
+/**
+ * Replaces the store with the rows already in Supabase. The outcome tells the
+ * caller how to proceed once supabase is the only source of truth:
+ *
+ *  - `"ok"`         — rows were found and became the store;
+ *  - `"empty"`      — the table is reachable but has no rows (a genuinely
+ *                      fresh database): the store stays empty, nothing is
+ *                      invented in its place;
+ *  - `"unreachable"`— the table errored or timed out (missing table, offline,
+ *                      stalled gateway): the caller may fall back to the
+ *                      last-known-good local mirror of Supabase data.
+ */
+type RemoteHydration = "ok" | "empty" | "unreachable"
+
+async function hydrateRemote(): Promise<RemoteHydration> {
+  if (!supabase) return "unreachable"
   type RemoteRow = { collection: string; id: string; data: Doc }
   const outcome = await withTimeout(
     supabase
@@ -358,7 +377,8 @@ async function hydrateRemote(): Promise<boolean> {
     6000,
     { data: null, error: { message: "timeout" } },
   )
-  if (outcome.error || !outcome.data || outcome.data.length === 0) return false
+  if (outcome.error || !outcome.data) return "unreachable"
+  if (outcome.data.length === 0) return "empty"
   store.clear()
   for (const row of outcome.data) {
     let table = store.get(row.collection)
@@ -370,7 +390,7 @@ async function hydrateRemote(): Promise<boolean> {
     const match = /^id_(\d+)_/.exec(row.id)
     if (match) counter = Math.max(counter, Number(match[1]))
   }
-  return true
+  return "ok"
 }
 
 /** Applies a single remote change to the in-memory store, skipping its own
@@ -455,16 +475,26 @@ function installCrossTabSync() {
  * `await`, so two importers racing on the first render both saw `seeded ===
  * false` and seeded the collections twice.
  *
- * Hydration happens here, once, before the seed has a chance to run: a
- * persisted snapshot restores the store (its `fill` skips any collection that
- * already has rows, so edits are never overwritten) and the seed is skipped
- * entirely when the snapshot says it had already completed.
+ * Orchestration differs by mode:
+ *
+ *  - **local** (`supabaseConfigured` false): a persisted snapshot restores the
+ *    store (its `fill` skips any collection that already has rows, so edits
+ *    are never overwritten) and the seed is skipped entirely when the snapshot
+ *    says it had already completed.
+ *
+ *  - **Supabase**: the store boots straight from the `documents` table. The
+ *    `initialise` callback (the mock dataset) is deliberately *not* run and
+ *    its rows are never pushed up — Supabase is the source of truth, and a
+ *    fresh database is populated with `pnpm migrate:supabase` or real edits.
+ *    A stalled remote falls back to the last-known-good local mirror of
+ *    Supabase data. Readiness always resolves (even on timeout), so a live
+ *    view can never hang on an empty store.
  */
 const initialisers = new Map<string, Promise<void>>()
 const completed = new Set<string>()
 
 /** True once the named initialiser has finished, for views that must not
- *  render an empty result while the seed is still filling collections. */
+ *  render an empty result while the store is still being populated. */
 export function isSeeded(key: string): boolean {
   return completed.has(key)
 }
@@ -476,30 +506,33 @@ export function seedOnce(
   const running = initialisers.get(key)
   if (running) return running
   const promise = (async () => {
-    // Restore a persisted snapshot synchronously when not wired to Supabase.
-    // Never let the network gate readiness: seeding is fast, so the site is
-    // fully rendered first and the remote store is merged in the background.
-    if (!supabaseConfigured && hydrate() && storedSeedComplete) {
+    if (!supabaseConfigured) {
+      if (hydrate() && storedSeedComplete) {
+        seedCompleted = true
+        return
+      }
+      await initialise()
       seedCompleted = true
+      persistNow()
       return
     }
-    await initialise()
-    seedCompleted = true
-    // Save the freshly seeded store right away so a crash before the next
-    // debounced write cannot leave a partial snapshot behind.
-    persistNow()
-    if (!supabaseConfigured) return
-    // Remote rows win when they exist; otherwise the seeded rows stay and are
-    // pushed up by the sync queue once the table is reachable/created.
-    const replaced = await hydrateRemote()
-    if (replaced) {
-      // The freshly seeded rows must not clobber the remote ones we just
-      // loaded, so drop the seed-time dirty/removed markers.
+
+    // Supabase mode: the remote store IS the data. Hydration never gates
+    // readiness on success — the network has a deadline and every outcome
+    // marks the store ready, so the public site renders instead of freezing.
+    const hydration = await hydrateRemote()
+    if (hydration === "ok") {
+      // Remote rows replaced the store; nothing is queued to upload.
       dirty.clear()
       removed.clear()
-      return
+    } else if (hydration === "unreachable") {
+      // Offline or stalled remote: boot from the last-good local mirror of
+      // Supabase data (never the mock dataset). A fresh install without a
+      // mirror simply renders whatever the store holds — an empty database.
+      hydrate()
     }
-    queueSync()
+    seedCompleted = true
+    persistNow()
   })().then(() => {
     completed.add(key)
     // Bump the revision so subscribers re-read: readiness changed, but no

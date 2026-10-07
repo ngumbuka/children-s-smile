@@ -3,6 +3,7 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { useOrganisation } from "../lib/public"
 import { saveMessage } from "../lib/repositories"
+import { usePageMeta } from "../lib/seo"
 
 const PROFILE_LABELS: Record<string, string> = {
   parent: "Parent ou représentant",
@@ -2661,6 +2662,10 @@ function ContactContent() {
 }
 
 export default function Contact() {
+  usePageMeta(
+    "Contact — Children's Smile Cameroun",
+    "Formulaire officiel de correspondance : écrivez à Children's Smile Cameroun depuis l'une des 10 régions du Cameroun.",
+  )
   return (
     <div className="bg-surface-subtle flex min-h-screen flex-col">
       <Header />

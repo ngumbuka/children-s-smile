@@ -2,10 +2,14 @@ import { db, seedOnce } from "./db"
 import { buildSeedRows, type SeedRow } from "./seedData"
 
 /**
- * Loads the canonical dataset into the in-memory store exactly once
- * ("core" bootstrap). The rows come from `seedData`, the same module the
- * Supabase migration script pushes upstream, so the remote snapshot and the
- * store can never disagree about what the mock DB contains.
+ * Loads the canonical mock dataset into the in-memory store exactly once
+ * ("core" bootstrap).
+ *
+ * This is the **local/demo** bootstrap: in a Supabase build the store is
+ * hydrated straight from the `documents` table and this module never runs —
+ * see the orchestration in `seedOnce`. The rows come from `seedData`, the
+ * same module `pnpm migrate:supabase` pushes upstream when a fresh database
+ * needs populating.
  */
 export async function seed() {
   await seedOnce("core", async () => {

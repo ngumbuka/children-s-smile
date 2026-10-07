@@ -6,6 +6,7 @@ import { Icon } from "../components/Icon"
 import { formatXOF } from "../lib/repositories"
 import { useActiveCampaign } from "../lib/public"
 import { useStoreReady } from "../lib/live"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgFrame = `${assetPathPrefix}/1720c.png`
@@ -131,6 +132,10 @@ const OFFICIAL_RIB = [
 ].join("\n")
 
 export default function NousSoutenir() {
+  usePageMeta(
+    "Nous soutenir — Children's Smile Cameroun",
+    "Chaque don redonne un avenir à un enfant : parrainez, donnez ou engagez-vous aux côtés de Children's Smile Cameroun.",
+  )
   const [frequency, setFrequency] = useState<"ponctuel" | "mensuel">("ponctuel")
   const [selectedTier, setSelectedTier] = useState(1)
   const [customAmount, setCustomAmount] = useState("")

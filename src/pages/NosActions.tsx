@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgProfile = `${assetPathPrefix}/1fe61.png`
@@ -27,6 +28,10 @@ const imgContainer16 = `${assetPathPrefix}/25ed3.svg`
 const imgContainer17 = `${assetPathPrefix}/03d40.svg`
 
 export default function NosActionsChildrensSmileCameroun() {
+  usePageMeta(
+    "Nos actions — Children's Smile Cameroun",
+    "Une action intégrée pour l'école et l'enfance au Cameroun : éducation, santé, cantines et protection des enfants dans les 10 régions.",
+  )
   return (
     <>
       <Header />

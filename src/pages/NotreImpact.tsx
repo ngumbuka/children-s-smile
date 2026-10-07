@@ -3,6 +3,7 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Icon } from "../components/Icon"
 import { usePublicImpact, useFeaturedProject } from "../lib/public"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgFrame = `${assetPathPrefix}/1fe61.png`
@@ -79,6 +80,10 @@ function regionPupils(
     : fallback
 }
 export default function NotreImpactChildrensSmileCameroun() {
+  usePageMeta(
+    "Notre impact — Children's Smile Cameroun",
+    "Un impact éducatif réel et mesurable : scolarisation, cantines servies et enfants accompagnés par Children's Smile Cameroun au Cameroun.",
+  )
   const impact = usePublicImpact()
   const featuredProject = useFeaturedProject()
   return (

@@ -6,6 +6,7 @@ import { ProgressMeter } from "../components/shared/ProgressMeter"
 import { formatXOF } from "../lib/repositories"
 import { usePublishedProjects, usePublicGifts } from "../lib/public"
 import { useStoreReady } from "../lib/live"
+import { usePageMeta } from "../lib/seo"
 
 export default function ProjetDetail() {
   const { slug = "" } = useParams()
@@ -26,6 +27,17 @@ export default function ProjetDetail() {
         (p.category === project?.category || p.region === project?.region),
     )
     .slice(0, 3)
+
+  // Per-project tab title and description, so shared links and search results
+  // read the name of the chantier rather than the generic listing page.
+  usePageMeta(
+    project
+      ? `${project.title} — Children's Smile Cameroun`
+      : "Projet — Children's Smile Cameroun",
+    project
+      ? project.excerpt
+      : "Nos chantiers et projets scolaires à travers le Cameroun.",
+  )
 
   if (!ready) {
     return (

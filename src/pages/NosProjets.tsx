@@ -8,6 +8,7 @@ import { TabBar } from "../components/TabBar"
 import { usePublishedProjects } from "../lib/public"
 import { saveMessage } from "../lib/repositories"
 import type { ProjectDoc } from "../lib/models"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgProfile = `${assetPathPrefix}/1fe61.png`
@@ -259,6 +260,10 @@ const chunkRows = <T,>(items: T[], size = 3): T[][] => {
 }
 
 export default function NosProjetsChildrensSmileCameroun() {
+  usePageMeta(
+    "Nos projets & chantiers — Children's Smile Cameroun",
+    "Chantiers et projets scolaires à travers le Cameroun : salles de classe, réfectoires et équipements menés par Children's Smile Cameroun.",
+  )
   const [projectFilter, setProjectFilter] = useState("all")
 
   /**

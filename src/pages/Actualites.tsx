@@ -8,6 +8,7 @@ import { formatDate } from "../lib/repositories"
 import type { ArticleCategory, ArticleDoc } from "../lib/models"
 import { usePublishedArticles, usePublicImpact } from "../lib/public"
 import { TabBar } from "../components/TabBar"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgEcoliersCamerounaisEpanouisLevantLaMainEnClasse = `${assetPathPrefix}/22911.png`
@@ -327,6 +328,10 @@ function NewsCard({ doc }: { doc: ArticleDoc }) {
 }
 
 export default function ActualitesHistoiresChildrensSmileCameroun() {
+  usePageMeta(
+    "Actualités — Children's Smile Cameroun",
+    "Actualités, carnets de terrain et histoires de vie de Children's Smile Cameroun : suivez nos programmes sur le terrain.",
+  )
   /** Read live, so a story published in the backoffice appears without a reload. */
   const articles = usePublishedArticles()
   /** The impact claims on the compliance checklist come from the register. */

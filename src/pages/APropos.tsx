@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgEnfantsSouriantsDansUneClasseRuraleAuCameroun = `${assetPathPrefix}/c5599.png`
@@ -3253,6 +3254,10 @@ function AProposContent() {
 }
 
 export default function APropos() {
+  usePageMeta(
+    "À propos — Children's Smile Cameroun",
+    "Découvrez Children's Smile Cameroun, ONG camerounaise agréée née de l'urgence de voir chaque enfant s'épanouir dans la dignité, l'instruction et la santé.",
+  )
   return (
     <div className="bg-surface-subtle flex min-h-screen flex-col">
       <Header />

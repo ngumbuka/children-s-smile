@@ -6,6 +6,7 @@ import { PAYMENT_RAIL_LABELS, type PaymentRail } from "../lib/models"
 import { usePublishedProjects } from "../lib/public"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
+import { usePageMeta } from "../lib/seo"
 
 const DEFAULT_AMOUNT = 25000
 
@@ -47,6 +48,10 @@ const imgWallet = `${assetPathPrefix}/9d939.svg`
 const imgMountain = `${assetPathPrefix}/f4d30.svg`
 
 export default function FormulaireDon() {
+  usePageMeta(
+    "Faire un don — Children's Smile Cameroun",
+    "Soutenez l'éducation, la santé et la protection des enfants de 3 à 15 ans au Cameroun par un don à Children's Smile Cameroun.",
+  )
   const [rail, setRail] = useState<PaymentRail>("mtn-momo")
   const [params] = useSearchParams()
   // A gift arriving from a project page is attributed to that project, so

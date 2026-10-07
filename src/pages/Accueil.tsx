@@ -6,6 +6,7 @@ import { Icon } from "../components/Icon"
 import type { IconName } from "../components/Icon"
 import { formatXOF } from "../lib/repositories"
 import { usePublicGifts, usePublishedProjects } from "../lib/public"
+import { usePageMeta } from "../lib/seo"
 
 const assetPathPrefix = "/assets"
 const imgHero = `${assetPathPrefix}/1720c.png`
@@ -62,6 +63,10 @@ const steps = [
 ]
 
 export default function Accueil() {
+  usePageMeta(
+    "Children's Smile Cameroun — Enfance & Avenir",
+    "ONG camerounaise agréée : éducation, santé et protection des enfants de 3 à 15 ans dans les 10 régions du Cameroun.",
+  )
   const published = usePublishedProjects()
   const gifts = usePublicGifts()
 
